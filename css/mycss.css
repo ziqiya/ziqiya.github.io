@@ -1,6 +1,18 @@
 *{
 	padding: 0;
 	margin:0;
+	font-family: "微软雅黑";
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	height: 100%;
+	width: 100%;
+}
+.nopad{
+	padding: 0!important;
 }
 .navbar{
 	box-shadow: 0px 5px 10px #747474;
@@ -13,6 +25,7 @@
 }
 .biaodan{
 	margin-top: 25px;
+	padding-left: 0;
 }
 .share{	
 	background: url(../images/icons.png)0 0;
@@ -38,20 +51,23 @@
 	width: 16px;
 	height: 16px;
 }
+.content{
+	margin-top: 50px;
+	height: 100%;
+}
+
+.head-logo{
+    font-size: 24px;
+    line-height: 42px;
+}
 li{
 	list-style: none;
-}
-.biaodan{
-	background-color: 
-}
-#range{
-	width: 200px;
 }
 .font1,.buttons1{
 	background-color: #a6a6ff;
 }
 .radius{
-	border-radius: 90px;	/*border-radius?*/
+	border-radius: 90px;	
 }
 .head1{
 	font-size: 20px;
@@ -67,4 +83,75 @@ li{
 }
 .inputs input{
 	margin-top: 1px;
+}
+.aside-nav{
+    width:  20%;
+    height:  100%;
+    float:  left;
+    margin-top: 50px;
+}
+.nav-panel{
+    min-height: 80%;
+}
+.nav-list-group .list-group-item:hover {
+    z-index: 3;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #fff;
+}
+.nav-list-group .list-group-item{
+	font-size: 17px;
+	cursor: pointer;
+}
+.sub-list-group .sub-list-group.active{
+	display: block;
+}
+.nav-list-group .sub-list-group{
+	display: none;
+	font-size: 15px;
+	text-align: center;
+	border:0;
+	margin:1px 0 0;
+}
+.nav-list-group .sub-list-group:hover {
+    z-index: 3;
+    color: #fff;
+    background-color: #337ab7;
+    border:1px solid #fff;
+    margin:0 0 -1px;
+}
+.nav-panel .panel-heading{
+	font-size: 18px;
+	font-weight: bold;
+}
+.content-box {
+    float: left;
+    width: 78%;
+    margin-top: 50px;
+    padding: 20px 50px;
+    border: 1px solid #eee;
+    min-height: 84%;
+    border-radius: 5px;
+}
+.content-box .content-box-panel{
+	display: none;
+}
+.content-box .content-box-panel.active{
+	display:block;
+}
+.dataintable td{
+	border:1px solid #ddd;
+    padding: 10px;
+}
+.dataintable th{
+	border:1px solid #ddd;
+	padding: 10px;
+	background: #f5f5f5;
+}
+.html5_new_note{
+    background: url(../images/html5_new_note.png) top left no-repeat;
+    padding-left: 20px;
+}
+table.dataintable td.html5_new {
+    background: transparent url(../images/html5_new_note.png) right no-repeat;
 }

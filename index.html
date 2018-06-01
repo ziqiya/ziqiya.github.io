@@ -18,9 +18,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<div class="head-logo"><a href=""><img src="images/logo.png"></a></div>	
+				<div class="head-logo">阮旭松的博客</div>	
 			</div>
-			<div class="navbar-collapse collapse">
+			<!-- <div class="navbar-collapse collapse">
 				<ul class="navbar-nav nav navbar-right">
 					<li class="share"><a href=""></a></li>
 					<li class="qqzone"><a href="" ></a></li>
@@ -29,232 +29,460 @@
 					<li class="rrw"><a href=""></a></li>
 					<li class="yijian"><a href=""></a></li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 	</nav>
-	<article class="fuxi">
-		<section class="biaodan col-md-3 wow fadeInLeft">
-			<div class="panel panel-default biaodan">
+	<section class="content">
+		<aside class="aside-nav">
+			<div class="panel panel-default nav-panel">
 				<div class="panel-heading">
-					表单
+					内容导航
 				</div>
-				<div class="panel-body">
-					<!-- <div class="form-group"></div> action?-->
-					<div class="labels">
-						<ul class="labels1">
-							<li><img src="images/loading.gif" alt=""></li>
-							<li><label for="username">用户名：</label></li>
-							<li><label for="password">密码：</label></li>
-							<li><label for="country">国家列表：</label></li>
-							<li><label for="number">数字：</label></li>
-							<li><label for="range">范围：</label></li>
-							<li><label for="color">颜色：</label></li>
-							<li><label for="date">日期：</label></li>
-							<li><label for="localtime">当地时间：</label></li>
-							<li><label for="email">邮箱：</label></li>
-							<li><label for="url">url: </label></li>
-							<li><label for="search">search: </label></li>
-							<li><label for="tel">telphone: </label></li>
-							<li><label for="time">time: </label></li>
-							<li><label for="touxiang">头像：</label></li>
-						</ul>
-					</div>
-					<div class="inputs">
-						<form action="?" method="post" oninput="x.value=parseInt(range.value)" id="review">
-							<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
-							<input placeholder="请输入密码" name="password"  id="password" type="password">
-							<input list="Country" id="country">
-							<datalist id="Country">
-							<option value="India">
-							<option value="Italy">
-							<option value="Iran">
-							<option value="Israel">
-							<option value="Indonesia">
-							</datalist>					
-								<input type="number" min="1" max="5" id="number">
-							<br>						
-								<input type="range" min="1" max="20" step="1" value="10" id="range"><!-- <output id="x">10</output> 为什么不同行?-->											
-								<input type="color" id="color">
-							<br>			
-								<input type="date" id="date">
-							<br>
-								<input type="datetime-local" id="localtime">
-							<br>
-								<input type="email" id="email">
-							<br>
-								<input type="url" id="url">
-							<br>
-								<input type="search" id="search">
-							<br>
-								<input type="tel" id="tel">
-							<br>
-							<input type="time" name="time">
-							<br>
-							<input type="file" name="file" accept="images/.jpg,images/.png" multiple="">
-						</form>
-					</div>
+				<div class="panel-body nopad">
+					<ul class="list-group nav-list-group">
+						<li class="list-group-item html active">HTML</li>
+						<li class="list-group-item sub-html sub-list-group">HTML标签</li>
+						<li class="list-group-item sub-html sub-list-group">HTML属性</li>
+						<li class="list-group-item css">CSS</li>
+						<li class="list-group-item sub-css sub-list-group">h1</li>
+						<li class="list-group-item sub-css sub-list-group">h2</li>
+						<li class="list-group-item js">JS</li>
+						<li class="list-group-item sub-js sub-list-group">h1</li>
+						<li class="list-group-item sub-js sub-list-group">h2</li>
+						<li class="list-group-item kj">框架</li>
+						<li class="list-group-item sub-kj sub-list-group">Bootstrap</li>
+						<li class="list-group-item sub-kj sub-list-group">jquery</li>
+					</ul>
 				</div>
 			</div>
-		</section>
-		<section class="font col-md-5 wow fadeInUp">
-			<div class="panel panel-default font1">
-				<div class="panel-heading">
-					字体大全
-				</div>
-				<div class="panel-body">
-					<h1>h1是一个标题<small>small是一个副标题</small></h1
-					<pre>pre是带边框的文本，成父级100%的block</pre>
-					<em>em也是斜体</em>
-					<mark>mark是标记</mark>>
-					<small>small是一个副标题</small>
-					<p class="lead">class="lead"是一个突出的文本</p>
-					<p class="text-uppercase">text-uppercase全部大写</p>
-					<p class="text-lowercase">text-lowercase全部大写</p>
-					<p class="text-capitalize">text-capitalize开头大写</p>
-					<del>del是删除</del>
-					<u>u是下划线</u>
-					<s>s为无用</s>
-					<ins>ins也是下划线，为插入的文字</ins>
-					<code>code代表代码，粉底</code>
-					<kbd>kbd是深灰色底的文本</kbd>
-					<pre>pre是带边框的文本，成父级100%的block</pre>
-					<em>em也是斜体</em>
-					<mark>mark是标记</mark>
-					<b>b是粗体</b>
-					<strong>strong也是粗体</strong>
-					<i>i也是斜体</i>
-					<abbr title="中华人民共和国">中国</abbr>
-					<cite>cite表引用，斜体</cite>
-					<blockquote>blockquote是文章导读，引用，用于文章导读左边有一条
-						<footer>footer左边有横杠</footer>
-						<small>small左边有横杠</small>
-					</blockquote>
-					<blockquote class="blockquote-reverse"><!-- class=“blockquote-reverse”小条在右边 -->
-						<footer>footer，反向右边有横杠</footer>
-						<small>small，反向右边有横杠</small>
-					</blockquote>
-					<address>address为地址
-						<abbr title="河南科技大学开元校区">河南科技大学</abbr>
-					</address>
-				</div>
-			</div>
-		</section>
-		<section class="buttons col-md-4 wow fadeInRight">
-			<div class="panel panel-default buttons1">
-				<div class="panel-heading">
-					按钮
-				</div>
-				<div class="panel-body">
-					<button class="btn btn-default">default</button>
-					<button class="btn btn-default btn-block">default</button>	<!-- btn-block占整排 -->
-					<a href="#" class="btn btn-primary">primary</a>
-					<input type="submit" class="btn btn-danger btn-xs">	<!-- btn-xs为小号按钮 -->
-					<button class="btn btn-success btn-sm">success</button>	<!-- btn-sm为略小按钮 -->
-					<button class="btn btn-info btn-lg">info</button>	<!-- btn-xs为大号按钮 -->
-					<button class="btn btn-link">link</button>	<!-- link按钮无边框 -->
-					<div class="btn-group btn-group-vertical">
-						<button class="btn btn-primary">1</button>
-						<button class="btn btn-danger">2</button>
-						<button class="btn btn-info">3</button>
-						<button class="btn btn-warning">4</button>
+		</aside>
+		<!-- 内容盒子 -->
+		<section class="content-box">
+			<!-- 1.HTML -->
+			<article class="content-box-panel active">
+				<h2>HTML</h2>
+				<section>
+					<p>
+					超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
+					您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。HTML 指的是超文本标记语言: HyperText Markup Language
+					HTML 不是一种编程语言，而是一种标记语言
+					标记语言是一套标记标签 (markup tag)
+					HTML 使用标记标签来描述网页
+					HTML 文档包含了HTML 标签及文本内容
+					HTML文档也叫做 web 页面
+					</p>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							实例
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<!DOCTYPE html>
+		<html>
+		<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+		</head>
+		<body>
+		    <h1>我的第一个标题</h1>
+		    <p>我的第一个段落。</p>
+		</body>
+	</html>
+							</xmp>
+
+								</pre>
+						</div>
 					</div>
-					<div class="btn-group">
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span></button>
-						<button class="btn btn-primary btn-lg radius"><span class="glyphicon glyphicon-play"></span></button>
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-pause"></span></button>
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span></button>
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
-					</div>
-					<div class="btn-group">	<!-- dropup往上拉 -->
-						<button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span></button>
-						<a href="#" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">primary<span class="caret"></span></a>
-						<ul class="dropdown-menu dropdown-menu-right">	<!-- dropdown-menu-right使菜单右对齐 -->
-							<li class="dropdown-header">第一类</li>
-							<li><a href="#" class="text-center">1</a></li>
-							<li><a href="#" class="text-center">2</a></li>
-							<li><a href="#" class="text-center">3</a></li>
-							<li class="divider">分割线</li>
-							<li class="dropdown-header">第二类</li>
-							<li><a href="#" class="text-center">1</a></li>
-							<li><a href="#" class="text-center">2</a></li>
-							<li><a href="#" class="text-center">3</a></li>
+					<p>
+						HTML文档的后缀名
+						<ul>
+							<li>.html</li>
+							<li>.htm</li>
 						</ul>
-						<!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">primary<span class="caret"></span></button>
-						<ul class="dropdown-menu">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-						</ul> 只能一个dropdown-->
+						<p>以上两种后缀名没有区别，都可以使用。</p>
+					</p>
+				</section>
+			</article>
+			<!-- HTML end -->
+			<!-- HTML标签-->
+			<article class="content-box-panel">
+				<h2>HTML标签</h2>
+				<section>
+					<table log-set-param="table_view" width="658" class="dataintable"><tbody><tr><th width="150">标签</th><th width="507">描述</th></tr><tr><td valign="top" align="left" width="150">&lt;!--...--&gt;</td><td valign="top" align="left" width="507">定义注释。</td></tr><tr><td valign="top" align="left" width="150">&lt;!DOCTYPE&gt;</td><td valign="top" align="left" width="507">定义文档类型。</td></tr><tr><td valign="top" align="left" width="150">&lt;a&gt;</td><td valign="top" align="left" width="507">定义锚。</td></tr><tr><td valign="top" align="left" width="150">&lt;abbr&gt;</td><td valign="top" align="left" width="507">定义缩写。</td></tr><tr><td valign="top" align="left" width="150">&lt;acronym&gt;</td><td valign="top" align="left" width="507">定义只取首字母的缩写。</td></tr><tr><td valign="top" align="left" width="150">&lt;address&gt;</td><td valign="top" align="left" width="507">定义文档作者或拥有者的联系信息。</td></tr><tr><td valign="top" align="left" width="150">&lt;applet&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义嵌入的 applet。</td></tr><tr><td valign="top" align="left" width="150">&lt;area&gt;</td><td valign="top" align="left" width="507">定义图像映射内部的区域。</td></tr><tr><td valign="top" align="left" width="150">&lt;article&gt;</td><td valign="top" align="left" width="507">定义文章。</td></tr><tr><td valign="top" align="left" width="150">&lt;aside&gt;</td><td valign="top" align="left" width="507">定义页面内容之外的内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;audio&gt;</td><td valign="top" align="left" width="507">定义声音内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;b&gt;</td><td valign="top" align="left" width="507">定义粗体字。</td></tr><tr><td valign="top" align="left" width="150">&lt;base&gt;</td><td valign="top" align="left" width="507">定义页面中所有链接的默认地址或默认目标。</td></tr><tr><td valign="top" align="left" width="150">&lt;basefont&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义页面中文本的默认字体、颜色或尺寸。</td></tr><tr><td valign="top" align="left" width="150">&lt;bdi&gt;</td><td valign="top" align="left" width="507">定义文本的文本方向，使其脱离其周围文本的方向设置。</td></tr><tr><td valign="top" align="left" width="150">&lt;bdo&gt;</td><td valign="top" align="left" width="507">定义文字方向。</td></tr><tr><td valign="top" align="left" width="150">&lt;big&gt;</td><td valign="top" align="left" width="507">定义大号文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;blockquote&gt;</td><td valign="top" align="left" width="507">定义长的引用。</td></tr><tr><td valign="top" align="left" width="150">&lt;body&gt;</td><td valign="top" align="left" width="507">定义文档的主体。</td></tr><tr><td valign="top" align="left" width="150">&lt;br&gt;</td><td valign="top" align="left" width="507">定义简单的折行。</td></tr><tr><td valign="top" align="left" width="150">&lt;button&gt;</td><td valign="top" align="left" width="507">定义按钮 (push button)。</td></tr><tr><td valign="top" align="left" width="150">&lt;canvas&gt;</td><td valign="top" align="left" width="507">定义图形。</td></tr><tr><td valign="top" align="left" width="150">&lt;caption&gt;</td><td valign="top" align="left" width="507">定义表格标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;center&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义居中文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;cite&gt;</td><td valign="top" align="left" width="507">定义引用(citation)。</td></tr><tr><td valign="top" align="left" width="150">&lt;code&gt;</td><td valign="top" align="left" width="507">定义计算机代码文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;col&gt;</td><td valign="top" align="left" width="507">定义表格中一个或多个列的属性值。</td></tr><tr><td valign="top" align="left" width="150">&lt;colgroup&gt;</td><td valign="top" align="left" width="507">定义表格中供格式化的列组。</td></tr><tr><td valign="top" align="left" width="150">&lt;command&gt;</td><td valign="top" align="left" width="507">定义命令按钮。</td></tr><tr><td valign="top" align="left" width="150">&lt;datalist&gt;</td><td valign="top" align="left" width="507">定义下拉列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;dd&gt;</td><td valign="top" align="left" width="507">定义定义列表中项目的描述。</td></tr><tr><td valign="top" align="left" width="150">&lt;del&gt;</td><td valign="top" align="left" width="507">定义被删除文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;details&gt;</td><td valign="top" align="left" width="507">定义元素的细节。</td></tr><tr><td valign="top" align="left" width="150">&lt;dir&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义目录列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;div&gt;</td><td valign="top" align="left" width="507">定义文档中的节。</td></tr><tr><td valign="top" align="left" width="150">&lt;dfn&gt;</td><td valign="top" align="left" width="507">定义定义项目。</td></tr><tr><td valign="top" align="left" width="150">&lt;dialog&gt;</td><td valign="top" align="left" width="507">定义对话框或窗口。</td></tr><tr><td valign="top" align="left" width="150">&lt;dl&gt;</td><td valign="top" align="left" width="507">定义定义列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;dt&gt;</td><td valign="top" align="left" width="507">定义定义列表中的项目。</td></tr><tr><td valign="top" align="left" width="150">&lt;em&gt;</td><td valign="top" align="left" width="507">定义强调文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;embed&gt;</td><td valign="top" align="left" width="507">定义外部交互内容或插件。</td></tr><tr><td valign="top" align="left" width="150">&lt;fieldset&gt;</td><td valign="top" align="left" width="507">定义围绕表单中元素的边框。</td></tr><tr><td valign="top" align="left" width="150">&lt;figcaption&gt;</td><td valign="top" align="left" width="507">定义 figure 元素的标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;figure&gt;</td><td valign="top" align="left" width="507">定义媒介内容的分组，以及它们的标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;font&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义文字的字体、尺寸和颜色。</td></tr><tr><td valign="top" align="left" width="150">&lt;footer&gt;</td><td valign="top" align="left" width="507">定义 section 或 page 的页脚。</td></tr><tr><td valign="top" align="left" width="150">&lt;form&gt;</td><td valign="top" align="left" width="507">定义供用户输入的 HTML 表单。</td></tr><tr><td valign="top" align="left" width="150">&lt;frame&gt;</td><td valign="top" align="left" width="507">定义框架集的窗口或框架。</td></tr><tr><td valign="top" align="left" width="150">&lt;frameset&gt;</td><td valign="top" align="left" width="507">定义框架集。</td></tr><tr><td valign="top" align="left" width="150">&lt;h1&gt; to &lt;h6&gt;</td><td valign="top" align="left" width="507">定义 HTML 标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;head&gt;</td><td valign="top" align="left" width="507">定义关于文档的信息。</td></tr><tr><td valign="top" align="left" width="150">&lt;header&gt;</td><td valign="top" align="left" width="507">定义 section 或 page 的页眉。</td></tr><tr><td valign="top" align="left" width="150">&lt;hr&gt;</td><td valign="top" align="left" width="507">定义水平线。</td></tr><tr><td valign="top" align="left" width="150">&lt;html&gt;</td><td valign="top" align="left" width="507">定义 HTML 文档。</td></tr><tr><td valign="top" align="left" width="150">&lt;i&gt;</td><td valign="top" align="left" width="507">定义斜体字。</td></tr><tr><td valign="top" align="left" width="150">&lt;iframe&gt;</td><td valign="top" align="left" width="507">定义内联框架。</td></tr><tr><td valign="top" align="left" width="150">&lt;img&gt;</td><td valign="top" align="left" width="507">定义图像。</td></tr><tr><td valign="top" align="left" width="150">&lt;input&gt;</td><td valign="top" align="left" width="507">定义输入控件。</td></tr><tr><td valign="top" align="left" width="150">&lt;ins&gt;</td><td valign="top" align="left" width="507">定义被插入文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;isindex&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义与文档相关的可搜索索引。</td></tr><tr><td valign="top" align="left" width="150">&lt;kbd&gt;</td><td valign="top" align="left" width="507">定义键盘文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;keygen&gt;</td><td valign="top" align="left" width="507">定义生成密钥。</td></tr><tr><td valign="top" align="left" width="150">&lt;label&gt;</td><td valign="top" align="left" width="507">定义 input 元素的标注。</td></tr><tr><td valign="top" align="left" width="150">&lt;legend&gt;</td><td valign="top" align="left" width="507">定义 fieldset 元素的标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;li&gt;</td><td valign="top" align="left" width="507">定义列表的项目。</td></tr><tr><td valign="top" align="left" width="150">&lt;link&gt;</td><td valign="top" align="left" width="507">定义文档与外部资源的关系。</td></tr><tr><td valign="top" align="left" width="150">&lt;map&gt;</td><td valign="top" align="left" width="507">定义图像映射。</td></tr><tr><td valign="top" align="left" width="150">&lt;mark&gt;</td><td valign="top" align="left" width="507">定义有记号的文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;menu&gt;</td><td valign="top" align="left" width="507">定义菜单列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;meta&gt;</td><td valign="top" align="left" width="507">定义关于 HTML 文档的元信息。</td></tr><tr><td valign="top" align="left" width="150">&lt;meter&gt;</td><td valign="top" align="left" width="507">定义预定义范围内的度量。</td></tr><tr><td valign="top" align="left" width="150">&lt;nav&gt;</td><td valign="top" align="left" width="507">定义导航链接。</td></tr><tr><td valign="top" align="left" width="150">&lt;noframes&gt;</td><td valign="top" align="left" width="507">定义针对不支持框架的用户的替代内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;noscript&gt;</td><td valign="top" align="left" width="507">定义针对不支持客户端脚本的用户的替代内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;object&gt;</td><td valign="top" align="left" width="507">定义内嵌对象。</td></tr><tr><td valign="top" align="left" width="150">&lt;ol&gt;</td><td valign="top" align="left" width="507">定义有序列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;optgroup&gt;</td><td valign="top" align="left" width="507">定义选择列表中相关选项的组合。</td></tr><tr><td valign="top" align="left" width="150">&lt;option&gt;</td><td valign="top" align="left" width="507">定义选择列表中的选项。</td></tr><tr><td valign="top" align="left" width="150">&lt;output&gt;</td><td valign="top" align="left" width="507">定义输出的一些类型。</td></tr><tr><td valign="top" align="left" width="150">&lt;p&gt;</td><td valign="top" align="left" width="507">定义段落。</td></tr><tr><td valign="top" align="left" width="150">&lt;param&gt;</td><td valign="top" align="left" width="507">定义对象的参数。</td></tr><tr><td valign="top" align="left" width="150">&lt;pre&gt;</td><td valign="top" align="left" width="507">定义预格式文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;progress&gt;</td><td valign="top" align="left" width="507">定义任何类型的任务的进度。</td></tr><tr><td valign="top" align="left" width="150">&lt;q&gt;</td><td valign="top" align="left" width="507">定义短的引用。</td></tr><tr><td valign="top" align="left" width="150">&lt;rp&gt;</td><td valign="top" align="left" width="507">定义若浏览器不支持 ruby 元素显示的内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;rt&gt;</td><td valign="top" align="left" width="507">定义 ruby 注释的解释。</td></tr><tr><td valign="top" align="left" width="150">&lt;ruby&gt;</td><td valign="top" align="left" width="507">定义 ruby 注释。</td></tr><tr><td valign="top" align="left" width="150">&lt;s&gt;</td><td valign="top" align="left" width="507">定义加删除线的文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;samp&gt;</td><td valign="top" align="left" width="507">定义计算机代码样本。</td></tr><tr><td valign="top" align="left" width="150">&lt;script&gt;</td><td valign="top" align="left" width="507">定义客户端脚本。</td></tr><tr><td valign="top" align="left" width="150">&lt;section&gt;</td><td valign="top" align="left" width="507">定义 section。</td></tr><tr><td valign="top" align="left" width="150">&lt;select&gt;</td><td valign="top" align="left" width="507">定义选择列表（下拉列表）。</td></tr><tr><td valign="top" align="left" width="150">&lt;small&gt;</td><td valign="top" align="left" width="507">定义小号文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;source&gt;</td><td valign="top" align="left" width="507">定义媒介源。</td></tr><tr><td valign="top" align="left" width="150">&lt;span&gt;</td><td valign="top" align="left" width="507">定义文档中的节。</td></tr><tr><td valign="top" align="left" width="150">&lt;strike&gt;</td><td valign="top" align="left" width="507">不赞成使用。定义加删除线文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;strong&gt;</td><td valign="top" align="left" width="507">定义强调文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;style&gt;</td><td valign="top" align="left" width="507">定义文档的样式信息。</td></tr><tr><td valign="top" align="left" width="150">&lt;sub&gt;</td><td valign="top" align="left" width="507">定义下标文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;summary&gt;</td><td valign="top" align="left" width="507">为 &lt;details&gt; 元素定义可见的标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;sup&gt;</td><td valign="top" align="left" width="507">定义上标文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;table&gt;</td><td valign="top" align="left" width="507">定义表格。</td></tr><tr><td valign="top" align="left" width="150">&lt;tbody&gt;</td><td valign="top" align="left" width="507">定义表格中的主体内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;td&gt;</td><td valign="top" align="left" width="507">定义表格中的单元。</td></tr><tr><td valign="top" align="left" width="150">&lt;textarea&gt;</td><td valign="top" align="left" width="507">定义多行的文本输入控件。</td></tr><tr><td valign="top" align="left" width="150">&lt;tfoot&gt;</td><td valign="top" align="left" width="507">定义表格中的表注内容（脚注）。</td></tr><tr><td valign="top" align="left" width="150">&lt;th&gt;</td><td valign="top" align="left" width="507">定义表格中的表头单元格。</td></tr><tr><td valign="top" align="left" width="150">&lt;thead&gt;</td><td valign="top" align="left" width="507">定义表格中的表头内容。</td></tr><tr><td valign="top" align="left" width="150">&lt;time&gt;</td><td valign="top" align="left" width="507">定义日期/时间。</td></tr><tr><td valign="top" align="left" width="150">&lt;title&gt;</td><td valign="top" align="left" width="507">定义文档的标题。</td></tr><tr><td valign="top" align="left" width="150">&lt;tr&gt;</td><td valign="top" align="left" width="507">定义表格中的行。</td></tr><tr><td valign="top" align="left" width="150">&lt;track&gt;</td><td valign="top" align="left" width="507">定义用在媒体播放器中的文本轨道。</td></tr><tr><td valign="top" align="left" width="150">&lt;tt&gt;</td><td valign="top" align="left" width="507">定义打字机文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;u&gt;</td><td valign="top" align="left" width="507">定义下划线文本。</td></tr><tr><td valign="top" align="left" width="150">&lt;ul&gt;</td><td valign="top" align="left" width="507">定义无序列表。</td></tr><tr><td valign="top" align="left" width="150">&lt;var&gt;</td><td valign="top" align="left" width="507">定义文本的变量部分。</td></tr><tr><td valign="top" align="left" width="150">&lt;video&gt;</td><td valign="top" align="left" width="507">定义视频。</td></tr><tr><td valign="top" align="left" width="150">&lt;wbr&gt;</td><td valign="top" align="left" width="507">定义视频。</td></tr><tr><td valign="top" align="left" width="150">&lt;xmp&gt;</td><td valign="top" align="left" width="507">定义预格式文本。</td></tr></tbody></table>
+				</section>
+			</article>
+			<!-- HTML标签 end -->
+			<!-- HTML属性 -->
+			<article class="content-box-panel">
+				<h2>HTML属性</h2>
+				<section>
+					<table class="dataintable">
+						<tbody>
+							<tr>
+								<th>属性</th>
+								<th>值</th>
+								<th>描述</th>
+							</tr>
+
+							<tr>
+								<td>class</td>
+								<td><i>classname</i></td>
+								<td>规定元素的类名（classname）</td>
+							</tr>
+
+							<tr>
+								<td>id</td>
+								<td><i>id</i></td>
+								<td>规定元素的唯一 id</td>
+							</tr>
+
+							<tr>
+								<td>style</td>
+								<td><i>style_definition</i></td>
+								<td>规定元素的行内样式（inline style）</td>
+							</tr>
+
+							<tr>
+								<td>title</td>
+								<td><i>text</i></td>
+								<td>规定元素的额外信息（可在工具提示中显示）</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<hr>
+				<div>
+				<h2>HTML 全局属性</h2>
+
+				<p class="html5_new_note">= HTML5 中添加的属性。</p>
+
+				<table class="dataintable">
+				<tbody><tr>
+				<th style="width:35%;">属性</th>
+				<th>描述</th>
+				</tr>
+
+				<tr>
+				<td>accesskey</td>
+				<td>规定激活元素的快捷键。</td>
+				</tr>
+
+				<tr>
+				<td>class</td>
+				<td>规定元素的一个或多个类名（引用样式表中的类）。</td>
+				</tr>
+
+				<tr>
+				<td class="html5_new">contenteditable</td>
+				<td>规定元素内容是否可编辑。</td>
+				</tr>
+
+				<tr>
+				<td class="html5_new">data-*</td>
+				<td>用于存储页面或应用程序的私有定制数据。</td>
+				</tr>
+
+				<tr>
+				<td>dir</td>
+				<td>规定元素中内容的文本方向。</td>
+				</tr>
+
+				<tr>
+				<td class="html5_new">draggable</td>
+				<td>规定元素是否可拖动。</td>
+				</tr>
+
+				<tr>
+				<td class="html5_new">hidden</td>
+				<td>规定元素仍未或不再相关。</td>
+				</tr>
+
+				<tr>
+				<td>id</td>
+				<td>规定元素的唯一 id。</td>
+				</tr>
+
+				<tr>
+				<td>lang</td>
+				<td>规定元素内容的语言。</td>
+				</tr>
+
+				<tr>
+				<td class="html5_new">spellcheck</td>
+				<td>规定是否对元素进行拼写和语法检查。</td>
+				</tr>
+
+				<tr>
+				<td>style</td>
+				<td>规定元素的行内 CSS 样式。</td>
+				</tr>
+
+				<tr>
+				<td>tabindex</td>
+				<td>规定元素的 tab 键次序。</td>
+				</tr>
+
+				<tr>
+				<td>title</td>
+				<td>规定有关元素的额外信息。</td>
+				</tr>
+
+		
+				</tbody></table>
+				</div>
+			</article>
+			<!-- HTML属性 end -->
+			<!-- CSS -->
+			<article class="content-box-panel">			
+				<p class="panel">
+					<h2 class="panel-heading">CSS概述</h2>
+					<ul class="panel-body">
+						<li>CSS 指层叠样式表 (Cascading Style Sheets)</li>
+						<li>样式定义如何显示 HTML 元素</li>
+						<li>样式通常存储在样式表中</li>
+						<li>把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题</li>
+						<li>外部样式表可以极大提高工作效率</li>
+						<li>外部样式表通常存储在 CSS 文件中</li>
+						<li>多个样式定义可层叠为一</li>
+					</ul>
+				</p>
+			</article>
+			<article class="content-box-panel">CSS-h1</article>
+			<article class="content-box-panel">CSS-h2</article>
+			<article class="content-box-panel">JS</article>
+			<article class="content-box-panel">JS-h1</article>
+			<article class="content-box-panel">JS-h2</article>
+			<article class="content-box-panel">框架</article>
+			<article class="content-box-panel">
+				<h2>Bootstrap应用例子</h2>
+				<section class="biaodan col-md-4 wow fadeInLeft">
+					<div class="panel panel-default biaodan">
+						<div class="panel-heading">
+							表单
+						</div>
+						<div class="panel-body">
+							<!-- <div class="form-group"></div> action?-->
+							<div class="labels">
+								<ul class="labels1">
+									<li><img src="images/loading.gif" alt=""></li>
+									<li><label for="username">用户名：</label></li>
+									<li><label for="password">密码：</label></li>
+									<li><label for="country">国家列表：</label></li>
+									<li><label for="number">数字：</label></li>
+									<li><label for="range">范围：</label></li>
+									<li><label for="color">颜色：</label></li>
+									<li><label for="date">日期：</label></li>
+									<li><label for="localtime">当地时间：</label></li>
+									<li><label for="email">邮箱：</label></li>
+									<li><label for="url">url: </label></li>
+									<li><label for="search">search: </label></li>
+									<li><label for="tel">telphone: </label></li>
+									<li><label for="time">time: </label></li>
+									<li><label for="touxiang">头像：</label></li>
+								</ul>
+							</div>
+							<div class="inputs">
+								<form action="?" method="post" oninput="x.value=parseInt(range.value)" id="review">
+									<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+									<input placeholder="请输入密码" name="password"  id="password" type="password">
+									<input list="Country" id="country">
+									<datalist id="Country">
+									<option value="India"></option>
+									<option value="Italy"></option>
+									<option value="Iran"></option>
+									<option value="Israel"></option>
+									<option value="Indonesia"></option>
+									</datalist>					
+										<input type="number" min="1" max="5" id="number">
+									<br>						
+										<input type="range" min="1" max="20" step="1" value="10" id="range"><!-- <output id="x">10</output> 为什么不同行?-->											
+										<input type="color" id="color">
+									<br>			
+										<input type="date" id="date">
+									<br>
+										<input type="datetime-local" id="localtime">
+									<br>
+										<input type="email" id="email">
+									<br>
+										<input type="url" id="url">
+									<br>
+										<input type="search" id="search">
+									<br>
+										<input type="tel" id="tel">
+									<br>
+									<input type="time" name="time">
+									<br>
+									<input type="file" name="file" accept="images/.jpg,images/.png" multiple="">
+								</form>
+							</div>
+						</div>
 					</div>
-					<!-- 列表按钮组 -->
-					<div class="list-group">
-						<a href="#" class="list-group-head">新闻</a>
-						<a href="#" class="list-group-item active">新闻快讯</a>
-						<a href="#" class="list-group-item">新闻快讯</a>
-						<a href="#" class="list-group-item">新闻快讯</a>
-						<a href="#" class="list-group-item">新闻快讯</a>
+				</section>
+				<section class="font col-md-4 wow fadeInUp">
+					<div class="panel panel-default font1">
+						<div class="panel-heading">
+							字体大全
+						</div>
+						<div class="panel-body">
+							<h1>h1是一个标题<small>small是一个副标题</small></h1>
+							<pre>pre是带边框的文本，成父级100%的block</pre>
+							<em>em也是斜体</em>
+							<mark>mark是标记</mark>>
+							<small>small是一个副标题</small>
+							<p class="lead">class="lead"是一个突出的文本</p>
+							<p class="text-uppercase">text-uppercase全部大写</p>
+							<p class="text-lowercase">text-lowercase全部大写</p>
+							<p class="text-capitalize">text-capitalize开头大写</p>
+							<del>del是删除</del>
+							<u>u是下划线</u>
+							<s>s为无用</s>
+							<ins>ins也是下划线，为插入的文字</ins>
+							<code>code代表代码，粉底</code>
+							<kbd>kbd是深灰色底的文本</kbd>
+							<pre>pre是带边框的文本，成父级100%的block</pre>
+							<em>em也是斜体</em>
+							<mark>mark是标记</mark>
+							<b>b是粗体</b>
+							<strong>strong也是粗体</strong>
+							<i>i也是斜体</i>
+							<abbr title="中华人民共和国">中国</abbr>
+							<cite>cite表引用，斜体</cite>
+							<blockquote>blockquote是文章导读，引用，用于文章导读左边有一条
+								<footer>footer左边有横杠</footer>
+								<small>small左边有横杠</small>
+							</blockquote>
+							<blockquote class="blockquote-reverse"><!-- class=“blockquote-reverse”小条在右边 -->
+								<footer>footer，反向右边有横杠</footer>
+								<small>small，反向右边有横杠</small>
+							</blockquote>
+							<address>address为地址
+								<abbr title="河南科技大学开元校区">河南科技大学</abbr>
+							</address>
+						</div>
 					</div>
-					modal:<div class="btn btn-default" data-toggle="modal" data-target="#myModal">注册</div>
-					<div class="modal fade" id="myModal">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-heading text-center">
-									<div class="head1">用户注册</div>
-								</div>
-								<div class="modal-body center-block">
-									<div class="labels1">
-										<ul>
-											<li><label for="">请输入用户名：</label></li>
-											<li><label for="">请输入密码：</label></li>
-										</ul>
+				</section>
+				<section class="buttons col-md-4 wow fadeInRight">
+					<div class="panel panel-default buttons1">
+						<div class="panel-heading">
+							按钮
+						</div>
+						<div class="panel-body">
+							<button class="btn btn-default">default</button>
+							<button class="btn btn-default btn-block">default</button>	<!-- btn-block占整排 -->
+							<a href="#" class="btn btn-primary">primary</a>
+							<input type="submit" class="btn btn-danger btn-xs">	<!-- btn-xs为小号按钮 -->
+							<button class="btn btn-success btn-sm">success</button>	<!-- btn-sm为略小按钮 -->
+							<button class="btn btn-info btn-lg">info</button>	<!-- btn-xs为大号按钮 -->
+							<button class="btn btn-link">link</button>	<!-- link按钮无边框 -->
+							<div class="btn-group btn-group-vertical">
+								<button class="btn btn-primary">1</button>
+								<button class="btn btn-danger">2</button>
+								<button class="btn btn-info">3</button>
+								<button class="btn btn-warning">4</button>
+							</div>
+							<div class="btn-group">
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span></button>
+								<button class="btn btn-primary btn-lg radius"><span class="glyphicon glyphicon-play"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-pause"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
+							</div>
+							<div class="btn-group">	<!-- dropup往上拉 -->
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span></button>
+								<a href="#" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">primary<span class="caret"></span></a>
+								<ul class="dropdown-menu dropdown-menu-right">	<!-- dropdown-menu-right使菜单右对齐 -->
+									<li class="dropdown-header">第一类</li>
+									<li><a href="#" class="text-center">1</a></li>
+									<li><a href="#" class="text-center">2</a></li>
+									<li><a href="#" class="text-center">3</a></li>
+									<li class="divider">分割线</li>
+									<li class="dropdown-header">第二类</li>
+									<li><a href="#" class="text-center">1</a></li>
+									<li><a href="#" class="text-center">2</a></li>
+									<li><a href="#" class="text-center">3</a></li>
+								</ul>
+								<!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">primary<span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+								</ul> 只能一个dropdown-->
+							</div>
+							<!-- 列表按钮组 -->
+							<div class="list-group">
+								<a href="#" class="list-group-head">新闻</a>
+								<a href="#" class="list-group-item active">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+							</div>
+							modal:<div class="btn btn-default" data-toggle="modal" data-target="#myModal">注册</div>
+							<div class="modal fade" id="myModal">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-heading text-center">
+											<div class="head1">用户注册</div>
+										</div>
+										<div class="modal-body center-block">
+											<div class="labels1">
+												<ul>
+													<li><label for="">请输入用户名：</label></li>
+													<li><label for="">请输入密码：</label></li>
+												</ul>
+											</div>
+											<form action="?" method="post" id="register">
+												<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+												<br>
+												<input placeholder="请输入密码" name="password"  id="password" type="password">
+											</form>
+										</div>
+										<div class="modal-footer">
+											已有账号？请<a href="">登录</a>
+										</div>
 									</div>
-									<form action="?" method="post" id="register">
-										<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
-										<br>
-										<input placeholder="请输入密码" name="password"  id="password" type="password">
-									</form>
-								</div>
-								<div class="modal-footer">
-									已有账号？请<a href="">登录</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section class="tables col-md-3">
-			<div class="panel panel-defautlt">
-				<div class="panel-heading">表格</div>
-				<div class="panel-body"><div class="table-responsible">
-					<table  class="table table-bordered table-striped table-hover table-condensed">	
-					<!-- table-condensed紧凑型 	table-hover划过变灰  table-striped斑马线  table-bordered有边框	 -->
-						<tr>
-							<td>姓名</td>
-							<td>Michael</td>		
-							<td>年龄</td>
-							<td>22</td>
-						</tr>
-						<tr>
-							<td>学历</td>
-							<td>本科</td>
-							<td>专业</td>
-							<td>电子信息</td>
-						</tr>
-						<tr>
-							<td>手机</td>
-							<td>15712696957</td>
-							<td>QQ</td>
-							<td>920595664</td>
-						</tr>
-					</table>
-				</div>
-				</div>
-			</div>
-		</section>
-	</article>
+				</section>
+				<section class="tables col-md-3">
+					<div class="panel panel-defautlt">
+						<div class="panel-heading">表格</div>
+						<div class="panel-body"><div class="table-responsible">
+							<table  class="table table-bordered table-striped table-hover table-condensed">	
+							<!-- table-condensed紧凑型 	table-hover划过变灰  table-striped斑马线  table-bordered有边框	 -->
+								<tr>
+									<td>姓名</td>
+									<td>Michael</td>		
+									<td>年龄</td>
+									<td>22</td>
+								</tr>
+								<tr>
+									<td>学历</td>
+									<td>本科</td>
+									<td>专业</td>
+									<td>电子信息</td>
+								</tr>
+								<tr>
+									<td>手机</td>
+									<td>15712696957</td>
+									<td>QQ</td>
+									<td>920595664</td>
+								</tr>
+							</table>
+						</div>
+						</div>
+					</div>
+				</section>
+			</article>
+			<article class="content-box-panel">Jquery</article>
+		</section>	
+	</section>
+	<canvas width="1360" height="674" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
 	<script src="js/jquery.min.js"></script>
+	<script src="js/canvas-nest.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
@@ -268,6 +496,33 @@
 			});
 		})
 		new WOW().init();
+		$('.nav-list-group .list-group-item').click(function(event) {
+			var index = $(this).index();
+			if (!$(this).hasClass('active')) {
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.content-box .content-box-panel').eq(index).addClass('active').siblings(index).removeClass('active');
+				}			
+		})
+		$('.html').click(function(event) {
+			$('.sub-html').slideToggle();
+		})
+		$('.css').click(function(event) {
+			$('.sub-css').slideToggle();
+		})
+		$('.js').click(function(event) {
+			$('.sub-js').slideToggle();
+		});
+		$('.kj').click(function(event) {
+			$('.sub-kj').slideToggle();
+		});
 	</script>
+	<!-- Baidu Button BEGIN -->
+	<script type="text/javascript" id="bdshare_js" data="type=slide&img=0&pos=right&uid=11824" ></script>
+	<script type="text/javascript" id="bdshell_js"></script>
+	<script type="text/javascript">
+	var bds_config = {"bdTop":155};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+	</script>
+<!-- Baidu Button END -->
 </body>
 </html>
