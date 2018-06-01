@@ -2,9 +2,272 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>blog</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css"> 
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
+	<title>My blog</title>
 </head>
 <body>
-	<h1>Hello GitHub!</h1>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="head-logo"><a href=""><img src="images/logo.png"></a></div>	
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="navbar-nav nav navbar-right">
+					<li class="share"><a href=""></a></li>
+					<li class="qqzone"><a href="" ></a></li>
+					<li class="xlwb"><a href=""></a></li>
+					<li class="qqwb"><a href=""></a></li>
+					<li class="rrw"><a href=""></a></li>
+					<li class="yijian"><a href=""></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<article class="fuxi">
+		<section class="biaodan col-md-3 wow fadeInLeft">
+			<div class="panel panel-default biaodan">
+				<div class="panel-heading">
+					表单
+				</div>
+				<div class="panel-body">
+					<!-- <div class="form-group"></div> action?-->
+					<div class="labels">
+						<ul class="labels1">
+							<li><img src="images/loading.gif" alt=""></li>
+							<li><label for="username">用户名：</label></li>
+							<li><label for="password">密码：</label></li>
+							<li><label for="country">国家列表：</label></li>
+							<li><label for="number">数字：</label></li>
+							<li><label for="range">范围：</label></li>
+							<li><label for="color">颜色：</label></li>
+							<li><label for="date">日期：</label></li>
+							<li><label for="localtime">当地时间：</label></li>
+							<li><label for="email">邮箱：</label></li>
+							<li><label for="url">url: </label></li>
+							<li><label for="search">search: </label></li>
+							<li><label for="tel">telphone: </label></li>
+							<li><label for="time">time: </label></li>
+							<li><label for="touxiang">头像：</label></li>
+						</ul>
+					</div>
+					<div class="inputs">
+						<form action="?" method="post" oninput="x.value=parseInt(range.value)" id="review">
+							<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+							<input placeholder="请输入密码" name="password"  id="password" type="password">
+							<input list="Country" id="country">
+							<datalist id="Country">
+							<option value="India">
+							<option value="Italy">
+							<option value="Iran">
+							<option value="Israel">
+							<option value="Indonesia">
+							</datalist>					
+								<input type="number" min="1" max="5" id="number">
+							<br>						
+								<input type="range" min="1" max="20" step="1" value="10" id="range"><!-- <output id="x">10</output> 为什么不同行?-->											
+								<input type="color" id="color">
+							<br>			
+								<input type="date" id="date">
+							<br>
+								<input type="datetime-local" id="localtime">
+							<br>
+								<input type="email" id="email">
+							<br>
+								<input type="url" id="url">
+							<br>
+								<input type="search" id="search">
+							<br>
+								<input type="tel" id="tel">
+							<br>
+							<input type="time" name="time">
+							<br>
+							<input type="file" name="file" accept="images/.jpg,images/.png" multiple="">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="font col-md-5 wow fadeInUp">
+			<div class="panel panel-default font1">
+				<div class="panel-heading">
+					字体大全
+				</div>
+				<div class="panel-body">
+					<h1>h1是一个标题<small>small是一个副标题</small></h1
+					<pre>pre是带边框的文本，成父级100%的block</pre>
+					<em>em也是斜体</em>
+					<mark>mark是标记</mark>>
+					<small>small是一个副标题</small>
+					<p class="lead">class="lead"是一个突出的文本</p>
+					<p class="text-uppercase">text-uppercase全部大写</p>
+					<p class="text-lowercase">text-lowercase全部大写</p>
+					<p class="text-capitalize">text-capitalize开头大写</p>
+					<del>del是删除</del>
+					<u>u是下划线</u>
+					<s>s为无用</s>
+					<ins>ins也是下划线，为插入的文字</ins>
+					<code>code代表代码，粉底</code>
+					<kbd>kbd是深灰色底的文本</kbd>
+					<pre>pre是带边框的文本，成父级100%的block</pre>
+					<em>em也是斜体</em>
+					<mark>mark是标记</mark>
+					<b>b是粗体</b>
+					<strong>strong也是粗体</strong>
+					<i>i也是斜体</i>
+					<abbr title="中华人民共和国">中国</abbr>
+					<cite>cite表引用，斜体</cite>
+					<blockquote>blockquote是文章导读，引用，用于文章导读左边有一条
+						<footer>footer左边有横杠</footer>
+						<small>small左边有横杠</small>
+					</blockquote>
+					<blockquote class="blockquote-reverse"><!-- class=“blockquote-reverse”小条在右边 -->
+						<footer>footer，反向右边有横杠</footer>
+						<small>small，反向右边有横杠</small>
+					</blockquote>
+					<address>address为地址
+						<abbr title="河南科技大学开元校区">河南科技大学</abbr>
+					</address>
+				</div>
+			</div>
+		</section>
+		<section class="buttons col-md-4 wow fadeInRight">
+			<div class="panel panel-default buttons1">
+				<div class="panel-heading">
+					按钮
+				</div>
+				<div class="panel-body">
+					<button class="btn btn-default">default</button>
+					<button class="btn btn-default btn-block">default</button>	<!-- btn-block占整排 -->
+					<a href="#" class="btn btn-primary">primary</a>
+					<input type="submit" class="btn btn-danger btn-xs">	<!-- btn-xs为小号按钮 -->
+					<button class="btn btn-success btn-sm">success</button>	<!-- btn-sm为略小按钮 -->
+					<button class="btn btn-info btn-lg">info</button>	<!-- btn-xs为大号按钮 -->
+					<button class="btn btn-link">link</button>	<!-- link按钮无边框 -->
+					<div class="btn-group btn-group-vertical">
+						<button class="btn btn-primary">1</button>
+						<button class="btn btn-danger">2</button>
+						<button class="btn btn-info">3</button>
+						<button class="btn btn-warning">4</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span></button>
+						<button class="btn btn-primary btn-lg radius"><span class="glyphicon glyphicon-play"></span></button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-pause"></span></button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span></button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
+					</div>
+					<div class="btn-group">	<!-- dropup往上拉 -->
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span></button>
+						<a href="#" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">primary<span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-right">	<!-- dropdown-menu-right使菜单右对齐 -->
+							<li class="dropdown-header">第一类</li>
+							<li><a href="#" class="text-center">1</a></li>
+							<li><a href="#" class="text-center">2</a></li>
+							<li><a href="#" class="text-center">3</a></li>
+							<li class="divider">分割线</li>
+							<li class="dropdown-header">第二类</li>
+							<li><a href="#" class="text-center">1</a></li>
+							<li><a href="#" class="text-center">2</a></li>
+							<li><a href="#" class="text-center">3</a></li>
+						</ul>
+						<!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">primary<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul> 只能一个dropdown-->
+					</div>
+					<!-- 列表按钮组 -->
+					<div class="list-group">
+						<a href="#" class="list-group-head">新闻</a>
+						<a href="#" class="list-group-item active">新闻快讯</a>
+						<a href="#" class="list-group-item">新闻快讯</a>
+						<a href="#" class="list-group-item">新闻快讯</a>
+						<a href="#" class="list-group-item">新闻快讯</a>
+					</div>
+					modal:<div class="btn btn-default" data-toggle="modal" data-target="#myModal">注册</div>
+					<div class="modal fade" id="myModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-heading text-center">
+									<div class="head1">用户注册</div>
+								</div>
+								<div class="modal-body center-block">
+									<div class="labels1">
+										<ul>
+											<li><label for="">请输入用户名：</label></li>
+											<li><label for="">请输入密码：</label></li>
+										</ul>
+									</div>
+									<form action="?" method="post" id="register">
+										<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+										<br>
+										<input placeholder="请输入密码" name="password"  id="password" type="password">
+									</form>
+								</div>
+								<div class="modal-footer">
+									已有账号？请<a href="">登录</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tables col-md-3">
+			<div class="panel panel-defautlt">
+				<div class="panel-heading">表格</div>
+				<div class="panel-body"><div class="table-responsible">
+					<table  class="table table-bordered table-striped table-hover table-condensed">	
+					<!-- table-condensed紧凑型 	table-hover划过变灰  table-striped斑马线  table-bordered有边框	 -->
+						<tr>
+							<td>姓名</td>
+							<td>Michael</td>		
+							<td>年龄</td>
+							<td>22</td>
+						</tr>
+						<tr>
+							<td>学历</td>
+							<td>本科</td>
+							<td>专业</td>
+							<td>电子信息</td>
+						</tr>
+						<tr>
+							<td>手机</td>
+							<td>15712696957</td>
+							<td>QQ</td>
+							<td>920595664</td>
+						</tr>
+					</table>
+				</div>
+				</div>
+			</div>
+		</section>
+	</article>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
+	<script type="text/javascript">				//单页面跳转
+		$(function(){
+			$('.nav').singlePageNav({
+				offset:70,
+			});							//;位于中括号后，位于值后面
+			$('.navbar-collapse a').click(function(){
+				$('.navbar-collapse').collapse('hide');
+			});
+		})
+		new WOW().init();
+	</script>
 </body>
 </html>

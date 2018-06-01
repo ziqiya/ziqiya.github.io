@@ -1,0 +1,70 @@
+*{
+	padding: 0;
+	margin:0;
+}
+.navbar{
+	box-shadow: 0px 5px 10px #747474;
+}
+.labels1{
+	float: left;
+}
+.buttons,.font{
+	margin-top: 45px;
+}
+.biaodan{
+	margin-top: 25px;
+}
+.share{	
+	background: url(../images/icons.png)0 0;
+}
+.qqzone{
+	background: url(../images/icons.png)0 -52px;
+}
+.xlwb{
+	background: url(../images/icons.png)0 -104px;
+}
+.qqwb{
+	background: url(../images/icons.png)0 -156px;
+}
+.rrw{
+	background: url(../images/icons.png)0 -208px;
+}
+.yijian{
+	background: url(../images/icons.png)0 -260px;
+}
+.nav li{
+	margin-top: 10px;
+	margin-right:8px; 
+	width: 16px;
+	height: 16px;
+}
+li{
+	list-style: none;
+}
+.biaodan{
+	background-color: 
+}
+#range{
+	width: 200px;
+}
+.font1,.buttons1{
+	background-color: #a6a6ff;
+}
+.radius{
+	border-radius: 90px;	/*border-radius?*/
+}
+.head1{
+	font-size: 20px;
+}
+.labels{
+	float: left;
+    width: 30%;
+}
+.inputs{
+	float: left;
+    width: 70%;
+    margin-top: 43px;
+}
+.inputs input{
+	margin-top: 1px;
+}
