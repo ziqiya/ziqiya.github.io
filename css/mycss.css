@@ -89,6 +89,7 @@ li{
     height:  100%;
     float:  left;
     margin-top: 50px;
+    transition:all 0.5s ease-in;
 }
 .nav-panel{
     min-height: 80%;
@@ -154,4 +155,42 @@ li{
 }
 table.dataintable td.html5_new {
     background: transparent url(../images/html5_new_note.png) right no-repeat;
+}
+.nav-tool{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 40%;
+    width: 25px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 20px 14px;
+    text-align: center;
+    box-sizing: initial;
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+    background: #fff;
+    cursor: pointer;
+    transition:all 0.5s ease-in;
+}
+@media(max-width: 768px){
+	.aside-nav {
+	    width: 20%;
+	    height: 100%;
+	    position: fixed;
+	    width: 40%;
+	    top: 5px;
+	    left: -40%;
+	    overflow: hidden;
+	}
+	.content-box{
+		width: 100%;
+	}
+	.nav-tool{
+		display: block;
+	}
+	.html-biaoqian .dataintable td,.html-biaoqian .dataintable th{
+		width: 50%;
+	}
 }
