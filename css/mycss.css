@@ -88,6 +88,7 @@ li{
     width:  20%;
     height:  100%;
     float:  left;
+    z-index: 1000;
     margin-top: 50px;
     transition:all 0.5s ease-in;
 }
@@ -182,8 +183,7 @@ table.dataintable td.html5_new {
 	    width: 40%;
 	    top: 5px;
 	    left: -40%;
-	    overflow: hidden;
-	    z-index: 1000;
+	    overflow: hidden;	    
 	}
 	.content-box{
 		width: 100%;
