@@ -183,14 +183,17 @@ table.dataintable td.html5_new {
 	    top: 5px;
 	    left: -40%;
 	    overflow: hidden;
+	    z-index: 1000;
 	}
 	.content-box{
 		width: 100%;
 	}
 	.nav-tool{
 		display: block;
+		z-index: 1000;
 	}
 	.html-biaoqian .dataintable td,.html-biaoqian .dataintable th{
 		width: 50%;
 	}
+
 }
