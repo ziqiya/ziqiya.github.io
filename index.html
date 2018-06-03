@@ -35,7 +35,9 @@
 		</div>
 	</nav>
 	<article class="banner">
-		
+		<div class="object-fish">
+			<img src="images/fish.png" alt="">
+		</div>
 	</article>
 	<section class="content">
 		<aside class="aside-nav">
@@ -692,6 +694,13 @@
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
 	<script type="text/javascript">				//单页面跳转
+
+			$(".banner").mousemove(function(e) {
+				$('.object-fish').css({
+		        		left: e.clientX-40+'px',
+		        		top: e.clientY-50+'px'
+		        	});	
+			});
 		$(function(){
 			$('.nav').singlePageNav({
 				offset:70,

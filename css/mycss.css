@@ -51,6 +51,14 @@ body{
     box-shadow: inset 0 0 10px #666;
 	background: url(../images/banner.jpg) no-repeat top center/cover ;
 }
+.banner:hover .object-fish{
+	display: block;
+}
+.object-fish{
+	position: absolute;
+	display: none;
+	transition:all 0.1s ease;
+}
 .nav li{
 	margin-top: 10px;
 	margin-right:8px; 
