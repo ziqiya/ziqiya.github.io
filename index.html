@@ -459,7 +459,89 @@
 
 			</article>
 			<!-- JS 数据类型 end-->
-			<article class="content-box-panel">JS-h2</article>
+			<article class="content-box-panel">
+				<h2>JS数据类型转换</h2>
+				<h3>数据类型查看</h3>
+				<p>在js中我们经常需要知道某些变量的数据类型，并将其转换为我们所需要的数据类型。通常，我们判断变量的数据类型会用到标识符typeof,<br/>如：</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							object
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>
+	var mood = "happy";
+ 
+	alert(typeof  mood);  //弹出string
+	 
+	alert(typeof  95);	////弹出number
+	</script>
+							</xmp>
+								</pre>
+							<button class="btn btn-default run-btn">立即运行</button>
+
+						</div>
+					</div>
+					<p>通过标识符，我们可以很快获取数据的类型;
+
+					<hr>
+					数据的转换中，我们经常用到的是将变量转换成字符串或数字。
+					转换成字符串要使用mix.toString()、String(mix)，
+					<br>如：
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							object
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>
+	var married = false;
+	 
+	alert(married.toString());	//弹出false
+
+	alert(String(married));	//弹出false
+	</script>
+							</xmp>
+								</pre>
+							<button class="btn btn-default run-btn">立即运行</button>
+
+						</div>
+					</div>
+					</p>
+
+					<hr>
+					转换成数字时，有两种方法，parseInt() 转换成整数，parseFloat()转换成浮点数。
+					<br>如：
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							object
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>
+	var test1 = parseInt("blue"); //returns NaN
+
+	var test2 = parseInt("1234blue"); //returns 1234
+	 
+	var test3 = parseInt("22.5"); //returns 22
+	 
+	var test4 = parseFloat("1234blue"); //returns 1234
+	 
+	var test5 = parseFloat("22.5"); //returns 22.5
+
+	alert("test1="+test1+",test2="+test2+",test3="+test3+",test4="+test4+",test5="+test5)
+	</script>
+							</xmp>
+								</pre>
+							<button class="btn btn-default run-btn">立即运行</button>
+
+						</div>
+					</div>
+					</p>
+			</article>
 			<article class="content-box-panel">框架</article>
 			<article class="content-box-panel">
 				<h2>Bootstrap应用例子</h2>
@@ -755,6 +837,7 @@
 	        }
 
 		});
+		
 	</script>
 	<script>
     var _title,_source,_sourceUrl,_pic,_showcount,_desc,_summary,_site,
