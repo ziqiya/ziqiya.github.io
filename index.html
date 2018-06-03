@@ -34,6 +34,9 @@
 			</div>
 		</div>
 	</nav>
+	<article class="banner">
+		
+	</article>
 	<section class="content">
 		<aside class="aside-nav">
 			<div class="panel panel-default nav-panel">
@@ -49,8 +52,8 @@
 						<li class="list-group-item sub-css sub-list-group">h1</li>
 						<li class="list-group-item sub-css sub-list-group">h2</li>
 						<li class="list-group-item js">JS</li>
-						<li class="list-group-item sub-js sub-list-group">h1</li>
-						<li class="list-group-item sub-js sub-list-group">h2</li>
+						<li class="list-group-item sub-js sub-list-group">JS数据类型</li>
+						<li class="list-group-item sub-js sub-list-group">JS数据类型转换</li>
 						<li class="list-group-item kj">框架</li>
 						<li class="list-group-item sub-kj sub-list-group">Bootstrap</li>
 						<li class="list-group-item sub-kj sub-list-group">jquery</li>
@@ -94,6 +97,7 @@
 							</xmp>
 
 								</pre>
+								<button class="btn btn-default run-btn">立即运行</button>
 						</div>
 					</div>
 					<p>
@@ -250,10 +254,209 @@
 					</ul>
 				</p>
 			</article>
+			<!-- CSS end-->
+			<!-- CSS -->
 			<article class="content-box-panel">CSS-h1</article>
 			<article class="content-box-panel">CSS-h2</article>
-			<article class="content-box-panel">JS</article>
-			<article class="content-box-panel">JS-h1</article>
+			<!-- JS -->
+			<article class="content-box-panel">
+				<h2>JS</h2>
+				<p>JavaScript 是世界上最流行的编程语言。<br/>
+					这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</p>
+					<hr>
+				<dl>
+					<dt><h3>JavaScript 是脚本语言</h3></dt>
+					<dd>JavaScript 是一种轻量级的编程语言。</dd>
+					<dd>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</dd>
+					<dd>JavaScript 是可插入 HTML 页面的编程代码。</dd>
+				</dl>
+			</article>
+			<!-- JS end -->
+			<!-- JS数据类型 -->
+			<article class="content-box-panel">
+				<h2>Js中的数据类型</h2>
+				<p>Js中的数据类型一共有六种，即number，string，boolean，underfine，null，object。</p>
+				<hr>
+				<h3>一、number</h3>
+				<p>Number数据类型指的是数字，可以为整型，也可以是浮点数。<br/>
+				如:</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							number
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	var a=12,b=12.5;
+							</xmp>
+
+								</pre>
+						</div>
+					</div>
+
+				<hr>
+				<h3>二、string</h3>
+				<p>
+				字符串由零个或多个字符构成，字符包括字母，数字，标点符号和空格;需要注意的是字符串必须放在引号里（单引号或双引号）;
+				<br/>
+				如:
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							string
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>							
+	var bob="man";
+	 
+	alert("bob");	//第一个弹窗为bob
+	 
+	alert(bob);		//第二个弹窗为man
+	</script>
+							</xmp>
+
+								</pre>
+								<button class="btn btn-default run-btn">立即运行</button>
+						</div>
+					</div>
+				<p>
+				浏览器首先会弹出包含有“bob”的字符串，然后弹出包含有“man”的字符串，前者是直接弹出字符串，后者则是弹出变量的值。
+				</p>
+
+				<hr>
+				<h3>三、boolean</h3>
+				<p>
+				布尔型数据只能有两种值 true 和 false，在js中true和false是关键字。通常，我们设置布尔值时多用于条件的判断。
+				<br/>
+				如:
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							boolean
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>
+	var flag=true;
+	 
+	if(flag){
+	 
+	alert("flag is "+flag)//若flag为true，弹窗
+	 
+	}
+	</script>
+							</xmp>
+								</pre>
+								<button class="btn btn-default run-btn">立即运行</button>
+						</div>
+					</div>
+				<p>
+				在条件判断语句中我们将所有的判断条件看做一个布尔值（这里需要了解一些布尔值的转换特性）如果布尔值为true，执行大括号内代码；如果为false，不执行大括号内代码。
+				</p>
+
+				<hr>
+				<h3>四、undefined</h3>
+				<p>
+				undefined通常指的是没有赋值的变量，通过typeof可以对数据的类型进行判断。
+				<br/>
+				如:
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							undefined
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>							
+	var a,b=undefined;
+	 
+	alert(a);	//弹出undefined
+	 
+	alert(typeof a); //弹出undefined
+	</script>
+							</xmp>
+
+								</pre>
+								<button class="btn btn-default run-btn">立即运行</button>
+						</div>
+					</div>
+				<p>
+				两次结果都为undefined。
+				</p>
+
+				<hr>
+				<h3>五、null</h3>
+				<p>
+				null是一个只有一个值的特殊类型。表示一个空对象引用。
+				<br/>
+				如:
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							null
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	var a=null;		//将a清空
+							</xmp>
+
+								</pre>
+						</div>
+					</div>
+				<p>
+				将a清空
+				</p>
+
+				<hr>
+				<h3>六、object</h3>
+				<p>
+				对象就是由一些彼此相关的属性和方法集合在一起而构成的一个数据实体。常见的对象有array，window，document等。
+				<br/>
+				如:
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							object
+						</div>
+						<div class="panel-body">
+								<pre>
+								<xmp>
+	<script>
+	var today = new Date();
+	 
+	var year = today.getFullYear();
+	 
+	var month = today.getMonth() + 1;
+	 
+	var day = today.getDay();
+
+	var date = today.getDate();
+ 
+    var weekly=["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+
+    document.write("this year is "+year+"年 "+"this month is "+month+"月 "+"the date is "+date+"日 "+"today is "+weekly[day]+"<br>");
+	</script>
+							</xmp>
+								</pre>
+							<button class="btn btn-default run-btn">立即运行</button>
+
+						</div>
+					</div>
+				<p>
+				通过创建对象实例就可以调用对象的方法了，如上就是创建了一个Date的对象实例today，today通过调用Date的方法得出了现在的年月日等信息。<br/>
+
+		数组array是作为经常使用的对象，是由多个 (键-值) 所组成的一个多容器。其索引 默认是从0开始的。创建数组有两种方法：1创建数组对象实例 var arr=new Array（1,2,3）；2直接使用面向字面量 var a=[1,2,3];
+				</p>
+
+
+
+			</article>
+			<!-- JS 数据类型 end-->
 			<article class="content-box-panel">JS-h2</article>
 			<article class="content-box-panel">框架</article>
 			<article class="content-box-panel">
@@ -528,6 +731,20 @@
 			setTimeout(function(){
 				$('.nav-tool').css('left', '0px');
 			},500)			
+		});
+		$('.run-btn').click(function(event) {
+			var code_html;
+			code_html=$(this).parent(".panel-body").find('xmp').html();
+			if(code_html){
+	          var win = window.open('', '运行窗口');
+	          win.document.open();
+	          win.document.write(code_html);
+	          win.document.close();
+	        }
+	        else{
+	          alert('请输入!');
+	        }
+
 		});
 	</script>
 	<script>
