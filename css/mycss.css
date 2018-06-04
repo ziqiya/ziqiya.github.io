@@ -246,7 +246,9 @@
 	    width: 15px;
 	    box-shadow: 0 0 12px 1px #007AFE;
 	}
-	
+	.swiper-slide1{
+		position: relative;
+	}
 	.swiper-slide2{
 		background: url(../images/bg1_1.png) no-repeat top center/cover;
 	}
@@ -255,17 +257,18 @@
 		height: 100%;
 		background: rgba(0,0,0,0.4);
 	}
-	.intro_wrap{
+	.intro_wrap {
 	    position: absolute;
 	    top: 50%;
 	    left: 50%;
-	    background: rgba(255,255,255,0.5);
+	    background: rgba(0,0,0,0.3);
 	    width: 300px;
 	    height: 250px;
 	    transform: translate(-50%,-50%);
 	    border-radius: 10px;
 	    padding: 30px;
 	    color: #fff;
+	    z-index: 1000;
 	}
 	.goodwords{
 		text-align: left;
@@ -297,6 +300,10 @@
 	    padding: 30px;
 	    border-radius: 10px;
 	    background: rgba(255,255,255,0.5);
+	}
+	.my_intro_word span{
+		display: block;
+		text-indent: 2.4rem;
 	}
 	.my_intro {
 	    width: 80%;

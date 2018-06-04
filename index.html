@@ -77,32 +77,29 @@
 				  <div class="swiper-container">
 				    <div class="swiper-wrapper">
 				      <div class="swiper-slide swiper-slide1">
-<!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
-<div class="ws_images"><ul>
-		<li><img src="data1/images/5.jpg" alt="" title="" id="wows1_0"/></li>
-		<li><img src="data1/images/1.jpg" alt="" title="" id="wows1_1"/></li>
-		<li><a href="http://wowslider.net"><img src="data1/images/2.jpg" alt="css image slider" title="" id="wows1_2"/></a></li>
-		<li><img src="data1/images/4.jpg" alt="" title="" id="wows1_3"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title=""><span><img src="data1/tooltips/5.jpg" alt=""/>1</span></a>
-		<a href="#" title=""><span><img src="data1/tooltips/1.jpg" alt=""/>2</span></a>
-		<a href="#" title=""><span><img src="data1/tooltips/2.jpg" alt=""/>3</span></a>
-		<a href="#" title=""><span><img src="data1/tooltips/4.jpg" alt=""/>4</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery slideshow</a> by WOWSlider.com v8.8</div>
-<div class="ws_shadow"></div>
-</div>	
-<!-- End WOWSlider.com BODY section -->
-					      <!-- <div class="bg_wrap">
-					      	<div class="intro_wrap">
-					      		<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-					      			Hello,I'm Michael.
-					      		</p>
-					      		<p class="jobword ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">前端工程师</p>
-					      		<p class="goodwords ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s">--路在自己脚下，路是自己走出来的，没有人可以决定我的方向。</p>
-					      	</div>
-					      </div> -->
+						<div id="wowslider-container1">
+						<div class="ws_images"><ul>
+								<li><img src="data1/images/1.jpg" alt="" title="" id="wows1_0"/></li>
+								<li><img src="data1/images/2.jpg" alt="" title="" id="wows1_1"/></li>
+								<li><a href="http://wowslider.net"><img src="data1/images/4.jpg" alt="slider jquery" title="" id="wows1_2"/></a></li>
+								<li><img src="data1/images/5.jpg" alt="" title="" id="wows1_3"/></li>
+							</ul></div>
+							<div class="ws_bullets"><div>
+								<a href="#" title=""><span><img src="data1/tooltips/1.jpg" alt=""/>1</span></a>
+								<a href="#" title=""><span><img src="data1/tooltips/2.jpg" alt=""/>2</span></a>
+								<a href="#" title=""><span><img src="data1/tooltips/4.jpg" alt=""/>3</span></a>
+								<a href="#" title=""><span><img src="data1/tooltips/5.jpg" alt=""/>4</span></a>
+							</div></div>
+						<div class="ws_shadow"></div>
+						</div>						     
+				      	<div class="intro_wrap">
+				      		<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				      			Hello,I'm Michael.
+				      		</p>
+				      		<p class="jobword ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">前端工程师</p>
+				      		<p class="goodwords ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s">--路在自己脚下，路是自己走出来的，没有人可以决定我的方向。</p>
+				      	</div>
+					    
 				      </div>
 				      <div class="swiper-slide swiper-slide2">
 				      	 <div class="bg_wrap">
@@ -111,9 +108,9 @@
 				      				<img src="images/my_pic.png" alt="我的头像">
 				      			</i>
 				      			<p class="my_intro_word ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">您好，我叫阮旭松，22岁，坐标洛阳。我对前端很感兴趣，今后的职业规划是向全栈开发看齐，精通了HTML，CSS,bootstrap,掌握Jquery,JS,vue,swiper,Git,webpack，对表现，结构，行为相分离,提升用户体验有深入了解,能做一些美观的交互效果。此外，我特别感谢<a href="http://www.lyxiangda.com/">洛阳翔达环保有限公司</a>，能给我很多学习的机会，让我能了解到当前的互联网趋势。并给我独立开发网站的经验。我善于学习，对新技术有狂热的研究兴趣,希望能接触到更先进的技术和更专业的团队。
-				      			<br/>
-								不负青春，不随大流。		
+									<span>不负青春，不随大流。</span>
 								</p>
+
 				      		</div>
 				      	</div>
 				      </div>
@@ -1438,6 +1435,15 @@
 
 		        	});	
 			});
+			$('#wowslider-container1').mousemove(function(e) {
+				cliX=e.clientX/5;
+				cliY=e.clientY;
+				$('.intro_wrap').css({
+		        		'transform':'translate('+cliX+','+cliY+')'
+
+		        	});	
+			});
+			
 		    var mySwiper1 = new Swiper ('.swiper-container', {
 		    	 direction: 'vertical',    
 		        mousewheel: true,
