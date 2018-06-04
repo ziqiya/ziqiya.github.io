@@ -5,8 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css"> 
     <link rel="stylesheet" type="text/css" href="css/mycss.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 	<title>My blog</title>
 </head>
 <body>
@@ -48,7 +50,8 @@
 				<div class="panel-body nopad">
 					<ul class="list-group nav-list-group">
 						<!-- 全文搜索 *名字 可以搜索到目标地点  -->
-						<li class="list-group-item html active">HTML</li>
+						<li class="list-group-item myself active">关于我</li>
+						<li class="list-group-item html">HTML</li>
 						<li class="list-group-item sub-html sub-list-group">HTML标签</li>
 						<li class="list-group-item sub-html sub-list-group">HTML属性</li>
 						<li class="list-group-item sub-html sub-list-group">HTML5新特性</li>
@@ -66,8 +69,39 @@
 		</aside>
 		<!-- 内容盒子 -->
 		<section class="content-box">
-			<!-- *HTML -->
+			<!-- *关于我 -->
 			<article class="content-box-panel active">
+				<!-- Swiper -->
+				  <div class="swiper-container">
+				    <div class="swiper-wrapper">
+				      <div class="swiper-slide swiper-slide1">
+					      <div class="bg_wrap">
+					      	<div class="intro_wrap">
+					      		<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+					      			Hello,I'm Michael.
+					      		</p>
+					      		<p>前端工程师</p>
+					      		<p>路在自己脚下，没有人可以决定我的方向。</p>
+					      	</div>	      
+					      </div>
+				      </div>
+				      <div class="swiper-slide">slide 2</div>
+				      <div class="swiper-slide">Slide 3</div>
+				      <div class="swiper-slide">Slide 4</div>
+				      <div class="swiper-slide">Slide 5</div>
+				      <div class="swiper-slide">Slide 6</div>
+				      <div class="swiper-slide">Slide 7</div>
+				      <div class="swiper-slide">Slide 8</div>
+				      <div class="swiper-slide">Slide 9</div>
+				      <div class="swiper-slide">Slide 10</div>
+				    </div>
+				    <!-- Add Pagination -->
+				    <div class="swiper-pagination"></div>
+				  </div>
+
+			</article>
+			<!-- *HTML -->
+			<article class="content-box-panel">
 				<h2>HTML</h2>
 				<section>
 					<p>
@@ -1351,18 +1385,45 @@
 	</section>
 	<canvas width="1360" height="674" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
 	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper.min.js"></script>
 	<script src="js/canvas-nest.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
 	<script type="text/javascript">				//单页面跳转
 
 			$(".banner").mousemove(function(e) {
+				deg=e.clientY/5+e.clientX/5;
 				$('.object-leaf').css({
-		        		left: e.clientX-60+'px',
-		        		top: e.clientY-40+'px'
+			        		left: e.clientX-60+'px',
+			        		top: e.clientY-40+'px',
+		        		'transform':'rotate('+deg+'deg)'
+
 		        	});	
 			});
+			var mySwiper = new Swiper('.swiper-container', {
+		        direction: 'vertical',    
+		        mousewheel: true,
+		        height:document.documentElement.clientHeight,
+		        pagination: {
+		          el: '.swiper-pagination',
+		          clickable: true,
+		        },
+		        
+		    });
+		    var mySwiper = new Swiper ('.swiper-container', {
+			    on:{
+			      init: function(){
+			        swiperAnimateCache(this); //隐藏动画元素 
+			        swiperAnimate(this); //初始化完成开始动画
+			      }, 
+			      slideChangeTransitionEnd: function(){ 
+			        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+			      } 
+			    }
+	  		}) 
+
 		$(function(){
 			$('.nav').singlePageNav({
 				offset:70,
@@ -1370,6 +1431,22 @@
 			$('.navbar-collapse a').click(function(){
 				$('.navbar-collapse').collapse('hide');
 			});
+		})
+		//$('.content-box').scrollTop();
+		
+		$('.swiper-container').mouseover(function(){
+			var scroll=0;
+			if(!$(window).scrollTop()!=$('.content-box').offset().top){
+				var timer=setInterval(function(){					
+					if($('.content-box').offset().top-$(window).scrollTop()<80){
+						$(window).scrollTop($('.content-box').offset().top);
+						window.clearInterval(timer);
+					}
+					else{
+						document.documentElement.scrollTop+=($('.content-box').offset().top-$(window).scrollTop())/80;
+					}
+				},5)
+			}
 		})
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
@@ -1392,13 +1469,15 @@
 			$('.sub-kj').slideToggle();
 		});
 		$('.nav-tool').click(function(event) {
-			$(this).css('left', '-53px');
+			$(this).css('left', '-44px');
 			setTimeout(function(){
 				$('.aside-nav').css('left', '0px');
+				$('.content-box').css('width', '80%');
 			},500)			
 		});
-		$('.aside-nav .panel-heading,.aside-nav .sub-list-group').click(function(event) {
+		$('.aside-nav .panel-heading,.aside-nav .sub-list-group,.aside-nav .myself').click(function(event) {
 			$(this).parents('.aside-nav').css('left', '-40%');
+			$('.content-box').css('width', '100%');
 			setTimeout(function(){
 				$('.nav-tool').css('left', '0px');
 			},500)			
@@ -1415,9 +1494,9 @@
 	        else{
 	          alert('请输入!');
 	        }
-
 		});
-		
+	    
+
 	</script>
 	<script>
     var _title,_source,_sourceUrl,_pic,_showcount,_desc,_summary,_site,
