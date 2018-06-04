@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css"> 
     <link rel="stylesheet" type="text/css" href="css/mycss.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+
 	<title>My blog</title>
 </head>
 <body>
@@ -75,17 +77,46 @@
 				  <div class="swiper-container">
 				    <div class="swiper-wrapper">
 				      <div class="swiper-slide swiper-slide1">
-					      <div class="bg_wrap">
+<!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+<div class="ws_images"><ul>
+		<li><img src="data1/images/5.jpg" alt="" title="" id="wows1_0"/></li>
+		<li><img src="data1/images/1.jpg" alt="" title="" id="wows1_1"/></li>
+		<li><a href="http://wowslider.net"><img src="data1/images/2.jpg" alt="css image slider" title="" id="wows1_2"/></a></li>
+		<li><img src="data1/images/4.jpg" alt="" title="" id="wows1_3"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title=""><span><img src="data1/tooltips/5.jpg" alt=""/>1</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/1.jpg" alt=""/>2</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/2.jpg" alt=""/>3</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/4.jpg" alt=""/>4</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery slideshow</a> by WOWSlider.com v8.8</div>
+<div class="ws_shadow"></div>
+</div>	
+<!-- End WOWSlider.com BODY section -->
+					      <!-- <div class="bg_wrap">
 					      	<div class="intro_wrap">
 					      		<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
 					      			Hello,I'm Michael.
 					      		</p>
-					      		<p>前端工程师</p>
-					      		<p>路在自己脚下，没有人可以决定我的方向。</p>
-					      	</div>	      
-					      </div>
+					      		<p class="jobword ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">前端工程师</p>
+					      		<p class="goodwords ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s">--路在自己脚下，路是自己走出来的，没有人可以决定我的方向。</p>
+					      	</div>
+					      </div> -->
 				      </div>
-				      <div class="swiper-slide">slide 2</div>
+				      <div class="swiper-slide swiper-slide2">
+				      	 <div class="bg_wrap">
+				      		<div class="my_intro">
+				      			<i class="my_pic ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				      				<img src="images/my_pic.png" alt="我的头像">
+				      			</i>
+				      			<p class="my_intro_word ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">您好，我叫阮旭松，22岁，坐标洛阳。我对前端很感兴趣，今后的职业规划是向全栈开发看齐，精通了HTML，CSS,bootstrap,掌握Jquery,JS,vue,swiper,Git,webpack，对表现，结构，行为相分离,提升用户体验有深入了解,能做一些美观的交互效果。此外，我特别感谢<a href="http://www.lyxiangda.com/">洛阳翔达环保有限公司</a>，能给我很多学习的机会，让我能了解到当前的互联网趋势。并给我独立开发网站的经验。我善于学习，对新技术有狂热的研究兴趣,希望能接触到更先进的技术和更专业的团队。
+				      			<br/>
+								不负青春，不随大流。		
+								</p>
+				      		</div>
+				      	</div>
+				      </div>
 				      <div class="swiper-slide">Slide 3</div>
 				      <div class="swiper-slide">Slide 4</div>
 				      <div class="swiper-slide">Slide 5</div>
@@ -1390,7 +1421,12 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/swiper.animate.min.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="engine1/jquery.js"></script>
+	<script type="text/javascript" src="engine1/wowslider.js"></script>
+	<script type="text/javascript" src="engine1/script.js"></script>
+
 	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
+
 	<script type="text/javascript">				//单页面跳转
 
 			$(".banner").mousemove(function(e) {
@@ -1402,20 +1438,17 @@
 
 		        	});	
 			});
-			var mySwiper = new Swiper('.swiper-container', {
-		        direction: 'vertical',    
+		    var mySwiper1 = new Swiper ('.swiper-container', {
+		    	 direction: 'vertical',    
 		        mousewheel: true,
 		        height:document.documentElement.clientHeight,
 		        pagination: {
 		          el: '.swiper-pagination',
 		          clickable: true,
 		        },
-		        
-		    });
-		    var mySwiper = new Swiper ('.swiper-container', {
 			    on:{
 			      init: function(){
-			        swiperAnimateCache(this); //隐藏动画元素 
+			       // swiperAnimateCache(this); //隐藏动画元素 
 			        swiperAnimate(this); //初始化完成开始动画
 			      }, 
 			      slideChangeTransitionEnd: function(){ 
@@ -1481,6 +1514,15 @@
 			setTimeout(function(){
 				$('.nav-tool').css('left', '0px');
 			},500)			
+			if ($('.myself').hasClass('active')) {
+				$('.content-box').css('padding', '0');
+			}
+			else if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
+			    $('.content-box').css('padding', '0 20px 20px');
+			}
+			else{
+				$('.content-box').css('padding', '20px 50px');
+			}
 		});
 		$('.run-btn').click(function(event) {
 			var code_html;
