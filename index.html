@@ -114,20 +114,13 @@
 				      		</div>
 				      	</div>
 				      </div>
-				      <div class="swiper-slide">Slide 3</div>
-				      <div class="swiper-slide">Slide 4</div>
-				      <div class="swiper-slide">Slide 5</div>
-				      <div class="swiper-slide">Slide 6</div>
-				      <div class="swiper-slide">Slide 7</div>
-				      <div class="swiper-slide">Slide 8</div>
-				      <div class="swiper-slide">Slide 9</div>
-				      <div class="swiper-slide">Slide 10</div>
 				    </div>
 				    <!-- Add Pagination -->
 				    <div class="swiper-pagination"></div>
 				  </div>
 
 			</article>
+			<!-- 关于我 end-->
 			<!-- *HTML -->
 			<article class="content-box-panel">
 				<h2>HTML</h2>
@@ -1427,7 +1420,7 @@
 	<script type="text/javascript">				//单页面跳转
 
 			$(".banner").mousemove(function(e) {
-				deg=e.clientY/5+e.clientX/5;
+				var deg=e.clientY/5+e.clientX/5;
 				$('.object-leaf').css({
 			        		left: e.clientX-60+'px',
 			        		top: e.clientY-40+'px',
@@ -1436,12 +1429,9 @@
 		        	});	
 			});
 			$('#wowslider-container1').mousemove(function(e) {
-				cliX=e.clientX/5;
-				cliY=e.clientY;
-				$('.intro_wrap').css({
-		        		'transform':'translate('+cliX+','+cliY+')'
-
-		        	});	
+				var cliX=(e.clientX-document.documentElement.clientWidth/2)/80-150;
+				var cliY=(e.clientY-document.documentElement.clientHeight/2)/80-125;
+				$('.intro_wrap').css("transform", "translate("+cliX+"px,"+cliY+"px)"+"skewX("+(150+cliX)*2+"deg)"+"skewY("+(cliY+124)*6+"deg)");
 			});
 			
 		    var mySwiper1 = new Swiper ('.swiper-container', {
