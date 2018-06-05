@@ -60,6 +60,8 @@
 						<li class="list-group-item css">CSS</li>
 						<li class="list-group-item sub-css sub-list-group">CSS语法</li>
 						<li class="list-group-item sub-css sub-list-group">CSS选择器</li>
+						<li class="list-group-item sub-css sub-list-group">盒子模型</li>
+						<li class="list-group-item sub-css sub-list-group">元素分类</li>
 						<li class="list-group-item js">JS</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型转换</li>
@@ -127,9 +129,9 @@
 							            <div class="swiper-slide">
 							            	<a href="http://www.wiprun.com/" target="_blank">
 							            	<img src="images/news1.jpg" alt="">
-							            	<!-- 此处为新闻标题 -->
+							            	<!-- 此处为项目标题 -->
 							            	<div class="swiper_cover2"><h2 class="news_head">洛阳卓众知识产权网</h2>            	
-							            	<!-- 此处为新闻内容 -->
+							            	<!-- 此处为项目内容 -->
 							            	<ul class="news_content">
 							            		<li>1、官网改版上线，在这个项目中，我负责前端页面的全部动态效果制作与页面的编写；</li>
 							            		<li>2、完成全部移动端页面的自适应，项目中配合后端开发人员完成官网各版本的界面设计及优化；</li>
@@ -140,9 +142,9 @@
 							           <div class="swiper-slide">
 							            	<a href="http://www.feihuiaoheji.com/" target="_blank">
 							            	<img src="images/news1.jpg" alt="">
-							            	<!-- 此处为新闻标题 -->
+							            	<!-- 此处为项目标题 -->
 							            	<div class="swiper_cover2"><h2 class="news_head">翔达飞灰螯合剂网站</h2>            	
-							            	<!-- 此处为新闻内容 -->
+							            	<!-- 此处为项目内容 -->
 							            	<ul class="news_content">
 							            		<li>1、负责整个项目的前端编写，特效修改，独自完成整个网站的编写。</li>
 												<li>2、写好dede模板html，用dede系统通过ftp在web服务器上部署，并且上传文章，图片等。</li>
@@ -153,9 +155,9 @@
 							            <div class="swiper-slide">
 							            	<a href="http://lyxiangda1.28.web1268.com" target="_blank">
 							            	<img src="images/news1.jpg" alt="">
-							            	<!-- 此处为新闻标题 -->
+							            	<!-- 此处为项目标题 -->
 							            	<div class="swiper_cover2"><h2 class="news_head">翔达脱色剂网站</h2>            	
-							            	<!-- 此处为新闻内容 -->
+							            	<!-- 此处为项目内容 -->
 							            	<ul class="news_content">
 							            		<li>1、负责整个项目的前端编写，特效修改，独自完成整个网站的编写。</li>
 												<li>2、写好dede模板html，用dede系统通过ftp在web服务器上部署，并且上传文章，图片等。</li>
@@ -166,9 +168,9 @@
 							            <div class="swiper-slide">
 							            	<a href="xsmsw.cn" target="_blank">
 							            	<img src="images/news1.jpg" alt="">
-							            	<!-- 此处为新闻标题 -->
+							            	<!-- 此处为项目标题 -->
 							            	<div class="swiper_cover2"><h2 class="news_head">象山民宿网</h2>            	
-							            	<!-- 此处为新闻内容 -->
+							            	<!-- 此处为项目内容 -->
 							            	<ul class="news_content">
 							            		<li>1、负责整个项目的前端页面编写，特效修改。</li>
 												<li>2、完成全部移动端页面的自适应，项目中配合产品经理及后端开发人员完成官网各版本的界面设计及优化；</li>
@@ -951,6 +953,31 @@
 					</tbody></table>
 			</article>
 			<!-- CSS选择器 end-->
+			<!-- *盒子模型 -->
+			<article class="content-box-panel">
+				<h2>盒子模型</h2>
+				<p>在网页中，一个元素占有空间的大小由几个部分构成，其中包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分。这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相邻的区域或区域。4个部分一起构成了css中元素的盒模型。
+				</p>
+				<hr>
+				<div class="padimg"><img src="images/css_box.jpg" alt="盒子模型" width="268px" height="168px"></div>
+			</article>
+			<!-- 盒子模型 end-->
+			<!-- *元素分类 -->
+			<article class="content-box-panel">
+				<h2>元素分类</h2>
+				<p>
+					HTML中标签元素三种不同类型：块状元素（block），行内元素（inline），行内块状元素（inline-block）。
+				</p>
+				<hr>
+				<ul>
+					<li>行内元素：a、b、span、img、input、strong、select、em、button、textarea, abbr , acronym , bdo , big , br , cite , code , dfn ,  font , i , img , input , kbd , label , q , s , samp , small , strike , sub , sup</li>
+					<li>块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote],address , blockquote , center , dir , div , dl , fieldset , form , hr , isindex , menu , noframes , noscript , ol , p , pre , table , ul , li</li>
+					<li>可变元素(根据上下文关系确定该元素是块元素还是内联元素)：applet ,button ,del ,iframe , ins ,map ,object , script</li>
+					<li>行内块状元素：只有在CSS中通过display:inline-block对一个对象指定inline-block属性，可以将对象呈递为内联对象。</li>
+					<li>空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img</li>
+				</ul>
+			</article>
+			<!-- 元素分类 end-->
 			<!-- *JS -->
 			<article class="content-box-panel">
 				<h2>JS</h2>
@@ -1556,8 +1583,7 @@
 			});
 		})
 		//$('.content-box').scrollTop();
-		
-		$('.swiper-container1').mouseover(function(){
+		function scrolls(){
 			var scroll=0;
 			if(!$(window).scrollTop()!=$('.content-box').offset().top){
 				var timer=setInterval(function(){					
@@ -1570,21 +1596,9 @@
 					}
 				},5)
 			}
-		})
-		$('.swiper-container1').on('tap',function(){
-			var scroll=0;
-			if(!$(window).scrollTop()!=$('.content-box').offset().top){
-				var timer=setInterval(function(){					
-					if($('.content-box').offset().top-$(window).scrollTop()<80){
-						$(window).scrollTop($('.content-box').offset().top);
-						window.clearInterval(timer);
-					}
-					else{
-						document.documentElement.scrollTop+=($('.content-box').offset().top-$(window).scrollTop())/80;
-					}
-				},5)
-			}
-		});
+		}
+		$('.swiper-container1').mouseover(scrolls)
+		$('.swiper-container1').on('touchstart',scrolls);
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
 			var index = $(this).index();
