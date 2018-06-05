@@ -70,10 +70,10 @@
 	.content{
 		height: 100%;
 	}
-
-	.head-logo{
+	.head-logo {
 	    font-size: 24px;
 	    line-height: 42px;
+	    padding-left: 20px;
 	}
 	li{
 		list-style: none;
