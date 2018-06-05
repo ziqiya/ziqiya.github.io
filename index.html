@@ -111,7 +111,6 @@
 				      			<p class="my_intro_word ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">您好，我叫阮旭松，22岁，坐标洛阳。我对前端很感兴趣，今后的职业规划是前端开发工程师，精通了HTML，CSS,bootstrap,掌握Jquery,JS,vue,swiper,Git,webpack，能做一些美观的交互效果。<i class="mobile-hidden">此外，我特别感谢<a href="http://www.lyxiangda.com/">洛阳翔达环保有限公司</a>，能给我很多学习的机会，让我能了解到当前的互联网趋势。并给我独立开发网站的经验。</i>我善于学习，对新技术有狂热的研究兴趣,希望能接触到更先进的技术和更专业的团队。
 									<em>不负青春，不随大流。</em>
 								</p>
-
 				      		</div>
 				      	</div>
 				      </div>
@@ -191,7 +190,6 @@
 				    <!-- Add Pagination -->
 				    <div class="swiper-pagination swiper-pagination1"></div>
 				  </div>
-
 			</article>
 			<!-- 关于我 end-->
 			<!-- *HTML -->
@@ -975,6 +973,20 @@
 					<li>行内块状元素：只有在CSS中通过display:inline-block对一个对象指定inline-block属性，可以将对象呈递为内联对象。</li>
 					<li>空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img</li>
 				</ul>
+				<hr>
+				<dl>
+					<dt>块级元素<em>特点：display:block;</em></dt>
+					<dd>1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。</dd>
+					<dd>2、元素的高度、宽度、行高以及顶和底边距都可设置。</dd>
+					<dd>3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</dd>
+					<dt>行内元素<em>特点：display:inline;</em></dt>
+					<dd>1、和其他元素都在一行上；</dd>
+					<dd>2、元素的高度、宽度及顶部和底部边距不可设置；</dd>
+					<dd>3、元素的宽度就是它包含的文字或图片的宽度，不可改变。</dd>
+					<dt>行内块状元素<em>特点：display:inline-block;</em></dt>
+					<dd>1、和其他元素都在一行上；</dd>
+					<dd>2、元素的高度、宽度、行高以及顶和底边距都可设置。</dd>
+				</dl>
 			</article>
 			<!-- 元素分类 end-->
 			<!-- *JS -->
@@ -1262,7 +1274,26 @@
 			</article>
 			<!-- JS数据类型转换 end -->
 			<!-- *h5触屏事件(touch) -->
-
+			<article class="content-box-panel">
+				<h2>h5触屏事件(touch)</h2>
+				<p>					
+				</p>
+				<hr>
+				<ul>
+					<li><b>touchstart</b>：触摸开始的时候触发</li>
+					<li><b>touchmove</b>：手指在屏幕上滑动的时候触发</li>
+					<li><b>touchend</b>：触摸结束的时候触发</li>
+					<li>而每个触摸事件都包括了三个触摸列表，每个列表里包含了对应的一系列触摸点（用来实现多点触控）：</li>
+					<li><b>touches</b>：当前位于屏幕上的所有触摸点的列表。</li>
+					<li><b>targetTouches</b>：位于当前DOM元素上手指的列表。</li>
+					<li><b>changedTouches</b>：涉及当前事件手指的列表。<br>每个触摸点由包含了如下触摸信息（常用）：</li>
+					<li><b>identifier</b>：一个数值，唯一标识触摸会话（touch session）中的当前手指。一般为从0开始的流水号（android4.1，uc）</li>
+					<li><b>target</b>：DOM元素，是动作所针对的目标。</li>
+					<li><b>pageX/pageY/clientX/clientY/screenX/screenY</b>：一个数值，动作在屏幕上发生的位置（page包含滚动距离,client不包含滚动距离，screen则以屏幕为基准）。</li>
+					<li><b>radiusX/radiusY/rotationAngle</b>：画出大约相当于手指形状的椭圆形，分别为椭圆形的两个半径和旋转角度。</li>
+				</ul>
+			</article>
+			
 			<!-- h5触屏事件(touch) end-->
 			<!-- *前端框架 -->
 			<article class="content-box-panel">
@@ -1582,8 +1613,7 @@
 			});							//;位于中括号后，位于值后面
 			$('.navbar-collapse a').click(function(){
 				$('.navbar-collapse').collapse('hide');
-			});
-			$(window).scrollTop(0);
+			});			
 		})
 		//$('.content-box').scrollTop();
 		function scrolls(){
@@ -1600,7 +1630,7 @@
 				},5)
 			}
 		}
-		$('.swiper-container1').mouseover(scrolls)
+		$('.swiper-container1').mouseover(scrolls);
 		$('.swiper-container1').on('touchmove',function(){
 			if(!$(window).scrollTop()!=$('.content-box').offset().top){
 				$(window).scrollTop($('.content-box').offset().top);
@@ -1611,7 +1641,6 @@
 			if(!$(window).scrollTop()<$('.content-box').offset().top){
 				$(window).scrollTop($('.content-box').offset().top);
 			}
-			
 		});
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
