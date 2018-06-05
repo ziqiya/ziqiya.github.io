@@ -337,7 +337,8 @@
 	.swiper-container2 .swiper-wrapper .swiper-slide{
 		position: relative;
 		overflow: hidden;
-		height: 100%;
+		height: 238px;
+	    background: rgba(255,255,255,0.5);
 	}
 	.swiper-container2 .swiper-wrapper .swiper-slide:hover .swiper_cover2{
 		width: 100%;
@@ -433,5 +434,8 @@
 		    width: 100%;
 		    height: 100%;
 		    padding: 10px 30px;
+		}
+		.swiper-container2 .swiper-wrapper .swiper-slide:hover .swiper_cover2{
+			padding:0px 30px;
 		}
 	}
