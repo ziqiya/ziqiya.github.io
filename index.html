@@ -1598,7 +1598,7 @@
 			}
 		}
 		$('.swiper-container1').mouseover(scrolls)
-		$('.swiper-container1').on('touchmove',function(){
+		$('.swiper-container1').on('touchstart',function(){
 			if(!$(window).scrollTop()<$('.content-box').offset().top){
 				$(window).scrollTop($('.content-box').offset().top);
 			}
