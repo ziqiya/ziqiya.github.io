@@ -117,8 +117,8 @@
 				      <div class="swiper-slide swiper-slide3">
 				      	<section class="new_info">
 							<div class="quick_head quick_head1 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-								<h1 class="quick_h red">最新信息</h1>
-								<p class="quick_p">News</p>
+								<h1 class="quick_h red">我的项目</h1>
+								<p class="quick_p">Projects</p>
 							</div>
 							 <!-- Swiper -->
 						    <div class="swiper-container swiper-container2">
@@ -1542,7 +1542,7 @@
 		})
 		//$('.content-box').scrollTop();
 		
-		$('.swiper-container1').touchStart=$('.swiper-container1').mouseover(function(){
+		$('.swiper-container1').mouseover(function(){
 			var scroll=0;
 			if(!$(window).scrollTop()!=$('.content-box').offset().top){
 				var timer=setInterval(function(){					
@@ -1556,7 +1556,20 @@
 				},5)
 			}
 		})
-
+		$('.swiper-container1').touchStart(function(){
+			var scroll=0;
+			if(!$(window).scrollTop()!=$('.content-box').offset().top){
+				var timer=setInterval(function(){					
+					if($('.content-box').offset().top-$(window).scrollTop()<80){
+						$(window).scrollTop($('.content-box').offset().top);
+						window.clearInterval(timer);
+					}
+					else{
+						document.documentElement.scrollTop+=($('.content-box').offset().top-$(window).scrollTop())/80;
+					}
+				},5)
+			}
+		})
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
 			var index = $(this).index();
