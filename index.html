@@ -1581,6 +1581,7 @@
 			$('.navbar-collapse a').click(function(){
 				$('.navbar-collapse').collapse('hide');
 			});
+			$(window).scrollTop(0);
 		})
 		//$('.content-box').scrollTop();
 		function scrolls(){
@@ -1640,6 +1641,7 @@
 		$('.aside-nav .panel-heading,.aside-nav .sub-list-group,.aside-nav .myself').click(function(event) {
 			$(this).parents('.aside-nav').css('left', '-40%');
 			$('.banner').fadeIn();
+			$('.aside-nav').css('marginTop', '0px');
 			$('.content-box').css('width', '100%');
 			setTimeout(function(){
 				$('.nav-tool').css('left', '0px');
@@ -1649,6 +1651,7 @@
 				if ((/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent))) {
 					$('.banner').hide();
 				};
+				$('.aside-nav').css('marginTop', '50px');
 			}
 			else if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
 			    $('.content-box').css('padding', '0 20px 20px');
