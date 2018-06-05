@@ -1556,7 +1556,7 @@
 				},5)
 			}
 		})
-		$('.swiper-container1').touchStart(function(){
+		$('.swiper-container1').on('tap',function(){
 			var scroll=0;
 			if(!$(window).scrollTop()!=$('.content-box').offset().top){
 				var timer=setInterval(function(){					
@@ -1569,7 +1569,7 @@
 					}
 				},5)
 			}
-		})
+		});
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
 			var index = $(this).index();
