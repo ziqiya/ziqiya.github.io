@@ -423,6 +423,7 @@
 		.my_intro_word{
 			width: 100%;
 			margin: 10px auto 0;
+		    padding: 10px;
 		}
 		.my_pic{
 			margin: 115px auto 0;

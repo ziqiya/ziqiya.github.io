@@ -1598,8 +1598,12 @@
 			}
 		}
 		$('.swiper-container1').mouseover(scrolls)
-		$('.swiper-container1').on('touchstart',scrolls);
-		$('.swiper-container1').on('touchmove',scrolls);
+		$('.swiper-container1').on('touchmove',function(){
+			if(!$(window).scrollTop()<$('.content-box').offset().top){
+				$(window).scrollTop($('.content-box').offset().top);
+			}
+			
+		});
 		new WOW().init();
 		$('.nav-list-group .list-group-item').click(function(event) {
 			var index = $(this).index();
