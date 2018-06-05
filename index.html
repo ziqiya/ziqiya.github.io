@@ -1598,6 +1598,12 @@
 			}
 		}
 		$('.swiper-container1').mouseover(scrolls)
+		$('.swiper-container1').on('touchmove',function(){
+			if(!$(window).scrollTop()!=$('.content-box').offset().top){
+				$(window).scrollTop($('.content-box').offset().top);
+			}
+			$(window).scrollTop($('.content-box').offset().top);
+		});
 		$('.swiper-container1').on('touchstart',function(){
 			if(!$(window).scrollTop()<$('.content-box').offset().top){
 				$(window).scrollTop($('.content-box').offset().top);
@@ -1633,18 +1639,23 @@
 		});
 		$('.aside-nav .panel-heading,.aside-nav .sub-list-group,.aside-nav .myself').click(function(event) {
 			$(this).parents('.aside-nav').css('left', '-40%');
+			$('.banner').fadeIn();
 			$('.content-box').css('width', '100%');
 			setTimeout(function(){
 				$('.nav-tool').css('left', '0px');
 			},500)			
 			if ($('.myself').hasClass('active')) {
 				$('.content-box').css('padding', '0');
+				if ((/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent))) {
+					$('.banner').hide();
+				};
 			}
 			else if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
 			    $('.content-box').css('padding', '0 20px 20px');
 			}
 			else{
 				$('.content-box').css('padding', '20px 50px');
+
 			}
 		});
 		$('.run-btn').click(function(event) {
