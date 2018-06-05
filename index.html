@@ -1505,7 +1505,29 @@
 				var cliY=(e.clientY-document.documentElement.clientHeight/2)/80-125;
 				$('.intro_wrap').css("transform", "translate("+cliX+"px,"+cliY+"px)"+"skewX("+(150+cliX)*2+"deg)"+"skewY("+(cliY+124)*6+"deg)");
 			});
-			
+			if((/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent))) { //移动端
+			     var swiper = new Swiper('.swiper-container2', {	    	
+				      slidesPerView: 1,
+				      spaceBetween: 30,
+				      loop : true,
+				      navigation: {
+					    nextEl: '.swiper-button-next',
+					    prevEl: '.swiper-button-prev',
+					  },
+				    });
+
+			}
+			else{
+				var swiper = new Swiper('.swiper-container2', {	    	
+				      slidesPerView: 3,
+				      spaceBetween: 30,
+				      loop : true,
+				      navigation: {
+					    nextEl: '.swiper-button-next',
+					    prevEl: '.swiper-button-prev',
+					  },
+				    });
+			}
 		    var mySwiper1 = new Swiper ('.swiper-container1', {
 		    	 direction: 'vertical',    
 		        mousewheel: true,
@@ -1524,16 +1546,7 @@
 			      } 
 			    }
 	  		}) 
-		    var swiper = new Swiper('.swiper-container2', {	    	
-		      slidesPerView: 3,
-		      spaceBetween: 30,
-		      loop : true,
-		      navigation: {
-			    nextEl: '.swiper-button-next',
-			    prevEl: '.swiper-button-prev',
-			  },
-		    });
-
+		   
 		$(function(){
 			$('.nav').singlePageNav({
 				offset:70,
