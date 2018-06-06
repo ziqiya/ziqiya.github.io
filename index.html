@@ -583,12 +583,14 @@
 					<dd>区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。</dd>
 					<dd>区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。</dd>
 					<dd>区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。</dd>
-					<dt>CSS选择符有哪些？优先级算法如何计算？内联和important哪个优先级高？</dt>
+					<dt>5.CSS选择符有哪些？优先级算法如何计算？内联和important哪个优先级高？</dt>
 					<dd>类型选择符（body）、群组选择符（h1，h2，h3，span）、包含选择符（h2 span）、ID选择符（#id）、Class选择符（.content）</dd>
-					<dt>哪些属性可以继承？</dt>
-					<dd>CLASS属性，伪类A标签，列表ul、li、dl、dd、dt可以继承</dd>
 					<dd>优先级就近原则</dd>
-					<dt>5:前端页面有哪三层构成，分别是什么？作用是什么？</dt>
+					<dd>important优先级高</dd>
+					<dt>6.哪些属性可以继承？</dt>
+					<dd>CLASS属性，伪类A标签，列表ul、li、dl、dd、dt可以继承</dd>
+					
+					<dt>7.前端页面有哪三层构成，分别是什么？作用是什么？</dt>
 					<dd>
 					结构层（structural layer）
 					由 HTML 或 XHTML之类的标记语言负责创建。标签，也就是那些出现在尖括号里的单词，对网页内容的语义含义做出了描述，但这些标签不包含任何关于如何显示有关内容的信息。例如，P标签表达了这样一种语义：“这是一个文本段。”
@@ -601,79 +603,137 @@
 					行为层（behaviorlayer）
 					负责回答“内容应该如何对事件做出反应”这一问题。这是 Javascript 语言和 DOM主宰的领域。
 					</dd>
-					<dt>css的基本语句构成是？</dt>
+					<dt>8.css的基本语句构成是？</dt>
 					<dd>（自定义的样式名称）｛样式内容｝</dd>
-					<dt>你做的页面在哪些流览器测试过？这些浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？怎么会出现？解决方法是什么？</dt>
-					<dd>IE浏览器的内核Trident、 Mozilla的Gecko、google的WebKit、Opera内核Presto</dd>
+					<dt>9.你做的页面在哪些流览器测试过？这些浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？怎么会出现？解决方法是什么？</dt>
+					<dd>Safari的内核KHTML/WebCore,IE浏览器的内核Trident、 Mozilla的Gecko、google的WebKit、Opera内核Presto</dd>
 					<dd>* png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.</dd>
 
-				   <dd> * 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
+				    <dd> * 浏览器默认的margin和padding不同。<em>解决方案是加一个全局的*{margin:0;padding:0;}来统一。</em></dd>
 
-			    	<dd>* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+			    	<dd>* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。</dd>
 
-			      <dd>浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}
+			      	<dd>浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}</dd>
 				</dl>
 				
+		
+ 	<dd>浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}</dd>
 
+    <dd> 这种情况之下IE会产生20px的距离，<em>解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)</em></dd>
 
+      <dd>渐进识别的方式，从总体中逐渐排除局部。</dd>
 
+     <dd> 首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。</dd>
 
+      <dd>接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。</dd>
 
-<!-- 行内元素：<xmp><a> <img > <input > <span></xmp>
+      <xmp>
+      css
 
-块级元素：<xmp><p> <h1>-<h6> <blockquote> <div> <ul> <li> <ol> <dl> <table> <form> <em> <strong> <input></xmp>
+          .bb{
 
-盒模型：width border padding margin
+           background-color:#f1ee18;/*所有识别*/
 
-3.CSS引入的方式有哪些? link和@import的区别是?
+          .background-color:#00deff\9; /*IE6、7、8识别*/
 
-外联式：<xmp><link href="url" rel="stylesheet" tyle="text/css"></xmp>
+          +background-color:#a200ff;/*IE6、7识别*/
 
-内联式:<xmp><script type="text/css"></script></xmp>
+          _background-color:#1e0bd1;/*IE6识别*/
 
-嵌入式:<xmp><input type="" style=""></xmp>
+          }
+	</xmp>
+   <dd> *  IE下,可以使用获取常规属性的方法来获取自定义属性,</dd>
 
-4.CSS选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important哪个优先级高？
-5:前端页面有哪三层构成，分别是什么？作用是什么？
+    <dd>   也可以使用getAttribute()获取自定义属性;</dd>
 
-结构层，表现层，行为层
-6:
-8：
-9.如何居中一个浮动元素?
-10.有没有关注HTML5和CSS3?如有请简单说一些您对它们的了解情况！
-11.你怎么来实现下面这个设计图,主要讲述思路 （效果图省略）
-13:如果让你来制作一个访问量很高的大型网站，你会如何来管理所有CSS文件、JS与图片？
-14：你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
+    <dd>   Firefox下,只能使用getAttribute()获取自定义属性.</dd>
 
-[Javascript]
-1：js是什么，js和html 的开发如何结合？
+     <dd><em>  解决方法:统一通过getAttribute()获取自定义属性.</em></dd>
 
-2.怎样添加、移除、移动、复制、创建和查找节点
-3.怎样使用事件以及IE和DOM事件模型之间存在哪些主要差别
-4.面向对象编程:b怎么继承a
-5.看看下面alert的结果是什么
-view sourceprint?1.function b(x, y, a) {
-.arguments[2] = 10;
-.alert(a);
-}
-b(1, 2, 3);
-如果函数体改成下面，结果又会是什么？
-a = 10;
-alert(arguments[2] );
+   <dd> *  IE下,even对象有x,y属性,但是没有pageX,pageY属性;</dd>
 
-6.请编写一个JavaScript函数 parseQueryString，它的用途是把URL参数解析为一个对象
-var obj = parseQueryString(url);
-alert(obj.key0)   // 输出0
+    <dd>  Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.</dd>
 
-7.ajax是什么?   ajax的交互模型? 同步和异步的区别? 如何解决跨域问题?
+    <dd>* （条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。</dd>
 
-8.什么是闭包？下面这个ul，如何点击每一列的时候alert其index?
-<ul id=”test”>
-<li>这是第一条</li><li>这是第二条</li><li>这是第三条</li>
-</ul>
+   <dd> * Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, <em>可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.</em></dd>
 
-9.最近看的一篇Javascript的文章是？
-10.常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？ -->
+    <dd>超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:</dd>
+
+    <dd>L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}</dd>
+	<dt>10.如何居中一个浮动元素?</dt>
+	<dd>1、可以在外层加一个div，外层的div采用margin居中，里层的div设置宽度为100%。</dd>
+	<dd>2、设置当前div的宽度，然后设置margin-left:50%; position:relative; left:-250px;其中的left是宽度500px的一半。</dd>
+	<dt>11.有没有关注HTML5和CSS3?如有请简单说一些您对它们的了解情况！</dt>
+	<dd>有，HTML5的是目前正在为未来的HTML标准的主要修订的发展。其前任一样，4.01和XHTML 1.1的HTML，HTML5的是一个结构和提交万维网内容的标准。新标准结合了诸如视频播放，拖动和放下以前曾在第三方浏览器插件依赖例如Adobe Flash，微软的Silverlight的功能，和谷歌齿轮。</dd>
+	<dt>12.如果让你来制作一个访问量很高的大型网站，你会如何来管理所有CSS文件、JS与图片?</dt>
+	<dd>把所有的CSS文件都放入一个样式表中,通过把所有的脚本放到一个文件中来减少HTTP请求的方法。js文件也采用同样的方法。把所有的背景图像都放到一个图片文件中，然后通过CSS的background-image和background-position属性来显示图片的不同部分。</dd>
+	<dt>13.你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？</dt>
+	<dd>前端界面工程师：1. 与交互设计师、视觉设计师协作，根据设计图完成页面制作。 2. 维护及优化网站前端性能。
+	</dd>
+	<dd>前景：长期以来，国内前端开发在整个软件开发行业内占得比重较小，发展较晚。网站也多倾向于赢利最大化而轻视用户体验。前后端比例悬殊大。近几年来，随着 以用户为中心 的思想普及发展。前端开发呈现出强劲的发展态势，前端开发人员在项目中的重要性日益突出。前端开发人员呈现出严重的人员短缺现象。
+	</dd>
+	<h3>[Javascript]</h3>
+	<dt>1：js是什么，js和html 的开发如何结合?</dt>
+	<dd>js是一种基于对象和事件驱动，并具有安全性的脚本语言。
+可以html的三个地方编写js脚本语言：一是在网页文件的标签对中直接编写脚本程序代码；二是将脚本程序代码放置在一个单独的文件中，在网页文件中引用这个脚本程序语言；三是将脚本程序代码作为某个元素的事件属性值或超链接的href属性值。</dd>
+	<dt>2.怎样添加、移除、移动、复制、创建和查找节点</dt>
+	<dd>(1)创建新节点</dd>
+
+ <dd>createDocumentFragment() //创建一个DOM片段</dd>
+
+<dd> createElement_x() //创建一个具体的元素</dd>
+
+ <dd>createTextNode() //创建一个文本节点</dd>
+
+<dd>(2)添加、移除、替换、插入</dd>
+
+<dd> appendChild()</dd>
+
+ <dd>removeChild()</dd>
+
+ <dd>replaceChild()</dd>
+
+ <dd>insertBefore()</dd>
+
+<dd>(3)查找</dd>
+
+ <dd>getElementsByTagName() //通过标签名称</dd>
+
+ <dd>getElementsByName() //通过元素的Name属性的值</dd>
+
+ <dd>getElementById() //通过元素Id，唯一性</dd>
+ <dt>3.怎样使用事件以及IE和DOM事件模型之间存在哪些主要差别</dt>
+ <dt>4.面向对象编程:b怎么继承a</dt>
+ <dt>5.看看下面alert的结果是什么</dt>
+ <dt>
+ 	<xmp>
+	view sourceprint?1.function b(x, y, a) {
+	.arguments[2] = 10;
+	.alert(a);
+	}
+	b(1, 2, 3);
+	如果函数体改成下面，结果又会是什么？
+	a = 10;
+	alert(arguments[2] );
+ 	</xmp>
+ </dt>
+ <dt>请编写一个JavaScript函数 parseQueryString，它的用途是把URL参数解析为一个对象</dt>
+ <dt>7.ajax是什么?   ajax的交互模型? 同步和异步的区别? 如何解决跨域问题?</dt>
+ <dt>
+ 	8.什么是闭包？下面这个ul，如何点击每一列的时候alert其index?
+	<xmp>
+		<ul id="test">
+		<li>这是第一条</li><li>这是第二条</li><li>这是第三条</li>
+		</ul>
+	</xmp>	
+ </dt>
+ <dd>闭包是可以包含自由（未绑定）变量的代码块；这些变量不是在这个代码块或者任何全局上下文中定义的，而是在定义代码块的环境中定义。</dd>
+ <dt>9.最近看的一篇Javascript的文章是</dt>
+ <dt>10.常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？</dt>
+ <dd>常使用的库:jquery，swiper</dd>
+ <dd>常用的前端开发工具：Sublime Text、FXP、photoshop、Google Chrome、取色器</dd>
+ <dd>开发过一个微信公众号：快点推，开发过两个webAPP，还开发了若干企业网站</dd>	
 			</article>
 			<!-- 前端面试题汇总 end-->
 			<!-- *CSS -->
