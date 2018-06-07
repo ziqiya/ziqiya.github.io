@@ -131,6 +131,7 @@
 	.nav-list-group .list-group-item{
 		font-size: 17px;
 		cursor: pointer;
+		transition:all 0.6s ease;
 	}
 	.sub-list-group .sub-list-group.active{
 		display: block;
@@ -146,8 +147,7 @@
 	    z-index: 3;
 	    color: #fff;
 	    background-color: #337ab7;
-	    border:1px solid #fff;
-	    margin:0 0 -1px;
+	    padding-left: 30px;
 	}
 	.nav-panel .panel-heading{
 		font-size: 18px;
