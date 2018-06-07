@@ -10,7 +10,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $("#b01").click(function(){
-  htmlobj=$.ajax({url:"js/test1.txt",async:true});
+  htmlobj=$.ajax({url:"js/test1.txt",async:false});
   $("#myDiv").html(htmlobj.responseText);
   });
 });
