@@ -61,10 +61,13 @@
 						<li class="list-group-item sub-css sub-list-group">CSS选择器</li>
 						<li class="list-group-item sub-css sub-list-group">盒子模型</li>
 						<li class="list-group-item sub-css sub-list-group">元素分类</li>
+						<li class="list-group-item sub-css sub-list-group">3d翻转(css)</li>
 						<li class="list-group-item js">JS</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型转换</li>
 						<li class="list-group-item sub-js sub-list-group">h5触屏事件(touch)</li>
+						<li class="list-group-item sub-js sub-list-group">3d翻转(js)</li>
+						<li class="list-group-item sub-js sub-list-group">ajax</li>
 						<li class="list-group-item kj">前端框架</li>
 						<li class="list-group-item sub-kj sub-list-group">Bootstrap</li>
 					</ul>
@@ -1195,6 +1198,44 @@
 				</dl>
 			</article>
 			<!-- 元素分类 end-->
+			<!-- *3d翻转(css) -->
+			<article class="content-box-panel">
+				<h2>3d翻转(css)</h2>
+				<p>这是一个用css:hover实现div翻转的例子<br>
+					主要思想就是：类比翻纸牌，正面和背面都贴上图片，再控制翻来翻去就行。<br>
+rotateX:3d纵向上下翻转<br>
+rotateY:3d横向左右翻转<br>
+rotateZ:平面360旋转(类似平面的rotate)<br>
+先建立一个3d模型：一张纸牌（flip）在桌子（body）上的小框（flip_wraper）内翻转正面（front）反面（back），旋转。<br>
+注意点：<br>
+1.给小框（flip_wraper）设置position: relative;让其子元素在position: absolute;时以他为定位标准。<br>
+2.给小框（flip_wraper）设置perspective:1000;是为了设置视野距离，越大表示看的距离越远，也就越小。<br>
+3.backface-visibility（背面不可见）的兼容性不太好，需要加前缀：<br>
+-webkit-:谷歌chrome，safari内核<br>
+-moz-:火狐firefox内核<br>
+-ms-:IE内核<br>
+4.transform-style: preserve-3d;    <br>转变效果保留3d效果。这一点至关重要！！因为该属性只对一级的子元素有效，也就是必须用在纸牌属性才能实现3d效果。<br>
+5.transition:all 0.6s ease-in-out;这里的transition是指该元素对应属性完成CSS动作所需的时间和速度曲线。<br>
+transition: property(属性名称) duration(时间) timing-function(速度曲线);<br>
+也可以拆分如下<br>
+transition-property	规定设置过渡效果的 CSS 属性的名称，可以是诸如width,height等css属性。<br>
+transition-duration	规定完成过渡效果需要多少秒或毫秒。<br>
+transition-timing-function	规定速度效果的速度曲线。<br>
+transition-delay	定义过渡效果何时开始。<br>
+
+常用速度曲线:<br>
+linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。<br>
+ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。<br>
+ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。<br>
+ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。<br>
+ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。<br>
+cubic-bezier(n,n,n,n)	在 cubic-bezier(贝塞尔曲线) 函数中定义自己的值。可能的值是 0 至 1 之间的数值。<br>
+贝塞尔曲线的取值可以参考这个网站：<a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">贝塞尔曲线的取值</a><br>
+				</p>
+				<hr>
+				<p><a href="js_project/3d_rotate/3d_rotate.html" target="_blank">点我跳转实例</a></p>
+			</article>
+			<!-- 3d翻转(css) end-->
 			<!-- *JS -->
 			<article class="content-box-panel">
 				<h2>JS</h2>
@@ -1501,6 +1542,31 @@
 			</article>
 			
 			<!-- h5触屏事件(touch) end-->
+			<!-- *3d翻转(js) -->
+			<article class="content-box-panel">
+				<h2>3d翻转(js)</h2>
+				<p>
+					这是一个用js来实现3d翻转的应用示例，通过按钮来实现div的翻转
+				</p>
+				<hr>
+				<p><a href="js_project/3d_rotate/3d_js.html" target="_blank">点我跳转实例</a></p>			
+			</article>
+			<!-- 3d翻转(js) end-->
+			<!-- *ajax -->
+			<article class="content-box-panel">
+				<h2>ajax</h2>
+				<p>
+					AJAX 指异步 JavaScript 及 XML（Asynchronous JavaScript And XML）
+				</p>
+				<p>
+					Ajax的核心是JavaScript对象XmlHttpRequest。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，XmlHttpRequest使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。<br>
+
+					Ajax对服务器没什么要求，可以为Java EE应用程序，.NET应用程序和其他类型的应用程序服务。可以通过Ajax，可以编写javascript代码来改进HTML，创建出丰富的交互性用户体验。
+				</p>
+				<hr>
+				<p><a href="js_project/ajax/ajax.html" target="_blank">点我跳转实例</a></p>			
+			</article>
+			<!-- 3d翻转(js) end-->
 			<!-- *前端框架 -->
 			<article class="content-box-panel">
 				<h2>前端框架</h2>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d翻转效果</title><!-- 做完去做下translate的js再做淡入的js -->
+	<style>
+		body,html{
+			height: 98%;
+    		width: 99%;
+		}
+		.flip_wraper{
+			position: absolute;		
+			top: 50%;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 90%;
+		    height: 80%;
+		    border: 1px solid #282828;
+		    position: relative;
+		}
+		.flip{
+			float: left;
+			border: 1px solid #282828;
+		    width: 12.5%;
+		    height: 158px;
+		    margin-left: 10%;
+			transform-style: preserve-3d;/*至关重要！！因为该属性只对一级的子元素有效*/
+			transition:all 0.6s ease-in-out;
+		}
+		.back,.front{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: green;
+			-webkit-backface-visibility:hidden;
+			-moz-backface-visibility:hidden;
+			-ms-backface-visibility:hidden;
+		}
+		.back img,.front img{
+			width: 100%;
+			height: 100%;
+		}
+		.front{
+			z-index: 2;
+		}
+		.back{
+			transform:rotateY(180deg);
+		}
+		.rotate_btn{
+			width: 100px;
+			height: 60px;
+			background:url("images/colors.png");
+			background-position: right 0;
+			color: #00bdef;
+			font-size: 20px;
+			text-align: center;
+			line-height: 60px;
+			border-radius: 10px;
+			cursor: pointer;
+			font-weight: bold;
+			transition:all 1s ease-out;
+		}
+	</style>
+</head>
+<body>
+	<div class="rotate_btn">旋 转</div>
+	<div class="flip_wraper">
+		<div class="flip flip1">
+			<div class="front">
+				<img src="images/up.jpg" alt="">			
+			</div>
+			<div class="back">
+				<img src="images/back.jpg" alt="">
+			</div>
+		</div>
+		<div class="flip flip2">
+			<div class="front">
+				<img src="images/up.jpg" alt="">			
+			</div>
+			<div class="back">
+				<img src="images/back.jpg" alt="">
+			</div>
+		</div>
+		<div class="flip flip3">
+			<div class="front">
+				<img src="images/up.jpg" alt="">			
+			</div>
+			<div class="back">
+				<img src="images/back.jpg" alt="">
+			</div>
+		</div>
+		<div class="flip flip4">
+			<div class="front">
+				<img src="images/up.jpg" alt="">			
+			</div>
+			<div class="back">
+				<img src="images/back.jpg" alt="">
+			</div>
+		</div>
+	</div>
+<script src="js/jquery.min.js"></script>	
+<script>
+	$('.rotate_btn').mouseover(function(event) {
+		$(this).css('background-position', '0 0');
+		$(this).css('color', '#fff');
+	});
+	$('.rotate_btn').mouseout(function(event) {
+		$(this).css('background-position', 'right 0');
+		$(this).css('color', '#00bdef');
+	});
+	
+	$('.rotate_btn').click(function(event) {
+		flips=document.querySelectorAll('.flip');
+		if (!$('.flip_wraper').hasClass('rotated')) {
+			$('.flip_wraper').addClass('rotated');
+			
+			[].forEach.call(flips, function(childEl,idx) {
+				//    setTimeout((function(a,b){ 
+				// 	return function(){
+				// 	a.style.transform='rotateX(180deg)';
+				// } 
+				// })(childEl,idx), idx*200);
+						setTimeout(childEl.style.transform="rotateX(180deg)",idx*200);
+			});
+		}
+		else{
+			$('.flip_wraper').removeClass('rotated');
+			[].forEach.call(flips, function(childEl,idx) {
+				   setTimeout((function(a,b){ 	//立即函数
+					return function(){
+					a.style.transform='rotateX(0deg)';
+				} 
+				})(childEl,idx), 600-idx*200);
+
+			})
+		}	
+	});
+	
+	// $('.flip').mouseout(function(e){
+	// 	$(this).css({
+	// 		transform: 'rotateX(0deg)'
+	// 	});
+	// })
+	// setTimeout(function(){alert(2);}, 1000);
+	// setTimeout(function(){alert(3);}, 2000);
+</script>
+</body>
+</html>
