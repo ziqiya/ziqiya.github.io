@@ -61,8 +61,9 @@ $(".banner").mousemove(function(e) {
 			$('.navbar-collapse a').click(function(){
 				$('.navbar-collapse').collapse('hide');
 			});			
+			$('.content-box').scrollTop(0);
 		})
-		//$('.content-box').scrollTop();
+		
 		function scrolls(){
 			var scroll=0;
 			if(!$(window).scrollTop()<$('.content-box').offset().top){
