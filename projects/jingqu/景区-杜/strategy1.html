@@ -263,7 +263,7 @@
 		// 鼠标移动事件
 		    $(document).mousemove(function(e) {
 		        $('.maomi_eye').css({
-		            "top":(e.pageY-document.body.scrollTop)/document.body.clientHeight*7+'%',
+		            "top":(e.clientY-document.body.scrollTop)/document.body.clientHeight*7+'%',
 		            "left":e.pageX/document.body.clientWidth*90+'%'
 		        })
 		    });
