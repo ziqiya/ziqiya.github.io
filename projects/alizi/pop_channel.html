@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>推广渠道统计</title>
+	<link rel="stylesheet" href="css/product.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="head_logo">
+			<img src="images/alizi.png" alt="">
+		</div>
+		<div class="navbar">
+			<ul>
+				<a href="houtai.html"><li class="navbar_li">首页</li></a>
+				<a href="product.html"><li class="navbar_li">商品</li></a>
+				<a href="order.html"><li class="navbar_li active">订单</li></a>			
+			</ul>
+			<div class="navbar-nav">
+				 <ul>
+				 	<li class="nav_li"><a href="">网站首页</a></li>		 	
+				 	<li class="nav_li"><a href="">删除缓存</a></li>			 	
+				 	<li class="nav_li nav_li_last"><a href="">退出</a></li>			 	
+				 </ul>
+			</div>	
+		</div>	
+	</div>
+	<div class="content">
+		<div class="box2 box">
+			<div class="sidernav_box">
+				<ul class="sider_nav">
+						<div class="sider_li sider_head">订单</div>
+						<li class="sider_li">
+							<a href="order.html">所有订单</a>
+						</li>
+						<li class="sider_li">
+							<a href="add_order.html">添加订单</a>
+						</li>					
+				</ul>
+				<ul class="sider_nav1">
+					<div class="sider_li sider_head">订单统计</div>
+						<li class="sider_li">
+							<a href="order_count.html">订单统计</a>
+						</li>
+						<li class="sider_li active1">
+							<a href="pop_channel.html">推广渠道统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="area_count.html">地区统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="time_count.html">时间统计</a>
+						</li>
+				</ul>
+			</div>
+			<div class="box2_content_box1 content_box">
+				<div class="location">
+					<strong>当前位置：</strong> 订单 >> 推广渠道统计
+				</div>
+				<div class="product_content">
+					<div class="product_header">
+						搜索 : <input type="text" class="product_rank info_input" placeholder="商品编号">
+						<input type="text" class="info_input date_input" id="from_date">
+							至
+							<input type="text" class="info_input date_input" id="to_date">					
+						<input type="button" value="搜索" class="search_btn">
+					</div>
+					<div class="product_list">
+						<table>
+								<thead>
+									<tr>
+										<th>推广渠道名称</th>
+										<th style="color: #999;">待支付</th>
+										<th style="color: #f60;">已付款</th>
+										<th style="color: #06c;">确认</th>
+										<th style="color: #090;">发货</th>
+										<th style="color: #f00;">签收</th>
+										<th style="color: #ccc;">拒收</th>
+										<th>关闭</th>
+										<th>完结</th>
+										<th>总计</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><a href="order.html">Alizi</a></td>
+										<td>
+											<b>10</b>
+											<p>985.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>10</b>
+											<p>985.00</p>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="order.html">7UTiqy</a></td>
+										<td>
+											<b>10</b>
+											<p>985.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>0</b>
+											<p>0.00</p>
+										</td>
+										<td>
+											<b>10</b>
+											<p>985.00</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>					
+				</div>
+			</div>		
+			<div class="copyright">
+					Copyright © 2017 <a href="">阿狸子订单系统</a>  All Rights Reserved.
+				</div>	
+		</div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+$( "#from_date" ).datepicker();
+$( "#from_date" ).datepicker( "option", "showAnim", "blind" );
+	$( "#to_date" ).datepicker();
+$( "#to_date" ).datepicker( "option", "showAnim", "blind" );
+
+</script>
+</body>
+</html>

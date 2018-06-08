@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+   	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	 <link rel="stylesheet" type="text/css" href="css/center.css">
+	<title>会议系统</title>
+</head>
+<body>
+<!-- 会议预定选项 -->
+<div class="back"><a href="index.html"><span class=" glyphicon glyphicon-menu-left"></span></a></div>
+	<ul class="nav-tabs nav">
+		<li class="nav_personal active"><a href="#personal_pane" data-toggle="tab" class="personal_a">个人中心</a></li>
+		<span></span>
+	</ul>
+<div class="tab-content">
+<!-- 个人中心 -->
+	<div class="tab-pane in active" id="personal_pane">
+		<div class="container">
+			<div class="personal clearfix">
+				<div class="myinfo clearfix">
+					<div class="my_head"><img src="images/2.jpeg" alt="" class="img-responsive"></div>
+					<div class="usernamep"><div class="name"><a href="">窗灬敲雨</a></div><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal">编辑</span></div>
+					<ul class="tab nav-tabs myinfo_tab">
+							<li class="meeting_li active1" href="#mymeeting" data-toggle="tab">我的会议</li>
+							<li class="meeting_li" href="#myinviting" data-toggle="tab">邀请我的</li>
+					</ul>			
+				</div>		
+				<div class="tab-content my_activity">
+<!-- 我的会议 -->   <div class="more-alert1 more-alert">
+						<div class="alert1">
+							<span class="close1"></span>							
+						</div>
+					</div>
+					<div class="mymeeting tab-pane active in" id="mymeeting">
+						<h1 class="meeting_head">我的会议</h1>													
+							<h3 class="meeting"><div class="meeting_title">会议一<span class="for_more">(点击查看详情）</span><span class="after_meeting meeting_state"><img src="images/after_meeting.png" alt=""></span><span class="delete_meeting"><a href="">删除会议</a></span></div>
+							<div class="meeting_more">
+								<ul>
+									<li class="meeting_detail">会议详情</li>
+									<li class="meeting_content">会议内容：XXX</li>
+									<li class="meeting_position">会议地点：XXX</li>
+									<li class="meeting_time">会议时间：XXX</li>
+									<li class="meeting_people">会议参与人：XXX</li>
+									<li class="meeting_alter">修改状态：XXX</li>
+								</ul>
+							</div>
+							</h3>		
+							<h3 class="meeting"><div class="meeting_title">会议二<span class="for_more">(点击查看详情）</span><span class="on_meeting meeting_state"><img src="images/on_meeting.png" alt=""></span><span class="delete_meeting"><a href="">删除会议</a></span></div>
+							<div class="meeting_more">
+								<ul>
+									<li class="meeting_detail">会议详情</li>
+									<li class="meeting_content">会议内容：XXX</li>
+									<li class="meeting_position">会议地点：XXX</li>
+									<li class="meeting_time">会议时间：XXX</li>
+									<li class="meeting_people">会议参与人：XXX</li>
+									<li class="meeting_alter">修改状态：XXX</li>
+								</ul>
+							</div>
+							</h3>
+							<h3 class="meeting"><div class="meeting_title">会议三<span class="for_more">(点击查看详情）</span><span class="end_meeting meeting_state"><img src="images/end_meeting.png" alt=""></span><span class="delete_meeting"><a href="">删除会议</a></span></div>
+							<div class="meeting_more">
+								<ul>
+									<li class="meeting_detail">会议详情</li>
+									<li class="meeting_content">会议内容：XXX</li>
+									<li class="meeting_position">会议地点：XXX</li>
+									<li class="meeting_time">会议时间：XXX</li>
+									<li class="meeting_people">会议参与人：XXX</li>
+									<li class="meeting_alter">修改状态：XXX</li>
+								</ul>
+							</div>
+							</h3>		
+					</div>
+<!-- 邀请我的 -->  
+					<div class="myinviting tab-pane in" id="myinviting">
+						<h1 class="meeting_head">邀请我的</h1>
+						<h3 class="meeting"><div class="meeting_title">会议一<span class="for_more">(点击查看详情）</span><span class="on_meeting meeting_state"><img src="images/on_meeting.png" alt=""></span></div>
+							<div class="meeting_more">
+								<ul>
+									<li class="meeting_detail">会议详情</li>
+									<li class="meeting_content">会议内容：XXX</li>
+									<li class="meeting_position">会议地点：XXX</li>
+									<li class="meeting_time">会议时间：XXX</li>
+									<li class="meeting_people">会议参与人：XXX</li>
+									<li class="meeting_alter">修改状态：XXX</li>
+								</ul>
+							</div>
+							</h3>		
+							<h3 class="meeting"><div class="meeting_title">会议一<span class="for_more">(点击查看详情）</span><span class="end_meeting meeting_state"><img src="images/end_meeting.png" alt=""></span></div>
+							<div class="meeting_more">
+								<ul>
+									<li class="meeting_detail">会议详情</li>
+									<li class="meeting_content">会议内容：XXX</li>
+									<li class="meeting_position">会议地点：XXX</li>
+									<li class="meeting_time">会议时间：XXX</li>
+									<li class="meeting_people">会议参与人：XXX</li>
+									<li class="meeting_alter">修改状态：XXX</li>
+								</ul>
+							</div>
+							</h3>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 个人信息修改 -->
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1>
+					个人信息<span class="close close-modal" data-dismiss="modal"></span>								
+				</h1>				
+			</div>
+			<div class="modal-body clearfix">
+				<form action="?" method="post"><div class="form-group"></div>	
+					<div class="labels_group">
+						<label for="al-username">用户名:</label>
+						<label for="al-email">邮箱：</label>
+						<label for="al-part">所属部门：</label>
+						<label for="al-worknumber">工号：</label>
+						<label for="al-telphone">手机号：</label>
+						<label for="al-password">密码：</label>
+					</div>
+					<div class="inputs_group">
+						<input type="text" id="alusername" name="alusername" class="form-control" placeholder="请输入用户名">
+						<input type="email" id="al-email" name="al-email" class="form-control" placeholder="请输入邮箱">
+						<input type="text" id="al-part" name="al-part" class="form-control" placeholder="所属部门">
+						<input type="text" id="al-worknumber" name="al-worknumber" class="form-control" placeholder="工号">
+						<input type="telphone" id="al-telphone" name="al-telphone" class="form-control" placeholder="手机号">
+						<input type="password" placeholder="设置web登录密码" id="
+						al-password" name="al-password" class="form-control">
+					</div>	
+					<div class="submit1_bar">
+						<input type="submit" value="提交更改" id="al-submit" name="al-submit">
+					</div> 				
+				</form>
+			</div>
+		</div>
+	</div>
+</div>				
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script>
+// 日期插件
+	$( "#date" ).datepicker();
+	$( "#date" ).datepicker( "option", "showAnim", "blind" );
+	 
+	</script>
+	<style>
+		#ui-datepicker-div{
+			left:120px!important;
+		}
+	</style>
+	<script>
+	function click_test(){
+		tx1=document.getElementById("start_time").value;
+		if (tx1=="") {
+			alert('请先选择会议开始时间！')
+		};
+	}
+	function check_time(){
+		tx1=document.getElementById("start_time").value;
+		tx2=document.getElementById("end_time").value;
+		if (tx2<tx1) {
+			alert('会议结束时间不可小于会议开始时间！')
+		};
+	}
+	</script>
+	<script>
+	$('.more1').click(function(){
+		$('.more-alert1').fadeIn();	
+	})
+	$('.more2').click(function(){
+		$('.more-alert2').fadeIn();
+	})
+	$('.close1').click(function(){
+		$('.more-alert1').hide();
+	})
+	$('.close2').click(function(){
+		$('.more-alert2').hide();
+	})
+	$('.myinfo_tab li').click(function(){
+		$(this).addClass('active1').siblings().removeClass('active1');
+	})
+	var flag=0;
+	$('.meeting').click(function() {		
+		if (!flag) {
+		$(this).find('.meeting_more').slideDown();
+		flag=1;
+		return
+		};
+		if (flag) {
+		$(this).find('.meeting_more').slideUp();
+		flag=0;
+		return
+		};
+	});
+	</script>
+</body>
+</html>

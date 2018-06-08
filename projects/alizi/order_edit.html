@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阿狸子-编辑页面</title>
+	<link rel="stylesheet" href="umeditor/themes/default/_css/umeditor.css">
+	<link rel="stylesheet" href="css/product.css">
+	<link rel="stylesheet" href="css/edit.css">
+	<style>
+		.product_pack{
+			width: 521px;
+		}
+		.short_input{
+			width: 71px;
+		}
+		#beizhu{
+			width: 250px;
+			height: 40px;
+		}
+		#action_beizhu{
+			width: 503px;
+			height: 54px;
+		}
+		.action_record{
+			margin-top: 20px;
+			width: 100%;
+		    background: #fff;
+		    float: left;
+		}
+		.action_list th,.action_list td{ 
+		    padding: 10px;
+		    text-align: left;
+		    word-break: break-all;
+		    font-size: 12px;
+		    border-right: 1px solid #ddd;
+		}
+		.action_list td{
+			background: #fff;
+		}
+		.action_list tr{
+			border-bottom: 1px solid #ddd;
+		}
+		.action_list thead{
+			border:1px solid #ddd;
+			background: #f5f5f5;
+		}
+	</style>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="head_logo">
+			<img src="images/alizi.png" alt="">
+		</div>
+		<div class="navbar">
+			<ul>
+				<a href="houtai.html"><li class="navbar_li">首页</li></a>
+				<a href="product.html"><li class="navbar_li">商品</li></a>
+				<a href="order.html"><li class="navbar_li active">订单</li></a>				
+			</ul>
+			<div class="navbar-nav">
+				 <ul>
+				 	<li class="nav_li"><a href="">网站首页</a></li>		 	
+				 	<li class="nav_li"><a href="">删除缓存</a></li>			 	
+				 	<li class="nav_li nav_li_last"><a href="">退出</a></li>			 	
+				 </ul>
+			</div>	
+		</div>	
+	</div>
+	<div class="content">
+		<div class="box2 box">
+			<div class="sidernav_box">
+				<ul class="sider_nav">
+						<div class="sider_li sider_head">订单</div>
+						<li class="sider_li active1">
+							<a href="order.html">所有订单</a>
+						</li>
+						<li class="sider_li">
+							<a href="add_order.html">添加订单</a>
+						</li>					
+				</ul>
+				<ul class="sider_nav1">
+					<div class="sider_li sider_head">订单统计</div>
+						<li class="sider_li">
+							<a href="order_count.html">订单统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="pop_channel.html">推广渠道统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="area_count.html">地区统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="time_count.html">时间统计</a>
+						</li>
+				</ul>
+			</div>
+			<div class="box2_content_box1 content_box">
+				<div class="location">
+					<strong>当前位置：</strong> 订单 >> 编辑
+				</div>
+			</div>
+			<div class="detail_content">
+				<div class="order_info clearfix">		
+					<div class="product_info_head">订单信息 （订单编号：73820482）</div>
+						<div class="product_info_list">
+							<table>
+							<form action="?" method="post">
+								<tbody>
+									<tr>
+										<th>
+											商品名称：
+										</th>	
+										<td>
+											男士太阳镜女偏光镜-演示产品
+										</td>
+									</tr>
+									<tr>
+										<th>
+											商品套餐：
+										</th>	
+										<td>
+											<input type="text" name="product_pack" id="product_pack" value="绵羊皮皮鞋绵羊皮皮鞋绵羊皮皮鞋" class="info_input product_pack">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											商品属性：
+										</th>	
+										<td>
+											赠品：<input type="text" name="product_gift" id="product_gift" value="胡萝卜" class="info_input product_gift">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											订单状态：
+										</th>	
+										<td>
+											<select name="order_status" id="order_status">
+												<option value="no" selected="ture">待支付</option>
+												<option value="yes">已付款</option>
+												<option value="confirm">确认</option>
+												<option value="send">发货</option>
+												<option value="sign">签收</option>
+												<option value="refuse">拒收</option>
+												<option value="close">关闭</option>
+												<option value="end">完结</option>
+											</select>									
+										</td>									
+									</tr>
+									<tr>
+										<th>
+											数量/价格：
+										</th>	
+										<td>
+											<input type="text" name="quantity" id="quantity" class="short_input info_input">/
+											<input type="text" name="prize" id="prize" class="short_input info_input">元
+										</td>
+									</tr>
+									<tr>
+										<th>
+											姓名：
+										</th>	
+										<td>
+											<input type="text" name="name1" id="name1" value="的哇" class="info_input">										
+										</td>
+									</tr>
+									<tr>
+										<th>下单备注:</th>
+										<td>															
+												<textarea name="beizhu" id="beizhu"></textarea>
+										</td>
+									</tr>
+									<tr>
+										<th>操作备注:</th>
+										<td>															
+												<textarea name="action_beizhu" id="action_beizhu"></textarea>
+										</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input type="submit" value="确认修改" class="confirm_btn">
+										</td>
+									</tr>														
+								</tbody>
+								</form>
+							</table>					
+						</div>
+					</div>
+					<div class="action_record">
+						<div class="action_head product_info_head">操作记录</div>
+						<div class="action_list">
+							<table>			
+							<thead>
+								<tr>								
+									<th width="100">操作时间</th>						
+									<th width="60">操作类型</th>
+									<th width="60">操作用户</th>
+									<th width="200">操作备注</th>							
+								</tr>
+							</thead>		
+							<tbody>
+								<tr>								
+									<td width="100">2017-07-15</td>						
+									<td width="60">待支付</td>
+									<td width="60">客户</td>
+									<td width="200">111</td>							
+								</tr>							
+							</tbody>
+						</table>
+						</div>
+					</div>							
+			</div>
+
+			
+			<div class="copyright">
+					Copyright © 2017 <a href="">阿狸子订单系统</a>  All Rights Reserved.
+				</div>	
+		</div>
+	</div>
+<script>
+	function pay_method(){
+		var pay= document.getElementById('pay_method');
+		if(pay.options[pay.options.selectedIndex].value=='noerweima')//获取选中的option值
+		{
+			$('.hidden_tr').hide();			
+		}
+		else
+		{	
+			$('.hidden_tr').show();	
+		}
+}	
+</script>
+</body>
+</html>

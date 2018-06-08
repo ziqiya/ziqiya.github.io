@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ch">
+<link rel="stylesheet" type="text/css" href="css/clear.css">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="images/headicon1.ico" type="image/x-icon">	
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" href="css/base.css">
+	<title>马蜂窝首页</title>
+	<script type="text/javascript">
+	function pageScroll()
+ {   
+ var sTop=document.documentElement.scrollTop+document.body.scrollTop;      
+  window.scrollBy(0,-sTop/10);      
+  scrolldelay = setTimeout('pageScroll()',10);        
+  if(sTop==0) clearTimeout(scrolldelay);
+
+ }
+	</script>
+	<script type="text/javascript">
+		function change1(a){
+			pic=document.getElementById('pic1')
+			p1=document.getElementById("p1")
+			p2=document.getElementById("p2")
+			p3=document.getElementById("p3")
+			p4=document.getElementById("p4")
+			p5=document.getElementById("p5")
+			word=document.getElementById("word1");		
+			p1.style.border=0;
+			p2.style.border=0;
+			p3.style.border=0;
+			p4.style.border=0;
+			p5.style.border=0;
+			
+			if (a==1) {
+				pic.src=('images/pb1.jpeg');
+				// 	setInterval(function(){
+				// 	if (i<10000) {
+				// 	pic.style.opacity=i/10000;				
+				// 	i++;
+				// 	}
+				// },1000000)
+				p1.style.border="2px solid yellow";			
+				word.innerHTML="<span>20</span>/Feb.2017<br/><br/>春天气息迎面而来";
+			};
+			if (a==2) {
+				
+				pic.src=('images/pb2.jpeg');
+				p2.style.border="2px solid yellow";
+				word.innerHTML="<span>15</span>/Jan.2017<br/><br/>寒冬的那一把热情之火";
+			};
+			if (a==3) {
+				pic.src=('images/pb3.jpeg');
+				p3.style.border="2px solid yellow";
+				word.innerHTML="<span>04</span>/Apr.2017<br/><br/>相濡以沫之秋";
+			};
+			if (a==4) {
+				pic.src=('images/pb4.jpeg');
+				p4.style.border="2px solid yellow";
+				word.innerHTML="<span>10</span>/Mar.2017<br/><br/>沙滩上的一抹清新";
+			};
+			if (a==5) {
+				pic.src=('images/pb5.jpeg');
+				p5.style.border="2px solid yellow";
+				word.innerHTML="<span>15</span>/Oct.2017<br/><br/>让我们一起穿越北极";
+			};
+		}
+	
+	</script>
+</head>
+<body style="overflow-x:hidden">
+	<div class="chunjie">
+		<div class="shang1 wow slideInDown"><img src="images/lucky.png" width="490px" height="110px"></div>
+		<div class="zuo1 wow slideInLeft"><img src="images/lantern-left.png" width="115px"height="380px"></div>
+		<div class="you1 wow slideInRight"><img src="images/lantern-right.png"width="115px"height="380px"></div>
+	</div>
+	<div class="navk">
+		<div class="nav clearfix">
+			<div class="container">
+				<div class="logo"><img src="images/logo.png" width="150px" height="60px"></div>
+				<ul>
+					<li class="navl1 navli"><a href="#">首页</a></li>
+					<li class="navl2 navli"><a href="#">目的地</a></li>
+					<li class="navl2 navli"><a href="#">旅游攻略</a></li>
+					<li class="navl3 navli"><a href="#">自由行商城<i class="sanjiao"></i></a>
+						<ul>
+							<li class="navlili"><a href="#">机票＋酒店<img src="images/hot1.png" width="35px" height="16px"></a></li>
+							<li class="navlili"><a href="#">半自由行</a></li>
+							<li class="navlili"><a href="#">当地游</a></li>
+							<li class="navlili"><a href="#">国内机票<img src="images/new.png" width="40px" height="17px"></a></li>
+							<li class="navlili"><a href="#">签证</a></li>
+							<li class="navlili"><a href="#">国际租车</a></li>
+							<li class="navlili"><a href="#">保险</a></li>
+						</ul>
+					</li>
+					<li class="navl2 navli "><a href="#">酒店</a></li>
+					<li class="navl3 navli "><a href="#">社区<i class="sanjiao"></i></a>
+						<ul>
+							<li class="navlili1 lili1 y"><a href="#">问答<img src="images/hot1.png" width="35px" height="16px"></a></li>
+							<li class="navlili1 g"><a href="#">蚂蜂窝周边<img src="images/new.png" width="40px" height="17px"></a></li>
+							<li class="navlili1 g"><a href="#">蜂蜜兑换</a></li>
+							<li class="navlili1 g"><a href="#">结伴</a></li>
+						</ul>
+						<div  class="navliul">
+							<ul>
+								<li class="navlili2 g"><a href="#">小组论坛</a></li>
+								<li class="navlili2 g"><a href="#">分舵同城</a></li>
+								<li class="navlili2 g"><a href="#">马蜂窝拍卖行</a></li>
+								<li class="navlili2 g"><a href="#">蜂首俱乐部</a></li>
+								<li class="navlili2 g"><a href="#">照片PK</a></li>
+								<li class="navlili2 g"><a href="#">真人兽</a></li>
+								<li class="navlili2 g"><a href="#">道具商店</a></li>
+							</ul>
+						</div>
+						<ul>
+							<li class="navlili2"></li>
+						</ul>
+					</li>
+					<li class="navl2 navli"><a href="#">APP</a></li>
+				</ul>
+				<div class="meiti">									
+					<a href="#"><img src="images/weibo.png"></a>				
+					<a href="#"><img src="images/qq.png"></a>							
+					<a href="#"><img src="images/weixin.png"></a>
+					<a href="#">注册&nbsp</a>
+					<span>|</span>
+					<a href="#">&nbsp登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="pic clearfix">
+			<div class="pic1 wow fadeIn">
+				<img src="images/pb2.jpeg" height="498px" width="1349px" id="pic1">
+			</div>
+			<div class="picr wow fadeInRight">
+				<ul class="xiangce">	
+								<li class="a"><a href="#"><img id="p1" src="images/p1.jpeg" onclick="change1(1)" class="wow fadeIn"></li>			<!-- class="wow fadeIn"不行？ -->
+								<li class="a"><a href="#"><img id="p2" src="images/p2.jpeg" onclick="change1(2)" class="wow fadeIn"></li>
+								<li class="a"><a href="#"><img id="p3" src="images/p3.jpeg" onclick="change1(3)" class="wow fadeIn" ></li>
+								<li class="a"><a href="#"><img id="p4" src="images/p4.jpeg" onclick="change1(4)" class="wow fadeIn" ></li>
+								<li class="a"><a href="#"><img id="p5" src="images/p5.jpeg" onclick="change1(5)" class="wow fadeIn" ></li>				
+				</ul>
+				<div class="show"></div>	
+			</div>
+				<div class="container ">
+			 				<div class="word wow fadeIn" id="word1"><span>15</span>/Jan.2017<br/><br/>寒冬的那一把热情之火</div>			
+					<div class="sou wow fadeIn">
+							&nbsp<div class="souw1"><input type="radio" value="全部" id="sou" name="sou" value="quanbu" checked="true">全部</div>
+							<div class="souw1"><input type="radio" value="全部" id="sou" name="sou" value="jiudian" checked="true">酒店 </div>
+							<div class="souw1"><input type="radio" value="全部" id="sou" name="sou" value="mudidi" checked="true">目的地 </div>
+							<div class="souw1"><input type="radio" value="全部" id="sou" name="sou" value="shangcheng" checked="true">自由行商城</div> 
+							<br/>
+							<input type="text" placeholder="搜目的地/攻略/酒店/旅行特价" size="60" maxlength="15" style="width:450px; height:34px;" class="kuang">
+							<div class="sousuo"><a href="http://www.baidu.com" target="_blank"><img src="images/sou.png" width="40px" height="37px"></a></div>						
+					</div>
+					<div class="word1 wow fadeIn">图片来自于<span><a href="http://www.baidu.com/" target="_blank">北海道</a></span>，此目的地共收藏了<span><a href="#">61350</a></span>张<span><a href="#">奥地利</a></span>照片，本片由<span><a href="#">odin___</a></span>荣誉出品!</div>
+				</div>
+		</div>	
+
+		<!--内容三列-->
+		<div class="content clearfix">
+			<div class="container">
+				<div class="left">
+					<div class="z1 wow fadeInLeft"><a href="#"><img src="images/booking.png"></a></div>
+					<div class="z2 wow fadeInLeft">
+						<div class="z2head">
+							旅行家专栏<span class="z2head1">专栏首页</span>
+						</div>
+						<div class="z2con">
+							<img src="images/chaosheng.png" width="265px">
+							<div class="z2conw1">当我们朝圣时，我们在朝圣什么</div>
+							<div class="z2conw2">当我们走在朝圣的路上，我们在走向通往内心的自由之路</div>
+						</div>
+					</div>
+					<div class="z3 wow fadeInLeft">
+						<div class="z3h1">
+							旅游攻略推荐<span class="z3h1s">更多</span>	<!--简明扼要的名称-->
+						</div>
+						<div class="z3con">
+								<div class="z3conp1"><img src="images/chenzhou.png" width="110px"></div>
+								<div class="z3conw">
+									<div class="z3conw1">郴州</div>
+									<div class="z3conw2">详细的吃、住、行、景点、线路、实用信息</div>
+								</div>
+						</div>
+					</div>
+					<div class="z4 y wow fadeInLeft">
+						<ul>
+							<li>
+								<a href="#">一诺</a> 点评了 崖州区的 <a href="#">三亚南山海上</a>
+							</li>
+							<li>
+								<a href="#">ludwig</a> 点评了 卡梅尔的 <a href="#">霍夫萨斯之家</a>
+							</li>
+							<li>
+								<a href="#">隔壁女生</a> 点评了 巴黎的 <a href="#">金蜗牛</a>
+							</li>
+							<li>
+								<a href="#">兔毛</a> 点评了 青山区的 <a href="#">闻酥园</a>
+							</li>
+							<li>
+								<a href="#">K~</a> 点评了 乔治敦的 <a href="#">格尼G酒店</a>
+							</li>
+						</ul>
+					</div>
+					<div class="z5">
+						<div class="z5h1 y wow fadeInLeft">
+							我的活动<span class="z5h1s"><a href="#">正在进行</a></span>
+						</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo1.png"></div>
+								<div class="z5con1w1"><a href="#">先旅奇缘</a></div>
+								<div class="z5con1w2">东风标致4008 先享新境界</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo2.png"></div>
+								<div class="z5con1w1"><a href="#">新年新旅程 抢Booking红包</a></div>
+								<div class="z5con1w2">Booking给你拜年 人人有红包</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo3.png"></div>
+								<div class="z5con1w1"><a href="#">伴我童行 玩转新加坡</a></div>
+								<div class="z5con1w2">20个带娃必TRY体验！</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo4.png"></div>
+								<div class="z5con1w1"><a href="#">Booking遇见美好时光</a></div>
+								<div class="z5con1w2">有机会开启阿姆斯特丹参观之旅</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo5.png"></div>
+								<div class="z5con1w1"><a href="#">遵义酷旅 野趣无边</a></div>
+								<div class="z5con1w2">来一场“醉”美公路骑行之旅</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo6.png"></div>
+								<div class="z5con1w1"><a href="#">自驾招募 最美中国行邀你同行</a></div>
+								<div class="z5con1w2">加入我们一起勇闯新境吧！</div>
+							</div>
+							<div class="z5con1 wow fadeInLeft">
+								<div class="z5con1p1"><img src="images/huo7.png"></div>
+								<div class="z5con1w1"><a href="#">马蜂窝拍卖行</a></div>
+								<div class="z5con1w2">每周二：拍精美实物奖品！</div>
+							</div>
+						</div>
+						<div class="z6">
+							<div class="z6h1 wow fadeInLeft">加入马蜂窝<span class="z6h1s">更多职位></span></div>
+							<div class="z6con1p1 wow fadeInLeft"><img src="images/hai.png" width="265px"></div>
+							<div class="z6con1w1 wow fadeInLeft">
+								广告销售经理<img src="images/hot.png" height="14px"><span class="z6con1w1s"><a href="#">申请职位></a></span>
+							</div>
+							<div class="z6con1w1 wow fadeInLeft">
+								资深PHP开发工程师<img src="images/hot.png" height="14px"><span class="z6con1w1s"><a href="#">申请职位></a></span>
+							</div>
+						</div>
+						<div class="z7 wow fadeInLeft">
+							<div class="z7h1 wow fadeInLeft">
+								蚂蜂窝旅行网站最新进展
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+							<div class="z7con1 wow fadeInLeft">
+								10月29日 蚂蜂窝秋酷大趴完美收官＆全纪录
+							</div>
+						</div>
+					</div>
+					<div class="middle">
+						<div class="m1 wow fadeInRight">
+							<div class="m1con1">
+								<a href="#"><img src="images/guanggao.png" height="120px" width="699px"></a>
+							</div>
+						</div>
+						<div class="m2 wow fadeInRight">
+							<div class="m2h1">爆款热卖</div>
+							<div class="m2con1">
+								<ul>
+									<li class="m2li">
+										<a href="#"><img src="images/bao1.png" height="135px" width="219px"></a>
+										<div class="m2h2 y"><a href="#">北京直飞巴厘岛6-7天自由行（赠送接送机+可私人定制+可定制浪漫婚拍）</a></div>
+										<div class="price y"> <a href="#"><span class="prices">￥3899</span>起/人</a></div>
+									</li>
+									<li class="m2li">
+										<a href="#"><img src="images/bao2.png" height="135px" width="219px"></a>
+										<div class="m2h2 y"><a href="#">上海直飞香港4天3晚自由行（当地多种热门酒店可供选择）</a></div>
+										<div class="price y"> <a href="#"><span class="prices">￥1420</span>起/人</a></div>
+									</li>
+									<li class="m2li">
+										<a href="#"><img src="images/bao3.png" height="135px" width="219px"></a>
+										<div class="m2h2 y"><a href="#">广州直飞东京3-15天往返含税机票（赠日本签证+首晚酒店+日本旅游局哆啦A梦散钱包+旅游指南）</a></div>
+										<div class="price y"> <a href="#"><span class="prices">￥3399</span>起/人</a></div>
+									</li>
+								</ul>
+							</div>
+						</div>			
+					<div class="m3 clearfix">
+						<div class="m3h wow fadeInRight">
+							<div class="m3h1">
+								<a href="#">热门游记</a><div class="m3h1s"><i class="icon"><img src="images/xuan.png" height="8px"></i>筛选</div>
+							</div>
+							<div class="m3h1">
+								<a href="#">最新发表</a>	
+							</div>
+							<div class="m3h2">
+								<a href="#"><img src="images/wenh.png" height="">我要上首页</a>
+							</div>
+							<div class="m3h3">
+								<div class="m3h3s"><img src="images/xie.png" height="20px" width="21px"></div><a href="#">写游记</a>
+							</div>
+						</div>
+							<!--第一篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you1.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											 <a href="#">【Mao&Lily重游日本】放不下的动画情愫，逛不完的东京百货</a>
+										</dt>
+										<dd>
+											<a href="#">你没有被新海诚的《你的名字》感染吗？你没有被电影同款滤镜刷爆朋友圈吗？然而，追逐不是跟风，欣赏也是一种崇拜。在电影的...
+											</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">东京,by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">林爱想想</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">11636/77
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>251</em>															
+								</div>
+							</div>
+							<!--第二篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you2.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">天下多美景 抓紧去看看</a>
+										</dt>
+										<dd>
+											 <a href="#">顾少强 “世界那么大，我想去看看” 的十字辞职信，使我想起旅游达人常说的一句话：“不登山，不知山高; 不涉水，不晓水深 ; 不赏奇景，怎知其绝妙“ 。 这句来自旅游达人普通平常的话语，...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">云南,by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">快乐游侠</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">8930/1622
+										</Span>									
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>1728</em>															
+								</div>
+							</div>
+							<!--第三篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you3.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">过完除夕去拉萨-记清新晨和小伙伴的日光城惬意游</a>
+										</dt>
+										<dd>
+											 <a href="#">新年伊始，晨飞扬依旧在路上，过完除夕出行系列已是传统，或许在每个人心中都有个 西藏 梦，但梦想总是会碍于现实的种种而始终是个梦，很多人会说因为“没钱”、“没假期”、“没旅伴”、“...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">西藏,by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">陈风扬</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">32086/413
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>206</em>															
+								</div>
+							</div>
+							<!--第四篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you4.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">听见鹰送来天空的自由—西澳大利亚&乌鲁鲁</a>
+										</dt>
+										<dd>
+											<a href="#">我们驾驶着越野车 奔驰在孤岛上 这里的人们只 临海 而居 整片陆地就是一座岛屿 岛的中心被红色洗礼 充满魔力与能量 被救赎过的人 可以闻到 印度 洋和大西洋不同的味道 ——这里是 澳大利亚 ...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">澳大利亚,by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">蓦然白里小三黑</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">949/57
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>124</em>															
+								</div>
+							</div>
+							<!--第五篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you5.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">漫步北地——内蒙古  2016.7  （原创）</a>
+										</dt>
+										<dd>
+											<a href="#">出发时间/2016-07-19 出行天数/10 天 人物/四个人 人均费用/5000RMB 2012年 云南 游： 大理 、 丽江 、 香格里拉 http://www.mafengwo.cn/i/1376832.html 2013年 西北 游: 敦煌 — 张掖 — ...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">内蒙古，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">轻轻地我走了</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">5893/8
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>827</em>															
+								</div>
+							</div>
+							<!--第六篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you6.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">泰好玩 泰国芭提雅、曼谷</a>
+										</dt>
+										<dd> 
+											<a href="#">差不多是一年前，刚刚接触到亚航，刚好遇上大促。于是某个夜黑风高的晚上，一个冲动定下了一年之后广州——曼谷——新加坡——吉隆坡——广州的四程机票。 一年前的约定，略带些残忍，却也...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">泰国，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">crystal878</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">102926/378
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>21834</em>															
+								</div>
+							</div>
+							<!--第七篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you7.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">邵小仙与罗小贱的海誓山盟之旅：沉醉在蓝白相间的爱琴海；徒...</a>
+										</dt>
+										<dd>
+											 <a href="#">罗小贱Oba： 高情商、高智商的双鱼男，语言能力超强，知识渊博却笑点极低；去 希腊 时总能滔滔不绝的给媳妇儿详细讲解 希腊 众多神将及故事，自称：科学小骚年 ；接受和学习新鲜事物很快，...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">欧洲，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">大圆儿cc</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">1218/10
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>42</em>															
+								</div>
+							</div>
+							<!--第八篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you8.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">彩虹之国—南非</a>
+										</dt>
+										<dd>
+											<a href="#"> 二0一一年四月十日，开始了四飞八天的南非之旅，下午三点从广州出发，乘车到深圳蛇口，再乘船到香港机场，深夜12点搭乘南非航空SA287航班，经过13个小时的飞行，于当地时间早上7点左右抵达...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y wow fadeInRight">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">南非，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">就爱游</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">54880/405
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>20729</em>															
+								</div>
+							</div>
+							<!--第九篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you9.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">🎈那年夏天一起的我们，拖着行李箱Let's go   嘎嘎嘎  我们来...</a>
+										</dt>
+										<dd> 
+											<a href="#">从春节就和闺蜜计划好的海岛游因为各种原因一直拖到了7月才出发。 在各个海岛中各种纠结最后在马代和塞班中选择了后者。两个字：开心。 我们了解到的信息是从国内出发直达塞班的航班只有包机...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y wow fadeInRight">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">塞班岛，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">情牵两人心</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">22462/88
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>83289</em>															
+								</div>
+							</div>
+							<!--第十篇-->
+							<div class="m3con1 wow fadeInRight">
+								<div class="m3con1p1">
+									<img src="images/you10.png" height="149px" width="220px">
+								</div>
+								<div class="m3con1w">
+									<dl>
+										<dt>
+											<a href="#">【14年の友谊纪念】澳~门~三~日~小~游</a>
+										</dt>
+										<dd>
+											 <a href="#">由于工作的原因，赶来 香港 参加展会，恰好展会结束就是周末，在得到领导的允许下，延后了回程的机票，再一次造访仅相见了一天的 澳门 。大家都说 澳门 非常的小，一天的时间就足够了，上次...</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="extra y">
+										<span class="wei"><img src="images/wei.png" width="16px" height="18px">澳门，by</span>
+										<span class="tou">
+											<img src="images/tou.png" width="18px" height="19px"><a href="#">小鱼儿酱</a>
+										</span>
+										<Span class="yan">
+											<img src="images/yan.png" width="20px" height="17px">416/5
+										</Span>
+										
+										<span class="ding">
+											<a href="#"><img src="images/ding.png" width="38px" height="35px"></a>
+										</span>
+										<em>29</em>															
+								</div>
+							</div>
+						</div>					
+						<div class="m4 wow fadeInRight">
+							<div class="m4con">
+								<div class="m4con1">
+									共250页/3000条
+								</div>
+								<div class="p0"><a href="#">1</a></div>
+								<div class="p1"><a href="#">2</a></div>
+								<div class="p1"><a href="#">3</a></div>
+								<div class="p1"><a href="#">4</a></div>
+								<div class="p1"><a href="#">5</a></div>
+								<div class="p1"><a href="#">6</a></div>
+								<div class="p1"><a href="#">7</a></div>
+								<div class="p1"><a href="#">8</a></div>
+								<div class="p1"><a href="#">9</a></div>
+								<div class="next"><a href="#">下一页>></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom clearfix wow fadeInUp">
+					<div class="container">
+						<div class="bottomh">
+							<div class="bottom1">
+								<div class="b1">
+									<div class="bh1 b1h1">
+										中国领先的自由行服务平台
+									</div>
+									<div class="b1con1">
+										<ul>
+											<li>覆盖全球200多个国家和地区</li>																		
+											<li><span class="y1">100,000,000</span> 位旅行者</li>
+											<li><span class="y1">920,000</span> 家国际酒店</li>
+											<li><span class="y1">21,000,000</span> 条真实点评</li>
+											<li><span class="y1">382,000,000</span> 次攻略下载</li>
+											<li><span class="y"><a href="#">中国旅游行业第一部“玩法”</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="b2">
+									<div class="bh1 b2h1">
+										关于我们
+									</div>
+									<div class="b2con1">
+										<ul>
+											<li class="b2con1l"><a href="#">关于蚂蜂窝</a></li>
+											<li class="b2con1l"><a href="#">网络信息侵权通知指引</a></li>
+											<li class="b2con1l"><a href="#">隐私政策</a></li>
+											<li class="b2con1l"><a href="#">服务协议</a></li>
+											<li class="b2con1l"><a href="#">联系我们</a></li>
+											<li class="b2con2l y"><a href="#">加入蚂蜂窝</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="b3">
+									<div class="bh1 b3h1">旅行服务</div>
+									<div class="b3con1">
+										<ul>
+											<li class="b3con1l"><a href="#">旅游攻略</a></li>
+											<li class="b3con1l"><a href="#">酒店预订</a></li>
+											<li class="b3con1l"><a href="#">旅游特价</a></li>
+											<li class="b3con1l"><a href="#">国际租车</a></li>
+											<li class="b3con1l"><a href="#">旅游问答</a></li>
+											<li class="b3con1l"><a href="#">旅游保险</a></li>
+											<li class="b3con1l"><a href="#">旅游指南</a></li>
+											<li class="b3con1l"><a href="#">订火车票</a></li>
+											<li class="b3con1l"><a href="#">旅游资讯</a></li>
+											<li class="b3con1l"><a href="#">APP下载</a></li>
+											<div class="b3con1b y"><a href="#">全球供应商入驻</a></div>
+										</ul>
+									</div>
+								</div>
+								<div class="b4">
+									<div class="b4con1">
+										<span class="ma1"><img src="images/ma1.png"></span>
+										<div class="b4con1w1">蚂蜂窝自由行<br/>官方订阅号</div>
+									</div>
+									<div class="b4con1">
+										<span class="ma2"><img src="images/ma2.png"></span>
+										<div class="b4con1w1">蚂蜂窝良品<br/>官方服务号</div>
+									</div>
+								</div>
+							</div>
+							<div class="bottom2">
+								<div class="container1">	
+									<dl>
+										<dt>
+											<a href="#">关注我们</a>
+										</dt>
+										<dd>
+											<div class="bo2dcon">
+											<a href="#">
+												<div class="bo2d weibo">
+													<img src="images/weibo1.png" height="30px" width="30px">
+												</div>
+											</a>
+											<a href="#">
+												<div class="bo2d tengxun">
+													<img src="images/tengxun.png" height="30px" width="30px">
+												</div>
+											</a>
+											<a href="#">
+												<div class="bo2d QQkj">
+													<img src="images/QQkj.png" height="30px" width="30px">
+												</div>
+											</a>
+										</dd>
+									</dl>
+								</div>	
+							</div>
+						</div>
+							<div class="bottom3">
+								<div class="bo3">
+									<img src="images/bottom3.png">
+								</div>
+							</div>
+							<div class="bottom4 copyright">
+								<div class="bot4p1"><a href="#"><img src="images/footicon.png"></a></div>
+								<p>© 2017 Mafengwo.cn 京ICP备11015476号 京公网安备110105013401号 京ICP证110318号</p>
+								<p>营业执照 新出网证(京)字242号 全国统一客服电话：<i class="y1" style="font-style:normal">4006-345-678 </i><span class="y"><a href="#"> 网站地图</a></span></p>
+								<div class="footer">
+									<div class="footerp1">
+										<a href="#"><img src="images/footer1.png"></a>
+									</div>
+									<div class="footerp1">
+										<a href="#"><img src="images/footer2.png"></a>
+									</div>
+									<div class="footerp1">
+										<a href="#"><img src="images/footer3.png"></a>
+									</div>
+								</div>	
+							</div>
+					</div>
+				</div>
+				<div class="toolbar wow fadeIn">
+						<div class="btn shang" onclick="pageScroll()" ><img src="images/shang.png" >返回顶部</div>
+ 						<div class="btn bi"><img src="images/bi.png">意见反馈</div>
+						<div class="btn ma">
+							<div class="erweima"><img src="images/erweima.jpeg"></div>
+						</div>
+						
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript">
+	new WOW().init();
+</script>
+</html>

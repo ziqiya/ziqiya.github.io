@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/upload_list.css">
+    <link rel="stylesheet" href="css/upload.css">
+	<title>发送名单</title>
+	<style>
+	/*用于调试*/
+	/*	.add_btn{		
+			width:50px;
+			height: 50px;
+			border-radius: 90px;
+			text-align: center;
+			line-height: 50px;
+			float: left;
+			background: #000;
+			color: #fff;
+		}*/
+	</style>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<a  href='#' onClick="javascript :window.history.go(-1);" class="back_icon"><img src="images/upload_03.png" alt=""></a>发送名单
+	</div>
+	<div class="content">
+		<div class="send_word">
+			<i class="upload_icon"><img src="images/send_list_03.png" alt=""></i>	名单正在发送中，请耐心等待(<span class="progress1">0</span>/10)			
+		</div>
+		 <div class="progress" id="progress">
+			<div class="progress-bar" style="width:0%" onchange="change()"><span></span></div>
+			<div class="progress_num"><span class="num" id="num">0</span>%</div>		
+		</div>
+		 <!-- <div class="add_btn">+</div>  --><!-- 调试专用 -->
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var progress=document.getElementById("progress");		
+		$('.num').bind('DOMNodeInserted', function(e) {
+			var progress=document.getElementById("progress");	
+			var width=$('.progress').width();
+			var left=progress.offsetLeft;
+			var progress1=$(this).text()/10;
+		    var width1 = $(this).text(); //获得自身宽度 
+		    var per = $(this).text()+'%';
+		    var move=width1*width/100+left/10;
+			if ($(this).text()>100) {
+				// 完成时要执行的函数
+			}
+			else{			
+			    $('.progress-bar').css('width', per);	
+			    $('.progress_num').offset({top:220,left:move});
+			    $('.progress1').text(progress1);
+			}	
+		});
+		$('.progress_num').offset({top:220,left:0});	
+	})
+	// $('.add_btn').click(function(event) {	//按下加10%,调试用
+	// 	var txt=parseFloat($(".num").text())+10;
+	// 	$('.num').text(txt);
+	// });
+
+	</script>
+</body>
+</html>

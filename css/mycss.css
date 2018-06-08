@@ -14,6 +14,10 @@
 		height: 100%;
 		width: 100%;
 	}
+	.red{
+		color: red;
+		font-style: normal;
+	}
 	dt {
 	    font-weight: 700;
 	    color: #9dae30;

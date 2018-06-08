@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/upload_list.css">
+    <link rel="stylesheet" href="css/bill_payee.css">
+    <link rel="stylesheet" href="css/combine_list.css">
+	<title>合并名单</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<a  href='#' onClick="javascript :window.history.go(-1);" class="back_icon"><img src="images/upload_03.png" alt=""></a>合并名单	
+	</div>
+	<div class="content1 clearfix">
+		<div class="payee_list clearfix">
+			<div class="payee_li">
+				<div class="payee_name_li">
+					<span class="payee_name">团号</span>
+					<div class="group_num">
+						15212421
+					</div>			
+				</div>	
+				<div class="payee_info people_list">
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客1</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客2</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客3</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_05.png" alt=""></i><span>12334556</span></div><!-- 无效的 -->
+					</div>
+				</div>	
+			</div>
+			<div class="payee_li">
+				<div class="payee_name_li">
+					<span class="payee_name">团号</span>
+					<div class="group_num">
+						15212421
+					</div>			
+				</div>	
+				<div class="payee_info people_list">
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客1</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客2</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客3</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_05.png" alt=""></i><span>12334556</span></div><!-- 无效的 -->
+					</div>
+				</div>	
+			</div>
+			<div class="payee_li">
+				<div class="payee_name_li">
+					<span class="payee_name">团号</span>
+					<div class="group_num">
+						15212421
+					</div>			
+				</div>	
+				<div class="payee_info people_list">
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客1</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客2</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_03.png" alt=""></i><span>12334556</span></div><!-- 有效的 -->
+					</div>
+					<div class="person_info">
+						<div class="payee_info_li people_info_list">姓名 <span>游客3</span></div>
+						<div class="payee_info_li people_info_list1">护照编号<i><img src="images/combine_list_05.png" alt=""></i><span>12334556</span></div><!-- 无效的 -->
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="submit_btn_wrap">
+		<input type="button" value="确认选择" class="submit_btn">
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$('.payee_name_li').click(function() {
+			$(this).next().slideToggle();
+			if ($(this).hasClass('top')) {
+			$(this).removeClass('top').find('.down_icon img').attr('src',"images/search_store_03.png"); 	
+			}
+			else {
+			$(this).addClass('top').find('.down_icon img').attr('src',"images/bill_payee_07.png"); 
+		};
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后端页面</title>
+	<style>
+		*{
+			padding:0;
+			margin: 0;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			color: #003a75;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		.navbar{
+			background:#509fe1; 
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+		}
+		.sider{
+			width: 20%;
+			float: left;
+			height: 700px;
+			padding: 10px;
+			border: 1px solid #509fe1;
+		}
+		.article{
+			width: 76%;
+			float: right;
+			padding: 10px;
+		}
+		li{
+			width: 100%;
+			border-bottom:1px solid #747474;
+			text-align: center;
+			padding-bottom:10px;
+			margin-bottom: 20px;
+		}
+		.meetingroom_info{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="navbar">
+		后端页面
+	</div>
+	<div class="sider">
+		<ul class="nav">
+			<li>员工信息</li>
+			<li>会议室信息</li>
+		</ul>
+	</div>
+	<div class="article">
+		<div class="worker_info">
+			<ul>
+				<li><details><summary>员工1</summary><p>性别：男 职位：XXX</p></details></li>
+				<li><details><summary>员工2</summary><p>性别：男 职位：XXX</p></details></li>
+				<li><details><summary>员工3</summary><p>性别：男 职位：XXX</p></details></li>
+			</ul>
+		</div>
+		<div class="meetingroom_info">
+			<ul>
+				<li><details><summary>会议室1</summary><p>地点：XXX 大小：XXX</p></details></li>
+				<li><details><summary>会议室2</summary><p>地点：XXX 大小：XXX</p></details></li>
+				<li><details><summary>会议室3</summary><p>地点：XXX 大小：XXX</p></details></li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$('.nav li').click(function(){ 
+			index = $(this).index();		//index后面一定要有()
+		 	$('.article div').eq(index).show().siblings().hide();
+		})	
+	</script>
+</body>
+</html>

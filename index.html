@@ -55,22 +55,43 @@
 						<li class="list-group-item sub-html sub-list-group">HTML标签</li>
 						<li class="list-group-item sub-html sub-list-group">HTML属性</li>
 						<li class="list-group-item sub-html sub-list-group">HTML5新特性</li>
-						<li class="list-group-item sub-html sub-list-group">前端面试题汇总</li>
+						<li class="list-group-item sub-html sub-list-group">Bootstrap</li>
+						<li class="list-group-item sub-html sub-list-group">前端面试题汇总</li>					
 						<li class="list-group-item css">CSS</li>
 						<li class="list-group-item sub-css sub-list-group">CSS语法</li>
 						<li class="list-group-item sub-css sub-list-group">CSS选择器</li>
+						<li class="list-group-item sub-css sub-list-group">表格(table)</li>
 						<li class="list-group-item sub-css sub-list-group">盒子模型</li>
 						<li class="list-group-item sub-css sub-list-group">元素分类</li>
 						<li class="list-group-item sub-css sub-list-group">3d翻转(css)</li>
 						<li class="list-group-item sub-css sub-list-group">animation属性</li>
+						<li class="list-group-item sub-css sub-list-group">button外光圈效果</li>
+						<li class="list-group-item sub-css sub-list-group">居中(flex弹性盒)</li>
+						<li class="list-group-item sub-css sub-list-group">details(summary)</li>
 						<li class="list-group-item js">JS</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型</li>
 						<li class="list-group-item sub-js sub-list-group">JS数据类型转换</li>
 						<li class="list-group-item sub-js sub-list-group">h5触屏事件(touch)</li>
 						<li class="list-group-item sub-js sub-list-group">3d翻转(js)</li>
 						<li class="list-group-item sub-js sub-list-group">ajax</li>
-						<li class="list-group-item kj">前端框架</li>
-						<li class="list-group-item sub-kj sub-list-group">Bootstrap</li>
+						<li class="list-group-item sub-js sub-list-group">canvas</li>
+						<li class="list-group-item sub-js sub-list-group">Jcrop</li>
+						<li class="list-group-item pro">我的作品</li>
+						<li class="list-group-item sub-pro sub-list-group">阿里互联人官网</li>
+						<li class="list-group-item sub-pro sub-list-group">卓众知识产权官网</li>						
+						<li class="list-group-item sub-pro sub-list-group">扬帆公司官网</li>
+						<li class="list-group-item sub-pro sub-list-group">象山民宿官网</li>
+						<li class="list-group-item sub-pro sub-list-group">唯美壁纸</li>
+						<li class="list-group-item sub-pro sub-list-group">阿狸子后台系统</li>
+						<li class="list-group-item sub-pro sub-list-group">趣开店微商城</li>
+						<li class="list-group-item sub-pro sub-list-group">西班牙旅游项目</li>
+						<li class="list-group-item sub-pro sub-list-group">马蜂窝首页</li>
+						<li class="list-group-item sub-pro sub-list-group">京东商城首页</li>
+						<li class="list-group-item sub-pro sub-list-group">搜礼网退货页面</li>
+						<li class="list-group-item sub-pro sub-list-group">课时口算APP宣传页</li>
+						<li class="list-group-item sub-pro sub-list-group">洛阳理工学院官网</li>
+						<li class="list-group-item sub-pro sub-list-group">会议系统</li>
+						<li class="list-group-item sub-pro sub-list-group">景区旅游项目</li>
 					</ul>
 				</div>
 			</div>
@@ -600,6 +621,232 @@
 			</article>
 
 			<!-- HTML5新特性 end-->
+			<!-- *Bootstrap -->
+			<article class="content-box-panel">
+				<h2>Bootstrap</h2>
+				<h3>Bootstrap应用例子</h3>
+				<section class="biaodan col-md-4 wow fadeInLeft">
+					<div class="panel panel-default biaodan">
+						<div class="panel-heading">
+							表单
+						</div>
+						<div class="panel-body">
+							<!-- <div class="form-group"></div> action?-->
+							<div class="labels">
+								<ul class="labels1">
+									<li><img src="images/loading.gif" alt=""></li>
+									<li><label for="username">用户名：</label></li>
+									<li><label for="password">密码：</label></li>
+									<li><label for="country">国家列表：</label></li>
+									<li><label for="number">数字：</label></li>
+									<li><label for="range">范围：</label></li>
+									<li><label for="color">颜色：</label></li>
+									<li><label for="date">日期：</label></li>
+									<li><label for="localtime">当地时间：</label></li>
+									<li><label for="email">邮箱：</label></li>
+									<li><label for="url">url: </label></li>
+									<li><label for="search">search: </label></li>
+									<li><label for="tel">telphone: </label></li>
+									<li><label for="time">time: </label></li>
+									<li><label for="touxiang">头像：</label></li>
+								</ul>
+							</div>
+							<div class="inputs">
+								<form action="?" method="post" oninput="x.value=parseInt(range.value)" id="review">
+									<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+									<input placeholder="请输入密码" name="password"  id="password" type="password">
+									<input list="Country" id="country">
+									<datalist id="Country">
+									<option value="India"></option>
+									<option value="Italy"></option>
+									<option value="Iran"></option>
+									<option value="Israel"></option>
+									<option value="Indonesia"></option>
+									</datalist>					
+										<input type="number" min="1" max="5" id="number">
+									<br>						
+										<input type="range" min="1" max="20" step="1" value="10" id="range"><!-- <output id="x">10</output> 为什么不同行?-->											
+										<input type="color" id="color">
+									<br>			
+										<input type="date" id="date">
+									<br>
+										<input type="datetime-local" id="localtime">
+									<br>
+										<input type="email" id="email">
+									<br>
+										<input type="url" id="url">
+									<br>
+										<input type="search" id="search">
+									<br>
+										<input type="tel" id="tel">
+									<br>
+									<input type="time" name="time">
+									<br>
+									<input type="file" name="file" accept="images/.jpg,images/.png" multiple="">
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="font col-md-4 wow fadeInUp">
+					<div class="panel panel-default font1">
+						<div class="panel-heading">
+							字体大全
+						</div>
+						<div class="panel-body">
+							<h1>h1是一个标题<small>small是一个副标题</small></h1>
+							<pre>pre是带边框的文本，成父级100%的block</pre>
+							<em>em也是斜体</em>
+							<mark>mark是标记</mark>>
+							<small>small是一个副标题</small>
+							<p class="lead">class="lead"是一个突出的文本</p>
+							<p class="text-uppercase">text-uppercase全部大写</p>
+							<p class="text-lowercase">text-lowercase全部大写</p>
+							<p class="text-capitalize">text-capitalize开头大写</p>
+							<del>del是删除</del>
+							<u>u是下划线</u>
+							<s>s为无用</s>
+							<ins>ins也是下划线，为插入的文字</ins>
+							<code>code代表代码，粉底</code>
+							<kbd>kbd是深灰色底的文本</kbd>
+							<pre>pre是带边框的文本，成父级100%的block</pre>
+							<em>em也是斜体</em>
+							<mark>mark是标记</mark>
+							<b>b是粗体</b>
+							<strong>strong也是粗体</strong>
+							<i>i也是斜体</i>
+							<abbr title="中华人民共和国">中国</abbr>
+							<cite>cite表引用，斜体</cite>
+							<blockquote>blockquote是文章导读，引用，用于文章导读左边有一条
+								<footer>footer左边有横杠</footer>
+								<small>small左边有横杠</small>
+							</blockquote>
+							<blockquote class="blockquote-reverse"><!-- class=“blockquote-reverse”小条在右边 -->
+								<footer>footer，反向右边有横杠</footer>
+								<small>small，反向右边有横杠</small>
+							</blockquote>
+							<address>address为地址
+								<abbr title="河南科技大学开元校区">河南科技大学</abbr>
+							</address>
+						</div>
+					</div>
+				</section>
+				<section class="buttons col-md-4 wow fadeInRight">
+					<div class="panel panel-default buttons1">
+						<div class="panel-heading">
+							按钮
+						</div>
+						<div class="panel-body">
+							<button class="btn btn-default">default</button>
+							<button class="btn btn-default btn-block">default</button>	<!-- btn-block占整排 -->
+							<a href="#" class="btn btn-primary">primary</a>
+							<input type="submit" class="btn btn-danger btn-xs">	<!-- btn-xs为小号按钮 -->
+							<button class="btn btn-success btn-sm">success</button>	<!-- btn-sm为略小按钮 -->
+							<button class="btn btn-info btn-lg">info</button>	<!-- btn-xs为大号按钮 -->
+							<button class="btn btn-link">link</button>	<!-- link按钮无边框 -->
+							<div class="btn-group btn-group-vertical">
+								<button class="btn btn-primary">1</button>
+								<button class="btn btn-danger">2</button>
+								<button class="btn btn-info">3</button>
+								<button class="btn btn-warning">4</button>
+							</div>
+							<div class="btn-group">
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span></button>
+								<button class="btn btn-primary btn-lg radius"><span class="glyphicon glyphicon-play"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-pause"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span></button>
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
+							</div>
+							<div class="btn-group">	<!-- dropup往上拉 -->
+								<button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span></button>
+								<a href="#" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">primary<span class="caret"></span></a>
+								<ul class="dropdown-menu dropdown-menu-right">	<!-- dropdown-menu-right使菜单右对齐 -->
+									<li class="dropdown-header">第一类</li>
+									<li><a href="#" class="text-center">1</a></li>
+									<li><a href="#" class="text-center">2</a></li>
+									<li><a href="#" class="text-center">3</a></li>
+									<li class="divider">分割线</li>
+									<li class="dropdown-header">第二类</li>
+									<li><a href="#" class="text-center">1</a></li>
+									<li><a href="#" class="text-center">2</a></li>
+									<li><a href="#" class="text-center">3</a></li>
+								</ul>
+								<!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">primary<span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+								</ul> 只能一个dropdown-->
+							</div>
+							<!-- 列表按钮组 -->
+							<div class="list-group">
+								<a href="#" class="list-group-head">新闻</a>
+								<a href="#" class="list-group-item active">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+								<a href="#" class="list-group-item">新闻快讯</a>
+							</div>
+							modal:<div class="btn btn-default" data-toggle="modal" data-target="#myModal">注册</div>
+							<div class="modal fade" id="myModal">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-heading text-center">
+											<div class="head1">用户注册</div>
+										</div>
+										<div class="modal-body center-block">
+											<div class="labels1">
+												<ul>
+													<li><label for="">请输入用户名：</label></li>
+													<li><label for="">请输入密码：</label></li>
+												</ul>
+											</div>
+											<form action="?" method="post" id="register">
+												<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
+												<br>
+												<input placeholder="请输入密码" name="password"  id="password" type="password">
+											</form>
+										</div>
+										<div class="modal-footer">
+											已有账号？请<a href="">登录</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="tables col-md-3">
+					<div class="panel panel-defautlt">
+						<div class="panel-heading">表格</div>
+						<div class="panel-body"><div class="table-responsible">
+							<table  class="table table-bordered table-striped table-hover table-condensed">	
+							<!-- table-condensed紧凑型 	table-hover划过变灰  table-striped斑马线  table-bordered有边框	 -->
+								<tr>
+									<td>姓名</td>
+									<td>Michael</td>		
+									<td>年龄</td>
+									<td>22</td>
+								</tr>
+								<tr>
+									<td>学历</td>
+									<td>本科</td>
+									<td>专业</td>
+									<td>电子信息</td>
+								</tr>
+								<tr>
+									<td>手机</td>
+									<td>15712696957</td>
+									<td>QQ</td>
+									<td>920595664</td>
+								</tr>
+							</table>
+						</div>
+						</div>
+					</div>
+				</section>
+			</article>
+			<!-- bootstrap end-->
 			<!-- *前端面试题汇总 -->
 			<article class="content-box-panel">			
 				<h2 class="panel-heading">前端面试题汇总</h2>
@@ -1160,6 +1407,100 @@
 					</tbody></table>
 			</article>
 			<!-- CSS选择器 end-->
+			<!-- *表格(table) -->
+			<article class="content-box-panel">
+				<h2>表格(table)</h2>
+				<p>简单的table会包含tr,td,th.更复杂一点有thead,tbody,tfoot内容下载完可以优先显示
+				tr 元素定义表格行，th 元素定义表头，td 元素定义表格单元。这里面的th其实是td的升级版，表示表头单元，而外面包的也是tr。<br>
+				如：
+				</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							表格1
+						</div>
+						<div class="panel-body">
+							<xmp>
+	<table border="1">
+	  <tr>
+	    <th>姓名</th>
+	    <th>电话</th>
+	  </tr>
+	  <tr>
+	    <td>张三</td>
+	    <td>1234</td>
+	  </tr>
+	</table>
+							</xmp>
+					</div>
+	<table border="1">
+	  <tr>
+	    <th>姓名</th>
+	    <th>电话</th>
+	  </tr>
+	  <tr>
+	    <td>张三</td>
+	    <td>1234</td>
+	  </tr>
+	</table>
+	</div>
+				<hr>
+				<p>这是最简单的一张表，html会默认给th，font-weight: bold;粗体样式。
+如果再升级一下就成了这样：</p>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							表格1
+						</div>
+						<div class="panel-body">
+							<xmp>
+	<table border="1">
+	<thead>
+	  <tr>
+	    <th>姓名</th>
+	    <th>电话</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+	    <td>张三</td>
+	    <td>1234</td>
+	  </tr>
+	</tbody>
+	</table>
+							</xmp>
+						</div>
+	<table border="1">
+	<thead>
+	  <tr>
+	    <th>姓名</th>
+	    <th>电话</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+	    <td>张三</td>
+	    <td>1234</td>
+	  </tr>
+	</tbody>
+	</table>
+						</div>
+				<p>里面的thead表示表头区域，tbody表示内容区域，如果有tfoot就是表尾区域。不过一般不用tfoot。</p>
+				<h3>table的属性:</h3>
+				<p>cellspacing：每个格子大小,为2时是标准大小。</p>
+				<p>cellpadding：字与单元边框边距 。</p>
+				<p>border-spacing:单元格内框与外框边距，当为0时重合。</p>
+				<p>td/th的属性:</p>
+				<p>clospan=“2”：合并两列。</p>
+				<p>rowspan=“3”：合并三行。</p>
+				<p>还可以给table,td,th定义边框border样式border-style，border-color</p>
+				<p>border-style:dotted solid double dashed;</p>
+				<h3>样式：</h3>
+				<p>上边框是点状</p>
+				<p>右边框是实线</p>
+				<p>下边框是双线</p>
+				<p>左边框是虚线</p>
+				<p>border属性可以直接包括以上宽度,border-style和border-color。</p>
+			</article>
+			<!-- 表格(table) end-->
 			<!-- *盒子模型 -->
 			<article class="content-box-panel">
 				<h2>盒子模型</h2>
@@ -1292,6 +1633,54 @@ cubic-bezier(n,n,n,n)	在 cubic-bezier(贝塞尔曲线) 函数中定义自己的
 				<p><a href="css_project/animation/animation.html">点我跳转实例</a></p>
 			</article>
 			<!-- animation属性 end-->
+			<!-- *button外光圈效果 -->
+			<article class="content-box-panel">
+				<h2>button外光圈效果</h2>
+				<p>本例子用的是css的hover效果配合贝塞尔曲线的外光圈按钮样式，看起来效果不错</p>
+				<hr>
+				<p><a href="css_project/buton_style/button.html">点我跳转实例</a></p>
+			</article>
+			<!-- *button外光圈效果 end-->
+			<!-- *居中(flex弹性盒)-->
+			<article class="content-box-panel">
+				<h2>居中(flex弹性盒)</h2>
+				<p>当要实现居中的li的时候，对li加float样式虽然可以并排显示li，但是就会脱离文本流，而且样式不居中，就需要加margin来调，很麻烦。<br>现在有两种方法推荐给大家：</p>
+				<hr>
+				<ul>
+					<li> ①inline-block:给li加CSS属性样式display: inline-block;再给ul加text-align:center就可以让li居中并排显示，还可以控制间距。</li>
+					<li>②flex盒模型：这个是最新的技术方法，就是先给ul加CSS属性样式:display: flex;justify-content:center;也能实现li居中并排显示。</li>
+				</ul>
+				<hr>
+				以下是大神的链接:<br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">flex</a>					
+			</article>
+			<!-- *居中(flex弹性盒) end-->
+			<!-- *details(summary)-->
+			<article class="content-box-panel">
+				<h2>details(summary)</h2>
+				<p>details标签是 HTML 5 中的新标签。但是兼容性有点差，只有chrome和Safari 6 支持details标签。</p>
+				<p>details 标签用于描述文档或文档某个部分的细节。</p>
+				<hr>
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							基本格式
+						</div>
+						<div class="panel-body">
+							<pre>
+								<xmp>
+	<details>
+	<summary>Copyright 2011.</summary>
+	<p>All pages and graphics on this web site are the property of W3School.</p>
+	</details>
+								</xmp>
+
+							</pre>
+						</div>
+					</div>
+				<hr>
+				<a href="css_project/details/index.html">点我跳转实例(笑)</a>					
+			</article>
+			<!-- *details(summary) end-->
+			
 			<!-- *JS -->
 			<article class="content-box-panel">
 				<h2>JS</h2>
@@ -1622,243 +2011,224 @@ cubic-bezier(n,n,n,n)	在 cubic-bezier(贝塞尔曲线) 函数中定义自己的
 				<hr>
 				<p><a href="js_project/ajax/ajax.html" target="_blank">点我跳转实例</a></p>			
 			</article>
-			<!-- 3d翻转(js) end-->
-			<!-- *前端框架 -->
+			<!-- ajax end-->
+			<!-- *canvas -->
 			<article class="content-box-panel">
-				<h2>前端框架</h2>
+				<h2>canvas</h2>
 				<p>
-					比较常用的框架有Bootstrap、AUI、Amaze UI、Frozen UI、WeUi、SUI、MUI、Semantic UI、Foundation、UiKit、Pure.
+					canvas标签定义图形，比如图表和其他图像。
+				</p>
+				<p>
+					canvas标签只是图形容器，您必须使用脚本来绘制图形。	
+				</p>				
+				<hr>
+				<p>以下是我的canvas实例：</p>
+				<p><a href="js_project/canvas/dingdangm.html" target="_blank">哆啦A梦</a></p>
+				<p><a href="js_project/canvas/baiyun.html">蓝天白云</a></p>			
+			</article>
+			<!-- canvas end-->
+			<!-- *Jcrop -->
+			<article class="content-box-panel">
+				<h2>Jcrop</h2>
+				<p>
+					Jcrop 是一个功能强大的 jQuery 图像裁剪插件，结合后端程序（例如：PHP）可以快速的实现图片裁剪的功能。
+				</p>
+				<p>
+					以下是使用该插件的具体方法：<a href="http://code.ciaoca.com/jquery/jcrop/" target="_blank">Jcrop使用方法</a>
+				</p>				
+				<hr>
+				<p>以下是Jcrop实例：<a href="js_project/Jcrop/Jcrop.html" target="_blank">点我跳转实例</a></p>
+					
+			</article>
+			<!-- Jcrop end-->
+			<!-- *我的作品 -->
+			<article class="content-box-panel">
+				<h2>我的作品</h2>
+				<p>
+					我做过很多实战项目，平时也会做一些仿站，以下是我的一些作品展示~
+				</p>			
+			</article>
+			<!-- 我的作品 end -->
+			<!-- *阿里互联人官网 -->
+			<article class="content-box-panel">
+				<h2>阿里互联人官网</h2>
+				<p>
+					这个是阿里互联人官网的切图项目，用了bootstrap框架,动态样式还不错的
 				</p>
 				<hr>
-				<p>以下将逐一对他们进行分析和样式实现</p>			
+				<p><a href="projects/alihulianren/index.html">点我跳转实例</a></p>
 			</article>
-			<!-- 前端框架 end -->
-			<!-- *Bootstrap -->
+			<!-- 阿里互联人官网 end-->
+			<!-- *卓众知识产权官网 -->
 			<article class="content-box-panel">
-				<h2>Bootstrap</h2>
-				<h3>Bootstrap应用例子</h3>
-				<section class="biaodan col-md-4 wow fadeInLeft">
-					<div class="panel panel-default biaodan">
-						<div class="panel-heading">
-							表单
-						</div>
-						<div class="panel-body">
-							<!-- <div class="form-group"></div> action?-->
-							<div class="labels">
-								<ul class="labels1">
-									<li><img src="images/loading.gif" alt=""></li>
-									<li><label for="username">用户名：</label></li>
-									<li><label for="password">密码：</label></li>
-									<li><label for="country">国家列表：</label></li>
-									<li><label for="number">数字：</label></li>
-									<li><label for="range">范围：</label></li>
-									<li><label for="color">颜色：</label></li>
-									<li><label for="date">日期：</label></li>
-									<li><label for="localtime">当地时间：</label></li>
-									<li><label for="email">邮箱：</label></li>
-									<li><label for="url">url: </label></li>
-									<li><label for="search">search: </label></li>
-									<li><label for="tel">telphone: </label></li>
-									<li><label for="time">time: </label></li>
-									<li><label for="touxiang">头像：</label></li>
-								</ul>
-							</div>
-							<div class="inputs">
-								<form action="?" method="post" oninput="x.value=parseInt(range.value)" id="review">
-									<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
-									<input placeholder="请输入密码" name="password"  id="password" type="password">
-									<input list="Country" id="country">
-									<datalist id="Country">
-									<option value="India"></option>
-									<option value="Italy"></option>
-									<option value="Iran"></option>
-									<option value="Israel"></option>
-									<option value="Indonesia"></option>
-									</datalist>					
-										<input type="number" min="1" max="5" id="number">
-									<br>						
-										<input type="range" min="1" max="20" step="1" value="10" id="range"><!-- <output id="x">10</output> 为什么不同行?-->											
-										<input type="color" id="color">
-									<br>			
-										<input type="date" id="date">
-									<br>
-										<input type="datetime-local" id="localtime">
-									<br>
-										<input type="email" id="email">
-									<br>
-										<input type="url" id="url">
-									<br>
-										<input type="search" id="search">
-									<br>
-										<input type="tel" id="tel">
-									<br>
-									<input type="time" name="time">
-									<br>
-									<input type="file" name="file" accept="images/.jpg,images/.png" multiple="">
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="font col-md-4 wow fadeInUp">
-					<div class="panel panel-default font1">
-						<div class="panel-heading">
-							字体大全
-						</div>
-						<div class="panel-body">
-							<h1>h1是一个标题<small>small是一个副标题</small></h1>
-							<pre>pre是带边框的文本，成父级100%的block</pre>
-							<em>em也是斜体</em>
-							<mark>mark是标记</mark>>
-							<small>small是一个副标题</small>
-							<p class="lead">class="lead"是一个突出的文本</p>
-							<p class="text-uppercase">text-uppercase全部大写</p>
-							<p class="text-lowercase">text-lowercase全部大写</p>
-							<p class="text-capitalize">text-capitalize开头大写</p>
-							<del>del是删除</del>
-							<u>u是下划线</u>
-							<s>s为无用</s>
-							<ins>ins也是下划线，为插入的文字</ins>
-							<code>code代表代码，粉底</code>
-							<kbd>kbd是深灰色底的文本</kbd>
-							<pre>pre是带边框的文本，成父级100%的block</pre>
-							<em>em也是斜体</em>
-							<mark>mark是标记</mark>
-							<b>b是粗体</b>
-							<strong>strong也是粗体</strong>
-							<i>i也是斜体</i>
-							<abbr title="中华人民共和国">中国</abbr>
-							<cite>cite表引用，斜体</cite>
-							<blockquote>blockquote是文章导读，引用，用于文章导读左边有一条
-								<footer>footer左边有横杠</footer>
-								<small>small左边有横杠</small>
-							</blockquote>
-							<blockquote class="blockquote-reverse"><!-- class=“blockquote-reverse”小条在右边 -->
-								<footer>footer，反向右边有横杠</footer>
-								<small>small，反向右边有横杠</small>
-							</blockquote>
-							<address>address为地址
-								<abbr title="河南科技大学开元校区">河南科技大学</abbr>
-							</address>
-						</div>
-					</div>
-				</section>
-				<section class="buttons col-md-4 wow fadeInRight">
-					<div class="panel panel-default buttons1">
-						<div class="panel-heading">
-							按钮
-						</div>
-						<div class="panel-body">
-							<button class="btn btn-default">default</button>
-							<button class="btn btn-default btn-block">default</button>	<!-- btn-block占整排 -->
-							<a href="#" class="btn btn-primary">primary</a>
-							<input type="submit" class="btn btn-danger btn-xs">	<!-- btn-xs为小号按钮 -->
-							<button class="btn btn-success btn-sm">success</button>	<!-- btn-sm为略小按钮 -->
-							<button class="btn btn-info btn-lg">info</button>	<!-- btn-xs为大号按钮 -->
-							<button class="btn btn-link">link</button>	<!-- link按钮无边框 -->
-							<div class="btn-group btn-group-vertical">
-								<button class="btn btn-primary">1</button>
-								<button class="btn btn-danger">2</button>
-								<button class="btn btn-info">3</button>
-								<button class="btn btn-warning">4</button>
-							</div>
-							<div class="btn-group">
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span></button>
-								<button class="btn btn-primary btn-lg radius"><span class="glyphicon glyphicon-play"></span></button>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-pause"></span></button>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span></button>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
-							</div>
-							<div class="btn-group">	<!-- dropup往上拉 -->
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span></button>
-								<a href="#" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">primary<span class="caret"></span></a>
-								<ul class="dropdown-menu dropdown-menu-right">	<!-- dropdown-menu-right使菜单右对齐 -->
-									<li class="dropdown-header">第一类</li>
-									<li><a href="#" class="text-center">1</a></li>
-									<li><a href="#" class="text-center">2</a></li>
-									<li><a href="#" class="text-center">3</a></li>
-									<li class="divider">分割线</li>
-									<li class="dropdown-header">第二类</li>
-									<li><a href="#" class="text-center">1</a></li>
-									<li><a href="#" class="text-center">2</a></li>
-									<li><a href="#" class="text-center">3</a></li>
-								</ul>
-								<!-- <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">primary<span class="caret"></span></button>
-								<ul class="dropdown-menu">
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-								</ul> 只能一个dropdown-->
-							</div>
-							<!-- 列表按钮组 -->
-							<div class="list-group">
-								<a href="#" class="list-group-head">新闻</a>
-								<a href="#" class="list-group-item active">新闻快讯</a>
-								<a href="#" class="list-group-item">新闻快讯</a>
-								<a href="#" class="list-group-item">新闻快讯</a>
-								<a href="#" class="list-group-item">新闻快讯</a>
-							</div>
-							modal:<div class="btn btn-default" data-toggle="modal" data-target="#myModal">注册</div>
-							<div class="modal fade" id="myModal">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-heading text-center">
-											<div class="head1">用户注册</div>
-										</div>
-										<div class="modal-body center-block">
-											<div class="labels1">
-												<ul>
-													<li><label for="">请输入用户名：</label></li>
-													<li><label for="">请输入密码：</label></li>
-												</ul>
-											</div>
-											<form action="?" method="post" id="register">
-												<input placeholder="请输入用户名" form="login" name="username" id="username" autofocus autocomplete="on" required="">
-												<br>
-												<input placeholder="请输入密码" name="password"  id="password" type="password">
-											</form>
-										</div>
-										<div class="modal-footer">
-											已有账号？请<a href="">登录</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="tables col-md-3">
-					<div class="panel panel-defautlt">
-						<div class="panel-heading">表格</div>
-						<div class="panel-body"><div class="table-responsible">
-							<table  class="table table-bordered table-striped table-hover table-condensed">	
-							<!-- table-condensed紧凑型 	table-hover划过变灰  table-striped斑马线  table-bordered有边框	 -->
-								<tr>
-									<td>姓名</td>
-									<td>Michael</td>		
-									<td>年龄</td>
-									<td>22</td>
-								</tr>
-								<tr>
-									<td>学历</td>
-									<td>本科</td>
-									<td>专业</td>
-									<td>电子信息</td>
-								</tr>
-								<tr>
-									<td>手机</td>
-									<td>15712696957</td>
-									<td>QQ</td>
-									<td>920595664</td>
-								</tr>
-							</table>
-						</div>
-						</div>
-					</div>
-				</section>
+				<h2>卓众知识产权官网</h2>
+				<p>
+					<i class="red">[实战项目]</i>这个是卓众知识产权官网项目,我负责移动端自适应和互动特效，布局和动态效果很好
+				</p>
+				<hr>
+				<p><a href="projects/zhuozhong/index.html">点我跳转实例</a></p>
 			</article>
-			<!-- bootstrap end-->
+			<!-- 卓众知识产权官网 end-->
+			<!-- *扬帆公司官网 -->
+			<article class="content-box-panel">
+				<h2>扬帆公司官网</h2>
+				<p>
+					<i class="red">[实战项目]</i>这个是扬帆公司官网项目,我负责页面的设计和全部的编写工作，总体布局大气
+				</p>
+				<hr>
+				<p><a href="projects/yangfan/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 扬帆公司官网 end-->
+			<!-- *象山民宿官网 -->
+			<article class="content-box-panel">
+				<h2>象山民宿官网</h2>
+				<p>
+					<i class="red">[实战项目]</i>这个是象山民宿项目,我负责页面的切图和全部的编写工作，实现移动端自适应，现已上线
+					<br>这是官网链接：<a href="http://xsmsw.cn">xsmsw.cn</a>
+				</p>
+				<hr>
+				<p><a href="projects/xsmsw/index.html">点我跳转静态页面</a></p>
+			</article>
+			<!-- 象山民宿官网 end-->
+			<!-- *唯美壁纸 -->
+			<article class="content-box-panel">
+				<h2>唯美壁纸</h2>
+				<p>
+					一个唯美风的动态桌面壁纸，用js效果实现，已经上传到wallpaper engine社区。
+				</p>
+				<hr>
+				<p><a href="projects/wallpaper/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 唯美壁纸 end-->
+			<!-- *阿狸子后台系统 -->
+			<article class="content-box-panel">
+				<h2>阿狸子后台系统</h2>
+				<p>
+					阿狸子后台系统页面,实战项目,负责切图和互动效果。
+				</p>
+				<hr>
+				<p><a href="projects/alizi/houtai.html">点我跳转实例</a></p>
+			</article>
+			<!-- 阿狸子后台系统 end-->
+			<!-- *趣开店微商城 -->
+			<article class="content-box-panel">
+				<h2>趣开店微商城</h2>
+				<p>
+					<i class="red">[实战项目]</i>趣开店微商城页面,负责切图和效果。
+				</p>
+				<hr>
+				<p><a href="projects/qukaidian/store.html">点我跳转实例</a></p>
+			</article>
+			<!-- 西班牙旅游项目 end-->
+			<!-- *西班牙旅游项目 -->
+			<article class="content-box-panel">
+				<h2>西班牙旅游项目</h2>
+				<p>
+					<i class="red">[实战项目]</i>西班牙旅游项目,负责切图和移动端自适应。这是一个移动端webAPP，需要手机打开效果更佳。
+				</p>
+				<hr>
+				<p><a href="projects/xibanya/sy/first.html">点我跳转实例</a></p>
+			</article>
+			<!-- 西班牙旅游项目 end-->
+			<!-- *马蜂窝首页 -->
+			<article class="content-box-panel">
+				<h2>马蜂窝首页</h2>
+				<p>
+					马蜂窝首页仿站,总体效果都不错。
+				</p>
+				<hr>
+				<p><a href="projects/mafengwo/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 马蜂窝首页 end-->
+			<!-- *京东商城首页 -->
+			<article class="content-box-panel">
+				<h2>京东商城首页</h2>
+				<p>
+					京东商城首页仿站,基本还原京东商城。
+				</p>
+				<hr>
+				<p><a href="projects/jingdong/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 京东商城首页 end-->
+			<!-- *搜礼网退货页面 -->
+			<article class="content-box-panel">
+				<h2>搜礼网退货页面</h2>
+				<p>
+					<i class="red">[实战项目]</i>搜礼网退货页面,负责切图和动态效果。
+				</p>
+				<hr>
+				<p><a href="projects/souli/1.html">点我跳转页面1</a></p>
+				<p><a href="projects/souli/2.1.html">点我跳转页面2</a></p>
+				<p><a href="projects/souli/2.html">点我跳转页面3</a></p>
+				<p><a href="projects/souli/3.html">点我跳转页面4</a></p>
+				<p><a href="projects/souli/4.html">点我跳转页面5</a></p>
+				<p><a href="projects/souli/5.html">点我跳转页面6</a></p>
+				<p><a href="projects/souli/6.html">点我跳转页面7</a></p>
+				<p><a href="projects/souli/7.html">点我跳转页面8</a></p>
+				<p><a href="projects/souli/8.html">点我跳转页面9</a></p>
+				<p><a href="projects/souli/9.html">点我跳转页面10</a></p>
+				<p><a href="projects/souli/10.html">点我跳转页面11</a></p>
+				<p><a href="projects/souli/11.html">点我跳转页面12</a></p>
+				<p><a href="projects/souli/12.html">点我跳转页面13</a></p>
+				<p><a href="projects/souli/13.html">点我跳转页面14</a></p>
+				<p><a href="projects/souli/14.html">点我跳转页面15</a></p>
+				<p><a href="projects/souli/15.html">点我跳转页面16</a></p>
+				<p><a href="projects/souli/16.html">点我跳转页面17</a></p>
+				<p><a href="projects/souli/17.html">点我跳转页面18</a></p>
+				<p><a href="projects/souli/18.html">点我跳转页面19</a></p>
+				<p><a href="projects/souli/19.html">点我跳转页面20</a></p>
+				<p><a href="projects/souli/20.html">点我跳转页面21</a></p>
+				<p><a href="projects/souli/21.html">点我跳转页面22</a></p>
+				<p><a href="projects/souli/22.html">点我跳转页面23</a></p>
+				<p><a href="projects/souli/23.html">点我跳转页面24</a></p>
+				<p><a href="projects/souli/24.html">点我跳转页面25</a></p>
+				<p><a href="projects/souli/25.html">点我跳转页面26</a></p>
+				<p><a href="projects/souli/26.html">点我跳转页面27</a></p>
+				<p><a href="projects/souli/27.html">点我跳转页面28</a></p>
+				<p><a href="projects/souli/28.html">点我跳转页面29</a></p>
+				<p><a href="projects/souli/29.html">点我跳转页面30</a></p>
+			</article>
+			<!-- 搜礼网退货页面 end-->
+			<!-- *课时口算APP宣传页 -->
+			<article class="content-box-panel">
+				<h2>课时口算APP宣传页</h2>
+				<p>
+					<i class="red">[实战项目]</i>课时口算APP宣传页,宣传课时口算APP，负责页面设计和编写。
+				</p>
+				<hr>
+				<p><a href="projects/kousuan/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 课时口算APP宣传页 end-->
+			<!-- *洛阳理工学院官网 -->
+			<article class="content-box-panel">
+				<h2>洛阳理工学院官网</h2>
+				<p>
+					洛阳理工学院官网首页仿站。
+				</p>
+				<hr>
+				<p><a href="projects/luoli/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 洛阳理工学院官网 end-->
+			<!-- *会议系统 -->
+			<article class="content-box-panel">
+				<h2>会议系统</h2>
+				<p>
+					<i class="red">[实战项目]</i>会议系统，负责全部页面设计和编写
+				</p>
+				<hr>
+				<p><a href="projects/huiyi/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 会议系统 end-->
+			<!-- *景区项目 -->
+			<article class="content-box-panel">
+				<h2>景区旅游项目</h2>
+				<p>
+					<i class="red">[实战项目]</i>景区旅游项目，作为组长负责大部分页面设计和编写，以及bug修复,总体页面设计和效果都不错。
+				</p>
+				<hr>
+				<p><a href="projects/jingqu/景区首页/index.html">点我跳转实例</a></p>
+			</article>
+			<!-- 景区旅游项目 end-->
 			<!-- *Jquery -->
 			<article class="content-box-panel">Jquery</article>
 			<!-- *Jquery end-->

@@ -1,0 +1,396 @@
+	<style>
+		*{
+			padding: 0;
+			margin: 0 auto;
+			font-family: 微软雅黑;
+		}
+		li{
+			list-style: none;
+		}
+		input{
+			border:0;
+			outline: none;
+			text-align:right;
+			width: 100%;
+		}
+		body{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			width: 95%;
+			margin:0 auto;
+		}
+		a{
+			text-decoration:none;
+		}
+		a:hover{
+			text-decoration:none;
+		}
+		.header{
+			width: 100%;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			height: 85px;
+			line-height: 85px;
+			background: #00b7ee;
+			position: absolute;
+			position:fixed;
+			top:expression(documentElemrnt.scrollTop + "px");
+			z-index: 9999;	/*蓝色背景*/
+		}
+		.header a{
+		    display: block;
+		    height: 100px;
+		    text-decoration: none;
+		    color: #fff;
+		    left: 10px;
+		    top: 0px;
+		}
+		.header-l{
+			width:10%;
+			line-height: 118px;
+		}
+		.header-l img{
+			width:50%;
+			margin-top: -34px;
+		}
+		.header-l a{
+		    display: block;
+		    height: 70px;
+		    text-decoration: none;
+		    color: #fff;
+		    position: absolute;
+		    left: 10px;
+		    top: 0px;
+		}
+		.header a:hover{
+			text-decoration: none;
+			color:#fff;
+		}
+		.shxq{
+			width:100%;
+		}
+		.shxq small{
+			margin-left: 22%;
+			font-size: 20px;
+			color:#fff;
+		}
+		.share-2{
+			height:20px;
+			float:right;
+			margin-right: 2%;
+		}
+		.share-2 img{
+			width:60%;			
+		}
+		.share-1{
+			float:right;
+			height:20px;			
+		}
+		.share-1 img{
+			width:60%;
+		}
+		.banner{
+			padding-top: 80px;
+		}
+		.share{
+			width:100%;
+			height:80px;
+			 margin-top:-80px;
+			 background: rgba(0,0,0,0.7);
+			 position:absolute;
+			line-height: 30px;
+		}
+		.share a{
+			margin-left: 7%;
+			font-size: 15.5px;
+			color:#fff;
+		}
+		.share small{
+			margin-left: 7%;
+			margin-top: 10px;
+		}
+		.share a:hover{
+			color:#fff;
+			text-decoration: none;
+		}
+		.share img{
+			width:11.5%;
+			margin-top:-34px;
+
+		}
+		.fast {
+		    width: 27%;
+		    margin-left: 74%;
+		    margin-top: -44px;
+		}
+		.fast p{
+			color: #fff;
+    		margin-top: -13px;
+		}
+		.carousel .slide .center-block img{
+			width:100%;
+		}
+		.content{
+			padding-bottom: 100px;
+		}
+		.introduce{
+			width:100%;
+			border-bottom: 1px solid  #dcdcdc;
+		}
+		.introduce-1{
+			width:100%;
+			height:110px;
+			border-bottom: 1px solid #dcdcdc;
+		}
+		.introduce-1 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.introduce big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.provide{
+			text-align: center;
+			width:21%;
+			float:left;
+			margin:0 3% 0 0;
+		}
+		.provide img{
+			width:45%;
+			height:30px;
+		}
+		.introduce-2{
+			width:100%;
+			height:90px;
+			border-bottom: 1px solid #dcdcdc;
+		}
+		.introduce-2 span{
+			float:right;
+			margin-right: 5%;margin-top: 10px;
+		}
+		.introduce-2 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.introduce-2 a{
+			padding:2% 4% 2% 4%;
+			color:#fff;
+			background-color: #00b7ee;
+			border-radius: 3px 3px 3px 3px;
+			float:right;
+		}
+		.introduce-3{
+			width:100%;
+			height:150px;
+			border-bottom: 1px solid #dcdcdc;
+		}
+		.introduce-3 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.introduce-3 a{
+			color:#000;
+		}
+		.introduce-3 a:hover{
+			color:#fff;
+			background-color: #00b7ee;
+			border-radius: 6px 6px 6px 6px;
+			padding:2% 4% 2% 4%;
+		}
+		.introduce-3 li{
+			border: 1px solid #00b7ee;
+		    border-radius: 6px 6px 6px 6px;
+		    float: left;
+		    padding: 6px 2%;
+		    margin-right: 2%;
+		    margin-bottom: 10px;
+		}
+		.introduce-4{
+			width:100%;
+			height:265px;
+		}
+		.introduce-4 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.show a{
+			float:right;
+			color:#000;
+		}
+		.show a:hover{
+			color:#000;
+		}
+		.pasta{
+			width:30%;
+			margin-bottom: 20px;
+			margin: 0;
+			float: left;
+		}
+		.pasta img{
+			width:100%;
+		}
+		.show-1{
+			width: 100%;
+		    float: left;
+		    margin-bottom: 30px;
+		    padding-bottom: 20px;
+		    border-bottom: 1px solid #dcdcdc;
+		}
+		.show-1 a{
+			padding:2% 8% 2% 8%;
+			color:#fff;
+			background-color: #00b7ee;
+			border-radius: 3px 3px 3px 3px;
+			float:right;
+			margin-top: -60px;
+			margin-left:60%;
+		}
+		.show-1-t{
+			width: 70%;
+		    float: right;
+		}
+		.show-1-t h1{
+			font-size: 15px;
+		}
+		.product_name{
+			margin: 0;
+		}
+		.product_prize{
+			color:red ;
+		}
+		.go{
+			width:20%;
+			float:right;
+			margin-top: -55px;
+
+		}
+		.go img{
+			width:17%;
+			margin-left: 60%;
+		}
+		.introduce-5{
+			width: 100%;
+		    float: left;
+		    border-bottom: 1px solid #dcdcdc;
+		}
+		.introduce-5 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.go-5{
+			width:20%;
+			float:right;
+			margin-top: -40px;
+
+		}
+		.go-5 img{
+			width:17%;
+			margin-left: 60%;
+		}
+		.introduce-6{
+			width: 100%;
+		    float: left;
+		    height: 40px;
+		    margin-bottom: 40px;
+		}
+		.introduce-6 big{
+			color:#1fbdef;
+			line-height: 40px;
+		}
+		.nav{
+			width:100%;
+			height:60px;
+			background-color: #00b7ee;
+			text-align: center;
+			line-height: 60px;
+			position: fixed;		
+			bottom: 0px;
+			z-index: 9999;
+		}
+		.nav img{
+			width:5%;
+			margin-top: -5px;
+		}
+		.nav a{
+			margin-left: -10%;
+			text-decoration: none;
+			color:#fff;
+		}
+		.nav a:hover{
+			text-decoration: none;
+			color:#fff;
+		}
+		.table{
+			width: 100%;
+			border:0;
+			font-size: 20px;
+			color: #1fbdef;     /*蓝色字*/
+			background: #fff;
+		}
+		.table1{
+		    margin-top: 3%;
+		    margin-bottom: 3%;
+		}
+		.td1{
+			width: 34%;		
+			height: 80px;
+			line-height: 80px;
+			text-align: left;
+			padding-left: 5%;
+		}
+		.td2{
+			width: 66%;		
+			height: 80px;
+			line-height: 80px;
+			text-align: left;
+			padding-right: 5%;
+		}
+		tr{
+			border:1px solid #f4f4f4;
+		}
+		.commission-1{
+			padding-bottom: 100px;
+		}
+		.show {
+		    float: left;
+		    width: 100%;
+		}
+		@media(max-width: 750px){
+		.tab-p{
+			font-size:30px; 
+		}
+		.tab2-p{
+			font-size: 10px;
+		}
+		.keep a{
+			font-size: 10px;
+		}
+		}
+
+		@media(max-width: 768px){
+			.product_img {			
+			    padding-bottom: 18%;
+			    width: 20%;
+			    background: url('../images/order_04_07.png');
+			    background-size: cover;
+			    margin-top: 18px;
+			}
+		.top img{width:4%;}
+		.tab-p{
+			font-size:8px; 
+		}
+		.tab2-p{
+			font-size: 10px;
+		}
+		.pasta img{
+			width: 93%;
+		}
+		.go, .goto, .go-5 img{
+			width:10%;
+		}
+		}
+	</style>

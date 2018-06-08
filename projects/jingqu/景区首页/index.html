@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>帝都网首页</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/didu.ico" rel="shortcut icon" />
+    <link  type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+<!-- 侧边条 -->
+	<div class="siderbar">
+		<ul class="siderbar_ul">
+			<li class="siderbar_li1"></li>
+			<li class="siderbar_li siderbar_li2 active1">
+				<div class="sider_icon glyphicon glyphicon-star"></div><a href="#spots">知名景区</a>
+			</li>
+			<li class="siderbar_li siderbar_li3">
+				<div class="sider_icon glyphicon glyphicon glyphicon-road"></div><a href="#route">旅游路线</a>
+			</li>
+			<li class="siderbar_li siderbar_li4">
+				<div class="sider_icon glyphicon glyphicon-home"></div><a href="#hotel">酒店预订</a>
+			</li>
+			<li class="siderbar_li siderbar_li5">
+				<div class="sider_icon glyphicon glyphicon glyphicon-flag"></div><a href="#agency">旅行社</a>
+			</li>
+			<li class="siderbar_li siderbar_li6">
+				<div class="sider_icon glyphicon glyphicon-leaf"></div><a href="#free_travel">自由行</a>
+			</li>
+			<li class="siderbar_li siderbar_li7">
+				<div class="sider_icon glyphicon glyphicon-tasks"></div><a href="#activity">热门活动</a>
+			</li>
+			<li class="siderbar_li siderbar_li8">
+				<div class="sider_icon glyphicon glyphicon-arrow-up"></div><a href="#top">返回顶部</a>
+			</li>
+		</ul>
+	</div>
+<!-- 客服 -->
+<div class="service">
+	<span class="service_close">x</span>
+	<p>客服热线：<br>123456789</p>
+</div>
+<!-- 侧边信息条 -->
+<div class="maomi_pic">
+	<img src="images/maomi.png" height="100px" width="100px" alt="">
+	<div class="maomi_eyeout maomi_eyeout1"><div class="maomi_eye maomi_eye1" id="maomi_eye"></div></div>	
+	<div class="maomi_eyeout maomi_eyeout2"><div class="maomi_eye maomi_eye2"></div></div>	
+</div>
+<div class="helping_alert">
+		<span class="helping_alert_close">x</span>
+		<div class="contact_us">
+			<div class="contact_us_head">联系我们</div>
+			<div class="contact_us_body">
+				<ul>
+					<li class="contact_us_li">联系电话：12345678</li>
+					<li class="contact_us_li">联系人：窗灬敲雨...</li>
+				</ul>
+			</div>
+		</div>
+		<div class="attention_us">
+			<div class="attention_us_head">关注我们</div>
+			<div class="attention_us_body">
+				<ul>
+					<li class="attention_us_li">
+						<div class="wechat_head">微信公众号</div>
+						<div class="wechat_ma"><img src="images/wechatma.png"  alt=""></div>
+					</li>
+					<li class="attention_us_li">
+						<div class="qq_head">qq群</div>
+						<div class="qq_ma"><img src="images/qqma.png"  alt=""></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 登录框 -->
+<div class="login-alert">
+	<h1>用户登录</h1>
+	<span class="login_close" id="login_close">x</span>
+	<form action="?" method="post">
+		<div class="labels">
+			<label for="username">用户名：</label>
+			<label for="password">密码：</label>
+			<label for="yanzheng">验证码：</label>
+		</div>
+		<div class="inputs">
+			<input type="text" placeholder="请输入用户名" class="form_item username" id="username">
+			<input type="password" placeholder="请输入密码" class="form_item password" id="password">
+			<input type="text" placeholder="请输入验证码" class="form_item yanzheng" id="yanzheng">
+		</div>
+		<div class="yanzhengma"><img src="images/yanzheng.png" alt=""></div>
+		<div class="login_btn_bar"><input type="submit" value="登录" class="login_btn"></div>
+		<div class="change">没有账号？<span class="changezc" href="">注册</span></div>		
+	</form>
+</div>
+<!-- 注册框 -->
+<div class="register-alert">
+	<h1>用户注册</h1>
+	<span class="register_close" id="register_close">x</span>
+	<form action="?" method="post">
+		<div class="labels">
+			<label for="z_username">用户名：</label>
+			<label for="z_password">密码：</label>
+			<label for="zc_password">确认密码：</label>
+			<label for="z_email">邮箱：</label>
+		</div>
+		<div class="inputs">
+			<input type="text" placeholder="请输入用户名" class="form_item z_username" id="z_username">
+			<input type="password" placeholder="请输入密码" class="form_item z_password" id="z_password">
+			<input type="password" placeholder="请确认密码" class="form_item zc_password" id="zc_password">
+			<input type="email" placeholder="请输入邮箱" class="form_item z_email">
+		</div>
+		<div class="register_btn_bar"><input type="submit" value="注册" class="register_btn"></div>
+		<div class="change">已有账号？<span class="changedl" href="">登录</span></div>		
+	</form>
+</div>
+	<!-- nav导航 -->
+	<a name="top" id="top"></a>
+	<nav class="navbar navar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="head-logo">帝都旅游</div>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="navbar-nav navbar-right login_register">
+					<li><a href=""><div class="login">登录</div></a></li>
+					<li class="nav-lan"></li> 
+					<li><a href=""><div class="register">注册</div></a></li>		
+					<li class="weather"><span id="weather"></span></li>
+				</ul>	
+				<ul class="nav navbar-nav navbar-left">
+					<li class="nav_spacer"></li>
+					<li><a href="index.html" class="active">首页</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区/jingqu.html">景区</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../旅游路线/xianlu.html">线路</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区酒店预订/jq.html">住宿</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../旅行社/agency.html">旅行社</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区-杜/自由行.html">自由行</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区-杜/strategy1.html">旅游攻略</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- banner图 -->
+	<div class="banner">
+		<div class="search_bar"><input type="text" id="search" placeholder="帝都今日推荐"><a href=""><span class="glyphicon glyphicon-search"></span></a></div>
+		<section class="case1">
+						<div id="lbt0" class="case carousel slide" data-ride="carousel">
+						<!-- 	三个小点 -->
+						  <ol class="carousel-indicators">
+						    <li data-target="#lbt0" data-slide-to="0" class="active"></li>
+						    <li data-target="#lbt0" data-slide-to="1"></li>
+						    <li data-target="#lbt0" data-slide-to="2"></li>
+						  </ol>
+						 <!-- 	轮播图内容 -->
+						  <div class="carousel-inner" role="listbox">
+						    <div class="item item1 active">
+						      <img src="images/banner1.png" width="1440px"  alt="">	      
+						    </div>
+						    <div class="item item1">
+						      <img src="images/banner2.png" width="1440px"   alt="">      
+						    </div>
+						  	<div class="item item1">
+						      <img src="images/banner3.png" width="1440px"   alt="">	      
+						    </div>					 
+						  </div>
+						  <!-- 	左右箭头 -->
+						  <a class="left carousel-control" href="#lbt0" role="button" data-slide="prev">
+						    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="right carousel-control" href="#lbt0" role="button" data-slide="next">
+						    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						</div>
+			</section>
+	</div>
+	<!-- 知名景点 -->
+
+	<div class="spots clearfix"id="spots">
+		<div class="container">
+		<div class="head_row"><span class="head-line1"></span><div class="sub_head"><img src="images/zhiming.png" alt=""></div><span class="head-line2"></span></div>
+			<div class="spot_show clearfix">
+				<ul class="spot_ul">
+					<li class="spot_li spot_li1"><a href=""><div class="cover">景点介绍景点介绍景点介绍景点介绍景点介绍</div></a></li>
+					<li class="spot_li spot_li2"><a href=""><div class="cover">景点介绍景点介绍景点介绍景点介绍</div></a></li>
+					<li class="spot_li spot_li3"><a href=""><div class="cover">景点介绍景点介绍景点介绍景点介绍</div></a></li>
+					<li class="spot_li spot_li4"><a href=""><div class="cover">景点介绍景点介绍景点介绍景点介绍</div></a></li>
+					<li class="spot_li spot_li5"><a href=""><div class="cover">景点介绍景点介绍景点介绍景点介绍</div></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="route" id="route">
+		<div class="container">
+		<div class="head_row"><span class="head-line1"></span><div class="sub_head"><img src="images/luxian.png" alt=""></div><span class="head-line2"></span></div>	
+		<div class="map">
+			<div class="intro clearfix intro1"><div class="intro_part clearfix"><div class="intro_pic"><img src="images/scene1.png" alt="" height="100px" width="100px"></div><div class="intro_word"><h1>龙门石窟</h1>龙门石窟位于洛阳市区南12公里处，是与大同云岗石窟、敦煌千佛洞石窟齐名的我国三大石窟之一，国家5A景区。龙门是一个风景秀丽的地方，这里有东、西两座青山对峙，伊水缓缓北流。</div></div></div>
+			<div class="intro intro2"><div class="intro_part"><div class="intro_pic"><img src="images/scene2.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+			<h1>白云山</h1>洛阳白云山位于河南省洛阳市嵩县南部伏牛山腹地，是国家级森林公园、国家级自然保护区、国家AAAA-旅游景区、中国十佳休闲胜地。</div></div></div>
+			<div class="intro intro3"><div class="intro_part"><div class="intro_pic"><img src="images/scene3.png" alt="" height="100px" width="100px"></div><div class="intro_word"><h1>白马寺</h1>
+			白马寺位于河南洛阳城东10公里处，在汉魏洛阳故城雍门西1.5公里处，古称金刚崖寺，号称“中国第一古刹”，是佛教传入中国后第一所官办寺院。</div></div></div>
+			<div class="intro intro4"><div class="intro_part"><div class="intro_pic"><img src="images/scene4.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+			<h1>关林</h1>
+　　位于洛阳市洛龙区关林镇，南临龙门石窟，西接洛龙大道，东傍伊水清流，相传是埋葬三国蜀将关羽首级的地方。为海内外三大关庙之一，是我国唯一的“冢、庙、林”三祀合一的古代经典建筑群，现为河南省文物保护单位，也是国家AAAA旅游景区。</div></div></div>
+			<div class="intro intro5"><div class="intro_part"><div class="intro_pic"><img src="images/scene5.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+				<h1>龙潭大峡谷</h1>
+　　龙潭大峡谷景区位于洛阳市新安县北部,距洛阳60公里,郑州180公里,连霍高速、310国道、陇海铁路横穿县境,位置优越,交通便利。</div></div></div>
+			<div class="intro intro6"><div class="intro_part"><div class="intro_pic"><img src="images/scene6.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+			<h1>老君山</h1>
+			洛阳栾川老君山—鸡冠洞旅游区　　老君山—鸡冠洞旅游区位于豫西伏牛山腹地，“九朝古都”洛阳市西南部的栾川县城。　　老君山古号景室山，因东周道家始祖老子归隐-于此而得名；是八百里伏牛山主峰，海拔 2217米。</div></div></div>
+			<div class="intro intro7"><div class="intro_part"><div class="intro_pic"><img src="images/scene7.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+			<h1>杜康仙庄</h1>
+				杜康仙庄位于洛阳市南50公里的汝阳县蔡店乡杜康村，景区以杜康仙庄为中心，周围三山（即龙山、凤山、虎山）环抱，中间一溪（即杜康河）穿流，山青水秀，鸟语花香，其得天独厚的自然景观与丰富多彩的人文景观相得益彰，浑然天成，成为中国一个酒文化荟萃胜地。
+			</div></div></div>
+			<div class="intro intro8"><div class="intro_part"><div class="intro_pic"><img src="images/scene8.png" alt="" height="100px" width="100px"></div><div class="intro_word">
+				<h1>龙峪湾</h1>
+				　龙峪湾，古为蛟龙淋浴之地。位于河南省洛阳市西南165公里处伏牛山腹地的栾川县境内，方圆百里，山势雄伟、峰峦叠嶂、-茫茫、古木参天。这里“龙”文化荟萃，自然景观万千，四季景色秀丽，奇峰异石林谷幽深。溪水、清潭、瀑布纵横其间。是原始的、纯天然的、无污染的生态旅游区。
+			</div></div></div>
+		</div>
+		<!-- 路线 -->
+	<div class="route_recommend">	
+		<div class="container">
+			<div class="recommend">
+				<div class="route_nav">
+					<ul class="nav-tabs nav">
+							<li class="active oneday"><a href="#oneday_trip" data-toggle="tab">一日游</a></li>
+							<li class="twodays"><a href="#twoday_trip" data-toggle="tab">两日游</a></li>
+							<li class="threedays"><a href="#threeday_trip" data-toggle="tab">三日游</a></li>
+							<li class="manydays"><a href="#manyday_trip" data-toggle="tab">多日游</a></li>
+					</ul>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane active in" id="oneday_trip">
+						<ul>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>	
+						</ul>
+					</div>
+					<div class="tab-pane in" id="twoday_trip">
+						<ul>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>		
+						</ul>
+					</div>
+					<div class="tab-pane in" id="threeday_trip">
+						<ul>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>	
+						</ul>
+					</div>
+					<div class="tab-pane in" id="manyday_trip">
+						<ul>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>
+							<li class="ticket_li"><img src="images/ticket1.jpg" alt="" width="200px" height="200px" class="img-reponsive"><div class="ticket_cover">景点一：门票：<br>成人：￥100<br>儿童：￥25<br>学生：￥50</div></li>	
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+		<!-- 酒店 -->
+		<div class="hotel clearfix" id="hotel">
+			<div class="container">
+		<div class="head_row"><span class="head-line1"></span><div class="sub_head"><img src="images/hotel.png" alt=""></div><span class="head-line2"></span></div>	
+			<div class="hotel_left">
+				<ul>
+					<li class="hotel_li big_hotel"><a href=""><img src="images/hotel0.png" alt="" width="261px" height="419px" class="img-reponsive"></a><a href=""><div class="hotel_cover"><h1>帝都大酒店</h1><p>一天单人：￥200<br>两天单人：￥390</p></div></a></li>		
+					<li class="hotel_li"><a href=""><img src="images/hotel1.png" alt="" width="261px" height="200px" class="img-reponsive"></a><a href=""><div class="hotel_cover"><h1>帝都大酒店</h1><p>一天单人：￥200<br>两天单人：￥390</p></div></a></li>
+					<li class="hotel_li"><a href=""><img src="images/hotel2.png" alt="" width="261px" height="200px" class="img-reponsive"></a><a href=""><div class="hotel_cover"><h1>帝都大酒店</h1><p>一天单人：￥200<br>两天单人：￥390</p></div></a></li>	
+					<li class="hotel_li"><a href=""><img src="images/hotel3.png" alt="" width="261px" height="200px" class="img-reponsive"></a><a href=""><div class="hotel_cover"><h1>帝都大酒店</h1><p>一天单人：￥200<br>两天单人：￥390</p></div></a></li>	
+					<li class="hotel_li"><a href=""><img src="images/hotel4.png" alt="" width="261px" height="200px" class="img-reponsive"></a><a href=""><div class="hotel_cover"><h1>帝都大酒店</h1><p>一天单人：￥200<br>两天单人：￥390</p></div></a></li>				
+				</ul>
+			</div>
+			<div class="hotel_right">
+				<ul> 
+					<li class="hotel_li1">
+						<h2>
+							帝都大酒店
+						</h2>
+						<p>帝都大酒店配套设施齐全,诚挚欢迎您的光临!选择帝都大酒店,独享尊贵奢华,</p>
+					</li>
+					<li class="hotel_li1">
+						<h2>
+							帝都大酒店
+						</h2>
+						<p>帝都大酒店配套设施齐全,诚挚欢迎您的光临!选择帝都大酒店,独享尊贵奢华,</p>
+					</li>
+					<li class="hotel_li1">
+						<h2>
+							帝都大酒店
+						</h2>
+						<p>帝都大酒店配套设施齐全,诚挚欢迎您的光临!选择帝都大酒店,独享尊贵奢华,</p>
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+	<!-- 旅行社 -->
+<div class="agency" id="agency">
+	<div class="container">
+		<div class="head_row"><span class="head-line1"></span><div class="sub_head"><img class="agency_head" src="images/agency.png" alt=""></div><span class="head-line2"></span></div>
+			<ul>
+				<li class="agency_li"><a href=""><div class="agency_pic"><img src="images/agency1.png" alt="" width="281px" height="200px"></div></a><div class="agency_intro"><a href=""><h1>天天旅行社</h1><p>旅行社,国内外游,周边游,全网促销,天天低价,价格合理.旅行社,您出游的首选</p></a></div></li>
+				<li class="agency_li"><a href=""><div class="agency_pic"><img src="images/agency2.png" alt="" width="281px" height="200px"></div></a><div class="agency_intro"><a href=""><h1>天天旅行社</h1><p>旅行社,国内外游,周边游,全网促销,天天低价,价格合理.旅行社,您出游的首选</p></a></div></li>
+				<li class="agency_li"><a href=""><div class="agency_pic"><img src="images/agency3.png" alt="" width="281px" height="200px"></div></a><div class="agency_intro"><a href=""><h1>天天旅行社</h1><p>旅行社,国内外游,周边游,全网促销,天天低价,价格合理.旅行社,您出游的首选</p></a></div></li>
+				<li class="agency_li"><a href=""><div class="agency_pic"><img src="images/agency4.png" alt="" width="281px" height="200px"></div></a><div class="agency_intro"><a href=""><h1>天天旅行社</h1><p>旅行社,国内外游,周边游,全网促销,天天低价,价格合理.旅行社,您出游的首选</p></a></div></li>
+			</ul>
+		</div>
+	</div>
+	<div class="free_travel" id="free_travel">
+		<div class="container">
+		<div class="head_row"><span class="head-line1"></span><div class="sub_head"><img src="images/free_travel.png" alt=""></div><span class="head-line2"></span></div>
+			<ul>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel1.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点一</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel2.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点二</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel3.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点三</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel4.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点四</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel5.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点五</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel6.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点六</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel7.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点七</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel8.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点八</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel9.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点九</div></a></li>
+				<li class="free_travel_li"><a href=""><div class="free_travel_img"><img src="images/free_travel10.jpg" alt="" width="220px" height="200px"></div><div class="travel_cover">景点十</div></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="container">
+			<div class="activity" id="activity">
+				<div class="head_row"><span class="head-line1 head_line1_b"></span><div class="sub_head"><img src="images/activity.png" alt=""></div><span class="head-line2 head_line2_b"></span></div>				
+				<div class="activity_show">
+					<section class="case1">
+						<div id="lbt" class="case carousel slide" data-ride="carousel">	 
+						 <!-- 	轮播图内容 -->
+						  <div class="carousel-inner" role="listbox">
+						    <div class="item item_a active">
+						      <img src="images/activity1.jpg" width="310px" height="191px" alt="">	      
+						    </div>
+						    <div class="item item_a">
+						      <img src="images/activity2.jpg" width="310px" height="191px" alt="">	      
+						    </div>
+						  	<div class="item item_a">
+						      <img src="images/activity3.jpg" width="310px" height="191px" alt="">	      
+						    </div>					 
+						  </div>
+						  <!-- 	三个小点 -->
+						  <ol class="carousel-indicators">
+						    <li data-target="#lbt" data-slide-to="0" class="active"></li>
+						    <li data-target="#lbt" data-slide-to="1"></li>
+						    <li data-target="#lbt" data-slide-to="2"></li>
+						  </ol>							  
+						</div>
+					</section>
+				</div>
+				<div class="activity_info">
+					<h1>泉舜音乐喷泉</h1>
+					<p>　泉舜集团·开元湖音乐喷泉4月1日至5月5日牡丹文化节期间，每日20时至20时20分进行喷泉表演；自5月6日起，每周二、四、六20时至20时20分进行喷泉表演。如遇特殊情况，另行通知。望广大市民相互转告，欢迎各位观众届时观看。
+					</p>
+					<button class="activity_more" onclick="window.open('www.baidu.com')">查看详情></button>
+				</div>
+			</div>
+			<div class="strategy">
+				<div class="head_row"><span class="head-line1 head_line1_b"></span><div class="sub_head"><img src="images/strategy.png" alt=""></div><span class="head-line2 head_line2_b"></span></div>
+				<div class="strategy_show">
+					<section class="case1">
+						<div id="lbt1" class="case carousel slide" data-ride="carousel">					
+						 <!-- 	轮播图内容 -->
+						  <div class="carousel-inner" role="listbox">
+						    <div class="item item_a active">
+						      <img src="images/strategy1.jpg" width="310px" height="191px" alt="">	      
+						    </div>
+						    <div class="item item_a">
+						      <img src="images/strategy2.jpg" width="310px" height="191px" alt="">	      
+						    </div>
+						  	<div class="item item_a">
+						      <img src="images/strategy3.jpg" width="310px" height="191px" alt="">	      
+						    </div>					 
+						  </div>
+						  <!-- 	三个小点 -->
+						  <ol class="carousel-indicators">
+						    <li data-target="#lbt1" data-slide-to="0" class="active"></li>
+						    <li data-target="#lbt1" data-slide-to="1"></li>
+						    <li data-target="#lbt1" data-slide-to="2"></li>
+						  </ol>						
+						</div>
+				</section>
+				</div>
+				<div class="strategy_info">
+					<h1>帝都旅游攻略</h1>
+					<p>　
+						帝都的牡丹和石窟很出名，龙门石窟特别好看。让人们不得不赞叹中国古代人民的智慧，很有历史的沉淀的气息。很多有地方特色的小吃都集中在市内，强烈推荐。
+					</p>
+					<button class="strategy_more" onclick="window.open('www.baidu.com')">查看详情></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="copyright">&copy2017-2020 帝都旅游有限公司,All Rights Reserved 豫ICP备12345678号</div>
+</div>
+	<script src="js/jquery.min.js"></script>
+	<script src='js/nav.js'></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+			// 鼠标移动事件
+		    $(document).mousemove(function(e) {
+		        $('.maomi_eye').css({
+		            "top":e.clientY/document.body.clientHeight*90+'%',	//e.clientY指当前浏览器窗口内的距顶部高
+		            "left":e.pageX/document.body.clientWidth*90+'%'
+		        })
+		    });
+		    $('.maomi_pic').click(function(){
+		    	$(this).css({
+		    		left: '-100px'		    		
+		    	});
+		    	setTimeout(function () {
+		    		$('.helping_alert').css('left', '0');
+		    	 }, 800);		    	
+		    })
+		    $('.helping_alert_close').click(function(){
+		    	$('.helping_alert').css('left', '-100%');
+		    	setTimeout(function () {
+		    		$('.maomi_pic').css('left', '-16px');
+		    	 }, 800);		    	
+		    })
+			$('.spot_ul li').mousemove(function() {
+				index=$(this).index();
+				$(this).css('width','40%').siblings().css('width','15%');
+				$('.cover').eq(index).css('height','30%');
+			});
+			$('.spot_ul li').mouseout(function() {
+				index=$(this).index();
+				$('.spot_ul li').css('width','20%');
+				$('.cover').eq(index).css('height','50px');
+			});
+			$('.service_close').click(function(){
+				$('.service').fadeOut();
+			})
+		var sign = 0;//定义默认的向上滚与向下滚的边界
+		window.onscroll = window.onresize = function(){
+	    var oScrollTop=$(window).scrollTop();
+	    if ( oScrollTop < 800) {
+	　　　　　$('.siderbar_ul li').eq(1).addClass('active1').siblings(1).removeClass('active1');
+	　　　}
+		if ( oScrollTop >800 && oScrollTop <1450) {
+			  // $('.p2_li1').fadeInDown();
+	　　　　　$('.siderbar_ul li').eq(2).addClass('active1').siblings(2).removeClass('active1');
+	    }
+	    if ( oScrollTop >1450 && oScrollTop <2200) {
+	    	//$('.p2_li2').fadeInDown();
+	　　　　　$('.siderbar_ul li').eq(3).addClass('active1').siblings(3).removeClass('active1');
+	    }
+	    if ( oScrollTop >2200 && oScrollTop <2600) {
+	　　　　　$('.siderbar_ul li').eq(4).addClass('active1').siblings(4).removeClass('active1');
+	    }
+	    if ( oScrollTop >2600 && oScrollTop <3100) {
+	　　　　　$('.siderbar_ul li').eq(5).addClass('active1').siblings(5).removeClass('active1');
+	    }
+	     if ( oScrollTop >3100) {
+	　　　　　$('.siderbar_ul li').eq(6).addClass('active1').siblings(6).removeClass('active1');
+	    }
+	    if ( oScrollTop > sign) {
+	      sign = oScrollTop;//更新scrollTop
+	      //console.log('向下');
+	    }
+	    if ( oScrollTop< sign) {
+	      sign = oScrollTop//更新scrollTop
+	      //console.log('向上');
+	 	 }
+	 	}
+	 	$('.siderbar').navScroll({
+		      mobileDropdown: true,
+		      mobileBreakpoint: 768,
+		      scrollSpy: true
+		    });
+	 	//登录框
+	 	$('.login').click(function(){
+	 		$('.login-alert').fadeIn();
+	 	})
+	 	$('.login_close').click(function(){
+	 		$('.login-alert').fadeOut();
+	 	})
+	 	// var current = 0;
+   //      function tranImg(trun){
+   //          var imgObj= document.getElementById('#login_close');
+   //          current = (current+trun)%360;
+   //          imgObj.style.transform = 'rotate('+current+'deg)';
+   //      }
+   		
+	 	$('.login_close').mouseover(function() {
+	 		$(this).css('transform','rotate(720deg)');
+	 	});
+	 	$('.login').click(function(){
+	 		$('.login-alert').fadeIn();
+	 	})
+	 	$('.login_close').click(function(){
+	 		$('.login-alert').fadeOut();
+	 	})
+	 	$('.changezc').click(function(){
+	 		$('.register-alert').fadeIn();
+	 		$('.login-alert').fadeOut();
+	 	})
+
+	 	$('.register').click(function(){
+	 		$('.register-alert').fadeIn();
+	 	})
+	 	$('.register_close').click(function(){
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	$('.register_close').mouseover(function() {
+	 		$(this).css('transform','rotate(720deg)');
+	 	});
+	 	$('.register').click(function(){
+	 		$('.register-alert').fadeIn();
+	 	})
+	 	$('.register_close').click(function(){
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	$('.changedl').click(function(){
+	 		$('.login-alert').fadeIn();
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	 //$(window.frames["tianqi"].document).find("#img1").css('height','10px');
+	 	 // $(window.fra"img1"].document).style.height=60+'px';  
+	 	 // document.gmes[etElementById('#img1').style.height=10;
+	 	// $('#img1').css('height','10px');#tianqi8_wetherinfo
+	 	//天气
+	 	function findWeather() {
+      var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+      $.getScript(cityUrl, function (script, textStatus, jqXHR) {
+        var citytq = remote_ip_info.city; // 获取城市
+ 
+        citytq = "洛阳";
+        var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+        $.ajax({
+          url: url,
+          dataType: "script",
+          scriptCharset: "gbk",
+          success: function (data) {
+            var _w = window.SWther.w[citytq][0];
+            var _f = _w.f1 + "_0.png";
+            if (new Date().getHours() > 17){
+              _f = _w.f2 + "_1.png";
+            }
+            var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" + _f
+        + "' />";
+            var tq =  '帝都' + " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃ " ;
+            $('#weather').html(tq);
+          }
+        });
+      });
+    }
+    findWeather()
+</script>
+</body>
+</html>

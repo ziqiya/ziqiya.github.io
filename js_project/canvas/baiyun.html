@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<title>蓝天白云</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var canvas = document.getElementById("canvas");
+		var cxt = canvas.getContext("2d");
+		canvas.height=550;
+		canvas.width=1000;
+		drawBackground();
+		
+// //蓝天
+// 		var grd=cxt.createRadialGradient(600,0,50,600,0,100);
+// 		grd.addColorStop("0","rgba(255,255,255,0.5");
+// 		grd.addColorStop("1","rgba(255,255,255,0.1");
+// 		cxt.fillStyle="#59acff";
+// 		cxt.fillRect(0,0,1000,550);
+// 		cxt.fillStyle=grd;
+// 		cxt.fillRect(0,0,1000,550);
+		
+// //草地
+// 		var gradient=cxt.createLinearGradient(0,480,0,350);
+// 		gradient.addColorStop("0","#008000");
+// 		gradient.addColorStop("1","#57ff57");
+// 		cxt.beginPath();	
+// 		cxt.moveTo(0,350);
+// 		cxt.bezierCurveTo(250,150,750,550,1100,350);
+// 		cxt.lineTo(1100,550);
+// 		cxt.lineTo(0,550);
+// 		cxt.closePath();
+// 		cxt.fillStyle=gradient;
+// 		cxt.fill();
+// 		cxt.save();
+//白云
+		// cxt.beginPath();
+		// cxt.arc(200,200,40,0,Math.PI*2);
+		// cxt.arc(240,210,25,0,Math.PI*2);
+		
+		// cxt.arc(160,210,25,0,Math.PI*2);
+		// cxt.arc(165,180,10,0,Math.PI*2);
+		// cxt.fillStyle="rgba(215,215,215,0.5)";
+		// cxt.fill();
+//白云函数
+	//	 drawCloud(cxt,5);
+//translate(0,0)可以改为原点
+		//var x=52; 	
+		var x=Math.random()*900+52;
+		var y=Math.random()*245+35; 
+		var w=Math.random()*10+40;	
+		var x1=Math.random()*900+52;
+		var y1=Math.random()*245+35; 
+		var w1=Math.random()*10+40;	
+		var x2=Math.random()*900+52;
+		var y2=Math.random()*245+35; 
+		var w2=Math.random()*10+40;	
+		 setInterval(function(){
+		 	drawBackground();
+		 	 //cxt.restore();
+		 	//var y=35;
+		 	var w=40;
+			
+			if(x>1000){
+				x=52;
+			}
+				cxt.beginPath();			 
+					
+				if(w>40,y<400){
+				cxt.arc(x,y,w,0,Math.PI*2);		//200,200,40,0
+				cxt.arc(x+40*240/200,y+10*210/200,w*0.625,0,Math.PI*2);	
+				cxt.arc(x-40*160/200,y+10*210/200,w*0.625,0,Math.PI*2);
+				cxt.arc(x-40*160/200,y-20*210/200,w*0.25,0,Math.PI*2);
+				cxt.fillStyle="#96cad6";
+				cxt.fill();	
+				x=x+20;
+				// y=y+10;
+	
+			if(x1>1000){
+				x1=52;
+			}
+				cxt.beginPath();			 
+					
+				if(w1>40,y1<400){
+				cxt.arc(x1,y1,w1,0,Math.PI*2);		//200,200,40,0
+				cxt.arc(x1+40*240/200,y1+10*210/200,w1*0.625,0,Math.PI*2);	
+				cxt.arc(x1-40*160/200,y1+10*210/200,w1*0.625,0,Math.PI*2);
+				cxt.arc(x1-40*160/200,y1-20*210/200,w1*0.25,0,Math.PI*2);
+				cxt.fillStyle="#96cad6";
+				cxt.fill();	
+				x1=x1+20;
+				// y=y+10;
+				}	
+			if(x2>1000){
+				x2=52;
+			}
+				cxt.beginPath();							
+				if(w2>40,y2<400){
+				cxt.arc(x2,y2,w2,0,Math.PI*2);		//200,200,40,0
+				cxt.arc(x2+40*240/200,y2+10*210/200,w2*0.625,0,Math.PI*2);	
+				cxt.arc(x2-40*160/200,y2+10*210/200,w2*0.625,0,Math.PI*2);
+				cxt.arc(x2-40*160/200,y2-20*210/200,w2*0.25,0,Math.PI*2);
+				cxt.fillStyle="#96cad6";
+				cxt.fill();	
+				x2=x2+20;
+				// y=y+10;
+				}			
+			}
+		},100)
+		 
+		// setInterval(function(){
+		// 	for(i=0;i<4;i++){
+		// 		cxt.beginPath();
+		// 		var x=Math.random()*900+52;
+		// 		var y=Math.random()*245+35;
+		// 		var w=Math.random()*30+10;
+		// 		if(y<400){
+		// 		cxt.arc(x,y,w,0,Math.PI*2);		//200,200,40,0
+		// 		cxt.arc(x+40*240/200,y+10*210/200,w*0.625,0,Math.PI*2);	
+		// 		cxt.closePath();										//closePath可以闭合路径
+		// 		cxt.arc(x-40*100/200+1/w,y+10*210/200,w*0.625,0,Math.PI*2);
+		// 		cxt.closePath();
+		// 		cxt.arc(x+40*120/200-1/w,y+10*210/200,w*0.625,0,Math.PI*2);
+		// 		cxt.closePath();
+		// 		cxt.arc(x-40*150/200+1/w,y-12*210/200,w*0.25,0,Math.PI*2);
+		// 		cxt.fillStyle="#96cad6";
+		// 		cxt.fill();	
+		// 		}
+		// 	}
+		// },50)
+	}	
+	function drawBackground(){
+//蓝天
+		var canvas = document.getElementById("canvas");
+		var cxt = canvas.getContext("2d");
+		var grd=cxt.createRadialGradient(600,0,50,600,0,100);
+		grd.addColorStop("0","rgba(255,255,255,0.5");
+		grd.addColorStop("1","rgba(255,255,255,0.1");
+		cxt.fillStyle="#59acff";
+		cxt.fillRect(0,0,1000,550);
+		cxt.fillStyle=grd;
+		cxt.fillRect(0,0,1000,550);
+		
+//草地
+		var gradient=cxt.createLinearGradient(0,480,0,350);
+		gradient.addColorStop("0","#008000");
+		gradient.addColorStop("1","#57ff57");
+		cxt.beginPath();	
+		cxt.moveTo(0,350);
+		cxt.bezierCurveTo(250,150,750,550,1100,350);
+		cxt.lineTo(1100,550);
+		cxt.lineTo(0,550);
+		cxt.closePath();
+		cxt.fillStyle=gradient;
+		cxt.fill();
+		cxt.save();
+	}
+
+	</script>
+	<style type="text/css">
+		canvas {
+		    margin: 0 auto;
+		    width: 80%;
+		    display: block;
+		}
+		body{
+			background:url(./bj1.jpg) no-repeat;
+		}
+		/*.canvas{
+			width: 1200px;			
+			margin:auto 0;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="canvas">
+		<canvas id="canvas">您的浏览器无法兼容canvas插件</canvas>
+	</div>
+</body>
+</html>

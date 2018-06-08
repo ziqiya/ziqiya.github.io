@@ -1,0 +1,1 @@
+﻿http://code.ciaoca.com/jquery/jcrop/demo/animation

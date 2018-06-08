@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/upload_list.css">
+    <link rel="stylesheet" href="css/bill_payee.css">
+	<title>团行程</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<a  href='#' onClick="javascript :window.history.go(-1);" class="back_icon"><img src="images/upload_03.png" alt=""></a>团行程
+	</div>
+	<div class="content clearfix">
+		<div class="group_num_li">
+			旅行社<span class="group_num"><input type="text" placeholder="选填"></span>
+		</div>
+		<div class="route_list">
+			<div class="list_head">
+				行程安排
+			</div>
+			<div class="list_body">		
+				<table class="list_table">
+					<thead>
+						<tr>
+							<th colspan="3">行程1</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="list_table_wd">
+									<span class="y-circle"></span>
+									选择城市
+								</div>	
+							</td>
+							<td>
+								<span class="p-circle"></span>
+								<a href="">2017-05-12</a>
+							</td>
+							<td>								
+								<span class="r-circle"></span>
+								<a href="">2017-05-12</a>										
+							</td>
+						</tr>							
+						<tr>								
+							<td class="border_1">
+								住宿酒店
+							</td>
+							<td colspan="2" class="border_2 txt_right">
+								<input type="text" class="hotel_address" placeholder="请填写酒店地址" value="12345678">
+							</td>								
+						</tr>
+
+						<tr>
+							<td>
+								<button class="choose_btn">选择商家</button>
+							</td>
+							<td colspan="2">
+								我不选择，系统默认提交名单至所有商家
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="list_table">
+					<thead>
+						<tr>
+							<th colspan="3">行程2</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="list_table_wd">
+									<span class="y-circle"></span>
+									选择城市
+								</div>	
+							</td>
+							<td>
+								<span class="p-circle"></span>
+								选择抵达时间
+							</td>
+							<td>								
+								<span class="r-circle"></span>
+								选择离开时间											
+							</td>
+						</tr>							
+						<tr>								
+							<td class="border_1">
+								住宿酒店
+							</td>
+							<td colspan="2" class="border_2 txt_right">
+								<input type="text" class="hotel_address" placeholder="请填写酒店地址">
+							</td>								
+						</tr>
+
+						<tr>
+							<td>
+								<button class="choose_btn">选择商家</button>
+							</td>
+							<td colspan="2">
+								我不选择，系统默认提交名单至所有商家
+							</td>
+						</tr>
+					</tbody>
+				</table>		
+			</div>
+			<div class="add_route">
+				<a href=""><img src="images/group_route_03.png" alt="">添加行程</a>
+			</div>
+			<div class="add_route">		
+				<a href="javascript:;" class="upload_btn">
+					<input type="file" onchange="document.getElementById('file_name').innerHTML=this.value"><img src="images/group_route_06.png" alt=""><div id="file_name">选择文件</div>
+				</a>				
+			</div>
+			<div class="add_route">
+				上传文件图片给我们办公室，由工作人员帮您录入行程单
+			</div>
+			<div class="submit_btn_wrap submit_btn_wrap2">
+			<input type="button" value="下一步" class="submit_btn">
+		</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+</body>
+</html>

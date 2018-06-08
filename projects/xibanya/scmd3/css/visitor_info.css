@@ -1,0 +1,151 @@
+		.visitor_content{
+			float: left;
+			padding-bottom: 88px;
+			width: 100%;
+		}
+		.visitor_table{
+			width: 100%;
+			text-align: center;
+		}
+		.visitor_table table{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.visitor_table th{
+			color:#1fbdef;
+			font-size: 16px;
+			height: 40px; 
+			font-weight: normal;
+		}
+		.visitor_table tr{
+			border-bottom: 1px solid #f4f4f4;
+		}
+		.visitor_table td{
+			color: #282828;
+		    height: 50px;
+		    font-size: 15px;
+		    text-align: center;
+		}
+		.visitor_table input{
+			width: 83%;
+		    border: 1px solid #f4f4f4;
+		    font-size: 12px;
+		    color: #282828;
+		    height: 31px;
+		    text-align: center;
+		}
+		.small_wd{
+			font-size: 10px;
+		}
+		.add_btn{
+			color: #1fbdef;
+		    border: 1px solid #1fbdef;
+		    border-radius: 4px;
+		    padding: 7px 12px;
+			background: #fff;
+			float: right;
+			margin-right: 5%;
+			margin-top: 10px;
+		}
+		.add_btn img{
+			width: 19px;
+		    float: left;
+		    margin-right: 4px;
+		}
+		.upload_btn{
+			display: block;
+		    padding:0;
+		    background: #fff;
+		    position: relative;	    
+		    float: left;
+		    margin-top: 10px;
+		    width: 88%;
+		}
+		.add_route{
+			float: left;
+		    width: 95%;
+		    font-size: 15px;
+		    color: #666;
+		    margin-top: 4px;
+		    margin-left: 3%;			
+		}
+		.add_route a{
+			font-size: 15px;
+			color: #1fbdef;
+		}
+		.add_route img{
+			width: 30px;
+		    float: left;
+		    margin-right: 10px;
+		}
+		.upload_btn input{
+			opacity: 0;
+			position: absolute;
+		    left: 20px;
+		    top: 0;
+		}
+		#file_name{
+			width: 80%;
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		}
+		.submit_btn_wrap{
+		    width: 100%;
+		    float: left;
+		    margin-top: 10px;
+		    text-align: center;
+		}
+		.submit_btn{
+			width: 80%;
+			height: 50px;
+    		line-height: 25px;
+			text-align: center;
+			font-size: 18px;
+			background: #00b7ee;
+			color: #fff;
+			border:0;
+			padding: 12px;
+			border-radius: 90px;
+		}
+		.fun_area{
+			width: 100%;
+		    float: left;
+		    margin-top: 100px;
+		}
+		.add_route1 a{
+			color: #282828;
+		}
+		h3{
+			margin: 0;
+			padding: 0;
+		}
+		.close{
+			position: absolute;
+		    top: 10px;
+		    display: block;
+		    height: 14px;
+		    line-height: 10px;
+		    width: 16px;
+		    text-align: center;
+		    right: 10px;
+		    font-size: 23px;
+		    font-weight:bold; 
+		    border: 2px solid #1fbdef;
+		    padding: 4px;
+		    border-radius: 90px;
+		    cursor: pointer;
+		}
+		.layui-m-layercont{
+			padding: 0 0 10px 0;
+		}
+		.layui-m-layerchild h3{
+			height: 44px;
+		}
+		.alert_p{		
+		    height: 28px;
+		    line-height: 17px;
+		}
+		.add_1{
+			color:#1fbdef;
+		}

@@ -1,0 +1,310 @@
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: 微软雅黑;
+		}
+		li{
+			list-style: none;
+		}
+		body{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			width: 95%;
+			margin:0 auto;
+		}
+		a{
+			text-decoration:none;
+		}
+		.header{
+			width: 100%;
+			text-align: center;
+			font-size: 20px;
+			color: #fff;
+			height: 85px;
+			line-height: 85px;
+			background: #00b7ee;
+			position: absolute;
+			position:fixed;
+			top:expression(documentElemrnt.scrollTop + "px");
+			z-index: 9999;	/*蓝色背景*/
+			
+		}
+		.header a{
+		    display: block;
+		    height: 100px;
+		    text-decoration: none;
+		    color: #fff;
+		    left: 10px;
+		    top: 0px;
+		}
+		.header-l{
+			width:10%;
+			line-height: 118px;
+		}
+		.header-l img{
+			width:50%;
+			
+		}
+		.header-l a{
+		    display: block;
+		    height: 70px;
+		    text-decoration: none;
+		    color: #fff;
+		    position: absolute;
+		    left: 10px;
+		    top: 0px;
+		    margin-top: -11px;
+		}
+		.header a:hover{
+			text-decoration: none;
+			color:#fff;
+		}
+		.shxq small{
+			font-size: 20px;
+			color:#fff;
+		}
+				.commission{
+			width:100%;
+			padding-bottom: 100px;
+		}
+		.com-t{
+			width:100%;
+			height:50px;
+			line-height:50px;
+			margin-top: 5%;
+		}
+		.com-t span{
+			float:right;
+		}
+		.com-t a{
+			color:#000;
+			text-decoration: none;
+		}
+		.com-t a:hover{
+			color:#000;
+			text-decoration: none;
+		}
+		.com-t img{
+			width:10%;
+		}
+		.com2-t{
+			width:100%;
+			height:50px;
+			line-height:50px;
+			
+		}
+		.com2-t span{
+			float:right;
+		}
+		.com2-t a{
+			color:#000;
+			text-decoration: none;
+		}
+		.com2-t a:hover{
+			color:#000;
+			text-decoration: none;
+		}
+		.com2-t img{
+			width:10%;
+		}
+		.image{
+			width:100%;
+			padding-top: 100px;
+		}
+		.image img{
+			width:100%;
+		}
+		.keep{
+			width: 20%;
+    		height: 50px;
+    		margin: -35% 0 0 80%;
+
+		}
+		.keep a{
+			color:#fff;
+			text-decoration: none;
+			font-size: 17px;
+		}
+		.keep a:hover{
+			color:#fff;
+			text-decoration: none;
+		}
+		.nav{
+			text-align: center;
+			line-height: 40px;
+		}
+		.nav ul{
+			margin: auto;
+			padding: 0;
+			font-size: 14px;
+			width: 100%;
+			height:93px;
+			position: fixed;		
+			bottom: 0px;
+			left: 0;
+			background-color: #fff;
+
+		}
+		.nav li{
+			width:24%;
+			float:left;
+			padding-top: 5px;
+		}
+
+		.nav img{
+			width:30%;
+		}
+		.nav a{
+			text-decoration: none;
+			color:#000;
+		}
+		.nav a:hover{
+			text-decoration: none;
+			color:#000;
+		}
+		.store_li{
+			position: relative;
+			margin-bottom: 25px;
+		}
+		.store_info{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 51px;			
+			background: rgba(0,0,0,0.5);
+			transition:all 0.5s ease;
+		}
+		.store_info:hover{
+			width: 100%;
+			height: 100%;
+		}
+		.store_p1{
+		    float: left;
+		    width: 96%;
+		    height: 20px;
+		    margin: 0;
+		    padding: 0.5% 2%;
+		    line-height: 20px;
+		}
+		.store_name{
+			font-size: 18px;
+		}
+		.store_deatil{
+			display: none;
+			font-size: 14px;
+			width: 96%;
+			padding: 1% 2%;
+			color:#fff;
+			margin-top: 5px;
+		}
+		.store_name a{
+			color: #fff;
+		}			
+		.money_rate{
+			color: #f8d60b;
+			font-size: 17px;
+			float: right;
+			font-weight: bold;
+		}
+		.store_address{
+			float: left;
+			font-size: 15px;
+		}
+		.store_address a{
+			color: #fff;
+		}
+		.collection{
+			font-size: 17px;
+			float: right;
+		}
+		.collection a{
+			color: #fff;
+		}
+ 		.close_btn{
+            position: absolute;
+            top: 10px;
+            display: block;
+            height: 14px;
+            line-height: 14px;
+            width: 16px;
+            text-align: center;
+            right: 10px;
+            font-size: 23px;
+            font-weight:bold; 
+            border: 2px solid #1fbdef;
+            padding: 4px;
+            border-radius: 90px;
+            cursor: pointer;
+        }
+        .layui-m-layercont{
+            padding: 0 0 10px 0;
+        }
+        .layui-m-layerchild h3{
+            height: 44px;
+        }
+        .alert_p{       
+            height: 28px;
+            line-height: 17px;
+        }
+        .add_1{
+            color:#1fbdef;
+            line-height: 11px;
+        }
+        .footer-1{
+            color: #fff;
+        }
+        .alert_p1{
+            font-size: 16px;
+        }
+        .activity_detail{
+			display: none;
+		}
+		.activity_name{
+			float: left;
+			padding-left: 2%;
+			color: #fff;
+		}
+		.alert_p2{
+			font-size: 16px;
+		    text-align: left;
+		    padding-left: 7px;
+		}
+		.alert_p3{
+			font-size: 14px;
+		    text-align: left;
+		    padding-left: 7px;
+		    color: #666;
+		}
+		@media(max-width: 750px){
+		.tab-p{
+			font-size:30px; 
+		}
+		.tab2-p{
+			font-size: 10px;
+		}
+		.keep a{
+			font-size: 10px;
+		}
+		}
+
+		@media(max-width: 768px){
+			.product_img {			
+			    padding-bottom: 18%;
+			    width: 20%;
+			    background: url('../images/order_04_07.png');
+			    background-size: cover;
+			    margin-top: 18px;
+			}
+		.top img{width:4%;}
+		.tab-p{
+			font-size:8px; 
+		}
+		.tab2-p{
+			font-size: 10px;
+		}
+		}
+	</style>

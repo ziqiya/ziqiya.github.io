@@ -1,0 +1,260 @@
+.red,.red a{
+			color: #f00;
+		}
+		.detail_content{
+			width: 85%;
+		    padding-bottom: 20px;
+		    float: left;
+		    margin-left: 2%;
+		}
+		.order_info{
+			background: #fff;
+		}
+		.location{
+			 width: 96%;
+		}
+		.product_info_head{
+		    padding: 14px 20px;
+		    font-size: 15px;
+		    font-weight: bold;
+		    border-bottom: 1px solid #cdcdcd;
+		}
+		.product_info_list{
+			float: left;
+			width: 93%;
+		}
+		.product_info_list tr{
+			border-bottom: 1px dotted #ddd;
+		}
+		.product_info_list th{
+			width: 100px;
+			padding: 10px;
+			font-size: 12px;
+			text-align: right;
+		    color: #333;
+		    vertical-align: top;
+		    font-weight: normal;
+		}    
+		.product_info_list td{
+			font-size: 12px;
+			padding: 2px;
+			color: #333;
+			font-weight: normal;
+		}
+		.product_info_list table{
+			margin: 10px 41px;
+		}
+		.sign{
+			color: red;
+			margin-right: 3px;
+		}
+		input[type=text]{
+			color: #333;
+		}
+		input:read-only{
+			background: #f4f4f4;
+		}
+		.info_input{
+			width: 161px;
+			height: 25px;	
+			box-shadow: 0px 0px 10px #eee inset;
+			padding: 2px 4px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			margin-left: 2px;
+			margin-right: 3px;
+			vertical-align: middle;
+		}
+		.product_name{			
+			width: 641px;
+		}
+		.tip{
+			color: #999;
+			font-size: 12px;
+		}
+		.hidden_tr{
+			display: none;
+		}
+		.prize{
+			margin-left: 10px;
+			width: 65px;
+			height:25px;
+		}
+		.origin_prize{
+			float: left;
+		}
+		.now_prize{
+			float: left;
+			margin-left: 10px;
+		}
+		.sell_num{
+			width: 65px;
+		}
+		.ui_btn{
+			width: 74px;
+			height: 24px;
+			background: linear-gradient(#fff,#f4f4f4);
+		    padding: 3px 12px;
+		    border: 1px solid #A8ADB6;
+		    cursor: pointer;
+		    color: #888;
+		    display: inline-block;
+		    font-size: 12px;
+		    border-radius: 2px;
+		    overflow: visible;
+		    line-height: 16px;
+		}
+		.ui_btn:hover{
+			background: linear-gradient(#fff,#ddd); /*往下是默认渐变方向*/
+			color: #555;
+		}
+		.add_package{
+			float: left;
+			width: 100%;
+			margin-top: 5px;
+		}
+		.package_table{
+			float: left;
+			width: 100%;
+		}
+		.package_table table{
+			margin:0;
+			border:1px solid #ddd;
+		}
+		.package_table th,.package_table td{
+			border:1px solid #ddd;
+			border-top: 0;
+			border-left: 0;
+			width: auto;
+		}
+		.package_table thead th{
+			background: #f6f7f9;
+		    text-align: left;
+		    font-weight: bold;
+		}
+		.character_table{
+			float: left;
+			width: 100%;
+		}
+		#content1{
+			float: left;
+			width: 531px;
+			height: 100px;
+		}
+		.content1{
+			margin-top: 10px;
+			float: left;
+		}
+		.content1_body{
+			float: left;
+			width: 100%;
+		}
+		.content1_head{
+			float: left;
+			width: 100%;
+		}
+		.character_table table{
+			margin:0;
+			border:1px solid #ddd;
+		}
+		.character_table th,.character_table td{
+			border:1px solid #ddd;
+			border-top: 0;
+			border-left: 0;
+			width: auto;
+		}
+		.character_table thead th{
+			background: #f6f7f9;
+		    text-align: left;
+		    font-weight: bold;
+		}
+		.upload_btn{
+			display: block;
+			padding: 0 10px;
+			width: 60px;
+			height: 30px;
+			line-height: 30px;
+			background: linear-gradient(#6297df,#3a78cc);
+			border-radius: 2px;
+			color: #fff;
+			position: relative;
+			margin-left: 10px;
+			float: left;
+		}
+		.upload_btn input{
+			opacity: 0;
+			position: absolute;
+		    left: 20px;
+		    top: 0;
+		}
+		.upload_btn:hover{
+			background: linear-gradient(#7aa1d8,#5c8ccb);
+			color: #fff;
+		}
+		.file_name{
+			background: #fff;
+			float: left;
+   			margin-left: 10px;
+		}
+		.long_input{
+			width: 521px;
+		}
+		.content1_head,.content2_head,.content1_body{
+			width: 100%;
+			float: left;
+		}
+		.content1_body{
+			padding-bottom: 10px;
+		}
+		.content2_head{
+			margin-top: 10px;
+		}	
+		#addition_content,#inform_content{
+			width: 773px;
+			height: 54px;
+		}
+		#inform_content{
+			margin-top: 10px;
+		}
+		.fasong_p{
+			float: left;
+			width: 100%;
+		}
+		.fasong_explain{
+			float: left;
+			width: 100%;
+		}
+		.manage{
+			margin-left:10px;; 
+		}
+		.confirm_btn{
+			background: #ff8600;
+			text-align: center;
+			color: #fff;
+			height: 30px;
+			line-height: 30px;
+			width: 79px;
+			float: left;
+			border:1px solid #ccc;
+			border-radius: 4px;
+			margin-right: 10px;
+		}
+		.confirm_btn:hover{
+			background: #fe930d;
+		}
+		.cancel_btn{
+			float: left;
+			background: #f9f9f9;
+			color: #fff;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			width: 79px;
+			color: #6f6f6f;
+			border-radius: 4px;
+			border:1px solid #ccc;		
+		}
+		.cancel_btn:hover{
+			color: #000;
+		}
+		

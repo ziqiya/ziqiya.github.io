@@ -1,0 +1,46 @@
+.group_num{
+			float: right;
+			color: #282828;
+		}
+		.people_list{
+			padding-right: 0;
+			width: 100%;
+			padding-left: 0;
+			padding-bottom: 10px;
+		}
+		.person_info{
+			float: left;
+		    padding-left: 6%;
+		    width: 94%;
+		    border-bottom: 1px solid #eaeaea;
+		}
+		.people_info_list{
+			padding-right: 3%;
+		    float: left;
+		    width: 96%;
+		    border-bottom: 1px solid #eaeaea;
+		}
+		.people_info_list span{
+			float: right;
+			margin-right: 5%;
+		}
+		.people_info_list1 span{
+			float: right;		
+		}
+		.people_info_list1 i{
+			float: right;
+		}
+		.people_info_list1{
+			float: left;
+			width: 97%;
+			padding-right: 0;
+		}
+		.people_info_list1 img{
+			width: 18px;
+		}
+		@media(min-width:750px){
+			.people_info_list {
+			    padding-right: 0%;
+			    width: 100%;
+			}
+		}

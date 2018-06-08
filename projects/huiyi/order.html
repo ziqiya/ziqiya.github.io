@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  type="text/css" rel="stylesheet" href="ADMIN_CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="ADMIN_CSS/jquery-ui.min.css">
+     <link rel="stylesheet" type="text/css" href="ADMIN_CSS/my.css">
+    <title>会议系统</title>
+    <style>
+    #meeting1{
+        position: relative;
+    }
+        .delete{
+            position: absolute;
+            right: 2px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 会议预定选项 -->
+<div class="back"><a href="{:U('Index/index')}"><span class=" glyphicon glyphicon-menu-left"></span></a></div>
+    <ul class="nav-tabs nav">
+        <li class="active nav_order"><a href="#order_pane" data-toggle="tab" class="order_a">会议预定</a></li>
+        <li class="nav_personal"><a href="#personal_pane" data-toggle="tab" class="personal_a">个人中心</a></li>
+        <span></span>
+    </ul>
+<div class="tab-content">
+    <div class="order clearfix tab-pane active in" id="order_pane">
+    <!-- 表单部分 -->
+        <form action="{:U('Order/order_data')}" method="post">
+            <label for="huiyishi" class="huiyishi_label labels">会议室选择</label>
+            <select name="mt_id" id="huiyishi" class="form_item">
+                <foreach name="r" item="vo"><option value="{$vo.mt_id}">{$vo.room}</option></foreach>
+            </select>
+
+            <label for="date" class="date_label labels">日期</label>
+            <input type="text" id="date" name="date" class="form_item" placeholder="请选择日期">
+            <label for="start_time" class="startt_label labels">开始时间</label>
+            <input type="time" id="start_time" name="start_time" class="form_item">
+            <label for="end_time" class="endt_label labels">结束时间</label>
+            <input type="time" id="end_time" name="end_time" class="form_item" onclick="click_test()" onChange="check_time()">
+            <label for="host" class="host_label labels">发起人</label>
+            <input type="text" id="host" name="founder" class="form_item" placeholder="发起人">
+            <label for="join" class="join_label labels">参会人员</label>
+            <input type="text" id="join" name="member" class="form_item" placeholder="参会人员">
+            <label for="number" class="number_label labels">会议人数</label>
+            <select name="number" id="number" class="form_item ">
+                <option value="50" selected="true">50人</option>
+                <option value="100">100人</option>
+                <option value="150">150人</option>
+                <option value="200">200人</option>
+                <option value="250">250人</option>
+                <option value="300">300人</option>
+            </select>
+            <label for="title" class="topic_label labels">会议主题</label>
+            <textarea name="title" id="title" placeholder="请输入会议主题"></textarea> 
+            <div class="submit">
+                <input type="submit" value="发起会议" id="submit">
+            </div>
+        </form>
+    </div>
+<!-- 个人中心 -->
+    <div class="tab-pane in" id="personal_pane">
+        <div class="container">
+            <div class="personal clearfix">
+                <div class="myinfo clearfix">
+                    <div class="my_head"><img src="ADMIN_IMG/2.jpeg" alt="" class="img-responsive"></div>
+                    <div class="usernamep"><div class="name">{$username}</div><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal">编辑</span></div>
+                    <ul class="tab nav-tabs myinfo_tab">
+                            <li class="meeting_li active1" href="#mymeeting" data-toggle="tab">我的会议</li>
+                            <li class="meeting_li" href="#myinviting" data-toggle="tab">邀请我的</li>
+                    </ul>           
+                </div>  
+                <div class="tab-content my_activity">
+<!-- 我的会议 -->   <div class="more-alert1 more-alert">
+                        <div class="alert1">
+                            <span class="close1"></span>                            
+                        </div>
+                    </div>
+                    <div class="mymeeting tab-pane active in" id="mymeeting">
+                        <h1 class="meeting_head">我的会议</h1>                      
+                        <div id="accordion">
+
+                        <foreach name="data_apply" item="f">
+                            <a href="" class="meeting1"><h3 id="meeting1" class="meeting">会议{$f.apply_id}&nbsp;&nbsp;&nbsp;<a href="{:U('Order/mt_del?mid='.$f['apply_id'])}">删除会议</a></h3></a>
+                            
+                                <div>
+                                <p>
+                                    <ul>
+                                        <li class="meeting_detail">会议详情</li>
+                                        <li class="meeting_content">会议内容：{$f.title}</li>
+                                        <li class="meeting_position">会议地点：{$f.room}</li>
+                                        <li class="meeting_time">会议时间：{$f.start_time}-{$f.end_time}</li>
+                                        <li class="meeting_people">会议参与人：{$f.member}</li>
+                                    </ul>
+                                </p>
+                                </div>   
+                                
+                                </foreach>
+                        </div>  
+                                                           
+                    </div>
+<!-- 邀请我的 -->  
+                    <div class="myinviting tab-pane in" id="myinviting">
+                        <h1 class="meeting_head">邀请我的</h1>
+                        <div id="accordion1">
+                        <foreach name="data_member" item="j">
+                            <a href="#?id='.$v['id']" class="meeting4"><h3 id="meeting4" class="meeting">会议{$j.apply_id}</h3></a>
+                                <div>
+                                <p>
+                                    <ul>
+                                        <li class="meeting_detail">会议详情</li>
+                                        <li class="meeting_content">会议内容：{$j.title}</li>
+                                        <li class="meeting_position">会议地点：{$j.room}</li>
+                                        <li class="meeting_time">会议时间：{$j.start_time}-{$j.end_time}</li>
+                                        <li class="meeting_people">会议参与人：{$j.member}</li>
+                                    </ul>
+                                </p>
+                                </div>
+                            </foreach>
+                            <!-- <a href="#?id='.$v['id']" class="meeting5"><h3 id="meeting5" class="meeting">会议5</h3></a>
+                                <div>
+                                <p>
+                                    <ul>
+                                        <li class="meeting_detail">会议详情</li>
+                                        <li class="meeting_content">会议内容：XXX</li>
+                                        <li class="meeting_position">会议地点：XXX</li>
+                                        <li class="meeting_time">会议时间：XXX</li>
+                                        <li class="meeting_people">会议参与人：XXX</li>
+                                        <li class="meeting_alter">修改状态：XXX</li>
+                                    </ul>
+                                </p>
+                                </div>
+                            <a href="#?id='.$v['id']" class="meeting6"><h3 id="meeting3" class="meeting">会议6</h3></a>
+                                <div>
+                                <p>
+                                    <ul>
+                                        <li class="meeting_detail">会议详情</li>
+                                        <li class="meeting_content">会议内容：XXX</li>
+                                        <li class="meeting_position">会议地点：XXX</li>
+                                        <li class="meeting_time">会议时间：XXX</li>
+                                        <li class="meeting_people">会议参与人：XXX</li>
+                                        <li class="meeting_alter">修改状态：XXX</li>
+                                    </ul>
+                                </p>
+                            </div>-->  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 个人信息修改 -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>
+                    个人信息<span class="close close-modal" data-dismiss="modal"></span>                                
+                </h1>               
+            </div>
+            <div class="modal-body clearfix">
+            <foreach name="data_user" item="u">
+                <form action="{:U('Order/user_update_data?uid='.$u['user_id'])}" method="post"><div class="form-group"></div>   
+                    <div class="labels_group">
+                        <label for="al-username">用户名:</label>
+                        <label for="al-email">姓名：</label>
+                        <label for="al-part">所属部门：</label>
+                        <label for="al-password">密码：</label>
+                    </div>
+                    <div class="inputs_group">
+                        <input type="text" id="alusername" name="username" class="form-control" placeholder="请输入用户名" value="{$u.username}">
+                        <input type="text" id="al-email" name="name" class="form-control" placeholder="请输入姓名" value="{$u.name}">
+                        <input type="text" id="al-part" name="department" class="form-control" placeholder="所属部门" value="{$u.department}">
+                        <input type="password" id="
+                        al-password" name="password" class="form-control" placeholder="密码不修改则不填写">
+                    </div>  
+                    <div class="submit1_bar">
+                        <input type="submit" value="提交更改" id="al-submit" name="al-submit">
+                    </div>              
+                </form>
+            </foreach>
+            </div>
+        </div>
+    </div>
+</div>              
+    <script src="ADMIN_JS/jquery.min.js"></script>
+    <script src="ADMIN_JS/bootstrap.min.js"></script>
+    <script src="ADMIN_JS/jquery-ui.min.js"></script>
+    <script>
+// 日期插件
+    $( "#date" ).datepicker();
+    $( "#date" ).datepicker( "option", "showAnim", "blind" );
+      $(function() {
+      var icons = {
+      header: "ui-icon-circle-arrow-e",
+      activeHeader: "ui-icon-circle-arrow-s"
+    };
+    $( "#accordion" ).accordion({
+        heightStyle: "content",
+        collapsible: true,
+        icons: icons,   
+    })
+    $( "#toggle" ).button().click(function() {
+      if ( $( "#accordion1" ).accordion( "option", "icons" ) ) {
+        $( "#accordion1" ).accordion( "option", "icons", null );
+      } else {
+        $( "#accordion1" ).accordion( "option", "icons", icons );
+      }
+    });
+     $( "#accordion1" ).accordion({
+        heightStyle: "content",
+        collapsible: true,
+        icons: icons,
+    })   
+  });
+    </script>
+    <style>
+        #ui-datepicker-div{
+            left:120px!important;
+        }
+    </style>
+    <script>
+    function click_test(){
+        tx1=document.getElementById("start_time").value;
+        if (tx1=="") {
+            alert('请先选择会议开始时间！')
+        };
+    }
+    function check_time(){
+        tx1=document.getElementById("start_time").value;
+        tx2=document.getElementById("end_time").value;
+        if (tx2<tx1) {
+            alert('会议结束时间不可小于会议开始时间！')
+        };
+    }
+    </script>
+    <script>
+    $('.more1').click(function(){
+        $('.more-alert1').fadeIn(); 
+    })
+    $('.more2').click(function(){
+        $('.more-alert2').fadeIn();
+    })
+    $('.close1').click(function(){
+        $('.more-alert1').hide();
+    })
+    $('.close2').click(function(){
+        $('.more-alert2').hide();
+    })
+    $('.myinfo_tab li').click(function(){
+        $(this).addClass('active1').siblings().removeClass('active1');
+    })
+ 
+    </script>
+</body>
+</html>

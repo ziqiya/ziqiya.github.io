@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后端页面</title>
+	<link rel="stylesheet" type="text/css" href="css/houtai.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+<body>
+	<div class="navbar">
+		后端页面
+		<div class="right"><button>退出</button></div>
+	</div>	
+	<div class="alert1 clearfix">
+		<span class="close1 close-modal"></span>
+		<h1 class="zhuce_head">用户注册</h1>
+		<form action="?" method="post">
+			<div class="name row">
+				<input type="text" id="realname" name="realname" placeholder="真实姓名">
+			</div>
+			<div class="zc_zhanghao row">
+				<input type="text" id="zc_username" name="zc_username" placeholder="账号">
+			</div>
+			<div class="zc_password row">
+				<input type="password" id="zc_password" name="zc_password" placeholder="密码">
+			</div>
+			<div class="con_password row">
+			<input type="password" id="con_password" name="con_password" placeholder="确认密码">
+			</div>
+			<div class="part row">
+				<select name="part" id="part">
+					<option value="part1">部门1</option>
+					<option value="part2">部门2</option>
+					<option value="part3">部门3</option>
+					<option value="part4">部门4</option>
+				</select>
+			</div>
+			<div class="zhucebtn">
+				<input type="submit" value="注册" name="zhuce" id="zhuce">
+			</div>
+		</form>
+	</div>
+	<div class="alert2 clearfix">
+	    <div class="close-modal close2"></div>
+		<form action="?" method="post">
+			<label for="huiyishi" class="huiyishi_label labels">会议室选择</label>
+			<select name="huiyishi" id="huiyishi" class="form_item">
+				<option value="room1" selected="true">会议室1</option>
+				<option value="room2">会议室2</option>
+			</select>
+			<label for="date" class="date_label labels">日期</label>
+			<input type="text" id="date" name="date" class="form_item" placeholder="请选择日期">
+			<label for="start_time" class="startt_label labels">开始时间</label>
+			<input type="time" id="start_time" name="start_time" class="form_item">
+			<label for="end_time" class="endt_label labels">结束时间</label>
+			<input type="time" id="end_time" name="end_time" class="form_item" onclick="click_test()" onChange="check_time()">
+			<label for="host" class="host_label labels">发起人</label>
+			<input type="text" id="host" name="host" class="form_item" placeholder="发起人">
+			<label for="join" class="join_label labels">参会人员</label>
+			<input type="text" id="join" name="join" class="form_item" placeholder="参会人员">
+			<label for="number" class="number_label labels">会议人数</label>
+			<select name="number" id="number" class="form_item ">
+				<option value="50" selected="true">50人</option>
+				<option value="100">100人</option>
+				<option value="150">150人</option>
+				<option value="200">200人</option>
+				<option value="250">250人</option>
+				<option value="300">300人</option>
+			</select>
+			<label for="title" class="topic_label labels">会议主题</label>
+			<textarea name="title" id="title" placeholder="请输入会议主题"></textarea>	
+			<div class="submit">
+				<input type="submit" value="发起会议" id="submit">
+			</div>
+		</form>	
+	</div>
+	<div class="sider">
+		<ul class="nav">
+			<li>员工信息</li>
+			<li>会议室信息</li>
+		</ul>
+	</div>
+	<div class="article">
+	
+		<div class="worker_info">
+			<ul>
+				<li><details><summary>员工1<span class="right"><button>删除</button><button class="edit1">修改</button></span></summary><p>性别：男 职位：XXX</p></details></li>
+			</ul>
+			<button class="add_worker">添加员工</button>
+		</div>
+		<div class="meetingroom_info">
+	
+			<ul>
+				<li><details><summary>会议室1 <span class="right"><button>删除</button><button class="edit2">修改</button></span>	</summary><p>地点：XXX 大小：XXX</p></details></li>
+			</ul>
+			<button class="add_room">添加会议室</button>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script>
+// 日期插件
+	$( "#date" ).datepicker();
+	$( "#date" ).datepicker( "option", "showAnim", "blind" );
+	$('.nav li').click(function(){ 
+			index = $(this).index();		//index后面一定要有()
+		 	$('.article div').eq(index).show().siblings().hide();
+		})	
+	$('.edit2').click(function(){
+		$('.alert2').fadeIn();
+	})
+	$('.edit1').click(function(){
+		$('.alert1').fadeIn();
+	})
+	$('.close1').click(function(){
+		$('.alert1').hide();
+	})
+	$('.close2').click(function(){
+		$('.alert2').hide();
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1"><!--告诉ie使用新的渲染方式，防止低版本的ie不能使用css3-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/mycss.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav">   
+            <input type="radio" name="radio-set" checked id="nav1">
+            <a href="#panel1" class="nav_a">首页</a>
+            <input type="radio" name="radio-set" id="nav2">
+            <a href="#panel2" class="nav_a">分层作业</a>
+            <input type="radio" name="radio-set" id="nav3">
+            <a href="#panel3" class="nav_a">错题整理</a>
+            <input type="radio" name="radio-set" id="nav4">
+            <a href="#panel4" class="nav_a">线上互动</a>
+            <input type="radio" name="radio-set" id="nav5">
+            <a href="#panel5" class="nav_a">同步课时</a>
+    <div class="scroll">
+        <section class="panel" id="panel1">
+            <div class="icon" data-icon="首页"></div>
+            <div class="head_word head_word1"><img src="images/word1.png" alt=""></div>
+            <p>口算无误，考试不愁</p>
+             <div class="download_wrap"><div class="download"><a href="">立即下载</a></div></div>
+        </section>
+        <section class="panel panelColor" id="panel2">
+            <div class="icon" data-icon="分层作业"></div>
+            <div class="head_word head_word2"><img src="images/word2.png" alt=""></div>
+            <div class="panel_left">
+                <p class="left introduction">具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介</p>
+            </div>
+            <div class="panel_right">
+                <div class="erweimar erweima"><img src="images/erweima.png" class="img-responsive" alt="" width="200px" height="200px"></div>
+                 <div class="download_wrap"><div class="download downloadr"><a href="">立即下载</a></div></div>
+             </div>
+        </section>
+        <section class="panel" id="panel3">
+            <div class="icon" data-icon="错题整理"></div>
+            <div class="head_word head_word3"><img src="images/word3.png" alt=""></div>
+            <div class="panel_right">
+                <p class="right introduction">具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介</p>
+            </div>
+            <div class="panel_left">
+                <div class="erweimal erweima"><img src="images/erweima.png" alt="" width="200px" height="200px"></div>
+                 <div class="download_wrap"><div class="download downloadl"><a href="">立即下载</a></div></div>
+            </div>
+        </section>
+        <section class="panel panelColor" id="panel4">
+            <div class="icon" data-icon="线上互动"></div>
+            <div class="head_word head_word4"><img src="images/word4.png" alt=""></div>
+            <div class="panel_left">
+                 <p class="left introduction">具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介</p>
+            </div>
+            <div class="panel_right">
+                <div class="erweimar erweima"><img src="images/erweima.png" alt="" width="200px" height="200px"></div>
+                <div class="download_wrap"><div class="download downloadr"><a href="">立即下载</a></div></div>
+            </div>
+        </section>
+        <section class="panel" id="panel5">
+            <div class="icon" data-icon="同步课时"></div>
+            <div class="head_word head_word5"><img src="images/word5.png" alt=""></div>
+            <div class="panel_right">
+                 <p class="right introduction">具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介具体简介</p>
+            </div>
+            <div class="panel_left">
+            <div class="erweimal erweima"><img src="images/erweima.png" alt="" width="200px" height="200px"></div>
+             <div class="download_wrap"><div class="download downloadl"><a href="">立即下载</a></div></div>
+            </div>
+              <div class="footer">&copy2017-2020 洛阳纸贵文化传播有限公司,All Rights Reserved 豫ICP备17017911号</div>
+        </section>
+    </div>
+    </div>
+</div>
+<script>
+    window.onload= function () {
+        var scroll=document.getElementsByClassName("scroll")[0];//ie不兼容，换成id会成功
+        var panel=document.getElementsByClassName("panel");//ie不兼容，换成id会成功
+
+        var clientH=window.innerHeight;
+        scroll.style.height=clientH+"px";
+        for(var i=0;i<panel.length;i++){
+            panel[i].style.height=clientH+"px";
+        }
+        /*下面是关于鼠标滚动*/
+        var inputC=document.getElementsByTagName("input");
+        var wheel= function (event) {
+            var delta=0;
+            if(!event)//for ie
+                event=window.event;
+            if(event.wheelDelta){//ie,opera
+                delta=event.wheelDelta/120;
+            }else if(event.detail){
+                delta=-event.detail/3;
+            }
+            if(delta){
+                handle(delta,inputC);
+            }
+            if(event.preventDefault)
+                event.preventDefault();
+            event.returnValue=false;
+        };
+        if(window.addEventListener){
+            window.addEventListener('DOMMouseScroll',wheel,false);
+        }
+        window.onmousewheel=wheel;
+    };
+    function handle(delta,arr) {
+        var num;
+        for(var i=0;i<arr.length;i++){//得到当前checked元素的下标
+            if(arr[i].checked){
+                num=i;
+            }
+        }
+        if(delta>0 && num>0){//向上滚动
+            num--;
+            arr[num].checked=true;
+        }else if(delta<0 && num<4){//向下滚动
+            num++;
+            arr[num].checked=true;
+        }
+    }
+</script>
+</body>
+</html>

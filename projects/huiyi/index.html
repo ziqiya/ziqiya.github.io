@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会议预订系统-首页</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myindex.css">
+</head>
+<body>
+	<div class="index_head">
+		<ul class="nav_tab">
+			<li class="nav_tab_li active tab1"><a href="index.html">会议预定</a></li>
+			<a href="person_center.html"><li class="nav_tab_li tab2">个人中心</li></a>
+		</ul>
+	</div>
+
+<!-- 会议信息弹窗 -->
+<div class="meeting_cover">
+	<div class="meeting_alert">
+		<div class="meeting_head"><h1 class="meeting_name">会议室1</h1><span class="meeting_close">x</span></div>
+		<div class="meeting_info">
+			<p class="meeting_size meeting_item">会议规模：<span class="size_number">100人</span></p>
+			<div class="meeting_time"><ul><li class="meeting_time_li meeting_item">会议时间：</li>
+			<li class="meeting_time_li"><span class="glyphicon glyphicon-time"></span><span class="start_time">8：00</span>~<span class="end_time">10:00</span></li>
+			<li class="meeting_time_li"><span class="glyphicon glyphicon-time"></span><span class="start_time">10：00</span>~<span class="end_time">12:00</span></li></ul>
+			</div>
+			<div class="order_meeting"><a href="huiyi1.html">预定会议</a></div>
+		</div>
+	</div>	
+</div>	
+<!-- 会议列表 -->
+	<div class="meeting_list">
+		<div class="list-group">
+			<a href="#"  onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting1.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">100</span></div>会议室1<span class="glyphicon glyphicon-chevron-right"></span></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting2.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">2</span></div>会议室2<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting1.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">10</span></div>会议室3<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting2.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">2</span></div>会议室4<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting1.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">10</span></div>会议室5<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting2.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">2</span></div>会议室6<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting1.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">10</span></div>会议室7<span class="glyphicon glyphicon-chevron-right"></div></a>
+			<a href="" onclick="return false;"><div class="list-group-item"><div class="list-img pic1"><img src="images/meeting2.jpg" width='80px'
+			height="80px" alt="" class="img-reponsive"><span class="badge">2</span></div>会议室8<span class="glyphicon glyphicon-chevron-right"></div></a>	
+		</div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$('.nav_tab li').click(function(){
+			index=$(this).index();
+			$('.nav_tab li').eq(index).addClass('active').siblings().removeClass('active');
+		})
+	$('.tab1').click(function(){
+		$('.denglu_wrap').fadeIn();
+		$('.zhuce_wrap').hide();
+	})
+	$('.tab2').click(function(){
+		$('.zhuce_wrap').fadeIn();
+		$('.denglu_wrap').hide();	
+	})
+	$('.changezc').click(function(){
+		$('.denglu_wrap').hide();
+		$('.zhuce_wrap').fadeIn();	
+	})
+	$('.changedl').click(function(){
+		$('.zhuce_wrap').hide();
+		$('.denglu_wrap').fadeIn();
+	})
+	$('.close1').click(function(){
+		$('.denglu_wrap').hide();
+	})
+	$('.close2').click(function(){
+		$('.zhuce_wrap').hide();
+	})
+	$('.meeting_close').click(function(){
+		$('.meeting_cover').fadeOut();
+	})
+	$('.meeting_close').mouseover(function() {
+	 	$(this).css('transform', 'rotate(720deg)');
+	})
+	$('.list-group-item').click(function(){
+		$('.meeting_cover').fadeIn();
+	})
+</script>
+</body>
+</html>

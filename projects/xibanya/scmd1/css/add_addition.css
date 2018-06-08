@@ -1,0 +1,60 @@
+		.content {
+		    width: 90%;
+		    margin: 30px auto;
+		}
+		.send_ok_wrap{
+			width: 90%;
+		    margin: 0 auto;
+		    border: 1px solid #f1f1f1;
+		    border-radius: 3px;
+		    padding: 5%;
+		    padding-top: 11%;
+
+		}
+		.send_ok_img{
+			width: 30%;
+		    margin: 0 auto;
+		    margin-bottom: 8%;
+		}
+		.send_ok_img img{
+			width: 100%;
+		}
+		.send_ok_word{
+			width: 100%;
+			font-size: 20px;
+			text-align: center;
+		}
+		.seller_num{
+			color: #00b7ee;
+			font-size: 20px;
+		}
+		.jump_btn{
+			color: #fff;
+			background: #00b7ee;
+			font-size: 20px;
+			text-align: center;
+			padding: 3%;
+			width: 90%;
+			border-radius: 90px;
+			border:0;
+			box-shadow: 3px 3px 4px #ddd;
+		}
+		.jump_btn_wrap{
+			width: 100%;
+			margin-top: 60px;
+			text-align: center;
+		}
+		.comment_area{
+			width: 100%;
+			height: 300px;
+			text-align: center;
+		}
+		#seller_comment{
+		    width: 96%;
+			height: 100%;
+			color：#f1f1f1;
+			font-size: 17px;
+			border: 1px solid #eaeaea;
+			padding: 2%;
+			outline: none;
+		}

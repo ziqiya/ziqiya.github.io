@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阿狸子后台</title>
+	<link rel="stylesheet" href="css/product.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<style>
+		.ui-datepicker .ui-datepicker-header {
+		    background: linear-gradient(to right,#fff,#ff9000,#fff);
+		}
+		.order_head_li{
+			width: 100%;
+			float: left;
+			border-bottom:1px dotted #ddd;
+			padding: 5px;
+			margin-bottom: 5px;
+			vertical-align: center;
+		}
+		.date_input {
+		    background: url('images/datePicker.gif') no-repeat 149px 6px;
+		}
+		.a_hover:hover{
+			color: #fca800;
+		}
+		.all{
+			background: #78849c;
+			font-weight: bold;
+			padding: 2px;
+			margin-right: 10px;
+		}
+		.all a{
+			color: #fff;
+		}
+		.order_lan{
+			background: #ddd;
+			width: 1px;
+			height: 5px;
+			display: block;
+			float: left;
+		}
+		.id_li{
+			float: left;
+			width: 100%;
+			margin:0 auto;
+			text-align: left;
+		}
+		.id_rank{
+			width: 20px;
+			height: 20px;
+			background: #ff6600;
+			border-radius: 3px;
+			text-align: center;
+			line-height: 20px;
+		}
+		.id_rank a{
+			color: #fff;
+		}
+		.order_list1{
+			width: 
+		}
+		.id_th{
+			width: 85px;
+		}
+		.red{
+			color: #f00 ;
+		}
+	</style>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="head_logo">
+			<img src="images/alizi.png" alt="">
+		</div>
+		<div class="navbar">
+			<ul>
+				<a href="houtai.html"><li class="navbar_li">首页</li></a>
+				<a href="product.html"><li class="navbar_li">商品</li></a>
+				<a href="order.html"><li class="navbar_li active">订单</li></a>
+			</ul>
+			<div class="navbar-nav">
+				 <ul>
+				 	<li class="nav_li"><a href="">网站首页</a></li>		 	
+				 	<li class="nav_li"><a href="">删除缓存</a></li>			 	
+				 	<li class="nav_li nav_li_last"><a href="">退出</a></li>			 	
+				 </ul>
+			</div>	
+		</div>	
+	</div>
+	<div class="content">
+		<div class="box2 box">
+			<div class="sidernav_box">
+				<ul class="sider_nav">
+						<div class="sider_li sider_head">订单</div>
+						<li class="sider_li active1">
+							<a href="order.html">所有订单</a>
+						</li>
+						<li class="sider_li">
+							<a href="add_order.html">添加订单</a>
+						</li>				
+				</ul>
+				<ul class="sider_nav1">
+					<div class="sider_li sider_head">订单统计</div>
+						<li class="sider_li">
+							<a href="order_count.html">订单统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="pop_channel.html">推广渠道统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="area_count.html">地区统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="time_count.html">时间统计</a>
+						</li>
+				</ul>
+			</div>
+			<div class="box3_content_box1 content_box">
+				<div class="location">
+					<strong>当前位置：</strong> 订单 >> 订单列表
+				</div>
+				<div class="order_content product_content">
+					<div class="order_header product_header">
+						<div class="order_head_li">
+							订单搜索 : <input type="text" class="search">
+							<select name="product_type" id="product_type">
+								<option value="" selected="true">订单编号</option>
+								<option value="danhao">渠道单号</option>
+								<option value="rank">商品编号</option>
+								<option value="name">商品名称</option>
+								<option value="cus_name">客户姓名</option>
+								<option value="phone">客户手机</option>
+							</select>			
+							<input type="button" value="搜索" class="search_btn">
+							<input type="button" value="导出订单" class="ui_btn">
+						</div>
+						<div class="order_head_li">
+							下单时间：
+							<input type="text" class="info_input date_input" id="from_date">
+							至
+							<input type="text" class="info_input date_input" id="to_date">
+							<select name="product_type" id="product_type">
+								<option value="25item" selected="true">每页显示25条</option>				
+								<option value="50item">每页显示50条</option>
+								<option value="100item">每页显示100条</option>
+								<option value="500item">每页显示500条</option>						
+							</select>
+						</div>
+						<div class="order_head_li order_status">
+							订单状态：
+							<span class="all"><a href="">所有</a></span>							
+							<span class="a_hover"><a href="">待支付(11)</a></span>
+							<span class="a_hover"><a href="">已付款(0)</a></span>
+							<span class="a_hover"><a href="">确认(0)</a></span>
+							<span class="a_hover"><a href="">发货(0)</a></span>
+							<span class="a_hover"><a href="">签收(0)</a></span>
+							<span class="a_hover"><a href="">拒收(0)</a></span>
+							<span class="a_hover"><a href="">关闭(0)</a></span>
+							<span class="a_hover"><a href="">完结(0)</a></span>
+						</div>
+						<div class="order_head_li order_status">
+							支付方式：
+							<span class="all"><a href="">所有</a></span>							
+							<span class="a_hover"><a href="">货到付款</a></span>
+							<span class="a_hover"><a href="">支付宝</a></span>
+							<span class="a_hover"><a href="">微信支付</a></span>
+							<span class="a_hover"><a href="">扫码支付</a></span>
+							<span class="a_hover"><a href="">银行汇款</a></span>
+							<span class="a_hover"><a href="">微信支付</a></span>							
+						</div>
+					</div>
+					<div class="order_list1 product_list">
+						<table>
+						<form action="?" method="post">
+							<thead>								
+								<tr>
+									<th style="width：15">
+										<input type="checkbox" id="choose_all" onclick="choose_all()">
+									</th>
+									<th class="id_th" style="width：100px">ID/订单编号</th>						
+									<th>订单信息</th>
+									<th>客户信息</th>
+									<th style="width：60">数量价格</th>
+									<th style="width：80">支付方式状态</th>
+									<th style="width：60">快递</th>
+									<th style="width：80">备注</th>
+									<th style="width：85">时间</th>
+									<th style="width：80">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>				
+									<td style="width：15">
+										<input type="checkbox" id="choose_all" name="check_box">
+									</td>
+									<td style="width：100px">
+										<div class="order_li id_rank"><a href="">1</a></div>
+										<div class="order_li">ID:13</div>
+										<div class="order_li">98504125</div>
+									</td>					
+									<td>
+										<div class="order_li">【商品编号】Alizi</div>
+										<div class="order_li">【商品名称】男士太阳镜女偏光镜-演示产品</div>
+										<div class="order_li">【商品套餐】黑框彩镜</div>
+									</td>
+									<td>
+										<div class="order_li">【姓名】第三个</div>
+										<div class="order_li">【手机】13222222222</div>
+										<div class="order_li">【地址】重庆市 重庆市 沙坪坝区 十多个三个</div>
+										
+									</td>
+									<td style="width：60">1/<span class="red">100.00</span></td>
+									<td style="width：80">
+										<div class="order_li">货到付款</div>
+										<div class="order_li tip">待支付</div>
+									</td>
+									<td style="width：60"></td>
+									<td style="width：80">三等分三个</td>
+									<td style="width：85">17-07-13 15:40</td>
+									<td style="width：80"><a href="order_edit.html">修改</a></td>
+								</tr>								
+							</tbody>
+							</form>
+						</table>
+						<div class="bottom_nav">
+							<input type="checkbox" id="check_box" name="converse" onclick="converse()"> 选择/反转						
+							<input type="button" class="action_btn rank_btn" value="批量删除">
+							<div class="record"><span class="record_num">1</span>条记录 <span class="now_page">1</span>/<span class="all_page">1</span>页</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+					Copyright © 2017 <a href="">阿狸子订单系统</a>  All Rights Reserved.
+				</div>	
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script>
+	$( "#from_date" ).datepicker();
+    $( "#from_date" ).datepicker( "option", "showAnim", "blind" );
+ 	$( "#to_date" ).datepicker();
+    $( "#to_date" ).datepicker( "option", "showAnim", "blind" );
+   
+    </script>
+	<script>
+	// $('.sider_nav li').click(
+	// 	function(){
+	// 		var index1=$(this).index()-1;
+	// 		$(this).addClass('active1').siblings().removeClass('active1');
+	// 		$('.sider_nav1 li').removeClass('active1');
+	// 		$('.box1_content_box .box1_content').eq(index1).show().siblings().hide();	
+	// })
+	// $('.sider_nav1 li').click(
+	// 	function(){
+	// 		var index1=$(this).index()-1;
+	// 		$(this).addClass('active1').siblings().removeClass('active1');
+	// 		$('.sider_nav li').removeClass('active1');
+	// 		$('.box1_content_box .box1_content').eq(index1).show().siblings().hide();	
+	// })
+	var flag=0;
+	function choose_all(){
+		flag=~flag;
+		if(!flag){
+			 $("input[name='check_box']").removeAttr("checked"); 
+		}
+		else
+		$("input[name='check_box']").attr("checked","checked"); 
+	}
+	function converse(){
+   $("input[name='check_box']").each(function (){  
+  
+            this.checked = !this.checked;  
+  
+         })  
+	}
+</script>
+</body>
+</html>

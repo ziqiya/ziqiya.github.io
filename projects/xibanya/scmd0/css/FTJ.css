@@ -1,0 +1,20 @@
+.content-2 td{
+			text-align: center;
+		}
+		.content-2 .seller-td{
+		}
+		.content-2 .status-td {
+		    width: 1.7%;
+		}
+		.content-2 .date-td{
+			width: 1%;
+		}
+	  .content-2 .detail_td{
+			width: 1%;
+		}
+		.content-2 .detail_td a{
+			color: #1fbdef;
+		}
+		.content td{
+			margin-left: 0;
+		}

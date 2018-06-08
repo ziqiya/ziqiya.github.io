@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/yjgl-q.css">
+	<title>佣金管理-所有团销售</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+			<div class="header-l">佣金管理</div>
+			<div class="header-right">
+				<a href="jqxs.html"><img src="images/header3.png" alt=""></a>
+			</div>
+	</div>
+	<div class="gray">
+		<div class="gray-left"><a href="yjgl-s.html">所有团销售</a></div>
+		<div class="gray-right"><a href="yjgl-q.html">全部追单</a></div>
+	</div>
+	<div class="add">
+		<a href=""><img src="images/header4.png" alt="添加追单"></a>
+	</div>
+	<div class="middle">
+		<table class="table1" style="border-collapse:collapse;">
+			<thead>
+				<tr class="line1">
+					<td class="td1">团号</td>
+					<td class="td2">团员</td>
+					<td class="td3">商户</td>
+					<td class="td4">时间</td>
+					<td class="td5">追单金</td>
+					<td class="td6">状态</td>
+				</tr>	
+			</thead>
+			<tbody>	
+				<tr class="wrap">
+					<td><p class="num">254698</p></td>
+					<td><p class="people">游客1</p></td>
+					<td><p class="shop">Casa Gracia BarcelonaHostel</p></td>
+					<td><p class="date">05/21</p></td>
+					<td><p class="zdj">10</p></td>
+					<td><p class="status" style="text-align: center;">追单中</p></td>
+				</tr>
+				<tr class="wrap">
+					<td><p class="num">254698</p></td>
+					<td><p class="people">游客3</p></td>
+					<td><p class="shop">Casa Gracia BarcelonaHostel</p></td>
+					<td><p class="date">05/21</p></td>
+					<td><p class="zdj">10</p></td>
+					<td><p class="status" style="text-align: center;">拒绝追单</p></td>
+				</tr>
+				<tr class="wrap">
+					<td><p class="num">254698</p></td>
+					<td><p class="people">游客3</p></td>
+					<td><p class="shop">Casa Gracia BarcelonaHostel</p></td>
+					<td><p class="date">05/21</p></td>
+					<td><p class="zdj">10</p></td>
+					<td><p class="status" style="text-align: center;">追单成功</p></td>
+				</tr>
+				<tr class="wrap">
+					<td><p class="num">254698</p></td>
+					<td><p class="people">12人</p></td>
+					<td><p class="shop">Casa Gracia BarcelonaHostel</p></td>
+					<td><p class="date">05/20</p></td>
+					<td><p class="zdj">10</p></td>
+					<td><p class="status" style="text-align: center;">追单成功</p></td>
+				</tr>
+			</tbody>	
+		</table>
+	</div>
+	<div class="footer">
+		<ul>
+			<li class="footer1"><a href=""><img src="images/footer1.png" alt=""></a></li>
+			<li class="footer2"><a href=""><img src="images/footer2.png" alt=""></a></li>
+			<li class="footer3"><a href=""><img src="images/footer3.png" alt=""></a></li>
+			<li class="footer4"><a href=""><img src="images/footer4.png" alt=""></a></li>
+		</ul>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+	  	$(".status").each(function() {
+		   if ($(this).text()=="追单中") {
+			$(this).css('color', '#4da456');
+			};
+			if ($(this).text()=="待付款") {
+				$(this).css('color', '#ef942f');
+			};
+			if ($(this).text()=="追单成功") {
+				$(this).css('color', '#33a7f1');
+			};
+			if ($(this).text()=="拒绝追单") {
+				$(this).css('color', '#f25b95');
+			};
+			if ($(this).text()=="待确认") {
+				$(this).css('color', '#33a7f1');
+			};
+			if ($(this).text()=="已完成") {
+				$(this).css('color', '#dddddd');
+			};
+		});		
+	})
+	</script>
+</body>
+</html>

@@ -106,8 +106,8 @@ $(".banner").mousemove(function(e) {
 		$('.js').click(function(event) {
 			$('.sub-js').slideToggle();
 		});
-		$('.kj').click(function(event) {
-			$('.sub-kj').slideToggle();
+		$('.pro').click(function(event) {
+			$('.sub-pro').slideToggle();
 		});
 		$('.nav-tool').click(function(event) {
 			$(this).css('left', '-44px');

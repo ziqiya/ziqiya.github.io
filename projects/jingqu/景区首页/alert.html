@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录窗</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    	input{
+			outline: none;
+		}
+		label {
+		    display: inline-block;
+		    max-width: 100%;
+		    margin-bottom: 5px;
+		    font-weight: 500;
+		}
+   		*{
+   			margin:0;
+   			padding: 0;
+   			font-family: 微软雅黑;
+   		}
+   		a{
+   			text-decoration: none;
+   			font-family: 微软雅黑;
+   		}
+   		a:hover{
+   			text-decoration: none;
+   		}
+   		li{
+   			list-style: none;
+   		}
+    	.labels{
+			float: left;
+			width: 30%;
+			margin-top: 4px;
+		}
+		.labels label{
+			line-height: 24px;
+			margin-top: 10px;
+		}
+		.form_item{
+			padding-left: 10px;
+			margin-top: 10px;
+			float:left;
+			width: 80%;
+			height:30px;
+			border:1px solid #eee;
+			border-radius:4px;
+		}
+		.inputs{
+			float: right;
+			width: 70%;
+		}		
+		.yanzhengma{
+			width: 100%;
+			float: left;
+			margin-top: 10px;
+			text-align: center;
+		}
+		input{
+			border-radius: 4px;
+			border:1px solid #eee;
+		}
+		.login{
+			float: right;
+		    height: 49px;
+		    line-height: 49px;
+		    margin-right: 0.4%;
+		    width: 40px;
+		    font-size: 14px;
+		}
+
+		.login a{
+			margin-right: 0.8%;
+			margin-left:  0.8%;
+		}
+		.login_close,.register_close{
+		    display: block;
+		    background: #000;
+		    color: #fff;
+		    width: 30px;
+		    height: 30px;
+		    border-radius: 90px;
+		    position: absolute;
+		    right: -14px;
+		    top: -14px;
+		    font-size: 20px;
+		    transition:all 2s ease;
+		}
+		.login-alert h1,.register-alert h1{
+			float: left;
+			width: 100%;
+			text-align:center;
+			font-size: 20px;
+			color: rgba(0,0,0,0.8);
+		}
+		.login-alert, .register-alert {
+		    position: fixed;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 287px;
+		    height: 290px;
+		    z-index: 30;
+		    text-align: center;
+		    background: #fff;
+		    border-radius: 4px;
+		    border: 1px solid #eee;
+		    padding-left: 5px;
+		    box-shadow: 3px 3px 10px #747474;
+		}
+		.login_btn_bar,.register_btn_bar{
+			    width: 100%;
+			    float: left;
+			    height: 39px;
+			    margin: 0px auto 0 auto;		
+		}
+		.login_btn,.register_btn{			
+			width: 100px;		
+			text-align: center;
+			height: 30px;
+			border-radius: 4px;
+			border:1px solid #eee;
+			background: #ff9d00;
+			color: #fff;
+			margin:7px auto 0 auto;
+		}
+		.register_btn:hover,.login_btn:hover{
+			border:1px solid #ff9d00;
+			background: #ea9300;
+		}
+		.change{
+			float: right;
+			margin-right: 10px;
+		}
+		.changezc,.changedl{
+			color:#80afff;
+		}
+    </style>
+</head>
+<body>
+<!-- 登录框 -->
+<div class="login-alert">
+	<h1>用户登录</h1>
+	<span class="login_close" id="login_close">x</span>
+	<form action="?" method="post">
+		<div class="labels">
+			<label for="username">用户名：</label>
+			<label for="password">密码：</label>
+			<label for="yanzheng">验证码：</label>
+		</div>
+		<div class="inputs">
+			<input type="text" placeholder="请输入用户名" class="form_item username" id="username">
+			<input type="password" placeholder="请输入密码" class="form_item password" id="password">
+			<input type="text" placeholder="请输入验证码" class="form_item yanzheng" id="yanzheng">
+		</div>
+		<div class="yanzhengma"><img src="yanzheng.png" alt=""></div>
+		<div class="login_btn_bar"><input type="submit" value="登录" class="login_btn"></div>
+		<div class="change">没有账号？<span class="changezc" href="">注册</span></div>		
+	</form>
+</div>	
+	<script src="jquery.min.js"></script>
+	<script>
+		$('.login_close').mouseover(function() {
+	 		$(this).css('transform','rotate(720deg)');
+	 	});
+	 	$('.login_close').click(function(){
+	 		$('.login-alert').fadeOut();
+	 	})
+	</script>
+</body>

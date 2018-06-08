@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>会议登录页面</title>
+	<link  type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+	<style>
+		li{
+			list-style: none;
+		}
+		a{
+			color: #003a75;
+		}
+		.nav-tabs{
+			padding-left: 25%;
+			text-align: center;
+			border: 0;
+		}
+		.alert-dl{
+			background: #d7ebff;
+		}
+		.nav>li>a{
+			padding:0;
+		}
+		.nav li{
+			float: left;
+		}
+		.nav span{
+			float: left;
+			margin-top: 3px;
+		}
+		input{
+			outline: none;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		.denglu_wrap{
+			width: 250px;
+			padding:20px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+			border:1px solid red;
+		}
+		.dl_head{
+			font-size: 20px;
+			text-align: center;
+		}
+		.glyphicon-user,.glyphicon-lock,.glyphicon-flag{
+			margin-left: 20px;
+			margin-right: -20px;
+			font-size: 15px;
+			color: #1399d2;
+		}
+		#username,#realname,#zc_username,#zc_password,#zc_zhanghao,#con_password{
+			margin-bottom: 10px;
+		}
+		#password,#part,#username,#realname,#zc_password,#zc_username,#zc_zhanghao,#con_password{
+			padding-left: 20px;
+			width: 189px;
+		}
+		.zhanghao,.password,.con_password,.part{
+			width: 100%;
+			float: left;
+		}
+		.part{
+			margin-left: -19px;
+		}
+		.change{
+			margin-top: 10px;
+			float: right;
+		}
+		#zhuce,#denglu{
+			text-align: center;
+			margin-top: 20px;
+			width: 90px;
+			height: 30px;
+			background: #2f82ff;
+			border-radius: 50px;		
+		}
+		.denglubtn{
+			float: left;
+			text-align: center;
+			width: 100%;
+			margin:0 auto;
+		}
+	</style>
+<body>
+<div class="denglu_wrap">
+	<h1 class="dl_head">用户登录</h1>
+	<div class="tab-content">
+		<div class="tab-dl tab-pane fade in active" id="dl">	
+			<form action="?" method="post">
+			<div class="zhanghao row">
+				<span class="glyphicon glyphicon-user"></span><input type="text" id="username" name="username" autocomplete="" placeholder="账号">
+			</div>
+			<div class="password row">
+				<span class="glyphicon glyphicon-lock"></span><input type="password" id="password" name="password" placeholder="密码">
+			</div>
+			<div class="denglubtn">
+				<input type="submit" value="登录" name="denglu" id="denglu">
+			</div>
+			<div class="change">没有账号？<a class="changezc" href="zhuce.html">注册</a></div>		
+			</form>		
+		</div>
+	</div>
+</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

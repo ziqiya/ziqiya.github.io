@@ -1,0 +1,668 @@
+ *{
+    	margin: 0;
+    	padding: 0;
+    	font-family: 微软雅黑;
+    }
+    li{
+    	list-style: none;
+    }
+    a,a:focus,a:hover{
+    	text-decoration: none;
+    	font-family: 微软雅黑;
+    }
+    .clearfix:after{
+		content: ".";
+		display: block;
+		visibility: hidden;
+		clear: both;
+		height: 0;
+		}
+		.clearfix{
+		*+height: 1%;//清除IE高问题
+		}
+		.container {
+		    width: 91.6%;
+		}
+    .grey_bg{
+    	background: #f7f7f7;
+
+    }
+    .nav .active{
+			background:#eeeeee;
+			color: #000; 
+		}
+    .labels{
+			float: left;
+			width: 30%;
+			margin-top: 4px;
+		}
+		.labels label{
+			line-height: 24px;
+			margin-top: 10px;
+		}
+		.inputs{
+			float: right;
+			width: 70%;
+		}		
+		.yanzhengma{
+			width: 100%;
+			float: left;
+			margin-top: 10px;
+			text-align: center;
+		}
+		input{
+			border-radius: 4px;
+			border:1px solid #eee;
+		}
+		.login_close,.register_close{
+		    display: block;
+		    background: #000;
+		    color: #fff;
+		    width: 30px;
+		    height: 30px;
+		    border-radius: 90px;
+		    position: absolute;
+		    right: -14px;
+		    top: -14px;
+		    font-size: 20px;
+		    transition:all 2s ease;
+		}
+		.login-alert h1,.register-alert h1{
+			float: left;
+			width: 100%;
+			text-align:center;
+			font-size: 20px;
+			color: rgba(0,0,0,0.8);
+		}
+		.login-alert, .register-alert {
+		    display: none;
+		    position: fixed;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 287px;
+		    height: 290px;
+		    z-index: 30;
+		    text-align: center;
+		    background: #fff;
+		    border-radius: 4px;
+		    border: 1px solid #eee;
+		    padding-left: 5px;
+		    box-shadow: 3px 3px 10px #747474;
+		}
+		.change{
+			position: absolute;
+			right: 2px;
+			bottom: 2px;
+		}
+		.login_btn_bar,.register_btn_bar{
+			    width: 100%;
+			    float: left;
+			    height: 39px;
+			    margin: 0px auto 0 auto;		
+		}
+		.login_btn,.register_btn{			
+			width: 100px;		
+			text-align: center;
+			height: 30px;
+			border-radius: 4px;
+			border:1px solid #eee;
+			background: #ff9d00;
+			color: #fff;
+			margin:7px auto 0 auto;
+		}
+		.register_btn:hover,.login_btn:hover{
+			border:1px solid #ff9d00;
+			background: #ea9300;
+		}
+		.changezc,.changedl{
+			color:#80afff;
+		}
+		#weather{
+			display: block;
+		    height: 50px;
+		    line-height: 48px;
+		    float: right;
+		    font-size: 14px;
+		    margin-left: 10px;
+		}
+		.weather{
+			margin-left:4px;
+		}
+		.form_item{
+			padding-left: 10px;
+			margin-top: 10px;
+			float:left;
+			width: 80%;
+			height:30px;
+			border:1px solid #eee;
+			border-radius:4px;
+		}
+   		.head-logo{
+   			height: 49px;
+   			line-height: 49px;
+   		}
+   		.navbar{
+			background: rgba(0,0,0,0.6);
+			height: 50px;
+			line-height: 50px;
+			border:0;
+			z-index: 50;
+		}
+		.navbar-nav{
+			margin-left: 1.59%;
+		}
+		.nav-lan {
+		    margin: 18px 12px 0 2px;
+		    background: #fff;
+		    height: 14px;
+		    width: 1px;
+		}
+		.nav_spacer{
+			width: 1px;
+			height: 14px;
+			margin: 18px 0;
+			border-radius: 90px;
+			background: #8f8f8f; 
+		}
+		.navbar a,.navbar{
+			color: #fff;
+			font-size: 17px;
+		}
+		.nav-tabs>li>a{
+			border-radius: 0px;
+		}
+		.service{
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			height: 200px;
+			background: url(../images/service.jpg);
+			background-size: cover;
+			border-radius: 4px;
+			overflow: hidden;
+			box-shadow: 0 0 10px rgba(151,151,151,0.8);
+			z-index: 30;
+		}
+		.service p{
+			font-size: 20px;
+		    margin-left: 11px;
+		    margin-top: 91px;
+		}
+		.service_close{
+			display: block;
+			float: right;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			border: 1px solid #fff;
+			color: #fff;
+			font-size: 20px;
+			font-weight: bold;
+			box-shadow: -2px 2px 10px rgba(151,151,151,0.8);
+		}
+		.maomi_pic{
+		    position: fixed;
+		    left: -16px;
+		    bottom: 45px;
+		    z-index: 50;
+		    transition:all 1s ease;
+		}
+		.maomi_eyeout{
+			width: 13px;
+		    height: 13px;
+		    border-radius: 20px;
+		    position: absolute;	    
+		    left: 42px;
+		}
+		.maomi_eyeout1{
+			top: 24px;
+		}
+		.maomi_eye{
+			background: #000;
+		    position: absolute;
+		    width: 6px;
+		    height: 6px;
+		    border-radius: 90px;
+		}
+		.maomi_eyeout2{
+			top: 65px;
+		}
+		.helping_alert{
+			width: 100%;
+			position: fixed;
+			bottom: 0;
+			left: -100%;
+			padding: 1%;		
+			background: rgba(0,0,0,0.7);
+			color: #fff;
+			z-index: 60;
+			transition:all 1s ease;
+		}
+		.helping_alert_close{
+		    position: absolute;
+		    top: 0;
+		    right: 8px;
+		    font-size: 25px;
+		}
+		.contact_us{
+			width: 50%;
+			float: left;			
+		}
+		.contact_us_li{
+			width: 100%;
+		    height: 2em;
+		    line-height: 2em;
+		    text-align: center;
+		}
+		.contact_us_head,.attention_us_head{
+			font-size: 20px;
+		    text-align: center;
+		    margin-bottom: 2%;
+		}
+		.contact_us_body,.attention_us_body{
+			width: 100%;
+			float: left;
+		}
+		.attention_us{
+			width: 50%;
+			float: left;
+			border-left: 1px solid #fff;
+		}
+		.attention_us_li{
+			float: left;
+			width: 50%;
+			height: 100%;
+			text-align: center;
+		}
+		.wechat_head,.qq_head{
+		    width: 100%;
+		    margin-bottom: 1%;
+		    font-size: 17px;
+		}
+		.wechat_ma,.qq_ma{
+			width: 100%;
+			float: left;
+		}
+		.wechat_ma img,.qq_ma img{
+			width: 60%;
+		}
+		.register{
+			float: right;
+			height: 49px;
+		    line-height: 49px;
+		    font-size: 14px;
+		    cursor:pointer;
+		}
+		.login{
+			float: right;
+		    height: 49px;
+		    line-height: 49px;
+		    margin-right: 0.4%;
+		    width: 40px;
+		    font-size: 14px;
+		    cursor:pointer;
+		}
+
+		.login a{
+			margin-right: 0.8%;
+			margin-left:  0.8%;
+		}
+		.banner{
+		    float: left;
+		    max-height: 453px;
+		    padding-bottom: 39%;
+		    width: 100%;
+		    background: url(../images/banner.png) 0 -0px no-repeat;
+		    background-size: cover;
+		    position: relative;
+		}
+		.search_bar{
+			position: absolute;
+		    bottom: 20px;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 31.87%;
+		    height: 40px;
+		    z-index: 10;
+		}
+		#search{
+			padding: 5px;
+			color: #000;
+			border:0;
+			width: 89.8%;
+			height: 40px;
+			border-radius: 3px 0 0 3px ;
+			background:rgba(255,255,255,0.8);
+		}
+		.glyphicon-search{
+			display: block;
+			width: 10.19%;
+			height: 40px;
+			line-height:40px;
+			text-align: center;
+			background: rgba(255,144,0,0.6);
+			color: #000;
+			float: right;
+			margin-top: -1px;
+			border-radius:0 3px 3px 0;
+			font-size: 20px;
+		}
+		.glyphicon-search:hover{
+			background:  rgba(255,144,0,0.8);
+		}
+		
+		.spot_show{
+			float: left;
+			margin-top: 73px;
+			max-height: 342px;
+		}
+		.spot_show_li{
+		    float: left;
+		    margin-left: 3%;
+		    width: 30%;
+		    height: auto;
+		    position: relative;
+		}
+		.spot_show_li h1 a{
+			font-size: 20px;
+			font-weight: normal;
+			color: #fff;
+		}
+		.spot_show_li img{
+			width: 100%;
+			height: 100%;
+		}
+		.spot_show_cover{
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: rgba(0,0,0,0.6);
+		    text-align: center;
+		    color: #fff;
+		    transition: all 0.7s ease;
+		    opacity: 0;
+		}
+		.spot_show_cover h1{
+			margin-top: 5%;
+			font-size: 15px;
+		}
+		.spot_show_li:hover .spot_show_cover{
+			opacity: 1;
+			padding-top: 20%;
+
+		}
+		.route_recommend{
+			float: right;
+		    width:100%;
+		    margin-left: 2%;
+		    margin-top: 5%;
+		    padding: 10px;
+		    background: #fff;
+		}
+		.route_recommend h1{
+			font-size: 30px;
+			margin:10px 0  0.605% 10px;
+		}
+		.recommend_li{
+			font-size: 15px;
+		    height: 35px;
+		    line-height: 35px;
+		}
+		.nav-tabs{
+			border: 0;
+		}
+		.ticket_li{
+			width: 96%;
+			height: 145px;
+    		line-height: 102px;
+			border: 1px solid #eee;
+			overflow: hidden;
+			margin:1%;
+			position: relative; 
+			padding: 20px;
+			transition:all 0.3s ease;
+		}
+		.ticket_li:hover{
+			border: 1px solid #ff9d00;
+		}
+		.ticket_li:hover .ticket_cover{
+			opacity: 1;
+			padding-top: 30%;
+		}
+		.nav .active{
+			background: #ff9d00;
+			color: #fff;
+		}
+		.nav>li>a:focus, .nav>li>a:hover{
+			background:#ff9d00;
+		}
+		.ticket_cover{
+			opacity: 0;
+			height:  258.16px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			color: #fff;
+			width: 100%;
+			transition:all 0.7s ease;
+			background: rgba(0,0,0,0.6);
+			overflow: hidden;
+		}
+		.trip_head{
+			border-bottom: 1px solid #eee;
+		}
+		.trip_head_li{
+			float: left;
+		    width: 19%;
+		    height: 40px;
+		    line-height: 40px;
+		    font-size: 17px;
+		    text-align: center;
+		    border-right: 1px solid #eee;
+		}
+		.trip_more{
+			border-right: 0;
+		}
+		.ticket_li_img{
+			float: left;
+			width: 20%;
+			height: 100px; 
+			overflow: hidden;
+		}
+		.ticket_li img{
+			width:100%;
+			height: 100%;
+		}
+		.ticket_li_name,.ticket_li_route,.ticket_li_price,.ticket_li_more{
+			float: left;
+			width: 20%;
+			height: 100px;
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow:ellipsis;
+		}
+		.buy_bar{
+			float: left;
+			width: 50%;
+		    height: 40px;
+		    line-height: 40px;
+		    color: #fff;
+		    margin-top: 31px;
+		    background: #ff4000;
+		    box-shadow: 0px 0px 5px #ff4000;
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		}
+		.buy_ma{
+			opacity: 0;
+		    position: absolute;
+		    width: 4%;
+		    padding-bottom: 4%;
+		    margin-top: -42px;
+		    margin-left: 0px;
+		    background: url(../images/weixin_ma.png);
+		    background-size: cover;
+		    transition: all ease 0.5s;
+		}
+		.buy_bar:hover{
+			box-shadow: 0px 0px 10px 3px #ff4000;
+		}
+		.buy_bar:hover .buy_ma{
+			opacity: 1;
+			margin-top: -61px;
+			margin-left: -77px;
+			width: 7%;
+		    padding-bottom: 7%;
+		}
+		.ticket_more_bar{
+			float: left;
+			width: 50%;
+		    height: 40px;
+		    line-height: 40px;
+		    margin-top: 31px;
+		    background: #ff9d00;
+		    box-shadow: 0px 0px 5px #ff9d00;
+		    color: #fff;
+		    transition: all 0.3s ease;
+		}
+		.ticket_more_bar:hover{		
+			box-shadow: 0px 0px 10px 3px #ff9d00;	
+		}
+
+		
+		/*.buy_ticket{
+			float: left;
+		    width: 80px;
+		    height: 37px;
+		    line-height: 37px;
+		    text-align: center;
+		    border-radius: 3px;		    
+		    color: #fff;
+		    margin-top: 20px;
+		    margin-right: 20px;
+		    font-size: 15px;
+		    transition:all 0.7s ease;
+			background: #ff4000;
+		}
+		.buy_ticket:hover{
+			box-shadow: 0px 0px 10px 3px #ff4000;		
+		}
+		.buy_ticket:hover a{
+			font-size: 16px;
+		}*/
+		.footer{
+			margin-top: 40px;
+			float: left;
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			background: #3b3b3b;
+			color: #fff;
+			font-size: 15px;
+			text-align: center;
+		}
+		.head_row{
+			float: left;
+		    width: 100%;
+		    height: 101px;
+		    position: relative;
+		    margin-bottom: 20px;
+		}
+		.head-line1{
+		    position: absolute;
+		    left: 16%;
+		    top: 55px;
+		    width: 17%;
+		    height: 6px;
+		    border-radius: 0px 200px 0px 200px;
+		    background: linear-gradient(45deg,transparent 0, #ff9d00 100%);
+		}
+		.head-line2 {
+		position: absolute;
+		    right: 16%;
+		    top: 55px;
+		    width: 17%;
+		    border-radius: 0px 200px 0px 200px;
+		    height: 6px;
+		    line-height: 20px;
+		    background: linear-gradient(45deg,#ff9d00 0,transparent 100%);
+		}
+		.sub_head{
+		    width: 28.9%;
+		    margin: 20px auto;
+		    height: 56px;
+		    line-height: 56px;
+		    text-align: center;
+		}
+		.navbar-toggle{
+			border: 1px solid #fff;
+		}
+		.navbar-toggle .icon-bar {
+		    background: #fff;
+		}
+		.navbar-collapse{
+    		z-index: 20;
+    	}
+    	@media (max-width:1006px){
+		.navbar-collapse{
+			background: rgba(0,0,0,0.6);
+		}
+		.nav>.nav_spacer,#weather,.login,.register,.nav1,.service{
+			display: none;
+		}
+		.nav>li{
+			margin-right: 0px;
+		}
+	}
+    	@media (max-width:750px){
+    		.sub_head{
+    			width: 100%;
+    		}
+    		.trip_head_li{
+    			font-size: 14px;
+    		}
+    		.search_bar { 
+			    width: 60.87%;
+			}
+			.head-line1,.head-line2{
+				display: none;
+			}
+		
+			.container{
+				width: 100%;
+			}
+			.ticket_li {
+				width: 100%;
+			    padding: 2px;		
+			}
+			.ticket_more_bar {
+			    width: 54px;
+			}
+			.container{
+				padding: 0;
+			}
+			.route_recommend{
+				padding: 2px;
+			}
+			.search_bar{
+				display: none;
+			}
+			.maomi_pic{
+				display: none;
+			}
+			.helping_alert{
+				display: none;
+			}
+		}
+		@media (max-width:522px){
+		.footer {
+		    line-height: 25px;
+		}
+	}

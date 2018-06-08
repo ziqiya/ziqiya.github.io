@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ZDJ.css">
+	<title>追单金</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="container">
+			<div class="header-l">
+				<a href="../scmd2/wd.html"><img src="images/order_04_03.png"></a>
+			</div>
+			<div class="shxq" style="color:#000">
+				<small>追单金</small>	
+			</div>
+		</div>
+	</div>
+	<!--内容-->
+	<div class="content">
+		<div class="container">
+			<div class="total">
+				<span>1523.00</span>
+				<p>总金额<small>&nbsp;(€)</small></p>
+			</div>
+		</div>
+			<div class="">
+				<table>
+					<thead>
+						<tr>
+							<td>团号</td>
+							<td>团员</td>
+							<td>商家&nbsp;</td>
+							<td>时间&nbsp;&nbsp;</td>
+							<td>追单金</td>
+							<td>状态</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>254698</td>
+							<td>13</td>
+							<td class="td"><little>Casa Gracia BarcelonaHotel</td>
+							<td>05/12</td>
+							<td>10</td>
+							<td class="status">追单中</td>
+						</tr>
+						<tr>
+							<td>254698</td>
+							<td>LIU MIA</td>
+							<td class="td">Casa Gracia BarcelonaHotel</td>
+							<td>05/12</td>
+							<td>10</td>
+							<td class="status">拒绝追单</td>
+						</tr>
+						<tr>
+							<td>254698</td>
+							<td>LIN DANDAN</td>
+							<td class="td">Casa Gracia BarcelonaHotel</td>
+							<td>05/12</td>
+							<td>-</td>
+							<td class="status">追单成功</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		
+	</div>
+	<script src="js/holder.min.js"></script>	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$(".status").each(function() {
+		   if ($(this).text()=="追单中") {
+			$(this).css('color', '#098217');
+			};
+			if ($(this).text()=="待付款") {
+				$(this).css('color', '#ef942f');
+			};
+			if ($(this).text()=="追单成功") {
+				$(this).css('color', '#cccccc');
+			};
+			if ($(this).text()=="拒绝追单") {
+				$(this).css('color', '#ed0a60');
+			};
+			if ($(this).text()=="待确认") {
+				$(this).css('color', '#33a7f1');
+			};
+			if ($(this).text()=="已完成") {
+				$(this).css('color', '#dddddd');
+			};
+		});	
+		})
+	</script>
+</body>
+</html>

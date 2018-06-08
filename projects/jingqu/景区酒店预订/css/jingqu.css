@@ -1,0 +1,102 @@
+
+.tu{
+	margin-top: 30px; 
+}
+.fj img{
+	width: 450px;
+	height: 300px;
+}
+.word{
+	width: 1000px;
+	margin: 0 auto;	
+}
+.yd-1{
+	height: 70px;
+	background-color: #DE3A33;
+	border-bottom:3px  solid #838383;	
+}
+.yd-1 span{
+	font-size: 30px;
+	color: #FFFFFF;
+	margin-left: 20px;
+}
+.s1{
+	color: #838383;
+	font-size: 13px;
+}
+.yd-2 li{
+	width: 167px;
+	border-right:1px  solid #838383;
+	float: left;
+	list-style: none;
+}
+.yd-2{
+	height: 70px;
+	border-bottom:1px solid #838383; 
+}
+.yd-3{
+	height: 80px;
+}
+.yd-3 div{
+	margin: 8px 0;
+}
+.yd-3 select{
+	color: red;
+	width: 400px;
+	padding: 5px 0;
+}
+.yd-3 span{
+	padding-right: 25px;
+	margin-left: 90px;
+}
+.yd-3 input{
+	width: 50px;
+	margin-left: 80px;
+}
+.yd-4{
+	height: 50px;
+}
+.yd-4 input{
+	margin-left: 80px;
+	margin-right: 50px;
+	width: 170px;height: 38px;
+	background: #FF4400;
+}
+.yd-4 a{
+	padding: 9px 25px;
+	background: #F8F8F8;
+	border: 1px solid #838383;
+	text-decoration: none;
+}
+.yd-4 span{
+	margin-right: 8px;
+	margin-top: 3px;
+};
+.yd1{
+	height: 340px;
+	position: relative;
+}
+.yd-5{
+	width: 200px;
+	height: 200px;
+	position:absolute;
+	top: 273px;
+	right:285px;
+	display: none;
+}
+.yd-4 a:hover .yd-5 img{
+	display: block;
+}
+.nav1{
+	border-top: 1px solid #838383;
+	margin: 0 20%;
+	height: 38px;
+}
+.nav1 a{
+	font-size: 20px;
+	text-decoration: none;
+	color: #333333;
+	padding: 8px 38px;
+	border-right: 1px solid #838383;
+	line-height: 38px;
+}

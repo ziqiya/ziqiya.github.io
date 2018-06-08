@@ -1,0 +1,660 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"content",
+				"content"
+			],
+			[
+				"colo",
+				"color:#000"
+			],
+			[
+				"style",
+				"style"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"b",
+				"button	Tag"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"boots",
+				"bootstrap"
+			],
+			[
+				"trans",
+				"translate"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"table-",
+				"table-row"
+			],
+			[
+				"sty",
+				"style	Tag"
+			],
+			[
+				"fill",
+				"fillStyle=\"red"
+			],
+			[
+				"fi",
+				"fillRect"
+			],
+			[
+				"get",
+				"getContext"
+			],
+			[
+				"add",
+				"addColorStop"
+			],
+			[
+				"line",
+				"lineStyle"
+			],
+			[
+				"stroke",
+				"strokeStyle"
+			],
+			[
+				"cl",
+				"closePath"
+			],
+			[
+				"lin",
+				"lineTo"
+			],
+			[
+				"close",
+				"closePath"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ge",
+				"getElementById"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"ar",
+				"article	Tag"
+			],
+			[
+				"re",
+				"reqiured"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"tetx",
+				"text-align"
+			],
+			[
+				"scr",
+				"script	Tag"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"side",
+				"sidebar-4"
+			],
+			[
+				"sid",
+				"sidebar-3"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"c",
+				"cursor"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"o",
+				"opacity"
+			],
+			[
+				"img",
+				"img"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"span",
+				"border-spacing"
+			],
+			[
+				"s",
+				"src	Attr"
+			],
+			[
+				"block",
+				"block-1"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"border-c",
+				"border-collapse"
+			],
+			[
+				"url",
+				"url()"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"clar",
+				"clearfix"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"ulr",
+				"url()"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"pading",
+				"padding-right"
+			],
+			[
+				"m",
+				"margin-top"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"clear",
+				"clearfix"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"br",
+				"br"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"cont",
+				"container"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"doc",
+				"DOCTYPE"
+			],
+			[
+				"getElemnt",
+				"getElementById('jifen"
+			],
+			[
+				"on",
+				"ondblclick	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 335.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Enable Package→启用插件"
+			],
+			[
+				"in",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"i",
+				"Package Control: Install Package→安装插件"
+			]
+		],
+		"width": 594.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/html/bootstrap格子.html",
+		"/E/html/css1/base.css",
+		"/E/html/文字动画faguang.html",
+		"/E/html/move box.html",
+		"/E/html/变换.html",
+		"/E/html/pingpu3.html",
+		"/E/html/pingpu2.html",
+		"/E/html/pingpu.html",
+		"/E/html/font family.html",
+		"/E/html/tuubiao.html",
+		"/E/html/ZIdong自动变宽.html",
+		"/E/html/Media search2.html",
+		"/E/html/Media search.html",
+		"/E/html/PIC change3.html",
+		"/E/html/PIC change2.html",
+		"/E/html/PIC change.html",
+		"/E/html/control PX.html",
+		"/E/html/cell.html",
+		"/E/html/clip.html",
+		"/E/html/jianbian.html",
+		"/E/html/cloudF.html",
+		"/E/html/sky.html",
+		"/E/html/Lattice layout.html",
+		"/E/html/bezier.html",
+		"/E/html/littleYL.html",
+		"/E/html/yuanjiaoJUxing.html",
+		"/E/html/guagou.html",
+		"/E/html/circular.html",
+		"/E/html/smile.html",
+		"/E/html/baseline.html",
+		"/E/html/jindutiao.html",
+		"/E/html/line.html",
+		"/E/html/canvas1.js",
+		"/E/html/canvas1.html",
+		"/E/html/canvas.js",
+		"/E/html/canvas.html",
+		"/E/html/yuanJiao.html",
+		"/E/1.jpg",
+		"/C/图片1.png",
+		"/E/bootstrap-3.3.7-dist/js/jquery.min.js",
+		"/E/images/poker1",
+		"/E/css/IcoMoon-Free Font Reference.html",
+		"/E/html/Media2.html2",
+		"/E/html/BIAOda.html",
+		"/E/html/input.html",
+		"/E/html/box.html",
+		"/E/html/sound.html",
+		"/E/html/h4.html",
+		"/E/html/css23.html",
+		"/E/html/css1/lylg.html",
+		"/E/html/css1/css22.html",
+		"/E/html/css1/css21.html",
+		"/E/html/css1/xuanxiangk.html",
+		"/E/html/css1/css20.html",
+		"/E/html/css19.html",
+		"/E/html/css.18.html",
+		"/E/html/css17.html",
+		"/E/html/css16.html",
+		"/E/html/css1/style.css",
+		"/E/html/caa15.html",
+		"/E/html/css16WYZZ.html",
+		"/E/html/biaodan.html",
+		"/E/html/css14.html",
+		"/E/html/css13.html",
+		"/E/html/css12.html",
+		"/E/html/css10.html",
+		"/E/html/css9.html",
+		"/E/html/css8.html",
+		"/E/html/css7.html.html",
+		"/E/html/css.5.html",
+		"/E/html/css6.html",
+		"/E/html/css.html",
+		"/E/html/css4.html",
+		"/E/html/css3.html",
+		"/E/html/css2.html",
+		"/E/html/csspractice三列布局.html",
+		"/E/html/csspractice.html",
+		"/E/html/cssDanLieDingKuan单列定宽列自适应复变加油.html",
+		"/E/html/cssJS实现两列定高.html",
+		"/E/html/cssFuBianJu边框实现两定高.html",
+		"/E/html/cssFuBianJu实现两列定高.html",
+		"/E/html/cssImages两列定宽下使用背景图片.html",
+		"/E/html/CSSFuBianJu负边距.html",
+		"/E/html/css absolut position.html",
+		"/E/html/单列定宽单列自适应1.html",
+		"/E/html/cssHeZiBuJu2.html",
+		"/E/html/cssHeZiBuJu1.html",
+		"/E/html/css1.html",
+		"/E/html/sxzy.html",
+		"/E/images/ll2.jpg",
+		"/E/images/bg_nav1.png",
+		"/E/html/xuanxiangka 011.html",
+		"/E/html/xuanxiangka 01.html",
+		"/E/images/zt1.jpg",
+		"/E/html/css18.html",
+		"/E/images/kuai1.html",
+		"/E/html/理工首页.html",
+		"/E/images/fang-da-jing.gif",
+		"/E/images/shuxian.gif",
+		"/E/images/sssx.gif",
+		"/E/images/dot.png",
+		"/E/images/sx.gif",
+		"/E/html/shu--xian.gif",
+		"/E/images/shu-xian.gif",
+		"/E/html/网站首页制作.rar",
+		"/E/images/01.jpg",
+		"/E/images/number.gif",
+		"/E/html/css11.html",
+		"/E/html/4.9.html",
+		"/E/html/4.8.html",
+		"/E/html/4.7.html",
+		"/E/html/4.6.html",
+		"/E/html/4.5.html",
+		"/E/html/5.1.html",
+		"/E/images/big.jpg",
+		"/E/images/a.png",
+		"/E/images/off.jpg",
+		"/E/html/images/002.jpg",
+		"/E/html/images/001.jpg",
+		"/C/Users/lei/Pictures/t016ee2b3f322a94e09.jpg",
+		"/E/html/4.3.html",
+		"/E/html/4.2.html",
+		"/E/html/4.1.html",
+		"/E/html/4.0.html",
+		"/E/html/111.html",
+		"/E/html/3.9.html",
+		"/E/html/3.8.html",
+		"/E/html/3.7.html"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";\">",
+			"255",
+			"></",
+			"/>\n",
+			"hover",
+			"jpg",
+			";\n",
+			"240px",
+			";\n",
+			"left",
+			";\n",
+			"&nbsp;&nbsp;&nbsp;&nbsp;",
+			"		\n",
+			"left",
+			"10",
+			";\n",
+			"NO.",
+			"."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"NO_",
+			"_"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bootstrap.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

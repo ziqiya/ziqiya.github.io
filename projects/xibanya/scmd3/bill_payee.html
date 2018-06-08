@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/upload_list.css">
+    <link rel="stylesheet" href="css/bill_payee.css">
+	<title>预约界面</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<a  href='#' onClick="javascript :window.history.go(-1);" class="back_icon"><img src="images/upload_03.png" alt=""></a>发票付款人
+		<a href="" class="add_btn"><img src="images/bill_payee_03.png" alt=""></a>
+	</div>
+	<div class="content1 clearfix">
+		<div class="payee_list clearfix">
+			<div class="payee_li">
+				<div class="payee_name_li">
+					<span class="payee_name">Mia</span>
+					<div class="down_icon">
+						<img src="images/search_store_03.png" alt="">
+					</div>			
+				</div>	
+				<div class="payee_info">
+					<div class="function_word"><span class="edit_word"><a href="">编辑</a></span><span class="delete_word"><a href="">删除</a></span></div>
+					<div class="payee_info_li">证件类型NIE/DNI: <span>NIE</span></div>
+					<div class="payee_info_li">证件号码：<span>12334556</span></div>
+					<div class="payee_info_li">地址：<span>12233441111111111111111</span></div>
+					<div class="payee_info_li">电话：<span>123445667</span></div>
+					<div class="payee_info_li">开户行：<span>西班牙银行</span></div>
+					<div class="payee_info_li">银行账号：<span>123445678</span></div>
+				</div>	
+			</div>
+			<div class="payee_li">
+				<div class="payee_name_li">
+					<span class="payee_name">Mia</span>
+					<div class="down_icon">
+						<img src="images/search_store_03.png" alt="">
+					</div>			
+				</div>	
+				<div class="payee_info">
+				<div class="function_word"><span class="edit_word"><a href="">编辑</a></span><span class="delete_word"><a href="">删除</a></span></div>
+					<div class="payee_info_li">证件类型NIE/DNI: <span>NIE</span></div>
+					<div class="payee_info_li">证件号码：<span>12334556</span></div>
+					<div class="payee_info_li">地址：<span>12233441111111111111111</span></div>
+					<div class="payee_info_li">电话：<span>123445667</span></div>
+					<div class="payee_info_li">开户行：<span>西班牙银行</span></div>
+					<div class="payee_info_li">银行账号：<span>123445678</span></div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$('.payee_name_li').click(function() {
+			$(this).next().slideToggle();
+			if ($(this).hasClass('top')) {
+			$(this).removeClass('top').find('.down_icon img').attr('src',"images/search_store_03.png"); 	
+			}
+			else {
+			$(this).addClass('top').find('.down_icon img').attr('src',"images/bill_payee_07.png"); 
+		};
+		});
+	</script>
+</body>
+</html>

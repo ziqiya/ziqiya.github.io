@@ -1,0 +1,399 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>景点页面</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="images/didu.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/order.css">
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+<div class="service">
+    <span class="service_close">x</span>
+    <p>客服热线：<br>123456789</p>
+</div>
+<!-- 侧边信息条 -->
+<div class="maomi_pic">
+    <img src="images/maomi.png" height="100px" width="100px" alt="">
+    <div class="maomi_eyeout maomi_eyeout1"><div class="maomi_eye maomi_eye1" id="maomi_eye"></div></div>   
+    <div class="maomi_eyeout maomi_eyeout2"><div class="maomi_eye maomi_eye2"></div></div>  
+</div>
+<div class="helping_alert">
+        <span class="helping_alert_close">x</span>
+        <div class="contact_us">
+            <div class="contact_us_head">联系我们</div>
+            <div class="contact_us_body">
+                <ul>
+                    <li class="contact_us_li">联系电话：12345678</li>
+                    <li class="contact_us_li">联系人：窗灬敲雨...</li>
+                </ul>
+            </div>
+        </div>
+        <div class="attention_us">
+            <div class="attention_us_head">关注我们</div>
+            <div class="attention_us_body">
+                <ul>
+                    <li class="attention_us_li">
+                        <div class="wechat_head">微信公众号</div>
+                        <div class="wechat_ma"><img src="images/wechatma.png" alt=""></div>
+                    </li>
+                    <li class="attention_us_li">
+                        <div class="qq_head">qq群</div>
+                        <div class="qq_ma"><img src="images/qqma.png" alt=""></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- 登录框 -->
+<div class="login-alert">
+    <h1>用户登录</h1>
+    <span class="login_close" id="login_close">x</span>
+    <form action="?" method="post">
+        <div class="labels">
+            <label for="username">用户名：</label>
+            <label for="password">密码：</label>
+            <label for="yanzheng">验证码：</label>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="请输入用户名" class="form_item username" id="username">
+            <input type="password" placeholder="请输入密码" class="form_item password" id="password">
+            <input type="text" placeholder="请输入验证码" class="form_item yanzheng" id="yanzheng">
+        </div>
+        <div class="yanzhengma"><img src="images/yanzheng.png" alt=""></div>
+        <div class="login_btn_bar"><input type="submit" value="登录" class="login_btn"></div>
+        <div class="change">没有账号？<span class="changezc" href="">注册</span></div>     
+    </form>
+</div>
+<!-- 注册框 -->
+<div class="register-alert">
+    <h1>用户注册</h1>
+    <span class="register_close" id="register_close">x</span>
+    <form action="?" method="post">
+        <div class="labels">
+            <label for="z_username">用户名：</label>
+            <label for="z_password">密码：</label>
+            <label for="zc_password">确认密码：</label>
+            <label for="z_email">邮箱：</label>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="请输入用户名" class="form_item z_username" id="z_username">
+            <input type="password" placeholder="请输入密码" class="form_item z_password" id="z_password">
+            <input type="password" placeholder="请确认密码" class="form_item zc_password" id="zc_password">
+            <input type="email" placeholder="请输入邮箱" class="form_item z_email">
+        </div>
+        <div class="register_btn_bar"><input type="submit" value="注册" class="register_btn"></div>
+        <div class="change">已有账号？<span class="changedl" href="">登录</span></div>     
+    </form>
+</div>
+    <a href="" name="top" id="top"></a>
+    <nav class="navbar navar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <div class="head-logo">帝都旅游</div>
+            </div>
+
+            <div class="navbar-collapse collapse">
+            <ul class="nav  nav1 navbar-nav navbar-right login_register">
+                <li><div class="login">登录</div></li>
+                <li class="nav-lan"></li> 
+                <li><div class="register">注册</div></li>     
+                <li class="weather"><span id="weather"></span></li>
+            </ul>   
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="nav_spacer"></li>
+                    <li><a href="../景区首页/index.html">首页</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="../景区/jingqu.html" class="active">景区</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="../旅游路线/xianlu.html">线路</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="jq.html">住宿</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="../旅行社/agency.html">旅行社</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="../景区-杜/自由行.html">自由行</a></li>
+                    <li class="nav_spacer"></li>
+                    <li><a href="../景区-杜/strategy.html">旅游攻略</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="lx" id="lx">
+        <div class="head_row"><span class="head-line1"></span><div class="sub_head"><h1>门票预订</h1></div><span class="head-line2"></span></div>
+    	<div class="lx-head">
+    		<p>产品/供应商<span>票价</span>取票方式</p>
+    	</div>
+    	<div class="lx-body center-block">
+    	    <ul>
+    	    	<li> 
+    	    	<div class="lx-1">
+    	    		<ul class="lx-1 text-center">
+    	    			<li class="lx-a"><p>龙门石窟</p><span>供应商：同程旅游</span></li>
+    	    			<li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+    	    			<li class="lx-c">请您凭入园辅</li>
+    	    			<li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+    	    		</ul>
+    	    	</div>
+    	    	</li>
+    	    	<li>
+    	    	<div class="lx-1">
+    	    		<ul class="lx-1 text-center">
+                        <li class="lx-a"><p>龙门石窟</p><span>供应商：天天旅游</span></li>
+                        <li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+                        <li class="lx-c">请您凭入园辅</li>
+                        <li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+                    </ul>
+    	    	</div>    	    		
+    	    	</li>
+    	    	<li>
+    	    	<div class="lx-1">
+    	    		<ul class="lx-1 text-center">
+                        <li class="lx-a"><p>龙门石窟</p><span>供应商：途牛旅游</span></li>
+                        <li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+                        <li class="lx-c">请您凭入园辅</li>
+                        <li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+                    </ul>
+    	    	</div>    	    		
+    	    	</li>
+    	    	<li> 
+                <div class="lx-1">
+                    <ul class="lx-1 text-center">
+                        <li class="lx-a"><p>龙门石窟</p><span>供应商：同程旅游</span></li>
+                        <li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+                        <li class="lx-c">请您凭入园辅</li>
+                        <li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+                    </ul>
+                </div>
+                </li>
+                <li>
+                <div class="lx-1">
+                    <ul class="lx-1 text-center">
+                        <li class="lx-a"><p>龙门石窟</p><span>供应商：天天旅游</span></li>
+                        <li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+                        <li class="lx-c">请您凭入园辅</li>
+                        <li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+                    </ul>
+                </div>                  
+                </li>
+                <li>
+                <div class="lx-1">
+                    <ul class="lx-1 text-center">
+                        <li class="lx-a"><p>龙门石窟</p><span>供应商：途牛旅游</span></li>
+                        <li class="lx-b"><div>成人<del>￥100</del><span>￥90</span><br>儿童<del>￥70</del><span>￥60</span></div></li>
+                        <li class="lx-c">请您凭入园辅</li>
+                        <li class="lx-d">在线支付<input class="order" type="button" value="预定"></li>
+                    </ul>
+                </div>                  
+                </li>
+    	    </ul>
+    	</div>
+    </div>
+ <div class="footer">
+      <div class="copyright">&copy2017-2020 帝都旅游有限公司,All Rights Reserved 豫ICP备12345678号</div>
+    </div>
+    <div class="alert alert-info alert-dismissible ydxx">
+        <button class="close close1">
+            <span>x</span>
+        </button>
+        <h4 >选择出游信息</h4>
+        <div class="cyxx"><span>出发日期</span><input type="text" id="departure_date" name="de_date" class="form_item" placeholder="请选择出发日期"></div>
+        <div class="cyxx"><span>出游人群</span><input type="text" class="people">个成人<input type="text" class="people">个儿童</div>
+        <button class="btn btn-danger center-block">立即预定</button>       
+    </div>
+    <div class="alert alert-info alert-dismissible jdyd ">
+        <button class="close close2">
+            <span>x</span>
+        </button>
+        <div class="jdxx"><span>入住日期</span><input type="text" id="checkin_date" name="in_date" class="form_item" placeholder="请选择入住日期"></div>
+        <div class="jdxx"><span>离店日期</span><input type="text" id="checkout_date" name="out_date" class="form_item" placeholder="请选择离店日期" onclick="checkdate1()" onChange="checkdate2()"></div>
+        <div class="jdxx"><span>房间规模</span><select class="riqi">
+        <option>精致单人间</option>
+        <option>豪华大床房</option>
+        <option>豪华双床房</option>  
+        </select>
+        <p class="jiage">价格：<span class="price">￥305</span></p>
+        <button class="btn btn-danger ">立即预定</button>       
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/nav.js'></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script> 
+    // 鼠标移动事件
+            $(document).mousemove(function(e) {
+                $('.maomi_eye').css({
+                    "top":(e.pageY-document.body.scrollTop)/document.body.clientHeight*90+'%',
+                    "left":e.pageX/document.body.clientWidth*90+'%'
+                })
+            });
+            $('.maomi_pic').click(function(){
+                $(this).css({
+                    left: '-100px'                  
+                });
+                setTimeout(function () {
+                    $('.helping_alert').css('left', '0');
+                 }, 800);               
+            })
+            $('.helping_alert_close').click(function(){
+                $('.helping_alert').css('left', '-100%');
+                setTimeout(function () {
+                    $('.maomi_pic').css('left', '-16px');
+                 }, 800);               
+            })
+    $('.login').click(function(){
+            $('.login-alert').fadeIn();
+        })
+        $('.login_close').click(function(){
+            $('.login-alert').fadeOut();
+        })
+        // var current = 0;
+   //      function tranImg(trun){
+   //          var imgObj= document.getElementById('#login_close');
+   //          current = (current+trun)%360;
+   //          imgObj.style.transform = 'rotate('+current+'deg)';
+   //      }
+        $('.login_close').mouseover(function() {
+            $(this).css('transform','rotate(720deg)');
+        });
+        $('.login').click(function(){
+            $('.login-alert').fadeIn();
+        })
+        $('.login_close').click(function(){
+            $('.login-alert').fadeOut();
+        })
+        $('.changezc').click(function(){
+            $('.register-alert').fadeIn();
+            $('.login-alert').fadeOut();
+        })
+        $('.register').click(function(){
+            $('.register-alert').fadeIn();
+        })
+        $('.register_close').click(function(){
+            $('.register-alert').fadeOut();
+        })
+        $('.register_close').mouseover(function() {
+            $(this).css('transform','rotate(720deg)');
+        });
+        $('.register').click(function(){
+            $('.register-alert').fadeIn();
+        })
+        $('.register_close').click(function(){
+            $('.register-alert').fadeOut();
+        })
+        $('.changedl').click(function(){
+            $('.login-alert').fadeIn();
+            $('.register-alert').fadeOut();
+        })
+    function checkdate1(){
+        var date1=document.getElementById('checkin_date').value; 
+        if(date1==""){
+                alert('请先选择入住日期！');
+                document.getElementById('checkout_date').value="";
+        }
+    }
+    function checkdate2(){
+        var date1=document.getElementById('checkin_date').value;
+        var date2=document.getElementById('checkout_date').value;
+        if(date1==""){
+                alert('请先选择入住日期！');
+                document.getElementById('checkout_date').value="";
+            }
+        if(date1>date2){
+            alert('离店日期不得小于入住日期！');
+            document.getElementById('checkout_date').value="";
+        }
+    }
+    </script>
+    <script>
+// 日期插件
+    // 出发日期
+    $( "#departure_date" ).datepicker();
+    $( "#departure_date" ).datepicker( "option", "showAnim", "blind" );
+     // 酒店预定入住
+    $( "#checkin_date" ).datepicker();
+    $( "#checkin_date" ).datepicker( "option", "showAnim", "blind" );
+    // 酒店预定离开
+    $( "#checkout_date" ).datepicker();
+    $( "#checkout_date" ).datepicker( "option", "showAnim", "blind" );
+    </script>
+    <script>
+        var sign = 0;//定义默认的向上滚与向下滚的边界
+        window.onscroll = window.onresize = function(){
+        var oScrollTop=$(window).scrollTop();
+        if ( oScrollTop < 500) {
+    　　　　　$('.siderbar_ul li').eq(1).addClass('active1').siblings(1).removeClass('active1');
+    　　　}
+        if ( oScrollTop >500 && oScrollTop <1450) {
+              // $('.p2_li1').fadeInDown();
+    　　　　　$('.siderbar_ul li').eq(2).addClass('active1').siblings(2).removeClass('active1');
+        }
+        if ( oScrollTop >1450 && oScrollTop <2200) {
+            //$('.p2_li2').fadeInDown();
+    　　　　　$('.siderbar_ul li').eq(3).addClass('active1').siblings(3).removeClass('active1');
+        }
+        if ( oScrollTop > sign) {
+          sign = oScrollTop;//更新scrollTop
+          //console.log('向下');
+        }
+        if ( oScrollTop< sign) {
+          sign = oScrollTop//更新scrollTop
+          //console.log('向上');
+         }
+        }
+        $('.siderbar').navScroll({
+              mobileDropdown: true,
+              mobileBreakpoint: 768,
+              scrollSpy: true
+            });
+    </script>
+    <script>function findWeather() {
+      var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+      $.getScript(cityUrl, function (script, textStatus, jqXHR) {
+        var citytq = remote_ip_info.city; // 获取城市
+        citytq = "洛阳";
+        var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+        $.ajax({
+          url: url,
+          dataType: "script",
+          scriptCharset: "gbk",
+          success: function (data) {
+            var _w = window.SWther.w[citytq][0];
+            var _f = _w.f1 + "_0.png";
+            if (new Date().getHours() > 17) {
+              _f = _w.f2 + "_1.png";
+            }
+            var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" + _f
+        + "' />";
+            var tq =  '帝都' + " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃ " ;
+            $('#weather').html(tq);
+          }
+        });
+      });
+    }
+    findWeather()
+    $('.order').click(function(){
+        $('.ydxx').fadeIn();
+    })
+    $('.hotel').click(function(){
+        $('.jdyd').fadeIn();
+    })
+    $('.close1').click(function(){
+        $('.ydxx').fadeOut();
+    })
+     $('.close2').click(function(){
+        $('.jdyd').fadeOut();
+    })
+     $('.service_close').click(function(){
+        $('.service').fadeOut();
+     })
+</script>
+</body>
+</html>

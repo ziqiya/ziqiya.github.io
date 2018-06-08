@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阿狸子后台</title>
+	<link rel="stylesheet" href="css/product.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/city.js"></script>  
+	<style>
+		.buy_btn{
+		    width: 30px;
+		    font-size: 12px;
+		    padding: 5px;
+		    text-align: center;
+		    height: 16px;
+		    line-height: 18px;
+		    border-radius: 3px;
+		    background: #ff6600;
+		    color: #fff;
+		    cursor: pointer;
+		}		
+		.buy_btn:hover{
+			background: #06c;
+		}
+		.buy_alert{
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+			height: 578px;
+			width: 586px;
+			border-radius: 4px;
+			background: #fff;
+			overflow-y:auto;
+			overflow-x:hidden;
+			box-shadow: 0 0 20px #000;
+			padding-top: 29px;
+			transition:all 0.7s ease;
+			outline: none;
+			z-index: 20;
+		}
+		.buy_alert_head{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 29px;
+			line-height: 29px;
+			color: #fff;
+			text-shadow:2px 2px 5px #000;
+			float: left;
+			font-size: 13px;
+			background: linear-gradient(#83858a,#373737);
+		}
+		.alert_head{
+			margin-left: 10px;
+		}
+		.buy_alert_content{
+			float: left;
+			padding: 20px 7px;
+			font-size: 15px;		
+		}
+		.alert_close{
+			font-size: 22px;
+			float: right;
+			margin-right: 8px;
+			cursor: pointer;
+			color: #ddd;
+		}
+		.alert_close:hover{
+			text-shadow: 0 0 10px #fff;
+			color: #fff;
+		}
+		.buy_icon {
+		    width: 36px;
+		    display: block;
+		    float: left;
+		    height: 44px;
+		    background: url('images/icon.png')0px 2px;
+		}
+		.item_name{
+			float: left;
+			width: 100%;
+			height: 45px;
+			line-height: 45px;
+			font-size: 20px;
+			background: #666666;
+			margin-left: 2px;		
+			color: #fff;
+		}
+		.alert_li{
+			width: 100%;
+			float: left;
+			margin-top: 3px;
+		
+		}
+		.order_prize em{
+			font-weight: normal;
+			font-style: normal;
+		}
+		.order_prize i{
+			color: #ff6600;
+			font-size: 20px;
+			font-style: normal;
+		}
+		.num_box{
+			float: left;
+			width: 130px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: normal;
+			margin-right: 10px;
+			border:1px solid #ddd;
+		}
+		.add,.minus{
+			float: left;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			background: #eee;
+		    line-height: 30px;
+		    color: #999;
+		    cursor: pointer;
+		}
+		.minus{
+			float: right;
+		}
+		.alert_li_name{
+			font-weight: bold;
+		    float: left;
+		    width: 78px;
+		    text-align: right;
+		}
+		.alert_li_content{
+			margin-left: 10px;
+			float: left;
+		    height: 27px;
+		    line-height: 20px;
+		}
+		.add:hover,.minus:hover{
+			background: #bfbfbf;
+		}
+		.product_num{
+		    float: left;
+		    width: 64px;
+		    text-align: center;
+		    height: 28px;
+		    line-height: 28px;
+		}
+		.sign{
+			color:#ff6600;
+		}
+		.alert_input{
+			width: 95%;
+			margin:5px 1%;
+		}
+		.alert_right{
+			margin-left: 8px;
+		}
+		#beizhu{
+			width: 97%;
+			height: 56px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border: 1px solid #ddd;
+		}	
+		.pay_method{
+			float: left;
+			width: 95px;
+			padding: 5px;
+			height: 40px;
+			text-align: right;
+			line-height: 40px;
+			border:2px solid #ddd;
+			margin-right: 5px;
+			color: #666;
+			cursor: pointer;
+			background-image: url(images/payment.png);
+			background-repeat:no-repeat;
+			background-color: #fff;
+			transition:all 0.5s ease;
+		}
+		.pay_method:hover{
+			background-color: #cccccc;
+		}
+		.pay_active{
+			background-color:#EE3300;
+			color: #fff;
+		}
+		.pay_active:hover{
+			background-color:#EE3300;
+			color: #fff;
+		}
+		.pay_method1{			
+			background-position: 6px 6px;
+		}
+		.pay_method1:hover{
+			background-position: -194px 6px;
+		}
+		/*.pay_method1+.pay_active{
+			background-position: -194px 6px;	
+		}
+		.pay_active:hover+.pay_method1{
+			background-position: -194px 6px;
+		}*/
+		.pay_method2{
+			background-position: 6px -38px;
+		}
+		.pay_method2:hover{
+			background-position: -194px -38px;
+		}
+		.pay_method3{
+			background-position: 6px -85px;
+		}
+		.pay_method3:hover{
+			background-position: -194px -85px;
+		}
+		.pay_method4{
+			background-position: 6px -136px;
+		}
+		.pay_method4:hover{
+			background-position: -194px -136px;
+		}
+		.benefit{
+			text-align: left;
+			background:#fbeedf;  
+			border-radius: 4px;
+			border:1px solid #ddd;
+			color: #d45300;
+			font-size: 13px;
+		}
+		.benefit_word{
+			display: block;
+			margin:6px 0;
+			margin-left: 10px;
+		}
+		.submit_btn{
+			background: #ee3300;
+			border-radius: 4px;
+			text-align: center;
+			height: 46px;
+			line-height: 46px;
+			color: #fff;
+			width: 100%;
+			border:0;
+			font-size: 16px;
+			margin-top: 23px;
+			cursor: pointer;
+		}
+		.recent_list_head{
+			float: left;
+			width: 100%;
+			background:#666; 
+			font-size: 20px;
+			height: 45px;
+			line-height: 45px;
+			color: #fff;
+			margin-left: 2px;
+			margin-top: 20px;
+		}
+		.order_icon{
+		    display: block;
+		    float: left;
+		    width: 35px;
+		    height: 35px;
+		    background: url(images/icon.png);
+		    background-repeat: no-repeat;
+		    background-position: 1px -45px;
+		    margin-left: 10px;
+		}
+		.rencent_list{
+			width: 100%;
+			float: left;
+			background: #fff;
+			height: 54px;
+			border-top: 1px dotted #ddd;
+			border-bottom: 1px dotted #ddd;
+			padding: 3px;
+		}
+		.rencent_list:nth-child(even){
+			background: #f4f4f4;
+		}
+		.rencent_p1,.rencent_p2{
+			float: left;
+			width: 100%;
+		}
+		.rencent_list_name,.rencent_list_item{
+			float: left;
+			font-size: 14px;
+			color: #333;
+		}
+		.rencent_list_address{
+			float: right;
+			border-radius: 3px;
+			padding: 2px;
+			text-align: center;
+			color: #fff;
+			background: #ee3300;
+			font-size: 14px;
+		}
+		.rencent_list_time{
+			float: right;
+			font-size: 14px;
+			color: #333;
+		}
+		.alert_background{
+			display: none;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+			background: rgba(0,0,0,0.5);
+		}
+	</style>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="head_logo">
+			<img src="images/alizi.png" alt="">
+		</div>
+		<div class="navbar">
+			<ul>
+				<a href="houtai.html"><li class="navbar_li">首页</li></a>
+				<a href="product.html"><li class="navbar_li">商品</li></a>
+				<a href="order.html"><li class="navbar_li active">订单</li></a>
+			</ul>
+			<div class="navbar-nav">
+				 <ul>
+				 	<li class="nav_li"><a href="">网站首页</a></li>		 	
+				 	<li class="nav_li"><a href="">删除缓存</a></li>			 	
+				 	<li class="nav_li nav_li_last"><a href="">退出</a></li>			 	
+				 </ul>
+			</div>	
+		</div>	
+	</div>
+	<div class="content">
+		<div class="box2 box">
+			<div class="sidernav_box">
+				<ul class="sider_nav">
+						<div class="sider_li sider_head">订单</div>
+						<li class="sider_li">
+							<a href="order.html">所有订单</a>
+						</li>
+						<li class="sider_li active1">
+							<a href="add_order.html">添加订单</a>
+						</li>					
+				</ul>
+				<ul class="sider_nav1">
+					<div class="sider_li sider_head">订单统计</div>
+						<li class="sider_li">
+							<a href="order_count.html">订单统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="pop_channel.html">推广渠道统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="area_count.html">地区统计</a>
+						</li>
+						<li class="sider_li">
+							<a href="time_count.html">时间统计</a>
+						</li>
+				</ul>
+			</div>
+			<div class="box2_content_box1 content_box">
+				<div class="location">
+					<strong>当前位置：</strong> 订单 >> 添加订单
+				</div>
+				<div class="product_content">
+					<div class="product_header">
+						搜索 : <input type="text" class="search">					
+						<input type="button" value="搜索" class="search_btn">
+					</div>
+					<div class="product_list">
+						<table>
+							<thead>
+								<tr>								
+									<th width="30">商品ID</th>						
+									<th width="50">商品编号</th>
+									<th width="240">名称</th>
+									<th width="200">操作</th>							
+								</tr>
+							</thead>
+							<tbody>
+								<tr>										
+									<td width="30">4</td>						
+									<td width="50">6btgbg</td>
+									<td width="240">大悲咒水晶杯</td>
+									<td width="200"><div class="buy_btn">下单</div></td>					
+								</tr>
+								<tr>										
+									<td width="30">3</td>						
+									<td width="50">6btgbg</td>
+									<td width="240">大悲咒水晶杯</td>
+									<td width="200"><div class="buy_btn">下单</div></td>					
+								</tr>
+								<tr>										
+									<td width="30">2</td>						
+									<td width="50">6btgbg</td>
+									<td width="240">大悲咒水晶杯</td>
+									<td width="200"><div class="buy_btn">下单</div></td>					
+								</tr>
+								<tr>										
+									<td width="30">1</td>						
+									<td width="50">6btgbg</td>
+									<td width="240">大悲咒水晶杯</td>
+									<td width="200"><div class="buy_btn">下单</div></td>					
+								</tr>
+							</tbody>
+						</table>
+						<div class="bottom_nav">						
+							<div class="record"><span class="record_num">3</span>条记录 <span class="now_page">1</span>/<span class="all_page">1</span>页</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="alert_background"></div>
+			<div class="buy_alert" tabindex="1">
+				<div class="buy_alert_head">
+					<span class="alert_head">单页推广-大悲咒水晶杯</span><span class="alert_close">×</span>
+				</div>		
+				<div class="item_name alert_li">
+					<i class="buy_icon"></i>
+					大悲咒水晶杯
+				</div>
+				<div class="buy_alert_content">
+					<div class="order_prize alert_li">
+					<div class="alert_li_name">订单价格:</div><div class="alert_li_content"> <em>￥</em><i class="prize">98.00</i></div></div>
+					<div class="order_prize alert_li">
+						<div class="alert_li_name"><span class="sign">*</span>订购数量:</div>
+						<div class="alert_li_content">
+							<div class="num_box">
+								<div class="add">+</div><div class="product_num">1</div><div class="minus">-</div>
+							</div>
+							<span class="tip">
+								买2件，立减￥30
+							</span>
+						</div>
+					</div>
+				<div class="alert_right">
+					<div class="alert_li">
+						<span class="sign">*</span>收货人名:
+					</div>
+					<div class="alert_li">
+						<input type="text" placeholder="输入您的名字或昵称" class="alert_input info_input">
+					</div>
+					<div class="alert_li">
+						<span class="sign">*</span>手机号码:
+					</div>
+					<div class="alert_li">
+						<input type="text" placeholder="输入您的手机号码" class="alert_input info_input">
+					</div>
+					<div class="alert_li">
+						<span class="sign">*</span>选择地区:
+					</div>
+					<div class="alert_li">
+						<select id="province"></select>  
+						<select id="city"></select>
+					</div>
+					<div class="alert_li">
+						<span class="sign">*</span>详细地址:
+					</div>
+					<div class="alert_li">
+						<input type="text" placeholder="输入您的详细地址" class="alert_input info_input">
+					</div>
+					<div class="alert_li">
+						留言备注:
+					</div>
+					<div class="alert_li">
+						<textarea name="beizhu" id="beizhu"></textarea>
+					</div>
+					<div class="alert_li">
+						<span class="sign">*</span>支付方式:
+					</div>
+					<div class="alert_li">
+						<div class="pay_method pay_method1 pay_active">货到付款</div>
+						<div class="pay_method pay_method2">支付宝</div>
+						<div class="pay_method pay_method3">微信支付</div>
+						<div class="pay_method pay_method4">银行汇款</div>
+					</div>
+					<div class="alert_li benefit">
+						<span class="benefit_word">货到付款，方便安全</span>
+						<span class="benefit_word" style="display:none">支付宝95折</span>
+						<span class="benefit_word" style="display:none"></span>
+						<span class="benefit_word" style="display:none"></span>
+					</div>
+					<div class="alert_li submit_btn_wrap">					
+						<input type="submit" value="确认提交" class="submit_btn">
+					</div>
+					<div class="recent_list alert_li">
+						<div class="recent_list_head">
+							<i class="order_icon"></i>最新订购
+						</div>
+						<div class="recent_list_box">
+							<ul id="sroll_list">
+								<li class="rencent_list">
+									<div class="rencent_p1">
+										<span class="rencent_list_name">柳*[159****8788]</span>
+										<span class="rencent_list_address">北京</span>
+									</div>
+									<div class="rencent_p2">
+										<span class="rencent_list_item">大悲咒水晶杯</span>
+										<span class="rencent_list_time">1分钟前</span>
+									</div>
+								</li>
+								<li class="rencent_list">
+									<div class="rencent_p1">
+										<span class="rencent_list_name">柳*[159****8788]</span>
+										<span class="rencent_list_address">北京</span>
+									</div>
+									<div class="rencent_p2">
+										<span class="rencent_list_item">大悲咒水晶杯</span>
+										<span class="rencent_list_time">1分钟前</span>
+									</div>
+								</li>
+								<li class="rencent_list">
+									<div class="rencent_p1">
+										<span class="rencent_list_name">柳*[159****8788]</span>
+										<span class="rencent_list_address">北京</span>
+									</div>
+									<div class="rencent_p2">
+										<span class="rencent_list_item">大悲咒水晶杯</span>
+										<span class="rencent_list_time">1分钟前</span>
+									</div>
+								</li>
+								<li class="rencent_list">
+									<div class="rencent_p1">
+										<span class="rencent_list_name">柳*[159****8788]</span>
+										<span class="rencent_list_address">北京</span>
+									</div>
+									<div class="rencent_p2">
+										<span class="rencent_list_item">大悲咒水晶杯</span>
+										<span class="rencent_list_time">1分钟前</span>
+									</div>
+								</li>
+								<li class="rencent_list">
+									<div class="rencent_p1">
+										<span class="rencent_list_name">柳*[159****8788]</span>
+										<span class="rencent_list_address">北京</span>
+									</div>
+									<div class="rencent_p2">
+										<span class="rencent_list_item">大悲咒水晶杯</span>
+										<span class="rencent_list_time">1分钟前</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="copyright">
+					Copyright © 2017 <a href="">阿狸子订单系统</a>  All Rights Reserved.
+				</div>	
+		</div>
+	</div>
+
+	<script>
+	// $('.sider_nav li').click(
+	// 	function(){
+	// 		var index1=$(this).index()-1;
+	// 		$(this).addClass('active1').siblings().removeClass('active1');
+	// 		$('.sider_nav1 li').removeClass('active1');
+	// 		$('.box1_content_box .box1_content').eq(index1).show().siblings().hide();	
+	// })
+	// $('.sider_nav1 li').click(
+	// 	function(){
+	// 		var index1=$(this).index()-1;
+	// 		$(this).addClass('active1').siblings().removeClass('active1');
+	// 		$('.sider_nav li').removeClass('active1');
+	// 		$('.box1_content_box .box1_content').eq(index1).show().siblings().hide();	
+	// })
+	var flag=0;
+	function choose_all(){
+		flag=~flag;
+		if(!flag){
+			 $("input[name='check_box']").removeAttr("checked"); 
+		}
+		else
+		$("input[name='check_box']").attr("checked","checked"); 
+	}
+	function converse(){
+   $("input[name='check_box']").each(function (){  
+            this.checked = !this.checked;  
+         })  
+	}
+	$('.add').click(function() {
+		str=$(this).next().text();
+		a=Number(str);
+		$(this).next().text(a+1);
+	});
+	$('.minus').click(function() {
+		str1=$(this).prev().text();
+		b=Number(str1);
+		if (b>0) {
+		$(this).prev().text(b-1);
+		};
+		if (b=0) {
+		$(this).prev().text(b);
+		};
+	});
+	$('.alert_li .pay_method').click(
+		function(){
+			index=$(this).index();
+			$('.alert_li .pay_method').eq(index).addClass('pay_active').siblings().removeClass('pay_active');
+			$('.benefit .benefit_word').eq(index).show().siblings().hide();
+			console.log($('.benefit .benefit_word').eq(index).text());
+			if ($('.benefit .benefit_word').eq(index).text()=='') {
+				$('.benefit').hide();
+			}
+			else
+				$('.benefit').show();
+		}
+	)		
+	$('.buy_alert').mousedown(function(){
+		$(this).css({'box-shadow':'0px 0px 2px #000'});
+	})	
+	$('.buy_alert').mouseup(function(){
+		$(this).css({'box-shadow':'0px 0px 20px #000'});
+	})		
+</script>
+<script>  
+    (function(){  
+        var pHtmlStr = '';  
+        for(var name in pc){  
+            pHtmlStr = pHtmlStr + '<option>'+name+'</option>';  
+        }  
+        $("#province").html(pHtmlStr);  
+        $("#province").change(function(){  
+            var pname = $("#province option:selected").text();  
+            var pHtmlStr = '';  
+            var cityList = pc[pname];  
+            for(var index in cityList){  
+                pHtmlStr = pHtmlStr + '<option>'+cityList[index]+'</option>';  
+            }  
+            $("#city").html(pHtmlStr);  
+        });  
+        $("#province").change();  
+    })();  
+    $('.alert_close').click(function(){
+    	$('.buy_alert').hide();
+    	$(".alert_background").hide();
+    })
+    $('.buy_btn').click(function(){
+    	$('.buy_alert').show();
+    	$(".alert_background").show();
+    })
+</script>  
+</body>
+</html>

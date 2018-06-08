@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>帝都网首页</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/didu.ico" rel="shortcut icon" />
+    <link  type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jingqu.css">
+	</head>
+<body scroll="no" style="overflow-x:hidden;">
+<!-- 客服 -->
+<div class="service">
+	<span class="service_close">x</span>
+	<p>客服热线：<br>123456789</p>
+</div>
+<!-- 侧边信息条 -->
+<div class="maomi_pic">
+	<img src="images/maomi.png" height="100px" width="100px" alt="">
+	<div class="maomi_eyeout maomi_eyeout1"><div class="maomi_eye maomi_eye1" id="maomi_eye"></div></div>	
+	<div class="maomi_eyeout maomi_eyeout2"><div class="maomi_eye maomi_eye2"></div></div>	
+</div>
+<div class="helping_alert">
+		<span class="helping_alert_close">x</span>
+		<div class="contact_us">
+			<div class="contact_us_head">联系我们</div>
+			<div class="contact_us_body">
+				<ul>
+					<li class="contact_us_li">联系电话：12345678</li>
+					<li class="contact_us_li">联系人：窗灬敲雨...</li>
+				</ul>
+			</div>
+		</div>
+		<div class="attention_us">
+			<div class="attention_us_head">关注我们</div>
+			<div class="attention_us_body">
+				<ul>
+					<li class="attention_us_li">
+						<div class="wechat_head">微信公众号</div>
+						<div class="wechat_ma"><img src="images/wechatma.png" alt=""></div>
+					</li>
+					<li class="attention_us_li">
+						<div class="qq_head">qq群</div>
+						<div class="qq_ma"><img src="images/qqma.png" alt=""></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 登录框 -->
+<div class="login-alert">
+	<h1>用户登录</h1>
+	<span class="login_close" id="login_close">x</span>
+	<form action="?" method="post">
+		<div class="labels">
+			<label for="username">用户名：</label>
+			<label for="password">密码：</label>
+			<label for="yanzheng">验证码：</label>
+		</div>
+		<div class="inputs">
+			<input type="text" placeholder="请输入用户名" class="form_item username" id="username">
+			<input type="password" placeholder="请输入密码" class="form_item password" id="password">
+			<input type="text" placeholder="请输入验证码" class="form_item yanzheng" id="yanzheng">
+		</div>
+		<div class="yanzhengma"><img src="images/yanzheng.png" alt=""></div>
+		<div class="login_btn_bar"><input type="submit" value="登录" class="login_btn"></div>
+		<div class="change">没有账号？<span class="changezc" href="">注册</span></div>		
+	</form>
+</div>
+<!-- 注册框 -->
+<div class="register-alert">
+	<h1>用户注册</h1>
+	<span class="register_close" id="register_close">x</span>
+	<form action="?" method="post">
+		<div class="labels">
+			<label for="z_username">用户名：</label>
+			<label for="z_password">密码：</label>
+			<label for="zc_password">确认密码：</label>
+			<label for="z_email">邮箱：</label>
+		</div>
+		<div class="inputs">
+			<input type="text" placeholder="请输入用户名" class="form_item z_username" id="z_username">
+			<input type="password" placeholder="请输入密码" class="form_item z_password" id="z_password">
+			<input type="password" placeholder="请确认密码" class="form_item zc_password" id="zc_password">
+			<input type="email" placeholder="请输入邮箱" class="form_item z_email">
+		</div>
+		<div class="register_btn_bar"><input type="submit" value="注册" class="register_btn"></div>
+		<div class="change">已有账号？<span class="changedl" href="">登录</span></div>		
+	</form>
+</div>
+	<!-- nav导航 -->
+	<a name="top" id="top"></a>
+	<nav class="navbar navar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="head-logo">帝都旅游</div>
+			</div>
+
+			<div class="navbar-collapse collapse">
+			<ul class="nav  nav1 navbar-nav navbar-right login_register">
+				<li><div class="login">登录</div></li>
+				<li class="nav-lan"></li> 
+				<li><div class="register">注册</div></li>		
+				<li class="weather"><span id="weather"></span></li>
+			</ul>	
+				<ul class="nav navbar-nav navbar-left">
+					<li class="nav_spacer"></li>
+					<li><a href="../景区首页/index.html">首页</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="jingqu.html" class="active">景区</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../旅游路线/xianlu.html">线路</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区酒店预订/jq.html">住宿</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../旅行社/agency.html">旅行社</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区-杜/自由行.html">自由行</a></li>
+					<li class="nav_spacer"></li>
+					<li><a href="../景区-杜/strategy1.html">旅游攻略</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<div class="banner">
+	<div class="search_bar"><input type="text" id="search" placeholder="帝都今日推荐"><a href=""><span class="glyphicon glyphicon-search"></span></a></div>
+	<div class="container"></div>
+</div>
+<div class="jingqu">
+	<div class="container">
+	<div class="tab-content">
+		<div class="tab-pane active in" id="1_page">
+				<ul>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p1.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">龙门石窟<span class="jingqu_namep">[Long Men]</span></a></h1>
+						<p class="jingqu_body">千年帝都，十三朝魅影，山河胜景，倾国倾城。洛阳是一副百看不厌的风情画卷，是一部百读不厌的历史巨著。古都魅力浩浩荡荡，历经岁月打磨，最终演化为“洛阳三绝”：龙门石窟、洛阳水席、洛阳牡丹。龙门石窟，世界文化遗产，是洛阳的历史 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p2.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">老君山<span class="jingqu_namep">[LaoJun Shan]</span></a></h1>
+						<p class="jingqu_body">老君山，李耳归隐修炼于此并被尊为太上老君被唐太宗命名的地方。它记录着十九亿年来华北陆块构造演化过程，独特的“滑脱峰林”地貌、石林、马鬃岭景观群，让人叹为观止。龙吟阁上听溪水潺潺的乐曲，观瀑布奔腾的壮观；在中鼎看一场云海盛 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p3.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">龙潭大峡谷<span class="jingqu_namep">[Long Tan]</span></a></h1>
+						<p class="jingqu_body">说起洛阳的龙潭大峡谷，只觉得再华丽的辞藻都略显晦涩，12亿年的沉积，260万年的流水侵蚀，在岁月的长河中，高峡瓮谷、山崩地裂奇观，它已经遥遥领先了。原始的自然，自然的经典，是任何峡谷都无法与之相提并论的。 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p4.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">白云山<span class="jingqu_namep">[BaiYun Shan]</span></a></h1>
+						<p class="jingqu_body">白云山，地跨长江、黄河、淮河三大流域之水于一峰，集三河之灵于一山，为中原独有，堪称“中原山水大观”之绝品。这里有一白云洞为道标的洞窟景观，有以乌曼寺为代表的人文景观，还有以云海日出为代表的物候景观。金秋来白云山，赏遍满山 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p5.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">白马寺<span class="jingqu_namep">[BaiMa Si]</span></a></h1>
+						<p class="jingqu_body">十三朝古都洛阳的东郊，隐藏在郁郁葱葱的长林古木之中的是一座被称为“中国第一古刹”的白马寺。白马寺，白马寺北依邝山，南望洛河，以它那巍峨的殿阁和高峭的宝塔，让众多的佛教信徒和游人前来祈福观光。 <a href="">[ 详细 ]</a><a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p6.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">鸡冠洞<span class="jingqu_namep">[JiGuan Dong]</span></a></h1>
+						<p class="jingqu_body">原以为南方才有的精致，如今在洛阳这座小城也迎来高潮。鸡冠洞，石灰岩铸造的喀斯特地貌奇观。钟乳石、石笋，在北方的这座小城安然扎根，有的如弥佛行吟，神态庄严；有的似百兽觅食，气势狰狞；更有庞大的石琴，以石击之，可奏出美妙乐曲 <a href="">[ 详细 ]					
+						</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p7.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">关林<span class="jingqu_namep">[Guan Lin]</span></a></h1>
+						<p class="jingqu_body">“滚滚长江东逝水，浪花淘尽英雄”每次音乐想起的时候，桃源三结义的情景都历历在目。要说结义三人，最为敬佩的还是关羽，桃园三结义体现对朋友的情义，千里走单骑提现对刘备的忠义，华容道逐放曹操提现的是信义。 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p8.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">洛阳牡丹园<span class="jingqu_namep">[MuDan Yuan]</span></a></h1>
+						<p class="jingqu_body">洛阳国家牡丹园是全国唯一的国家级牡丹观赏地，是中国牡丹栽培繁衍的主要故地之一，又称“牡丹故土”。这里气候土壤条件优越，非常适宜牡丹生长，牡丹花朵硕大，色泽艳丽，香气浓郁，花期长，素有“洛阳地脉花最宜，牡丹尤为天下奇” <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p9.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">黛眉山<span class="jingqu_namep">[DaiMei Shan]</span></a></h1>
+						<p class="jingqu_body">洛阳黛眉山世界地质公园位于秦岭与太行山的过渡地带,黄河小浪底水库上游南岸,行政区划隶属河南省洛阳市新安县管辖,分为龙潭峡、荆紫山、黛眉山、青要山和万山湖五大景区,面积约328km2。是一座以沉积构造遗迹和地质地貌景观为主。 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p10.jpg" alt=""></a></div>
+					<div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">重渡沟<span class="jingqu_namep">[ChongDu Gou]</span></a></h1>
+						<p class="jingqu_body">重渡沟景区内林茂草丰、雉飞鹿鸣,四时泉水喷涌、常年飞瀑成群,翠竹碧水交织,肥鸭壮鹅嬉戏,水乡特色浓郁,堪称北国一绝。著名作家张一弓赞誉为"高峡飞瀑藏幽径,绿水秀竹怀古情"。"竖看山水横看竹,上听鸟语下听泉" <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div>
+					</li>
+				</ul>
+			</div>	
+			<div class="tab-pane in" id="2_page">
+				<ul>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p2.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">老君山</a></h1>
+						<p class="jingqu_body">老君山，李耳归隐修炼于此并被尊为太上老君被唐太宗命名的地方。它记录着十九亿年来华北陆块构造演化过程，独特的“滑脱峰林”地貌、石林、马鬃岭景观群，让人叹为观止。龙吟阁上听溪水潺潺的乐曲，观瀑布奔腾的壮观；在中鼎看一场云海盛 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p3.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">龙潭大峡谷</a></h1>
+						<p class="jingqu_body">说起洛阳的龙潭大峡谷，只觉得再华丽的辞藻都略显晦涩，12亿年的沉积，260万年的流水侵蚀，在岁月的长河中，高峡瓮谷、山崩地裂奇观，它已经遥遥领先了。原始的自然，自然的经典，是任何峡谷都无法与之相提并论的。 <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p4.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">白云山</a></h1>
+						<p class="jingqu_body">白云山，地跨长江、黄河、淮河三大流域之水于一峰，集三河之灵于一山，为中原独有，堪称“中原山水大观”之绝品。这里有一白云洞为道标的洞窟景观，有以乌曼寺为代表的人文景观，还有以云海日出为代表的物候景观。金秋来白云山，赏遍满山 <a href="">[ 详细 ]</a>
+						<a href="../景区酒店预订/order.html"><div class="buy_ticket jinqu_btns">立即购买</div></a>
+						<a href="../景区-杜/景点页面.html"><div class="learn_more jinqu_btns">进去看看</div></a>
+						</p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p5.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">白马寺</a></h1>
+						<p class="jingqu_body">十三朝古都洛阳的东郊，隐藏在郁郁葱葱的长林古木之中的是一座被称为“中国第一古刹”的白马寺。白马寺，白马寺北依邝山，南望洛河，以它那巍峨的殿阁和高峭的宝塔，让众多的佛教信徒和游人前来祈福观光。 <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p6.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">鸡冠洞</a></h1>
+						<p class="jingqu_body">原以为南方才有的精致，如今在洛阳这座小城也迎来高潮。鸡冠洞，石灰岩铸造的喀斯特地貌奇观。钟乳石、石笋，在北方的这座小城安然扎根，有的如弥佛行吟，神态庄严；有的似百兽觅食，气势狰狞；更有庞大的石琴，以石击之，可奏出美妙乐曲 <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p7.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">关林</a></h1>
+						<p class="jingqu_body">“滚滚长江东逝水，浪花淘尽英雄”每次音乐想起的时候，桃源三结义的情景都历历在目。要说结义三人，最为敬佩的还是关羽，桃园三结义体现对朋友的情义，千里走单骑提现对刘备的忠义，华容道逐放曹操提现的是信义。 <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p8.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">洛阳牡丹园</a></h1>
+						<p class="jingqu_body">洛阳国家牡丹园是全国唯一的国家级牡丹观赏地，是中国牡丹栽培繁衍的主要故地之一，又称“牡丹故土”。这里气候土壤条件优越，非常适宜牡丹生长，牡丹花朵硕大，色泽艳丽，香气浓郁，花期长，素有“洛阳地脉花最宜，牡丹尤为天下奇” <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p9.jpg" alt=""></a></div><div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">黛眉山</a></h1>
+						<p class="jingqu_body">洛阳黛眉山世界地质公园位于秦岭与太行山的过渡地带,黄河小浪底水库上游南岸,行政区划隶属河南省洛阳市新安县管辖,分为龙潭峡、荆紫山、黛眉山、青要山和万山湖五大景区,面积约328km2。是一座以沉积构造遗迹和地质地貌景观为主。 <a href="">[ 详细 ]</a></p>
+					</div></li>
+					<li class="jingqu_li clearfix"><div class="jingqu_li_pic"><a href=""><img src="images/p10.jpg" alt=""></a></div>
+					<div class="jingqu_li_intro">
+						<h1 class="jingqu_head"><a href="">重渡沟</a></h1>
+						<p class="jingqu_body">重渡沟景区内林茂草丰、雉飞鹿鸣,四时泉水喷涌、常年飞瀑成群,翠竹碧水交织,肥鸭壮鹅嬉戏,水乡特色浓郁,堪称北国一绝。著名作家张一弓赞誉为"高峡飞瀑藏幽径,绿水秀竹怀古情"。"竖看山水横看竹,上听鸟语下听泉" <a href="">[ 详细 ]</a></p>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="page_nav nav nav-tabs"><li class="page_nav_li active1"><a href="#1_page"  data-toggle="tab">1</a></li><li class="page_nav_li"><a href="#2_page" data-toggle="tab">2</a></li><li class="page_nav_li"  data-toggle="tab"><a href="#3_page">3</a></li><li class="page_nav_li">...</li><li class="page_nav_li"><a href="#12_page"  data-toggle="tab">12</a></li><li class="page_nav_li"><a href="#13_page"  data-toggle="tab">13</a></li><li class="next">下一页</li>
+		</ul>
+	</div>
+</div>
+<div class="footer">
+	<div class="copyright">&copy2017-2020 帝都旅游有限公司,All Rights Reserved 豫ICP备12345678号</div>
+</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		// 鼠标移动事件
+		    $(document).mousemove(function(e) {
+		        $('.maomi_eye').css({
+		            "top":(e.pageY-document.body.scrollTop)/document.body.clientHeight*70+'%',
+		            "left":e.pageX/document.body.clientWidth*70+'%'
+		        })
+		    });
+		    $('.maomi_pic').click(function(){
+		    	$(this).css({
+		    		left: '-100px'		    		
+		    	});
+		    	setTimeout(function () {
+		    		$('.helping_alert').css('left', '0');
+		    	 }, 800);		    	
+		    })
+		    $('.helping_alert_close').click(function(){
+		    	$('.helping_alert').css('left', '-100%');
+		    	setTimeout(function () {
+		    		$('.maomi_pic').css('left', '-16px');
+		    	 }, 800);		    	
+		    })
+		$('.service_close').click(function(){
+				$('.service').fadeOut();
+			})
+	//登录框
+	 	$('.login').click(function(){
+	 		$('.login-alert').fadeIn();
+	 	})
+	 	$('.login_close').click(function(){
+	 		$('.login-alert').fadeOut();
+	 	})
+	 	// var current = 0;
+   //      function tranImg(trun){
+   //          var imgObj= document.getElementById('#login_close');
+   //          current = (current+trun)%360;
+   //          imgObj.style.transform = 'rotate('+current+'deg)';
+   //      }
+   		
+	 	$('.login_close').mouseover(function() {
+	 		$(this).css('transform','rotate(720deg)');
+	 	});
+	 	$('.login').click(function(){
+	 		$('.login-alert').fadeIn();
+	 	})
+	 	$('.login_close').click(function(){
+	 		$('.login-alert').fadeOut();
+	 	})
+	 	$('.changezc').click(function(){
+	 		$('.register-alert').fadeIn();
+	 		$('.login-alert').fadeOut();
+	 	})
+
+	 	$('.register').click(function(){
+	 		$('.register-alert').fadeIn();
+	 	})
+	 	$('.register_close').click(function(){
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	$('.register_close').mouseover(function() {
+	 		$(this).css('transform','rotate(720deg)');
+	 	});
+	 	$('.register').click(function(){
+	 		$('.register-alert').fadeIn();
+	 	})
+	 	$('.register_close').click(function(){
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	$('.changedl').click(function(){
+	 		$('.login-alert').fadeIn();
+	 		$('.register-alert').fadeOut();
+	 	})
+	 	 //$(window.frames["tianqi"].document).find("#img1").css('height','10px');
+	 	 // $(window.fra"img1"].document).style.height=60+'px';  
+	 	 // document.gmes[etElementById('#img1').style.height=10;
+	 	// $('#img1').css('height','10px');#tianqi8_wetherinfo
+	 	//天气
+	 	function findWeather() {
+      var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+      $.getScript(cityUrl, function (script, textStatus, jqXHR) {
+        var citytq = remote_ip_info.city; // 获取城市
+ 
+        citytq = "洛阳";
+        var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+        $.ajax({
+          url: url,
+          dataType: "script",
+          scriptCharset: "gbk",
+          success: function (data) {
+            var _w = window.SWther.w[citytq][0];
+            var _f = _w.f1 + "_0.png";
+            if (new Date().getHours() > 17) {
+              _f = _w.f2 + "_1.png";
+            }
+            var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" + _f
+        + "' />";
+            var tq =  '帝都' + " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃ " ;
+            $('#weather').html(tq);
+          }
+        });
+      });
+    }
+    findWeather()
+    $('.page_nav .page_nav_li').click(function() {
+    	index=$(this).index();
+    	$('.page_nav .page_nav_li').eq(index).addClass('active1').siblings().removeClass('active1');
+    });
+     $('.next').click(function(){
+    	index=$('.active1').index();
+    	$('.page_nav_li').eq(index).removeClass('active1').next(index).addClass('active1');
+    	$('.page_nav_li').eq(index).removeClass('active').next(index).addClass('active');
+    	$('.tab-content .tab-pane').eq(index).removeClass('active').next(index).addClass('active');
+    })
+</script>
+</body>
+</html>

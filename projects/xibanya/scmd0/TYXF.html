@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/TYXF.css">
+	<title>团员消费</title>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+	<div class="header">
+		<div class="container">
+			<div class="header-l">
+				<a href='#' onClick="javascript :window.history.go(-1);"><img src="images/order_04_03.png"></a>
+			</div>
+			<div class="shxq" style="color:#000">
+				<small>团员消费</small>	
+			</div>
+		</div>
+	</div>
+	<!--内容-->
+	<div class="content">
+		<div class="content-1">
+			<div class="container">
+				<div class="message">
+					<p>团员信息</p>
+				</div>
+				<div class="message-1">
+					<p>MIA LIU</p>
+					<table>
+						<tr>
+							<td>护照号</td>
+							<td><span>545656151</span></td>
+						</tr>
+						<tr>
+							<td>团号</td>
+							<td><span>545656151</span></td>
+						</tr>
+						<tr>
+							<td>团有效期</td>
+							<td><span>545656151</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-2">
+			<div class="">
+				<div class="">
+				<table>
+					<thead>
+						<tr>
+							<td class="seller-td">商家</td>
+							<td class="date-td">日期</td>
+							<td>消费金额</td>
+							<td>佣金</td>
+							<td>追单金</td>
+							<td class="status-td">状态</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td class="status-td"><div>未确认</div></td>
+						</tr>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>1234</td>
+							<td>200</td>
+							<td>10</td>
+							<td class="status-td"><div>追单中</div></td>
+						</tr>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>1234</td>
+							<td>200</td>
+							<td>10</td>
+							<td class="status-td"><div>待付款</div></td>
+						</tr>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>1234</td>
+							<td>200</td>
+							<td>10</td>
+							<td class="status-td"><div>拒绝追单</div></td>
+						</tr>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>1234</td>
+							<td>200</td>
+							<td>10</td>
+							<td class="status-td"><div>已完成</div></td>
+						</tr>
+						<tr>
+							<td class="seller-td">CasaGracia<br>Barcelona<br>Hostle</td>
+							<td class="date-td">05/21</td>
+							<td>1234</td>
+							<td>200</td>
+							<td>10</td>
+							<td class="status-td"><div>确认收款</div></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/holder.min.js"></script>	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		 $(document).ready(function(){
+	  	$(".status-td div").each(function() {
+		   if ($(this).text()=="追单中") {
+			$(this).css('color', '#4da456');
+			};
+			if ($(this).text()=="待付款") {
+				$(this).css('color', '#ef942f');
+			};
+			if ($(this).text()=="追单成功") {
+				$(this).css('color', '#33a7f1');
+			};
+			if ($(this).text()=="拒绝追单") {
+				$(this).css('color', '#f25b95');
+			};
+			if ($(this).text()=="待确认") {
+				$(this).css('color', '#33a7f1');
+			};
+			if ($(this).text()=="已完成") {
+				$(this).css('color', '#dddddd');
+			};
+			if ($(this).text()=="未确认") {
+			$(this).css('color', '#1fbdef');
+			};
+			if ($(this).text()=="确认收款") {
+			$(this).css({
+				"color":"#fff",
+				"background":"#1fbdef",
+				"borderRadius":"5px",
+				"width":"55px",
+				"height":"38px",
+				"lineHeight":"38px"
+			});
+			};
+		});		
+	})	
+	</script>
+</body>
+</html>

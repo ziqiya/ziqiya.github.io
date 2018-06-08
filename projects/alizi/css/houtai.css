@@ -1,0 +1,335 @@
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: 微软雅黑;
+		}
+		a{
+			color: #0066cc;
+		}
+		a,a:hover{
+			text-decoration: none;
+
+		}
+		img {
+		    vertical-align: middle;
+		}
+		li{
+			list-style: none;
+		}
+		input{
+			outline: none;
+		}
+		body{
+			background: #f5f5f5;
+		}
+		button{
+			border:0;
+		}
+		.header{
+			width: 3.5%;
+			height: 50px;
+			line-height: 50px;
+			background: linear-gradient(#485063,#363b49);
+			display: table-cell; /*垂直居中显示*/
+            vertical-align: middle;
+		}
+		.head_logo{
+			float:left;
+			margin-left: 20px;
+		}	
+		.navbar{
+			padding-left: 20px;
+		}
+		.navbar_li{
+		    float: left;
+		    width: 66px;
+		    height: 29px;
+		    border-radius: 2px 2px 0 0;
+		    background: #555;
+		    color: #fff;
+		    border: 1px solid #58606e;
+    		border-bottom: none;
+    		background-color: #565f6e;
+		    line-height: 29px;
+		    margin-top: 20px;
+		    margin-right: 3px;
+		    vertical-align: bottom;
+		    text-align: center;
+		    cursor:pointer;
+		}
+		.navbar-nav{
+			float: right;
+			height: 29px;
+			line-height: 29px;
+			font-size: 12px;
+			color: #fff;
+			padding-top: 18px;
+		}
+		.nav_li a{
+			color: #c8c8c8;
+		}
+		.nav_li a:hover{
+			color: #fff;
+		}
+		.nav_li{
+		    float: left;
+		    height: 13px;
+		    line-height: 13px;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		    border-right: 1px solid #c8c8c8;
+		}
+		.nav_li_last{
+			float: left;
+			border:0;
+		}
+		.left_money span{
+			color: #f00;
+		}
+		.navbar_li:hover{
+			border-color: #6f7a8b;
+			background: linear-gradient(#778191,#576070);
+		}
+		.active,.active:hover{
+			background: #fff;
+			color: #000;
+    		font-weight: 800;
+		}
+		.content{
+			width: 99%;
+			float: left;
+			margin: 0 0.5%;
+		}
+		.box{
+			margin-top: 10px;
+			width: 100%;
+		    background: #fff;	   
+		}
+		.sider_nav{
+			border: 1px solid #ddd;
+			float: left;
+			width: 13%;
+		    border-radius: 2px;
+		}	
+		.sider_li{
+			margin: 0;
+    		padding: 0 20px;
+			height: 30px;
+			font-size: 11px;
+   			line-height: 30px;		
+   			background: #fff;
+		}
+		.sider_li:hover{
+			background-color: #F6F6FB;		
+		}
+		.sider_head{
+			background: linear-gradient(#fff,#f4f4f4);
+			border-bottom: solid 1px #ccc;
+    		font-size: 13px;
+    		font-weight: bold;
+		}
+		.sidernav_box a{
+			color: #000;
+		}
+		.active1,.active1:hover{
+			font-size: 13px;
+			font-weight: bold;
+			background-color: #78849C;
+			color: #fff;
+		}
+		.active1 a{
+			color: #fff;
+		}
+		.content_box{
+			width: 85%;
+		    float: left;
+		    margin-left: 1%;
+		    font-size: 13px;					
+		}
+		.box1_content{
+			width: 100%;
+			float: left;
+		}
+		.b1c1_hello{
+			width: 100%;
+			float: left;
+			border: 1px solid #ddd;
+			background: #fff;
+		    margin-bottom: 12px;
+		    border-radius: 2px;
+		}
+		.hello_content{
+			width: 100%;
+			float: left;
+			margin-top: 10px;
+		}
+		.hello_content_li{
+			float: left;
+			width: 100%;
+			height: 2em;
+			padding-left: 10px;
+			line-height: 2em;
+		}
+		.hello_head{
+			border-bottom: 1px solid #f3f3f3;
+			padding: 14px 20px;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		table{
+			width: 100%;
+			border-collapse: collapse;	/*可以解决tr没有border-bottom问题*/
+		}
+		.b1c1_table{
+			float: left;
+			width: 100%;
+			background: #fff;
+			table-layout:fixed;
+			word-wrap:break-word;
+			border:2px solid #ddd;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd; 		
+		}
+		.b1c1_table{
+			margin-bottom: 20px;
+		}
+		.b1c1_table th{
+			font-weight: 700;
+			background: #f6f7f9;
+			padding: 10px;
+			border-right: 1px solid #ddd;
+			text-align: left;
+			color:#666;
+		}
+		.b1c1_table td{
+			padding: 10px;
+			border-right: 1px solid #ddd;			
+		}
+		.b1c1_table tr{
+		   border-bottom: 1px solid #ddd;
+		}
+		.b1c1_table tr:hover{
+			background: #FFF9EE;
+		}
+		.location{
+			width: 113%;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 20px;
+			font-size: 13px;
+			border: 1px solid #ddd;
+		    margin-bottom: 12px;
+		    background-color: #fafafa;
+		    border-bottom: solid 1px #ccc;
+		}
+		.sign{
+			color: red;
+			margin-right: 3px;
+		}
+		.id_info_list th{
+		    padding: 5px;
+		    text-align: left;
+		    color: #666;
+		    width: 83px;
+		    font-weight: normal;
+		    font-size: 12px;
+		    text-align: right;
+		}
+		.id_info_list td{
+			padding: 5px;
+		}
+		.id_info_list table{
+			margin: 10px 41px;
+			width: 93%;
+		}
+		.id_info{
+			width: 116%;
+			background: #fff;
+			padding-bottom: 20px;
+		}
+		.id_info_head{
+		    padding: 14px 20px;
+		    font-size: 15px;
+		    font-weight: bold;
+		    border-bottom: 1px solid #cdcdcd;
+		}
+		.id_info_list tr{
+			border-bottom: 1px dotted #ddd;
+		}
+		.correct_mima,.correct_id,.cancel_id,.cancel_mima
+		{
+			color: blue;
+			cursor: pointer;
+		}
+		.hidden_tr,.hidden_tr1{
+			display: none;
+		}
+		.info_input{
+			width: 161px;
+			height: 25px;	
+			box-shadow: 0px 0px 10px #eee inset;
+			padding: 2px 4px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+		}
+		.ye_input{
+			background: #faffbd;
+		}
+		.confirm_btn{
+			background: #ff8600;
+			text-align: center;
+			color: #fff;
+			height: 30px;
+			line-height: 30px;
+			width: 79px;
+			float: left;
+			border:1px solid #ccc;
+			border-radius: 4px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.confirm_btn:hover{
+			background: #fe930d;
+		}
+		.cancel_btn{
+			float: left;
+			background: #f9f9f9;
+			color: #fff;
+			text-align: center;
+			height: 28px;
+			line-height: 28px;
+			width: 79px;
+			color: #6f6f6f;
+			border-radius: 4px;
+			border:1px solid #ccc;	
+			cursor: pointer;	
+		}
+		.cancel_btn:hover{
+			color: #000;
+		}
+		#beizhu_info{
+			width: 411px;
+			height: 82px;
+			overflow:hidden;
+		}
+		.copyright{
+			float: left;
+			width: 100%;
+			text-align: center;
+			margin-top: 12px;
+   			padding: 20px;
+			font-size: 10px;
+			color:#a1a1a1; 
+		}
+		.copyright a{
+			color:#a1a1a1; 
+		}
+		.tip{
+			color: #999;
+			font-size: 12px;
+		}
+		select{
+			height: 30px;
+		    line-height: 30px;
+		    vertical-align: middle;
+		}
