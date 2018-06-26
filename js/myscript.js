@@ -117,6 +117,9 @@ $(".banner").mousemove(function(e) {
 				$('.content-box').css('width', '80%');
 			},500)			
 		});
+		$('.nav-list-group .list-group-item').click(function(event) {
+			$(this).addClass('active').siblings().removeClass('active');
+		});
 		$('.aside-nav .panel-heading,.aside-nav .sub-list-group,.aside-nav .myself').click(function(event) {
 			$(this).parents('.aside-nav').css('left', '-40%');
 			$('.banner').fadeIn();
@@ -126,10 +129,9 @@ $(".banner").mousemove(function(e) {
 				$('.nav-tool').css('left', '0px');
 			},500)			
 			if ($('.myself').hasClass('active')) {
-				$('.content-box').css('padding', '0');
-				if ((/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent))) {
-					$('.banner').hide();
-				};
+				$('.content-box').css('padding', '0');	
+				$(window).scrollTop(0);			
+				$('.banner').hide();				
 				$('.aside-nav').css('marginTop', '50px');
 			}
 			else if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
