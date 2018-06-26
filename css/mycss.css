@@ -65,7 +65,7 @@
 		margin-top: 50px;
 		padding-bottom: 30%;
 	    box-shadow: inset 0 0 10px #666;
-		background: url(../images/banner.png) no-repeat top center/cover ;
+		background: url(../images/banner.jpg) no-repeat top center/cover ;
 	}
 	.banner:hover .object-leaf{
 		display: block;
@@ -275,13 +275,13 @@
 	}
 	.swiper-slide1{
 		position: relative;
-		background: url(../images/bg1_2.png) no-repeat top center/cover fixed;
+		background: url(../images/bg1_2.jpg) no-repeat top center/cover fixed;
 	}
 	.swiper-slide2{
-		background: url(../images/bg1_1.png) no-repeat top center/cover;
+		background: url(../images/bg1_1.jpg) no-repeat top center/cover;
 	}
 	.swiper-slide3{
-		background: url(../images/bg3_1.png) no-repeat top center/cover;
+		background: url(../images/bg3_1.jpg) no-repeat top center/cover;
 	}
 	.bg_wrap{
 		width: 100%;
