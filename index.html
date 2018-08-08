@@ -78,6 +78,7 @@
 						<li class="list-group-item sub-js sub-list-group">canvas</li>
 						<li class="list-group-item sub-js sub-list-group">Jcrop</li>
 						<li class="list-group-item sub-js sub-list-group">读心术小游戏</li>
+						<li class="list-group-item sub-js sub-list-group">3dChart</li>
 						<li class="list-group-item pro">我的作品</li>
 						<li class="list-group-item sub-pro sub-list-group">阿里互联人官网</li>
 						<li class="list-group-item sub-pro sub-list-group">卓众知识产权官网</li>						
@@ -238,7 +239,7 @@
 						</div>
 						<div class="panel-body">
 								<pre>
-								<xmp>
+								<xmp id="xmp">
 	<!DOCTYPE html>
 		<html>
 		<head>
@@ -2233,7 +2234,16 @@ cubic-bezier(n,n,n,n)	在 cubic-bezier(贝塞尔曲线) 函数中定义自己的
 				<p><a href="js_project/duxin/index.html">点我跳转游戏页面</a></p>
 			</article>
 			<!-- 读心术小游戏 end-->
-
+			<!-- *3dChart-->
+			<article class="content-box-panel">
+				<h2>3dChart</h2>
+				<p>
+					3dChart。
+				</p>
+				<hr>
+				<p><a href="js_project/3dChart/index.html">3dChart</a></p>
+			</article>
+			<!-- 3dChart end-->
 			<!-- *我的作品 -->
 			<article class="content-box-panel">
 				<h2>我的作品</h2>
@@ -2439,5 +2449,8 @@ cubic-bezier(n,n,n,n)	在 cubic-bezier(贝塞尔曲线) 函数中定义自己的
 	<script type="text/javascript" src="engine1/script.js"></script>
 	<script type="text/javascript" src="js/jquery.singlePageNav.min.js"></script>
 	<script src="js/myscript.js"></script>	
+	<script>
+		console.log($('#xmp'));
+	</script>
 </body>
 </html>
