@@ -3,24 +3,25 @@
 
 <head>
   
-  <title>关于threeJS - Hexo</title>
+  <title>关于threeJS - 阮旭松的博客</title>
   <meta charset="UTF-8">
-  <meta name="description" content="">
+  <meta name="description" content="基于hexo的博客">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <meta name="description" content="关于 threeJS&amp;emsp;&amp;emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。 hexo 中的配置&amp;emsp;&amp;emsp;首先，是 hexo 博客中要使用 three 的配置，不用 hexo 的小伙伴可以跳过这一点。为了在 hexo 里面显示出原页面的 html，需要先在 hexo 中配置一下skip_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于threeJS">
-<meta property="og:url" content="http://yoursite.com/2019/12/29/threeJS/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于 threeJS&amp;emsp;&amp;emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。">
+<meta property="og:url" content="https://www.ruanxusong.com/2019/12/29/threeJS/index.html">
+<meta property="og:site_name" content="阮旭松的博客">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。 hexo 中的配置&amp;emsp;&amp;emsp;首先，是 hexo 博客中要使用 three 的配置，不用 hexo 的小伙伴可以跳过这一点。为了在 hexo 里面显示出原页面的 html，需要先在 hexo 中配置一下skip_">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-29T13:40:15.000Z">
-<meta property="article:modified_time" content="2019-12-29T13:43:59.262Z">
+<meta property="article:modified_time" content="2019-12-29T17:29:01.901Z">
 <meta property="article:author" content="Ruan XuSong">
+<meta property="article:tag" content="three.js">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
@@ -29,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1577634211644">
+  <link rel="stylesheet" href="/css/style.css?v=1577640565374">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -56,10 +57,10 @@
     </a>
   </div>
   <div class="nexmoe-count">
-    <div><span>文章</span>3</div>
-    <div><span>标签</span>0</div>
+    <div><span>文章</span>2</div>
+    <div><span>标签</span>1</div>
     <div>
-      <span>分类</span>0
+      <span>分类</span>1
     </div>
   </div>
   <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -118,9 +119,41 @@
 </div>
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">技术</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
 
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/three/" style="font-size: 10px;">three.js</a>
+    </div>
+    
+  </div>
+
   
   
   <div class="nexmoe-widget-wrap">
@@ -145,19 +178,50 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/covers/test.jpeg">
+        <img src="/covers/three.jpeg">
         
         <h1>关于threeJS</h1>
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年12月29日</a>
-    <a><i class="nexmoefont icon-areachart"></i>62 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>695 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/three/" rel="tag">three.js</a>
     
   </div>
   <article>
-    <h1 id="关于-threeJS"><a href="#关于-threeJS" class="headerlink" title="关于 threeJS"></a>关于 threeJS</h1><p>&emsp;&emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。</p>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。</p>
+<h2 id="hexo-中的配置"><a href="#hexo-中的配置" class="headerlink" title="hexo 中的配置"></a>hexo 中的配置</h2><p>&emsp;&emsp;首先，是 hexo 博客中要使用 three 的配置，不用 hexo 的小伙伴可以跳过这一点。为了在 hexo 里面显示出原页面的 html，需要先在 hexo 中配置一下<code>skip_render</code>用来跳过渲染，最好在文件目录下新建一个文件,假设是<code>photoWall</code>然后在<code>_config.yml</code>中设置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: photoWall&#x2F;*</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;表示跳过 photoWall 文件下所有文件的渲染,也可以用*.html 等进行更进一步的匹配跳过渲染，其他文章里也有提到这里不再赘述。接下来就可以在 photoWall 的文件夹下新建一个 index 文件写 原样的 html 文件了。</p>
+<h2 id="引入-js-脚本"><a href="#引入-js-脚本" class="headerlink" title="引入 js 脚本"></a>引入 js 脚本</h2><p>&emsp;&emsp;如果要在 html 中使用 three.js 的话，需要先把 three.js 给下载到本地进行引入，同时如果想要动画效果的话也可以把<code>tween.js</code> 引入:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/three.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"js/tween.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;我这里可以提供现成的下载链接，可以直接右键另存为保存到本地<br/></p>
+<ul>
+<li>three.js：<a href="/js/three/Three.js">three.js</a></li>
+<li>tween.js：<a href="/js/three/tween.js">tween.js</a></li>
+</ul>
+<p>&emsp;&emsp;<code>tween.js</code> 是一个很好用的平滑动画转换的 js 插件，可以让值从一个状态平滑的过渡到另一个状态。以后在我的博客里会继续介绍。</p>
+<h2 id="xxx-is-not-a-constructor"><a href="#xxx-is-not-a-constructor" class="headerlink" title="xxx is not a constructor"></a>xxx is not a constructor</h2><p>&emsp;&emsp;因为 three.js 的更新，我最近经常遇到如下问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">THREE.FirstPersonControls is not a constructor</span><br></pre></td></tr></table></figure>
+
+<p><br>这个问题意思是，THREE 下的 FirstPersonControls 不是一个构造函数，但是明明代码里写着是构造函数呀，你可以试着 console 一下 THREE，在最新版 THREE 里面就不存在这个属性，可能是 THREE 里面忽略了这些属性，这个问题有一个解决方法：那就是把<code>FirstPersonControls.js</code>的代码在本地引入这样就肯定没问题了，存在同样问题的有<code>MTLLoader</code>和<code>OBJLoader</code>，也可以用同样的方式解决。这里提供给有一样问题的小伙伴下载链接，可以直接右键另存到本地。</p>
+<ul>
+<li>FirstPersonControls：<a href="/js/three/FirstPersonControls.js">FirstPersonControls：</a></li>
+<li>MTLLoader：<a href="/js/three/MTLLoader.js">MTLLoader</a></li>
+<li>OBJLoader：<a href="/js/three/OBJLoader.js">OBJLoader</a></li>
+</ul>
+<p>在本地就可以直接引用<code>FirstPersonControls：</code>不需要引用<code>THREE.</code>的前缀啦。</p>
+<h2 id="Failed-to-execute-‘texImage2D’"><a href="#Failed-to-execute-‘texImage2D’" class="headerlink" title="Failed to execute ‘texImage2D’"></a>Failed to execute ‘texImage2D’</h2><p>这个问题全部报错信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ThreeJS DOMException: Failed to execute &#39;texImage2D&#39; on &#39;WebGLRenderingContext&#39;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;这个原因是在贴图的时候，由于浏览器或者本地环境 localhost 的安全问题，可以试着部署到线上或者换成谷歌浏览器就可以了。</p>
 
   </article>
   
@@ -165,7 +229,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="http://yoursite.com/2019/12/29/threeJS/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;</a><br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2019/12/29/threeJS/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -205,7 +269,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1577634211645"></script>
+<script src="/js/app.js?v=1577640565376"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
