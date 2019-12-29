@@ -136,6 +136,7 @@
           /** 加地板 */
           const floorGeometry = new THREE.BoxGeometry(2500, 2, 2800);
           var texture = THREE.ImageUtils.loadTexture("/three/floor.jpeg");
+          THREE.ImageUtils.crossOrigin = "Anonymous";
           texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
           texture.repeat.set(4, 4);
           var floorMaterials = new THREE.MeshLambertMaterial({ map: texture });
@@ -151,6 +152,7 @@
           /** 加天花板 */
           const topGeometry = new THREE.BoxGeometry(2500, 2, 2800);
           var texture = THREE.ImageUtils.loadTexture("/three/upBackground.jpg");
+          THREE.ImageUtils.crossOrigin = "Anonymous";
           texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
           texture.repeat.set(8, 8);
           var topMaterials = new THREE.MeshBasicMaterial({ map: texture });
@@ -178,7 +180,17 @@
             let direction;
             let rotation = 0;
             img.src = img_url;
-            img.onload = function() {
+            console.log("img.complete: ", img.complete);
+            if (img.complete) {
+              console.log("img.width: ", img.width);
+              console.log("img.height : ", img.height);
+              loadImg();
+            } else {
+              img.onload = loadImg;
+            }
+            function loadImg() {
+              console.log("img.width1: ", img.width);
+              console.log("img.height1 : ", img.height);
               const heightRate = img.height / img.width;
               const width = index === 12 ? 200 : 250;
               var geometry = new THREE.PlaneGeometry(
@@ -187,55 +199,75 @@
                 0,
                 0
               );
+
               var texture = THREE.ImageUtils.loadTexture(img_url);
+              THREE.ImageUtils.crossOrigin = "Anonymous";
               var material = new THREE.MeshBasicMaterial({ map: texture });
-              var mesh = new THREE.Mesh(geometry, material);
-              // 右面的图片
-              if (index < 3) {
-                direction = "right";
-                xOffSet = 0;
-                zOffSet = 500 * index;
-              }
-              // 前面的图片
-              if (index >= 3 && index < 6) {
-                direction = "front";
-                xOffSet = 500 * (index - 3);
-                zOffSet = 0;
-              }
-              // 后面的图片
-              if (index >= 6 && index < 9) {
-                direction = "back";
-                xOffSet = 500 * (index - 6);
-                zOffSet = 0;
-              }
-              // 左面的图片
-              if (index >= 9 && index < 12) {
-                direction = "left";
-                xOffSet = 0;
-                zOffSet = 500 * (index - 9);
-              }
-              // 恶搞的图片
-              if (index == 12) {
-                direction = "extra";
-                xOffSet = 0;
-                zOffSet = 0;
-              }
-              mesh.position.x = intialXYZ[direction].x + xOffSet;
-              mesh.position.y = intialXYZ[direction].y;
-              mesh.position.z = intialXYZ[direction].z + zOffSet;
-              if (intialXYZ[direction].rotationY) {
-                mesh.rotation.y =
-                  -(Math.PI * intialXYZ[direction].rotationY) / 180;
-              }
-              if (intialXYZ[direction].rotationX) {
-                mesh.rotation.x =
-                  -(Math.PI * intialXYZ[direction].rotationX) / 180;
-              }
-              mesh.castShadow = true;
-              scene.add(mesh);
-              border = new THREE.BoxHelper(mesh, 0xe9d8b6);
-              scene.add(border);
-            };
+
+              var loader = new THREE.TextureLoader();
+              loader.setCrossOrigin("Anonymous");
+              // load a resource
+              loader.load(
+                // resource URL
+                img_url,
+                // onLoad callback
+                function(texture) {
+                  var material = new THREE.MeshBasicMaterial({ map: texture });
+                  var mesh = new THREE.Mesh(geometry, material);
+                  // 右面的图片
+                  if (index < 3) {
+                    direction = "right";
+                    xOffSet = 0;
+                    zOffSet = 500 * index;
+                  }
+                  // 前面的图片
+                  if (index >= 3 && index < 6) {
+                    direction = "front";
+                    xOffSet = 500 * (index - 3);
+                    zOffSet = 0;
+                  }
+                  // 后面的图片
+                  if (index >= 6 && index < 9) {
+                    direction = "back";
+                    xOffSet = 500 * (index - 6);
+                    zOffSet = 0;
+                  }
+                  // 左面的图片
+                  if (index >= 9 && index < 12) {
+                    direction = "left";
+                    xOffSet = 0;
+                    zOffSet = 500 * (index - 9);
+                  }
+                  // 恶搞的图片
+                  if (index == 12) {
+                    direction = "extra";
+                    xOffSet = 0;
+                    zOffSet = 0;
+                  }
+                  mesh.position.x = intialXYZ[direction].x + xOffSet;
+                  mesh.position.y = intialXYZ[direction].y;
+                  mesh.position.z = intialXYZ[direction].z + zOffSet;
+                  if (intialXYZ[direction].rotationY) {
+                    mesh.rotation.y =
+                      -(Math.PI * intialXYZ[direction].rotationY) / 180;
+                  }
+                  if (intialXYZ[direction].rotationX) {
+                    mesh.rotation.x =
+                      -(Math.PI * intialXYZ[direction].rotationX) / 180;
+                  }
+                  mesh.castShadow = true;
+                  scene.add(mesh);
+                  border = new THREE.BoxHelper(mesh, 0xe9d8b6);
+                  scene.add(border);
+                },
+                // onProgress callback currently not supported
+                undefined,
+                // onError callback
+                function(err) {
+                  console.error("An error happened." + err);
+                }
+              );
+            }
           }
 
           /** 所有图片 */
