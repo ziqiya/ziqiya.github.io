@@ -180,17 +180,12 @@
             let direction;
             let rotation = 0;
             img.src = img_url;
-            console.log("img.complete: ", img.complete);
             if (img.complete) {
-              console.log("img.width: ", img.width);
-              console.log("img.height : ", img.height);
               loadImg();
             } else {
               img.onload = loadImg;
             }
             function loadImg() {
-              console.log("img.width1: ", img.width);
-              console.log("img.height1 : ", img.height);
               const heightRate = img.height / img.width;
               const width = index === 12 ? 200 : 250;
               var geometry = new THREE.PlaneGeometry(

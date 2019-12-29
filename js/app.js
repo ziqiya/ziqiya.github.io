@@ -40,14 +40,25 @@ $("#nexmoe-content img").each(function() {
 });
 
 $("article:not(.nexmoe-py) img").each(function() {
-  if($(this).parent()[0].localName!=="a"){
+  if ($(this).parent()[0].localName !== "a") {
     var element = document.createElement("a");
     $(element).attr("data-fancybox", "gallery");
     $(element).attr("href", $(this).attr("data-src"));
     $(this).wrap(element);
-  }  
+  }
 });
-
 
 $("#nexmoe-sidebar a").addClass("mdui-ripple");
 mdui.mutation();
+
+(function() {
+  var bp = document.createElement("script");
+  var curProtocol = window.location.protocol.split(":")[0];
+  if (curProtocol === "https") {
+    bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+  } else {
+    bp.src = "http://push.zhanzhang.baidu.com/push.js";
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
