@@ -56,7 +56,7 @@ body {
   z-index: 4;
   position: relative;
   font-size: 0;
-  width: calc(100% - 90px);
+  width: 150px;
   overflow: hidden;
   border-radius: 100%;
   box-shadow: 0 0.3rem 2rem rgba(161,177,204,0.6);
@@ -293,6 +293,9 @@ body {
 #nexmoe-content .nexmoe-posts .nexmoe-post:last-child {
   margin-bottom: 20px;
 }
+#nexmoe-content .nexmoe-post:hover article {
+  display: block;
+}
 #nexmoe-content .nexmoe-post .nexmoe-post-cover {
   width: 100%;
   position: relative;
@@ -339,6 +342,9 @@ body {
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-meta {
   margin-bottom: -10px;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta article {
+  display: none;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-meta a {
   border-radius: 10px;
