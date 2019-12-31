@@ -7,6 +7,7 @@
     <script src="/js/three/FirstPersonControls.js"></script>
     <script src="/js/three/MTLLoader.js"></script>
     <script src="/js/three/OBJLoader.js"></script>
+    <script src="/js/three/three-gltf-loader.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
       div#canvas-frame {
@@ -55,7 +56,7 @@
           );
           camera.position.x = 300;
           camera.position.y = 0;
-          camera.position.z = 200;
+          camera.position.z = 500;
           camera.up.x = 0;
           camera.up.y = 1;
           camera.up.z = 0;
@@ -80,7 +81,8 @@
           // light = new THREE.DirectionalLight(0xff0000, 1.0, 0);
           // light.position.set(0, 0, 0);
           const pointLight = new THREE.PointLight(0xffffff);
-          pointLight.position.set(300, 400, 100);
+          pointLight.position.set(300, 0, 300);
+          // pointLight.castShadow = true;
           scene.add(pointLight);
           light = new THREE.DirectionalLight("#ffffff");
           light.position.set(-40, 60, -10);
@@ -167,8 +169,7 @@
             right: { x: 1298, y: 200, z: -400, rotationY: 90 },
             front: { x: -300, y: 200, z: -1298, rotationY: 0 },
             back: { x: -300, y: 200, z: 1298, rotationY: 180 },
-            left: { x: -698, y: 200, z: -400, rotationY: -90 },
-            extra: { x: 300, y: -265, z: 200, rotationX: 90 }
+            left: { x: -698, y: 200, z: -400, rotationY: -90 }
           });
 
           /** 批量生成壁纸图片 */
@@ -234,12 +235,7 @@
                     xOffSet = 0;
                     zOffSet = 500 * (index - 9);
                   }
-                  // 恶搞的图片
-                  if (index == 12) {
-                    direction = "extra";
-                    xOffSet = 0;
-                    zOffSet = 0;
-                  }
+
                   mesh.position.x = intialXYZ[direction].x + xOffSet;
                   mesh.position.y = intialXYZ[direction].y;
                   mesh.position.z = intialXYZ[direction].z + zOffSet;
@@ -267,7 +263,7 @@
           }
 
           /** 所有图片 */
-          for (let i = 0; i < 13; i++) {
+          for (let i = 0; i < 12; i++) {
             generatePic(i);
           }
 
@@ -290,7 +286,7 @@
             });
             object.position.x = 300;
             object.position.y = -500;
-            object.position.z = 200;
+            object.position.z = 100;
             object.scale.set(500, 500, 500);
 
             scene.add(object);
@@ -347,18 +343,34 @@
                   child.receiveShadow = true;
                 }
               });
-              /** 右后方盆栽 */
-              object.position.x = 0;
+              object.position.x = 300;
               object.position.y = 0;
               object.position.z = 0;
-              // object.rotation.y = -(Math.PI * rotation) / 180;
-              object.scale.set(30, 30, 30);
+              object.rotation.x = (Math.PI * 90) / 180;
+              object.scale.set(100, 100, 100);
               scene.add(object);
             });
           }
 
           // 加祝贺文字
           addWords();
+
+          // 加蛋糕
+          var cakeLoader = new GLTFLoader();
+          cakeLoader.load(
+            "/three/obj/cake.gltf",
+            function(gltf) {
+              gltf.scene.position.x = 300;
+              gltf.scene.position.y = -262;
+              gltf.scene.position.z = 100;
+              gltf.scene.scale.set(100, 100, 100);
+              scene.add(gltf.scene);
+            },
+            undefined,
+            function(e) {
+              console.error(e);
+            }
+          );
 
           /** 加盆栽 */
           function addNewPlant(x, y, z, rotation) {
