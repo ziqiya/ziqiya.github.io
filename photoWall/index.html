@@ -78,12 +78,12 @@
           scene = new THREE.Scene();
         };
         const initLight = () => {
-          // light = new THREE.DirectionalLight(0xff0000, 1.0, 0);
-          // light.position.set(0, 0, 0);
+          // 点光源
           const pointLight = new THREE.PointLight(0xffffff);
           pointLight.position.set(300, 0, 300);
           // pointLight.castShadow = true;
           scene.add(pointLight);
+          // 线光源(加阴影效果)
           light = new THREE.DirectionalLight("#ffffff");
           light.position.set(-40, 60, -10);
           light.shadow.camera.near = 20; //产生阴影的最近距离
@@ -97,15 +97,11 @@
           light.shadow.mapSize.height = 512;
           light.shadow.mapSize.width = 512;
           //告诉平行光需要开启阴影投射
-          light.castShadow = true;
+          // light.castShadow = true;
 
           scene.add(light);
         };
         const initObject = () => {
-          // var geometry = new THREE.Geometry();
-          // geometry.vertices.push(new THREE.Vector3(500, 0, 100));
-          // geometry.vertices.push(new THREE.Vector3(-500, 0, 100));
-
           /** 加墙体函数 */
           const addWall = (x = 0, y = 0, z = 0) => (length, width, thick) => {
             const wallGeometry = new THREE.BoxGeometry(length, width, thick); //长宽厚
@@ -113,10 +109,6 @@
               color: 0xf9ebeb,
               side: THREE.DoubleSide
             });
-            // var texture = THREE.ImageUtils.loadTexture(wallBackground);
-            // texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-            // texture.repeat.set(8, 4);
-            // var wallMaterials = new THREE.MeshBasicMaterial({ map: texture });
             const wallMesh = new THREE.Mesh(wallGeometry, wallMaterials);
             wallMesh.position.y = y;
             wallMesh.position.x = x;
@@ -188,7 +180,7 @@
             }
             function loadImg() {
               const heightRate = img.height / img.width;
-              const width = index === 12 ? 200 : 250;
+              const width = 300;
               var geometry = new THREE.PlaneGeometry(
                 width,
                 width * heightRate,
@@ -216,12 +208,21 @@
                     direction = "right";
                     xOffSet = 0;
                     zOffSet = 500 * index;
+
+                    // 修正方向
+                    if (index === 0 || index === 2) {
+                      mesh.rotation.x = Math.PI / 2;
+                    }
                   }
                   // 前面的图片
                   if (index >= 3 && index < 6) {
                     direction = "front";
                     xOffSet = 500 * (index - 3);
                     zOffSet = 0;
+                    // 修正方向
+                    if (index === 4) {
+                      mesh.rotation.z = -Math.PI / 2;
+                    }
                   }
                   // 后面的图片
                   if (index >= 6 && index < 9) {
@@ -234,6 +235,10 @@
                     direction = "left";
                     xOffSet = 0;
                     zOffSet = 500 * (index - 9);
+                    // 修正方向
+                    if (index === 10 || index === 11) {
+                      mesh.rotation.x = -Math.PI / 2;
+                    }
                   }
 
                   mesh.position.x = intialXYZ[direction].x + xOffSet;
@@ -291,39 +296,6 @@
 
             scene.add(object);
           });
-
-          // var plantloader = new OBJLoader();
-          // var mtlLoader = new MTLLoader(); //材质文件加载器
-          // mtlLoader.load('/obj/indoor_plant.mtl', function(materials) {
-          //   materials.preload();
-          //   // 返回一个包含材质的对象MaterialCreator
-          //   //obj的模型会和MaterialCreator包含的材质对应起来
-          //   plantloader.setMaterials(materials);
-          //   console.log('materials: ', materials);
-          //   plantloader.load('/obj/indoor_plant.obj', function(object) {
-          //     //taverse函数为遍历object的每个子mesh，传入的child为每个mesh
-          //     //该示例中的object为一个group，有多个mesh组成
-          //     object.traverse(function(child) {
-          //       if (child instanceof THREE.Mesh) {
-          //         child.material.emissive = new THREE.Color(1, 1, 1);
-          //         child.material.emissiveIntensity = 1;
-          //         child.material.emissiveMap = child.material.map;
-          //         // child.material.transparent = true;
-          //         // child.shading = THREE.FlatShading;
-          //         // child.material = materials;
-          //         // enable casting shadows
-          //         // child.castShadow = true;
-          //         // child.receiveShadow = true;
-          //       }
-          //     });
-          //     object.position.x = 300;
-          //     object.position.y = 0;
-          //     object.position.z = 200;
-          //     object.scale.set(30, 30, 30);
-
-          //     scene.add(object);
-          //   });
-          // });
 
           /** 加标语 */
           function addWords() {
