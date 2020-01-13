@@ -195,11 +195,9 @@
 
               var loader = new THREE.TextureLoader();
               loader.setCrossOrigin("Anonymous");
-              // load a resource
               loader.load(
-                // resource URL
                 img_url,
-                // onLoad callback
+                // 成功load的回调
                 function(texture) {
                   var material = new THREE.MeshBasicMaterial({ map: texture });
                   var mesh = new THREE.Mesh(geometry, material);
@@ -257,9 +255,9 @@
                   border = new THREE.BoxHelper(mesh, 0xe9d8b6);
                   scene.add(border);
                 },
-                // onProgress callback currently not supported
+                // 更新以后的回调
                 undefined,
-                // onError callback
+                // load失败的callback
                 function(err) {
                   console.error("An error happened." + err);
                 }
