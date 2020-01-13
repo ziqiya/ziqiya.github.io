@@ -776,6 +776,9 @@ article table {
   margin: auto;
   border-radius: 6px;
 }
+article table pre {
+  text-align: left;
+}
 article table::-webkit-scrollbar {
   width: 6px;
   height: 6px;
