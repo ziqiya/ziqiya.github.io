@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>正则校验 - 阮旭松的博客</title>
+  <title>myElement - 阮旭松的博客</title>
   <meta charset="UTF-8">
   <meta name="description" content="基于hexo的博客">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,18 +11,21 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <meta name="description" content="正则校验字符串格式化的问题">
+  <meta name="description" content="油猴脚本-我的元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则校验">
-<meta property="og:url" content="https://www.ruanxusong.com/2020/01/13/regs/index.html">
+<meta property="og:title" content="myElement">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/01/21/myElement/index.html">
 <meta property="og:site_name" content="阮旭松的博客">
-<meta property="og:description" content="正则校验字符串格式化的问题">
+<meta property="og:description" content="油猴脚本-我的元素">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-13T06:26:05.000Z">
-<meta property="article:modified_time" content="2020-01-13T10:54:49.882Z">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/myElement/element.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/myElement/inspect.jpg">
+<meta property="article:published_time" content="2020-01-21T07:41:38.000Z">
+<meta property="article:modified_time" content="2020-01-21T08:56:11.496Z">
 <meta property="article:author" content="Ruan XuSong">
-<meta property="article:tag" content="正则">
+<meta property="article:tag" content="油猴">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/myElement/element.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -30,7 +33,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579597207943">
+  <link rel="stylesheet" href="/css/style.css?v=1579597207937">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -185,34 +188,61 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/covers/regs.jpg">
+        <img src="/covers/myElement.jpg">
         
-        <h1>正则校验</h1>
+        <h1>myElement</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月13日</a>
-    <a><i class="nexmoefont icon-areachart"></i>352 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月21日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%B2%B9%E7%8C%B4/" rel="tag">油猴</a>
     
   </div>
   <article>
-    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>&emsp;&emsp;在 vscode 的编辑器的字符串里如果输入<code>\p</code>或者<code>\.</code>等带斜杠的字符串，编辑器就会自动过滤前面的反斜杠，保证正确编辑，但是再某些情况下，这种格式的字符串却是需要的，比如在字符串拼接复杂正则的时候，这个时候应该怎么处理呢？</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>&emsp;&emsp;其实也简单，那就是不用字符串来保存正则片段，保存的时候，先用正则储存，等用到的时候再转换成字符串拼接使用,<code>getRegString</code>的函数可以把 RegExp 格式的正则转化为去掉两边<code>/</code>的正则字符串。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getRegString = <span class="function">(<span class="params">reg: <span class="built_in">RegExp</span></span>) =&gt;</span> (<span class="string">''</span> + reg).substring(<span class="number">1</span>, (<span class="string">''</span> + reg).length - <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>从正则里获得 reg 的字符串再用<code>new RegExp()</code>从 string 中获得最终的正则表达式。</p>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>比如想获得英文和空格组成的字符串（这里只是简单举例），那就可以这样子保存：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  英文: <span class="regexp">/a-z|A-Z/</span>,</span><br><span class="line">  空格: <span class="regexp">/\s/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在用的地方可以这样用</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regs, &#123; getRegString &#125; <span class="keyword">from</span> <span class="string">'@/utils/regex-utils'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getRegsExp = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> rulesArr = [<span class="string">'英文'</span>,<span class="string">'空格'</span>];</span><br><span class="line">  <span class="keyword">const</span> regString = <span class="string">`^[<span class="subst">$&#123;rulesArr.map(item =&gt; getRegString(regs[item])).join(<span class="string">'|'</span>)&#125;</span>]*$`</span>;</span><br><span class="line">  <span class="keyword">const</span> regsExp = <span class="keyword">new</span> <span class="built_in">RegExp</span>(regString);</span><br><span class="line">  <span class="keyword">return</span> regsExp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以获得校验英文和空格的正则了，并且不用担心正则字符串被编译器自动转化。</p>
+    <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>&emsp;&emsp;要说浏览器上的插件哪个最强，那肯定是油猴脚本了，上面有很多好用的油猴脚本，比如获得解析后的 vip 视频脚本，自动滚动的脚本等，而今天要说的是我自己写的一个油猴脚本–myElement，主要用来生成页面的自定义元素，用于页面演示或者样式说明，查看页面样式。</p>
+<h2 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a>二、使用方法</h2><p>先下载油猴，本脚本已经放到<code>openuserjs</code>官网上了： <a href="https://openuserjs.org/scripts/RuanXuSong/%E6%88%91%E7%9A%84%E5%85%83%E7%B4%A0" target="_blank" rel="noopener">myElement</a> ,点击链接-&gt;点击 Install 下载安装脚本。脚本运行后的效果图如图：</p>
+<p><img src="/images/posts/myElement/element.jpg" alt="脚本效果"></p>
+<h2 id="三、功能说明"><a href="#三、功能说明" class="headerlink" title="三、功能说明"></a>三、功能说明</h2><h3 id="1-折叠菜单"><a href="#1-折叠菜单" class="headerlink" title="1.折叠菜单"></a>1.折叠菜单</h3><ul>
+<li>1.点击右侧圆形收缩按钮可以使侧边栏收缩到最小，不影响正常浏览。</li>
+<li>2.再次点击圆形收缩按钮可以使菜单栏回到原始形状。</li>
+</ul>
+<h3 id="2-添加元素"><a href="#2-添加元素" class="headerlink" title="2.添加元素"></a>2.添加元素</h3><ul>
+<li>1.点击元素出现元素列表</li>
+<li>2.点击元素 div 或 button 可以在页面中插入对应元素 3.画线:点击 line，再在页面中任意位置点击可以确认直线起点，再点击一次可以确认直线终点，连成一条直线。再点击页面任意位置可以开始下一次画线，可以连续画线。</li>
+</ul>
+<p><span style="color:#F0412C;">注：如果进入画线模式后不退出，执行其他操作将会卡顿，需要点击 line 以后出现的“点击取消画线”按钮，可以退出画线。</span></p>
+<h3 id="3-添加属性"><a href="#3-添加属性" class="headerlink" title="3.添加属性"></a>3.添加属性</h3><ul>
+<li>1.在添加元素以后，可以双击该元素，此时在属性列表下可以看到一个初始化的有一些默认值的属性列表，进行填值，input 失去焦点以后即可给该元素该属性赋值，并将该属性样式存到缓存中。</li>
+<li>2.添加另外属性:点击属性列表下的加号，会出现新的 input 行，在左边填入 CSS 属性名，右边填入 CSS 属性值，可以添加另外的 CSS 样式，并将该属性存到缓存中。</li>
+</ul>
+<h3 id="4-增加动画幕布"><a href="#4-增加动画幕布" class="headerlink" title="4.增加动画幕布"></a>4.增加动画幕布</h3><ul>
+<li>1.在元素 Tab 下，点击 cover 即可一键自动在页面生成动画幕布。</li>
+</ul>
+<h3 id="5-一键填充表单"><a href="#5-一键填充表单" class="headerlink" title="5.一键填充表单"></a>5.一键填充表单</h3><ul>
+<li>1.基本模式：在元素 tab 页下，点击下方的“一键填充表单”按钮，出现一对 input 输入框和一个 textarea 文本框，此时可以复制 JSON 格式字符串到 textarea 文本框中，失去焦点即可一键填充页面内的所有对应表单项，免去了测试调试时一个个去填充的烦恼。</li>
+<li>2.辅助模式：也可以通过上方的 input 输入框来生成 JSON，在左边输入要填充的 input 的 name 值，右边填入要填充的 input 的 value 值，失去焦点以后就会在 textarea 中自动生成对应的 JSON，同时自动填充页面表单值。要添加新的 input 的键值对，只要把原来的 input 内容改为要新增的就可以了，原来的 textarea 中不会被删除或更改。</li>
+<li>3.退出：点击下方的“退出表单填充模式”按钮即可退出，原有的 textarea 的值不会被清除。</li>
+</ul>
+<h3 id="6-移动"><a href="#6-移动" class="headerlink" title="6.移动"></a>6.移动</h3><ul>
+<li>1.生成 div 或 button 元素后，可以用鼠标拖动移动到指定位置。同时样式中的坐标值会改变,同时保存到缓存中。</li>
+</ul>
+<h3 id="7-下载样式"><a href="#7-下载样式" class="headerlink" title="7.下载样式"></a>7.下载样式</h3><ul>
+<li>1.若想下载调节样式后的样式表，可以点击元素页下的下载按钮进行下载样式。</li>
+<li>2.文件格式为 txt，文件名为下载时间，文件下 createdAt 后为元素的创建时间，itemOrder 为元素添加的次序(第几个添加的)，其后面的括号内字符串为 css 格式的字符串，可以直接复制使用。</li>
+</ul>
+<h3 id="8-删除元素"><a href="#8-删除元素" class="headerlink" title="8.删除元素"></a>8.删除元素</h3><ul>
+<li>1.点击元素列表，出现删除按钮，点击删除以后，再去点击要删除的线或是元素即可删除。</li>
+<li>2.退出删除：1.点击“删除”以后，按钮内容变成“退出删除”，此时点击“退出删除”按钮即可退出删除。2.或者点击元素列表下任意元素也可退出删除</li>
+</ul>
+<h3 id="9-查看页面元素"><a href="#9-查看页面元素" class="headerlink" title="9.查看页面元素"></a>9.查看页面元素</h3><ul>
+<li>1.点击“查看元素”按钮即可监听鼠标的滑动事件(注：最好先退出画线的状态，否则会卡顿)，鼠标滑过页面上的元素时将显示出滑过的元素的范围和标签，属性，html 元素。效果如下：</li>
+</ul>
+<p><img src="/images/posts/myElement/inspect.jpg" alt="脚本效果"></p>
 
   </article>
   
@@ -220,7 +250,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/01/13/regs/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;13&#x2F;regs&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;13&#x2F;regs&#x2F;</a><br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/01/21/myElement/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;myElement&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;myElement&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -261,7 +291,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1579597207945"></script>
+<script src="/js/app.js?v=1579597207938"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
