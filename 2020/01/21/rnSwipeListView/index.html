@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>rnSwipeListView - 阮旭松的博客</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="基于hexo的博客">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="react-native-swipe-list-view的使用和注意事项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rnSwipeListView">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/01/21/rnSwipeListView/index.html">
+<meta property="og:site_name" content="阮旭松的博客">
+<meta property="og:description" content="react-native-swipe-list-view的使用和注意事项">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/rnSwipeListView/result.jpg">
+<meta property="article:published_time" content="2020-01-21T06:21:58.000Z">
+<meta property="article:modified_time" content="2020-01-21T07:17:07.527Z">
+<meta property="article:author" content="Ruan XuSong">
+<meta property="article:tag" content="RN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/rnSwipeListView/result.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1579591051522">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background.jpeg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ruan XuSong" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.jpeg"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+  <div class="nexmoe-avatar mdui-ripple">
+    <a href="/" title="Ruan XuSong">
+      <img
+        src="/images/avatar.jpeg"
+        alt="Ruan XuSong"
+      />
+    </a>
+  </div>
+  <div class="nexmoe-count">
+    <div><span>文章</span>5</div>
+    <div><span>标签</span>5</div>
+    <div>
+      <span>分类</span>2
+    </div>
+  </div>
+  <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/"
+      title="回到首页"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-home"
+      ></i>
+      <div class="mdui-list-item-content">
+        回到首页
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/about.html"
+      title="关于博客"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-info-circle"
+      ></i>
+      <div class="mdui-list-item-content">
+        关于博客
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/photoWall/index.html"
+      title="照片墙"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-appstore-fill"
+      ></i>
+      <div class="mdui-list-item-content">
+        照片墙
+      </div>
+    </a>
+    
+  </ul>
+  <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=920595664&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/ruanxusong/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">技术</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/life/">生活</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/three/" style="font-size: 10px;">three.js</a> <a href="/tags/motion/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+  <div class="nexmoe-copyright">
+    &copy; 2020 Ruan XuSong
+  </div>
+</div>
+<!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="/covers/rnSwipeListView.jpg">
+        
+        <h1>rnSwipeListView</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月21日</a>
+    <a><i class="nexmoefont icon-areachart"></i>871 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/RN/" rel="tag">RN</a>
+    
+  </div>
+  <article>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;<code>react-native-swipe-list-view</code>是一个<code>React-Native</code>上用于侧滑的组件基于 RN 原生的<code>ListView</code>，网上有很多关于<code>react-native-swipe-list-view</code>使用的博客，但是很多都没有注意一些使用的细节，比如如果是删除组件，删除以后的效果如何，是否正常运行？我下面就把作为侧滑删除的时候的情况完整的说一下。</p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>&emsp;&emsp;直入正题，下面是主要部分的代码:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; SwipeListView &#125; <span class="keyword">from</span> <span class="string">'react-native-swipe-list-view'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; View, Text, StyleSheet, TouchableOpacity &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">import</span> ListEmpty <span class="keyword">from</span> <span class="string">'@/components/ListEmpty'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Size, Colors &#125; <span class="keyword">from</span> <span class="string">'@/config'</span>;</span><br><span class="line"><span class="keyword">import</span> Iconfont <span class="keyword">from</span> <span class="string">'@/components/Iconfont'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; px &#125; = Size;</span><br><span class="line"></span><br><span class="line">&lt;SwipeListView</span><br><span class="line">  data=&#123;addressList&#125;</span><br><span class="line">  closeOnRowPress=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">  keyExtractor=&#123;<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">String</span>(item.id)&#125;  <span class="comment">// 实现删除后自动关闭的关键</span></span><br><span class="line">  renderItem=&#123;<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; item &#125; = data;</span><br><span class="line">    <span class="keyword">const</span> &#123;</span><br><span class="line">      id,</span><br><span class="line">      receiverName = <span class="string">''</span>,</span><br><span class="line">      detailedAddress = <span class="string">''</span>,</span><br><span class="line">      phone = <span class="string">''</span>,</span><br><span class="line">      provinceName = <span class="string">''</span>,</span><br><span class="line">      cityName = <span class="string">''</span>,</span><br><span class="line">      districtName = <span class="string">''</span>,</span><br><span class="line">    &#125; = item;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View style=&#123;styles.addressRow&#125;&gt;</span><br><span class="line">        &lt;View style=&#123;styles.infoContent&#125;&gt;</span><br><span class="line">            &lt;View style=&#123;styles.infoHead&#125;&gt;</span><br><span class="line">              &lt;Text style=&#123;styles.userName&#125;&gt;&#123;receiverName&#125;&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">              &lt;Text style=&#123;styles.userTel&#125;&gt;&#123;phone&#125;&lt;/</span>Text&gt;</span><br><span class="line">            &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Text</span></span><br><span class="line"><span class="regexp">              style=&#123;styles.userAddress&#125;</span></span><br><span class="line"><span class="regexp">            &gt;&#123;`$&#123;provinceName&#125;$&#123;cityName&#125;$&#123;districtName&#125;$&#123;detailedAddress&#125;`&#125;&lt;/</span>Text&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">        &lt;TouchableOpacity style=&#123;styles.editWrap&#125; onPress=&#123;() =&gt; handleEdit(id)&#125;&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Iconfont name="iconbianjix" size=&#123;Size.px(16)&#125; color=&#123;Colors.dark&#125; /</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/TouchableOpacity&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;&#125;</span><br><span class="line">  renderHiddenItem=&#123;<span class="function"><span class="params">data</span> =&gt;</span> (</span><br><span class="line">    &lt;TouchableOpacity style=&#123;styles.rowBack&#125; onPress=&#123;<span class="function"><span class="params">()</span> =&gt;</span> deleteAddress(data.item.id)&#125;&gt;</span><br><span class="line">      &lt;Text style=&#123;styles.deleteBtn&#125;&gt;删除&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">  )&#125;</span><br><span class="line">  disableRightSwipe=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">  rightOpenValue=&#123;<span class="number">-96</span>&#125;</span><br><span class="line">  ListEmptyComponent=&#123;&lt;ListEmpty /&gt;&#125;</span><br><span class="line">/&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 样式代码</span></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  rowBack: &#123;</span><br><span class="line">    display: <span class="string">'flex'</span>,</span><br><span class="line">    flexDirection: <span class="string">'row'</span>,</span><br><span class="line">    justifyContent: <span class="string">'flex-end'</span>,</span><br><span class="line">    alignItems: <span class="string">'center'</span>,</span><br><span class="line">    backgroundColor: Colors.red,</span><br><span class="line">    height: <span class="string">'100%'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  editWrap: &#123;</span><br><span class="line">    display: <span class="string">'flex'</span>,</span><br><span class="line">    justifyContent: <span class="string">'center'</span>,</span><br><span class="line">    alignItems: <span class="string">'center'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  closeBtn: &#123;</span><br><span class="line">    position: <span class="string">'absolute'</span>,</span><br><span class="line">    right: px(<span class="number">0</span>),</span><br><span class="line">    top: -px(<span class="number">30</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  deleteBtn: &#123;</span><br><span class="line">    fontSize: px(<span class="number">16</span>),</span><br><span class="line">    color: Colors.white,</span><br><span class="line">    marginRight: px(<span class="number">25</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  deleteText: &#123;</span><br><span class="line">    textAlign: <span class="string">'center'</span>,</span><br><span class="line">    fontSize: px(<span class="number">14</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  addressRow: &#123;</span><br><span class="line">    width: <span class="string">'100%'</span>,</span><br><span class="line">    display: <span class="string">'flex'</span>,</span><br><span class="line">    justifyContent: <span class="string">'space-between'</span>,</span><br><span class="line">    flexDirection: <span class="string">'row'</span>,</span><br><span class="line">    backgroundColor: Colors.white,</span><br><span class="line">    paddingVertical: px(<span class="number">15</span>),</span><br><span class="line">    paddingHorizontal: px(<span class="number">18</span>),</span><br><span class="line">    borderBottomWidth: Size.ONE_PIXEL,</span><br><span class="line">    borderBottomColor: Colors.borderColor,</span><br><span class="line">  &#125;,</span><br><span class="line">  infoHead: &#123;</span><br><span class="line">    display: <span class="string">'flex'</span>,</span><br><span class="line">    flexDirection: <span class="string">'row'</span>,</span><br><span class="line">    marginBottom: px(<span class="number">12</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  userName: &#123;</span><br><span class="line">    fontSize: px(<span class="number">16</span>),</span><br><span class="line">    color: Colors.dark,</span><br><span class="line">  &#125;,</span><br><span class="line">  userTel: &#123;</span><br><span class="line">    fontSize: px(<span class="number">16</span>),</span><br><span class="line">    color: Colors.dark,</span><br><span class="line">    marginLeft: px(<span class="number">16</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  userAddress: &#123;</span><br><span class="line">    fontSize: px(<span class="number">13</span>),</span><br><span class="line">    color: Colors.labelColor,</span><br><span class="line">  &#125;,</span><br><span class="line">  infoContent: &#123;</span><br><span class="line">    display: <span class="string">'flex'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;最终实现效果如下，删除后会自动关闭打开的行：</p>
+<p><img src="/images/posts/rnSwipeListView/result.jpg" alt="实现效果"></p>
+<p>&emsp;&emsp;解释一下参数：</p>
+<ul>
+<li>data：这个是你要传给 SwipeListView 的数据，是一个数组。</li>
+<li>closeOnRowPress：决定点击行后是否关闭行，其实实际效果是无论是否为<code>true</code>，点击行后都会自动关闭行。</li>
+<li>keyExtractor：这个是唯一标识键，实现删除后自动关闭的关键，在很多博客里都没有提到，如果用的是删除组件，没有这个的话就会导致上一行删除后下一行的删除变成打开状态的 bug。接收参数为数组中的每一项。</li>
+<li>renderItem：渲染每一行的元素，要注意的是接收一个<code>data</code>，<code>data.item</code>才是数组中的每一项。<code>handleEdit</code>是点击编辑的操作。</li>
+<li>renderHiddenItem：渲染隐藏的元素，这里隐藏的是一个删除的按钮。<code>deleteAddress</code>是执行删除的函数。</li>
+<li>disableRightSwipe：禁止右滑，因为删除组件是只有左滑的，所以设为<code>true</code>。</li>
+<li>rightOpenValue：右边隐藏元素打开时的长度，要注意的是这是一个负数。</li>
+<li>ListEmptyComponent：列表为空的时候展示的元素。这里的<code>&lt;ListEmpty /&gt;</code>就是空数据的组件。</li>
+</ul>
+<p>&emsp;&emsp;基本上删除组件会用到的属性就是上面这些。希望对你有所帮助~</p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>Ruan XuSong<br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/01/21/rnSwipeListView/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;rnSwipeListView&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;rnSwipeListView&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c42de8657e362551bd3e",
+    clientSecret: "dcafad30fc2d7c1f4b85ee2ac5f878a4baa9533b",
+    id: window.location.pathname,
+    repo: "ruanxusong.github.io",
+    owner: "ruanxusong",
+    admin: "ruanxusong"
+  });
+  gitalk.render("gitalk");
+</script>
+
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1579591051523"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
