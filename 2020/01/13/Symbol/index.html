@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    
+    <title>Symbol的应用 - 阮旭松的博客</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="基于hexo的博客" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+     
 
-<head>
-  
-  <title>Symbol的应用 - 阮旭松的博客</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="基于hexo的博客">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <meta name="description" content="Symbol的应用和解释">
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="description" content="Symbol的应用和解释">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Symbol的应用">
 <meta property="og:url" content="https://www.ruanxusong.com/2020/01/13/Symbol/index.html">
@@ -23,30 +28,45 @@
 <meta property="article:author" content="Ruan XuSong">
 <meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579597207941">
-<meta name="generator" content="Hexo 4.2.0"></head>
+     
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
+    />
+    <link rel="stylesheet" href="/css/style.css?v=1579600377768">
+  <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body class="mdui-drawer-body-left">
-  
-  <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/images/background.jpeg)"></div>
-    <div class="mdui-appbar mdui-shadow-0">
-      <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-        <div class="mdui-toolbar-spacer"></div>
-        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="Ruan XuSong" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.jpeg"></a>
-       </div>
+  <body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+      <div
+        class="nexmoe-bg"
+        style="background-image: url(/images/background.jpeg)"
+      ></div>
+      <div class="mdui-appbar mdui-shadow-0">
+        <div class="mdui-toolbar">
+          <a
+            mdui-drawer="{target: '#drawer', swipe: true}"
+            title="menu"
+            class="mdui-btn mdui-btn-icon"
+            ><i class="mdui-icon material-icons">menu</i></a
+          >
+          <div class="mdui-toolbar-spacer"></div>
+          <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+          <a
+            href="/"
+            title="Ruan XuSong"
+            class="mdui-btn mdui-btn-icon"
+            ><img src="/images/avatar.jpeg"
+          /></a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div id="nexmoe-header">
+    <div id="nexmoe-header">
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
   <div class="nexmoe-avatar mdui-ripple">
     <a href="/" title="Ruan XuSong">
@@ -179,9 +199,9 @@
 </div>
 <!-- .nexmoe-drawer -->
 
-  </div>
-  <div id="nexmoe-content">
-    <div class="nexmoe-primary">
+    </div>
+    <div id="nexmoe-content">
+      <div class="nexmoe-primary">
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
@@ -191,7 +211,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月13日</a>
-    <a><i class="nexmoefont icon-areachart"></i>593 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>603 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
@@ -204,17 +224,21 @@
     <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在 ES6 里又新加了一个 <code>Symbol</code> 的基础类型，有空去学习了一下其基础的使用方法和用处。在这里整理了一下比较常用的属性和方法。</p>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>&emsp;&emsp;<code>Symbol</code>，英文里的意思是象征，标识的意思，表示独一无二的值。这样在使用的时候就可以避免与其他值重复。<code>Symbol</code> 函数不能使用<code>new</code>命令，因为 <code>Symbol</code> 可以理解为跟 string 类似的原始类型的值。所以 <code>Symbol</code> 也没有对象中的属性。</p>
 <p>&emsp;&emsp;<code>Symbol</code> 函数可以接受一个字符串作为参数，相当于一个标记，也就是对 <code>Symbol</code> 的描述，当然每一个 <code>Symbol</code> 的值都是不同的。就算标记一样，<code>Symbol</code> 也不会相等，这一点有点像 NaN，就算两个 <code>Symbol</code> 完全一样也不会相等。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Symbol(<span class="string">'name'</span>) === Symbol(<span class="string">'name'</span>));</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">console.log(Symbol(&#39;name&#39;) === Symbol(&#39;name&#39;));</code></pre>
 <p>&emsp;&emsp;在控制台里运行上面的代码也自然会是 <code>false</code>。</p>
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="对象中使用"><a href="#对象中使用" class="headerlink" title="对象中使用"></a>对象中使用</h3><p>&emsp;&emsp;以 <code>Symbol</code> 的这个特性，可以用来在对象里面获得唯一的属性名。防止公用的对象属性被改写或覆盖。可以这么写：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = Symbol();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  [s]: <span class="string">"Hello"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> word = obj[s]; <span class="comment">// "Hello"</span></span><br></pre></td></tr></table></figure>
+<pre><code class="typescript">let s = Symbol();
 
+let obj = {
+  [s]: &quot;Hello&quot;
+};
+
+const word = obj[s]; // &quot;Hello&quot;</code></pre>
 <p>&emsp;&emsp;但是在使用 <code>Symbol</code> 的时候就不能直接用<code>.</code>运算符了，因为对象的<code>.</code>运算符都是直接引用的 string，跟 <code>Symbol</code> 不是一个类型，要引用必须用<code>[]</code>包括起来。</p>
 <p>&emsp;&emsp;但是原来我们用的<code>Object.keys</code>获得所有 object 的属性数组的方法也是无法获得 <code>Symbol</code> 类型的属性的，需要获得 <code>Symbol</code> 类型属性要用新的方法：<code>Object.getOwnPropertySymbols()</code>，同时，如果想获得所有 <code>Symbol</code> 和<code>string</code>类型的属性就要用<code>Reflect.ownKeys()</code>了。这些是需要注意的点。</p>
 <h3 id="Symbol-for"><a href="#Symbol-for" class="headerlink" title="Symbol.for()"></a>Symbol.for()</h3><p>&emsp;&emsp;我们如果想使用同一个<code>Symbol</code>值的话，就可以<code>Symbol.for()</code>,每次调用<code>Symbol()</code>都会返回不一样的值，但是<code>Symbol.for()</code>不一样，每次<code>Symbol.for()</code>的时候都会检查全局是否有登记过的<code>Symbol.for</code>的标签。如果有就会拿之前的值，否则会自动登记一个新的<code>Symbol.for</code>标签。前后的值是一样的，即:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Symbol.for(<span class="string">"bar"</span>) === Symbol.for(<span class="string">"bar"</span>);</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="typescript">Symbol.for(&quot;bar&quot;) === Symbol.for(&quot;bar&quot;);
+// true</code></pre>
 <p>&emsp;&emsp;<code>Symbol.keyFor()</code>接收一个<code>Symbol</code>类型的参数，可以获得登记过的<code>Symbol</code>的标签名。</p>
 
   </article>
@@ -249,35 +273,33 @@
 
 </section>
 </div>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
  
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script></script>
 
-<script src="/js/app.js?v=1579597207943"></script>
+<script src="/js/app.js?v=1579600377771"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
-
-  
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
+ 
 
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
