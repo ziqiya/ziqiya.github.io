@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>React Hooks - 阮旭松的博客</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="基于hexo的博客" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+     
+
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="description" content="React的新特性hooks的介绍及常用函数介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Hooks">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/03/07/hooks/index.html">
+<meta property="og:site_name" content="阮旭松的博客">
+<meta property="og:description" content="React的新特性hooks的介绍及常用函数介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-07T07:12:56.000Z">
+<meta property="article:modified_time" content="2020-03-07T11:27:07.307Z">
+<meta property="article:author" content="Ruan XuSong">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="hooks">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+     
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
+    />
+    <link rel="stylesheet" href="/css/style.css?v=1583580474749">
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+      <div
+        class="nexmoe-bg"
+        style="background-image: url(/images/background.jpeg)"
+      ></div>
+      <div class="mdui-appbar mdui-shadow-0">
+        <div class="mdui-toolbar">
+          <a
+            mdui-drawer="{target: '#drawer', swipe: true}"
+            title="menu"
+            class="mdui-btn mdui-btn-icon"
+            ><i class="mdui-icon material-icons">menu</i></a
+          >
+          <div class="mdui-toolbar-spacer"></div>
+          <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+          <a
+            href="/"
+            title="Ruan XuSong"
+            class="mdui-btn mdui-btn-icon"
+            ><img src="/images/avatar.jpeg"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+  <div class="nexmoe-avatar mdui-ripple">
+    <a href="/" title="Ruan XuSong">
+      <img
+        src="/images/avatar.jpeg"
+        alt="Ruan XuSong"
+      />
+    </a>
+  </div>
+  <div class="nexmoe-count">
+    <div><span>文章</span>9</div>
+    <div><span>标签</span>10</div>
+    <div>
+      <span>分类</span>2
+    </div>
+  </div>
+  <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/"
+      title="回到首页"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-home"
+      ></i>
+      <div class="mdui-list-item-content">
+        回到首页
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/about.html"
+      title="关于博客"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-info-circle"
+      ></i>
+      <div class="mdui-list-item-content">
+        关于博客
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/photoWall/index.html"
+      title="照片墙"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-appstore-fill"
+      ></i>
+      <div class="mdui-list-item-content">
+        照片墙
+      </div>
+    </a>
+    
+  </ul>
+  <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=920595664&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/ruanxusong/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">技术</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/life/">生活</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/cordova/" style="font-size: 10px;">cordova</a> <a href="/tags/hooks/" style="font-size: 10px;">hooks</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-native/" style="font-size: 15px;">react-native</a> <a href="/tags/three/" style="font-size: 10px;">three.js</a> <a href="/tags/motion/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 10px;">油猴</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+  <div class="nexmoe-copyright">
+    &copy; 2020 Ruan XuSong
+  </div>
+</div>
+<!-- .nexmoe-drawer -->
+
+    </div>
+    <div id="nexmoe-content">
+      <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="/covers/hooks.jpg">
+        
+        <h1>React Hooks</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月07日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/hooks/" rel="tag">hooks</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/react/" rel="tag">react</a>
+    
+  </div>
+  <article>
+    <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>&emsp;&emsp;以前开发React的时候组件都是分为无状态组件和有状态组件的，无状态组件一般用function优化性能，有状态组件就用class，然后在组件里加一些生命周期钩子函数，比如：<code>componentWillMount,componentWillUpdate,componentDidMount,componentWillUnmount</code>。React Hooks只能用于函数组件,但是在hooks的函数组件中也可以使用状态，那就可以统一用hooks function来写有状态组件了。下面是摘自官网对React Hooks的介绍：</p>
+<blockquote>
+<p>Hooks let you use state and other React features without writing a class.</p>
+</blockquote>
+<h2 id="二、具体使用对比"><a href="#二、具体使用对比" class="headerlink" title="二、具体使用对比"></a>二、具体使用对比</h2><h3 id="1-useState-VS-setState"><a href="#1-useState-VS-setState" class="headerlink" title="1.useState VS setState"></a>1.useState VS setState</h3><p>&emsp;&emsp;之前我们在项目里面经常在<code>constructor</code>构造器里用<code>this.state = {}</code>来进行<code>state</code>状态的初始化，再在函数体里用<code>this.setState({})</code>来进行异步设置状态值。如下：</p>
+<pre><code class="js">class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;You clicked {this.state.count} times&lt;/p&gt;
+        &lt;button onClick={() =&gt; this.setState({ count: this.state.count + 1 })}&gt;
+          Click me
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+<p>&emsp;&emsp;但在使用hooks以后<code>state</code>的初始化就变成了<code>const [count, setCount] = useState(0)</code>，在括号里是对应变量<code>count</code>的初值,<code>setCount</code>是修改<code>count</code>变量的方法，对应原来的<code>setState</code>，不同是<code>setCount</code>是针对单个值修改，而<code>setState</code>是针对于整个<code>state</code>中的状态对象。<b>这里的<code>count</code>和<code>setCount</code>都是自定义的名字，推荐用这种命名格式将变量与对应set方法对应。</b>。hooks修改后函数如下：</p>
+<pre><code class="js">import React, { useState } from &#39;react&#39;;
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+<p>&emsp;&emsp;显而易见，相比<code>class</code>的的写法要简洁得多。</p>
+<h3 id="2-useEffect-VS-componentDidMount-componentDidUpdate-componentWillUnmount"><a href="#2-useEffect-VS-componentDidMount-componentDidUpdate-componentWillUnmount" class="headerlink" title="2.useEffect VS componentDidMount,componentDidUpdate,componentWillUnmount"></a>2.useEffect VS componentDidMount,componentDidUpdate,componentWillUnmount</h3><p>&emsp;&emsp;先来介绍一下<code>useEffect</code>函数，<code>useEffect</code>接受两个参数，第一个是函数，当组件第一次被挂载到DOM以后，<code>useEffect</code>就必然会执行第一个函数，第二个参数是一个数组，表示依赖项，React会监听<code>useEffect</code>第二个参数中数组中每一个变量的值，当其中某一个或多个发生变化时，<code>useEffect</code>就会再执行一次<code>useEffect</code>中的第一个函数。</p>
+<p>&emsp;&emsp;之前我们在<code>componentDidMount</code>的钩子函数里执行组件被挂载到DOM后的操作，且只会调用一次。这个可以用<code>useEffect</code>第二个参数传<code>[]</code>的方法代替。类似的，如果想要在每次组件重新渲染的时候就调用就不传第二个参数,这样就等效于同时用了<code>componentDidMount</code>和<code>componentDidUpdate</code>。</p>
+<p>&emsp;&emsp;再如<code>componentWillUnmount</code>,我们用在卸载组件的时候执行，用<code>useEffect</code>可以选择<code>return</code>一个函数回去，效果是一样的，具体原代码如下：</p>
+<pre><code class="js">class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentWillUnmount() {
+    document.title = `卸载组件`;
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;You clicked {this.state.count} times&lt;/p&gt;
+        &lt;button onClick={() =&gt; this.setState({ count: this.state.count + 1 })}&gt;
+          Click me
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+<p>以上代码跟下面的代码是等效的：</p>
+<pre><code class="js">import React, { useState, useEffect } from &#39;react&#39;;
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    document.title = `You clicked ${count} times`;
+    // 这里执行的是卸载组件要执行的函数
+    return () =&gt; {
+      document.title = `卸载组件`;
+    }
+  });
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+<h3 id="3-useReducer-VS-redux"><a href="#3-useReducer-VS-redux" class="headerlink" title="3.useReducer VS redux"></a>3.useReducer VS redux</h3><p><code>useReducer</code>是hooks里类似<code>Redux</code>功能的一个hook函数，一般用在监听变量比较多，<code>useState</code>应付不过来的时候。首先来复习一下<code>Redux</code>的常见写法:</p>
+<ul>
+<li>1.<code>&quot;react-redux&quot;</code>中的<code>connect</code>可以接受两个括号传参，第一个括号里接受两个函数A,B，第二个括号接受当前组件Component。</li>
+<li>2.函数A一般叫<code>mapStateToProps</code>，用来把当前的<code>state</code>关联到<code>this.props</code>中可以使用。</li>
+<li>3.函数B一般叫<code>mapDispatchToProps</code>，结合<code>&#39;redux&#39;</code>中的<code>bindActionCreators</code>方法把函数C(用于执行操作并调用<code>dispatch</code>)也关联到<code>this.props</code>中可以使用。</li>
+<li>4.函数C中的<code>dispatch</code>调用以后则会调用<code>reducer</code>中的处理方法，判断<code>dispatch</code>的<code>type</code>类型返回对应的<code>state</code>。</li>
+</ul>
+<p>看着饶了一大圈其实简单的来说就是：调用函数C-&gt;dispatch-&gt;调用<code>reducer</code>方法返回更新的state-&gt;在<code>this.props</code>里获得更新后的state里的变量.</p>
+<p><code>useReducer</code>相对来说简单好理解一些，如下是<code>useReducer</code>的实例:</p>
+<pre><code class="js">import React,{ useReducer } from &#39;react&#39;
+
+// 初始化的state
+const initialState = {
+  count: 0,
+}
+
+export default function ReducerDemo() {
+    const reducer = (state,action) =&gt; {
+      if(action.type === &#39;add&#39;){
+        return {
+          ...state,
+          count: count + 1
+        }
+      }
+      return state;
+    };
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const { count } = state;
+
+    // 新增count
+    const handleIncreaseCount = () =&gt; {
+      dispatch({ type: &#39;add&#39; });
+    }
+    return (
+        &lt;div onClick={}&gt;
+            &lt;h1 className=&quot;title&quot;&gt;{count}&lt;/h1&gt;
+        &lt;/div&gt;
+    )
+}</code></pre>
+<p>&emsp;&emsp;<code>useReducer</code>的用法是：接受一个 <code>reducer</code> 函数作为参数，函数<code>reducer</code> 接受两个参数一个是 <code>state</code>(prev状态) 另一个是 <code>action</code>(调用<code>dispatch</code>的传参)，函数<code>reducer</code>返回值是更新后的<code>state</code> 。<code>useReducer</code>返回值是一个数组，第一个值是状态 <code>state</code>(当前状态) 和 <code>dispath</code>， <code>dispatch</code> 是一个可以发布事件调用<code>reducer</code>函数来更新 state 的方法。</p>
+<p>&emsp;&emsp;可以从上面的代码看出，<code>useReducer</code>的步骤就是：调用函数<code>handleIncreaseCount</code>-&gt;dispatch-&gt;调用<code>reducer</code>方法更新<code>state</code>-&gt;在<code>useReducer</code>返回值<code>state</code>中获取更新后的<code>state</code>。</p>
+<p>&emsp;&emsp;以上步骤一对比发现其实<code>useReducer</code>和<code>reducer</code>控制state的思想是一样的。区别就是<code>useReducer</code>更简单，便于使用。</p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>Ruan XuSong<br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/03/07/hooks/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;03&#x2F;07&#x2F;hooks&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;03&#x2F;07&#x2F;hooks&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c42de8657e362551bd3e",
+    clientSecret: "d9fb1325c3fefa35a2486369919f7e4ee16cdc33",
+    id: window.location.pathname,
+    repo: "ruanxusong.github.io",
+    owner: "RuanXuSong",
+    admin: "RuanXuSong"
+  });
+  gitalk.render("gitalk");
+</script>
+
+</section>
+</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script></script>
+
+<script src="/js/app.js?v=1583580474751"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
+ 
+
+
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
