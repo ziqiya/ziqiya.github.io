@@ -31,7 +31,6 @@ Proxy Group:
   name: Proxy
   type: select
   proxies:
-    - '普通年付套餐--套餐到期'
     - '官网-jsss.ws'
 
 - 
