@@ -26,11 +26,6 @@ secret: ''
 # 参数应填写配置目录的相对路径或绝对路径。
 # external-ui: folder
 
-
-Proxy: 
-{"name":"官网-jsss.ws","type":"vmess","server":"jsss.ws","port":10000,"uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
-
-
 Proxy Group: 
 - 
   name: Proxy
