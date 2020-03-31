@@ -30,8 +30,6 @@ Proxy Group:
 - 
   name: Proxy
   type: select
-  proxies:
-    - '官网-jsss.ws'
 
 - 
   name: Domestic
