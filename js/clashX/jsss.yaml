@@ -26,29 +26,48 @@ secret: ''
 # 参数应填写配置目录的相对路径或绝对路径。
 # external-ui: folder
 
-Proxy Group: 
-- 
+
+Proxy:
+  - {"name":"美国","type":"vmess","server":"usa1v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+  - {"name":"美国2","type":"vmess","server":"usa2v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+  - {"name":"香港1","type":"vmess","server":"hk1v2.jsss.ltd","port":443,"uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto","network":"ws","tls":true,"ws-path":"/cpyhyfd3"}
+  - {"name":"俄罗斯","type":"vmess","server":"ru1v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+  - {"name":"韩国","type":"vmess","server":"kr1v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+  - {"name":"新加坡","type":"vmess","server":"sg1v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+  - {"name":"日本","type":"vmess","server":"jp1v2.jsss.ltd","port":"43214","uuid":"1b91a981-dbb2-11e9-8ee6-00163e108217","alterId":2,"cipher":"auto"}
+
+
+Proxy Group:
+-
   name: Proxy
   type: select
+  proxies:
+    - '美国'
+    - '美国2'
+    - '香港1'
+    - '俄罗斯'
+    - '韩国'
+    - '新加坡'
+    - '日本'
 
-- 
+-
   name: Domestic
   type: select
   proxies:
     - DIRECT
     - Proxy
-- 
+-
   name: AsianTV
   type: select
   proxies:
     - Domestic
     - Proxy
-- 
+-
   name: GlobalTV
   type: select
   proxies:
     - Proxy
-- 
+-
   name: Others
   type: select
   proxies:
@@ -57,7 +76,7 @@ Proxy Group:
 
 
 # 规则
-Rule: 
+Rule:
 # (GlobalTV)
 # > ABC
 - DOMAIN-SUFFIX,edgedatg.com,GlobalTV
