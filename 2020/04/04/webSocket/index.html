@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>webSocket - 阮旭松的博客</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="基于hexo的博客" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+     
+
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="description" content="webSocket 简介及其实践">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webSocket">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/04/04/webSocket/index.html">
+<meta property="og:site_name" content="阮旭松的博客">
+<meta property="og:description" content="webSocket 简介及其实践">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/webSocket/chatRoom.jpg">
+<meta property="article:published_time" content="2020-04-04T09:32:39.000Z">
+<meta property="article:modified_time" content="2020-04-06T17:03:31.661Z">
+<meta property="article:author" content="Ruan XuSong">
+<meta property="article:tag" content="webSocket">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/webSocket/chatRoom.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+     
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
+    />
+    <link rel="stylesheet" href="/css/style.css?v=1586193318843">
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+      <div
+        class="nexmoe-bg"
+        style="background-image: url(/images/background.jpeg)"
+      ></div>
+      <div class="mdui-appbar mdui-shadow-0">
+        <div class="mdui-toolbar">
+          <a
+            mdui-drawer="{target: '#drawer', swipe: true}"
+            title="menu"
+            class="mdui-btn mdui-btn-icon"
+            ><i class="mdui-icon material-icons">menu</i></a
+          >
+          <div class="mdui-toolbar-spacer"></div>
+          <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+          <a
+            href="/"
+            title="Ruan XuSong"
+            class="mdui-btn mdui-btn-icon"
+            ><img src="/images/avatar.jpeg"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+  <div class="nexmoe-avatar mdui-ripple">
+    <a href="/" title="Ruan XuSong">
+      <img
+        src="/images/avatar.jpeg"
+        alt="Ruan XuSong"
+      />
+    </a>
+  </div>
+  <div class="nexmoe-count">
+    <div><span>文章</span>11</div>
+    <div><span>标签</span>14</div>
+    <div>
+      <span>分类</span>2
+    </div>
+  </div>
+  <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/"
+      title="回到首页"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-home"
+      ></i>
+      <div class="mdui-list-item-content">
+        回到首页
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/about.html"
+      title="关于博客"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-info-circle"
+      ></i>
+      <div class="mdui-list-item-content">
+        关于博客
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/photoWall/index.html"
+      title="照片墙"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-appstore-fill"
+      ></i>
+      <div class="mdui-list-item-content">
+        照片墙
+      </div>
+    </a>
+    
+  </ul>
+  <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=920595664&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/ruanxusong/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">技术</a>
+          <span class="category-list-count">10</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/life/">生活</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Taro/" style="font-size: 10px;">Taro</a> <a href="/tags/cordova/" style="font-size: 10px;">cordova</a> <a href="/tags/hooks/" style="font-size: 10px;">hooks</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-native/" style="font-size: 15px;">react-native</a> <a href="/tags/three/" style="font-size: 10px;">three.js</a> <a href="/tags/webSocket/" style="font-size: 10px;">webSocket</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/motion/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 10px;">油猴</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+  <div class="nexmoe-copyright">
+    &copy; 2020 Ruan XuSong
+  </div>
+</div>
+<!-- .nexmoe-drawer -->
+
+    </div>
+    <div id="nexmoe-content">
+      <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="/covers/webSocket.jpg">
+        
+        <h1>webSocket</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月04日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.6k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/webSocket/" rel="tag">webSocket</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a>
+    
+  </div>
+  <article>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;现在很多网站的推送服务用的都是 ajax 轮询，有些还是每隔 1s 的短轮询，由浏览器对服务器发出 HTTP 请求，然后服务器返回最新的消息数据给浏览器端，这种模式的缺点很明显，就是浏览器要不停地向服务器发送请求，这样会浪费很多带宽等资源。而 HTML5 里新增了<code>webSocket</code>的技术,<code>webSocket</code>是单个 TCP 连接上进行全双工通讯的协议，这样服务器端也能主动向客户端推送数据了，弥补了 HTTP 协议的缺陷。而且浏览器和服务器只要建立了一次握手，就可以建立持久性的通信通道，可以进行双向数据传输。</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>1.建立在 TCP 协议之上，服务器端的实现比较容易。</p>
+<p>2.与 HTTP 协议有着良好的兼容性。默认端口也是 80 和 443，并且握手阶段采用 HTTP 协议，因此握手时不容易屏蔽，能通过各种 HTTP 代理服务器。</p>
+<p>3.数据格式比较轻量，性能开销小，通信高效。</p>
+<p>4.可以发送文本，也可以发送二进制数据。</p>
+<p>5.没有同源限制，客户端可以与任意服务器通信。</p>
+<p>6.协议标识符是 ws（如果加密，则为 wss），服务器网址就是 URL。</p>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>&emsp;&emsp;而最近我结合<code>webSocket</code>，<code>koa</code>，<code>socket.io</code>和<code>mysql</code>做了一个聊天室的 web 页面，用到了<code>webSocket</code>，<a href="https://github.com/RuanXuSong/webSocket/tree/feat/chatRoom" target="_blank" rel="noopener">聊天室 github 地址</a>其中有<code>React</code>版和<code>h5</code>版，目前<code>React</code>版还在做，小伙伴们可以先根据 readme 里的教程跑一下看看<code>h5</code>版，最近会更新<code>React</code>版哈。</p>
+<p>&emsp;&emsp;以下为聊天室初版截图，由于还是初版所以样式还会在<code>React</code>版里改进：<br><img src="/images/posts/webSocket/chatRoom.jpg" alt="聊天室截图"></p>
+<h2 id="代码及原理"><a href="#代码及原理" class="headerlink" title="代码及原理"></a>代码及原理</h2><blockquote>
+<p>Talk is cheap. Show me the code.<br><span style="float:right">—— Linus Torvalds</span></p>
+</blockquote>
+<p>&emsp;&emsp;OK，主要的还是代码及原理部分。源代码都在 github 上了，我就不再全部贴出来了。先讲引入部分，我用的是<code>socket.io</code>框架，也是基于<code>webSocket</code>的，只是经过了一些封装。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>socket.io</code>是一个允许实时，全双工，基于事件的，在服务器和客户端建立连接沟通的库，且基于<code>Node.js</code>。他有着<code>webSocket</code>类似的特性，而且他支持自动连接，也就是客户端会自动连接上服务器，除非进行配置<code>io({autoConnect: false})</code>。</p>
+<pre><code class="js">// 服务器端
+// 引入koa
+const Koa = require(&quot;koa&quot;);
+const app = new Koa();
+// 创建http服务
+var server = require(&quot;http&quot;).createServer(app.callback());
+// 给http封装成io对象
+var io = require(&quot;socket.io&quot;)(server);</code></pre>
+<p>以上就是定义部分的代码，这个 io 对象里包含了监听事件的方法，在服务器端定义以后将通过引入服务器地址下的<code>/socket.io/socket.io.js</code>的<code>script</code>脚本暴露给客户端，相当于沟通服务器和客户端的桥梁。</p>
+<pre><code class="js">// 客户端
+// 引入io对象
+&lt;script src=&quot;http://localhost:3000/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>以上为客户端代码，这样在客户端就可以调用服务器端暴露的<code>io</code>对象的<code>connect</code>方法，代码如下:</p>
+<pre><code class="js">const BASE_URL = &quot;http://localhost:3000&quot;;
+
+class Websocket {
+  constructor() {
+    this.socket;
+  }
+  // 连接到服务器
+  handleConnect(callback) {
+    try {
+      const _this = this;
+      this.socket = io.connect(BASE_URL);
+      this.socket.on(&quot;connect&quot;, function() {
+        const userName = localStorage.getItem(&quot;chatRoom-userName&quot;);
+        const userStatus = localStorage.getItem(&quot;chatRoom-userStatus&quot;);
+        chatRoom.userName = userName;
+        $(&quot;#name-input&quot;).val(userName);
+        if (userName &amp;&amp; userStatus !== &quot;online&quot;) {
+          _this.handleSendSystemMessage(userName, &quot;online&quot;);
+        }
+        // 执行回调
+        callback();
+      });
+      this.socket.on(&quot;getMessage&quot;, function(data) {
+        // 服务端收到信息回调
+        callback();
+      });
+      this.socket.on(&quot;disconnect&quot;, function() {
+        alert(&quot;服务器已断开连接&quot;);
+        this.userName = &quot;&quot;;
+        this.userContent = &quot;&quot;;
+        this.socket = null;
+      });
+    } catch (err) {
+      alert(&quot;服务器未启动!&quot;);
+    }
+  }
+}
+
+// 连接服务器
+const handleConnect = content =&gt; {
+  // 发送成功回调
+  const callback = () =&gt; {
+    const scrollHeight = $(&quot;.chat-list&quot;).prop(&quot;scrollHeight&quot;);
+    // 获取聊天室数据
+    chatRoom.fetchData();
+    // 滚动到底部
+    $(&quot;.chat-list&quot;).scrollTop(scrollHeight, 1000);
+  };
+  websocket.handleConnect(callback);
+};</code></pre>
+<p>&emsp;&emsp;刚打开页面就执行<code>handleConnect()</code>,在以上代码中 <code>io.connect(BASE_URL)</code>是为了连接上服务器，并使用<code>socket</code>进行监听客户端的事件，并触发函数，比如:<code>socket.on(&quot;connect&quot;,func)</code>是监听客户端连接上服务器的事件，然后执行回调函数，<code>socket.on(&quot;getMessage&quot;,func)</code>是监听客户端接收到服务器端发出的<code>getMessage</code>事件，这个<code>getMessage</code>是自己定义的，后面会说到，<code>socket.on(&quot;disconnect&quot;,func)</code>是监听客户端断开连接的事件，其他的都是业务代码。</p>
+<pre><code class="js">// 客户端
+// 点击发送内容给服务器
+handleSendMessage(content) {
+  if (this.socket) {
+    this.socket.emit(&#39;sendMessage&#39;, content);
+  } else {
+    alert(&#39;请先连接到服务器！&#39;);
+  }
+}</code></pre>
+<p>&emsp;&emsp;如果客户端想要发送信息给服务器端，就可以触发事件<code>socket.emit</code>表示私发，在客户端只能私发给服务器端，而在服务器端则可以用<code>io.emit</code>表示群发给客户端，<code>socket.emit</code>表示私发给客户端。这里的<code>sendMessage</code>跟前面的<code>getMessage</code>一样都是自定义的。</p>
+<pre><code class="js">// 服务器端
+// 建立链接
+io.on(&quot;connection&quot;, function(socket) {
+  // io.emit代表广播，socket.emit代表私发
+  socket.on(&quot;sendMessage&quot;, async function(content) {
+    const result = await mysql.addChatData(content);
+    io.emit(&quot;getMessage&quot;, content);
+  });
+});</code></pre>
+<p>&emsp;&emsp;此时，服务器端收到了客户端的<code>sendMessage</code>事件后进行回应。服务器端的<code>io</code>对象有一个全局监听事件<code>connect</code>，当有客户端连接上以后，回调函数的传参会返回连接上的客户端的<code>socket</code>对象，就可以在回调函数里监听该客户端的对应事件，这里是<code>sendMessage</code>也就是前面说到的客户端发起的事件。在回调函数在会返回客户端的传参<code>content</code>，接着用这个<code>content</code>进行<code>mysql</code>的增删改查操作，然后服务器端调用<code>io.emit</code>进行群发(也可以用<code>socket.emit</code>私发)，所有的客户端上都会触发<code>getMessage</code>事件，并进行后续操作。</p>
+<p style="color:#F0412C">注:这里`sendMessage`和`getMessage`也可以叫别的名字，这个前端和后端需要约定好保持一致。</p>
+
+<p>&emsp;&emsp;至此，<code>webSocket</code>的运作原理已经讲完了，也可以配合常规的<code>HTTP</code>请求，如本例中的<code>fetchData</code>方法就是正常的<code>ajax</code>请求。</p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>Ruan XuSong<br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/04/04/webSocket/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;04&#x2F;webSocket&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;04&#x2F;webSocket&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c42de8657e362551bd3e",
+    clientSecret: "d9fb1325c3fefa35a2486369919f7e4ee16cdc33",
+    id: window.location.pathname,
+    repo: "ruanxusong.github.io",
+    owner: "RuanXuSong",
+    admin: "RuanXuSong"
+  });
+  gitalk.render("gitalk");
+</script>
+
+</section>
+</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script></script>
+
+<script src="/js/app.js?v=1586193318846"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
+ 
+
+
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
