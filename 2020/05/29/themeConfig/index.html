@@ -2,7 +2,7 @@
 <html>
   <head>
     
-    <title>docker - 阮旭松的博客</title>
+    <title>图表主题配置 - 阮旭松的博客</title>
     <meta charset="UTF-8" />
     <meta name="description" content="基于hexo的前端博客" />
     <meta
@@ -16,21 +16,20 @@
       href="/favicon.ico"
       type="image/x-icon"
     />
-    <meta name="description" content="关于docker的基础指令及用法">
+    <meta name="description" content="基于 G2Plot 实现主题配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker">
-<meta property="og:url" content="https://www.ruanxusong.com/2020/04/26/docker/index.html">
+<meta property="og:title" content="图表主题配置">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/05/29/themeConfig/index.html">
 <meta property="og:site_name" content="阮旭松的博客">
-<meta property="og:description" content="关于docker的基础指令及用法">
+<meta property="og:description" content="基于 G2Plot 实现主题配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.ruanxusong.com/images/posts/docker/mirror-accelerate.jpg">
-<meta property="og:image" content="https://www.ruanxusong.com/images/posts/docker/dockerEngine.jpg">
-<meta property="article:published_time" content="2020-04-26T02:27:31.000Z">
-<meta property="article:modified_time" content="2020-04-26T15:14:35.820Z">
+<meta property="article:published_time" content="2020-05-29T12:02:52.000Z">
+<meta property="article:modified_time" content="2020-05-30T06:00:11.656Z">
 <meta property="article:author" content="Ruan XuSong">
-<meta property="article:tag" content="项目管理">
+<meta property="article:tag" content="图表">
+<meta property="article:tag" content="可视化">
+<meta property="article:tag" content="AntV">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/docker/mirror-accelerate.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
     
@@ -40,7 +39,7 @@
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
     />
-    <link rel="stylesheet" href="/css/style.css?v=1590818433536">
+    <link rel="stylesheet" href="/css/style.css?v=1590818433530">
   <meta name="generator" content="Hexo 4.2.0"></head>
 
   <body class="mdui-drawer-body-left">
@@ -222,65 +221,174 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/covers/docker.jpg">
+        <img src="/covers/themeConfig.jpg">
         
-        <h1>docker</h1>
+        <h1>图表主题配置</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月26日</a>
-    <a><i class="nexmoefont icon-areachart"></i>750 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年05月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
     
-      <a class="nexmoefont icon-appstore-fill -link" href="/categories/tech/">技术</a>
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/fontEnd/">前端</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/projectManage/" rel="tag">项目管理</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/AntV/" rel="tag">AntV</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/visualized/" rel="tag">可视化</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/graph/" rel="tag">图表</a>
     
   </div>
   <article>
-    <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>&emsp;&emsp;Docker，后端同学应该很熟悉了，但有些前端同学可能还没有接触过。Docker，英文直译是“码头工人”。类似的，他在项目中的作用也是如此，他可以帮你把打包好的货物（应用/项目）运到船上（容器），再送到目的地（线上环境）交付。官方的解释是：Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上。docker的本质是一个附加系统，类似于虚拟机，我们可以在虚拟机上运行其他系统的程序，docker上经过系统管理以及配置以后也可以用虚拟的操作系统运行应用，而且docker非常轻量。</p>
-<p>&emsp;&emsp;这篇博客主要记录一下对线上已存在镜像的docker拉到本地的指令及方法。</p>
-<h2 id="二、用法步骤"><a href="#二、用法步骤" class="headerlink" title="二、用法步骤"></a>二、用法步骤</h2><h3 id="1-镜像加速器"><a href="#1-镜像加速器" class="headerlink" title="1.镜像加速器"></a>1.镜像加速器</h3><p>&emsp;&emsp;因为为了更快地拉取线上容器，推荐加个镜像加速器，需要在阿里云的控制台里搜索“容器镜像服务”，进入“镜像中心”下的“镜像加速器”,如下图<br><img src="/images/posts/docker/mirror-accelerate.jpg" alt="镜像加速器"></p>
-<p>&emsp;&emsp;如果是最新版docker，有两种添加方法：</p>
+    <h2 id="使用主题配置功能"><a href="#使用主题配置功能" class="headerlink" title="使用主题配置功能"></a>使用主题配置功能</h2><h3 id="步骤一：安装环境"><a href="#步骤一：安装环境" class="headerlink" title="步骤一：安装环境"></a>步骤一：安装环境</h3><p>安装最新版 <code>umi-plugin-antd-theme</code>，</p>
+<h3 id="步骤二：基础配置"><a href="#步骤二：基础配置" class="headerlink" title="步骤二：基础配置"></a>步骤二：基础配置</h3><p>在项目 config 文件夹下新建 theme.config.json 文件，然后加入以下配置：</p>
+<pre><code class="json">{
+  &quot;theme&quot;: [
+    {
+      &quot;theme&quot;: &quot;dark&quot;,
+      &quot;fileName&quot;: &quot;dark.css&quot;,
+      &quot;modifyVars&quot;: {
+        &quot;@blue-screen-bg&quot;: &quot;#090b2c&quot;
+      }
+    },
+    {
+      &quot;theme&quot;: &quot;light&quot;,
+      &quot;fileName&quot;: &quot;light.css&quot;,
+      &quot;modifyVars&quot;: {
+        &quot;@blue-screen-bg&quot;: &quot;#fff&quot;
+      }
+    }
+  ],
+  // 是否压缩css
+  &quot;min&quot;: true,
+  // css module
+  &quot;isModule&quot;: true,
+  // 忽略 antd 的依赖
+  &quot;ignoreAntd&quot;: false,
+  // 忽略 pro-layout
+  &quot;ignoreProLayout&quot;: false,
+  // 使用缓存
+  &quot;cache&quot;: true,
+  // 引入外库less文件
+  &quot;extraLibraries&quot;: [&quot;@td-design/charts&quot;]
+}</code></pre>
+<p>theme 下的 modifyVars 下默认可配置 antd 的自带样式变量如：@primary-color 等。</p>
+<p>其中 <code>extraLibraries</code> 项目加入组件库名称后可以引入其他库的样式，并且添加组件库中定义的 less 变量到 modifyVars 下，可实现对该变量的主题色自定义配置，就可以实现组件库主题样式的统一配置。</p>
+<h3 id="步骤三：项目中使用经过主题色配置的变量"><a href="#步骤三：项目中使用经过主题色配置的变量" class="headerlink" title="步骤三：项目中使用经过主题色配置的变量"></a>步骤三：项目中使用经过主题色配置的变量</h3><p>在 src/styles 文件夹下 default.less 下添加该变量的默认配置。如：</p>
+<pre><code class="less">@blue-screen-bg: #fff;</code></pre>
+<p>在项目的样式文件<code>xxx.module.less</code>中使用该颜色变量，并从 default.less 文件中引入。<code>antd-pro-merge-less</code>会自动将该组件库中处理过的样式整合入<code>/theme/xxx.css</code>下，缓存在 node_modules/.plugin-theme 下 配合 theme/index.ts 中的主题切换方法就可以实现自定义主题色配置了。</p>
+<h3 id="步骤四：在项目中初始化-切换使用主题"><a href="#步骤四：在项目中初始化-切换使用主题" class="headerlink" title="步骤四：在项目中初始化/切换使用主题"></a>步骤四：在项目中初始化/切换使用主题</h3><h4 id="初始化主题"><a href="#初始化主题" class="headerlink" title="初始化主题"></a>初始化主题</h4><p>global.ts 中配置初始 theme ，这里配置了 <code>dark</code> 为初始主题：</p>
+<pre><code class="ts">((global as unknown) as CustomWindow).chartConfig = {
+  theme: &quot;dark&quot;
+};</code></pre>
+<p>在 app.ts 的 <code>render</code> 方法中调用 <code>themeInit</code> 方法，新建 <code>theme/index.ts</code> 并放入以下代码:</p>
+<pre><code class="ts">// theme/index.ts文件
+import { CustomWindow } from &quot;@/interfaces/common&quot;;
+
+/**
+ * @功能描述: 获得url中的传参
+ * @参数: name(指定项的key值)
+ * @返回值: 若有name，则返回指定项的value，若没有name则返回一个query的json
+ */
+const getUrlQuery = (name?: string) =&gt; {
+  let after = window.location.search || window.location.hash;
+  after = after ? after.split(&quot;?&quot;)[1] : &quot;&quot;;
+  const query = {};
+  const strs = after ? after.split(&quot;&amp;&quot;) : [];
+  for (let i = 0; i &lt; strs.length; i += 1) {
+    const keyValueMaps = strs[i] ? strs[i].split(&quot;=&quot;) : [];
+    if (keyValueMaps.length === 2) {
+      query[keyValueMaps[0]] = decodeURIComponent(keyValueMaps[1]);
+    } else if (keyValueMaps[0]) {
+      query[keyValueMaps[0]] = null;
+    }
+  }
+
+  if (name &amp;&amp; typeof name !== &quot;object&quot;) {
+    return query[name];
+  }
+
+  return query;
+};
+
+/**
+ * @功能描述: 跳转到修改/添加某参数后格式化过的url
+ * @参数: @param paramName 参数名,@param paramValue 参数值
+ * @返回值: void
+ */
+const getFormatedUrl = (paramName: string, paramValue: string) =&gt; {
+  const params = getUrlQuery();
+  const { origin, pathname } = window.location;
+  let newUrl = `${origin}${pathname}?`;
+  // 除了paramName之外的参数数组
+  const otherParamsKeys = Object.keys(params).filter(
+    item =&gt; item !== paramName
+  );
+  otherParamsKeys.forEach((item, idx) =&gt; {
+    newUrl = newUrl.concat(`${idx !== 0 ? &quot;&amp;&quot; : &quot;&quot;}${item}=${params[item]}`);
+  });
+  const formatedUrl = `${newUrl}${
+    otherParamsKeys.length &gt; 0 ? &quot;&amp;&quot; : &quot;&quot;
+  }${paramName}=${paramValue}`;
+  window.location.href = formatedUrl;
+};
+
+/**
+ * @功能描述: 初始化自定义主题色/重新设定主题色
+ * @参数: 如果需要修改主题可传入主题theme，否则可不传
+ * @返回值: 无
+ */
+export const themeInit = (customTheme?: string) =&gt; {
+  const { chartConfig } = (global as unknown) as CustomWindow;
+  let { theme } = chartConfig;
+  let styleLink = document.getElementById(&quot;theme-style&quot;) as HTMLLinkElement;
+  const body = document.getElementsByTagName(&quot;body&quot;)[0];
+  const newTheme = customTheme || getUrlQuery(&quot;theme&quot;);
+  if (newTheme) {
+    ((global as unknown) as CustomWindow).chartConfig.theme = newTheme;
+    // 如果地址存在theme参数，使用该theme
+    theme = newTheme;
+    if (customTheme) {
+      getFormatedUrl(&quot;theme&quot;, theme);
+    }
+  } else {
+    // 如果地址不存在theme参数，添加theme
+    getFormatedUrl(&quot;theme&quot;, theme);
+  }
+
+  if (styleLink) {
+    // 假如存在id为theme-style 的link标签，直接修改其href
+    if (theme) {
+      styleLink.href = `/theme/${theme}.css`;
+      body.className = `body-warp-${theme}`; // 切换自定义组件的主题
+    }
+  } else {
+    // 不存在的话，则新建一个
+    styleLink = document.createElement(&quot;link&quot;);
+    styleLink.type = &quot;text/css&quot;;
+    styleLink.rel = &quot;stylesheet&quot;;
+    styleLink.id = &quot;theme-style&quot;;
+    if (theme) {
+      styleLink.href = `/theme/${theme}.css`;
+      body.className = `body-warp-${theme}`; // 切换自定义组件的主题
+    }
+    document.body.append(styleLink);
+  }
+};</code></pre>
+<h4 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h4><p>调用 themeInit 方法(从 theme/index.ts 中引入)并传入主题名称即可。</p>
 <ul>
-<li>法1：用上图中推荐的方法。</li>
-<li>法2：复制加速器地址，进入docker目录下的preference，进入Docker Engine，在JSON的配置项中加<code>&quot;registry-mirrors&quot;</code>项，并把镜像加速器地址设为数组中的值，应用并重启Docker，拉取速度就可以大大提升。</li>
+<li>注：在 global.less 中的样式不会被整合，所以修改不会生效。</li>
 </ul>
-<p>配置如图:<br><img src="/images/posts/docker/dockerEngine.jpg" alt="镜像加速配置"></p>
-<h3 id="2-拉取并挂载docker"><a href="#2-拉取并挂载docker" class="headerlink" title="2.拉取并挂载docker"></a>2.拉取并挂载docker</h3><ul>
-<li><p>1.拉线上docker镜像 <code>docker pull 镜像名:v版本号</code></p>
-</li>
-<li><p>2.获得本地地址:<code>pwd</code></p>
-</li>
-<li><p>3.复制docker到本地test文件夹</p>
-<pre><code class="bash">docker cp 容器名:应用地址 eMacBook-Pro:~ michael$ cd test/</code></pre>
-</li>
-<li><p>4.docker新开运行并挂载到本地，挂载以后修改本地就会同步修改Docker容器文件：</p>
-<pre><code class="bash">docker run -d --name 容器名 -p 运行端口号:80 -p 8000:8000 -p 9000:9000 -p 9001:9001 -p 9002:9002 -v 本地挂载地址:对应线上地址 镜像名:v版本号</code></pre>
-<ul>
-<li>如果只是docker新开运行（不挂载到本地）：<pre><code class="bash">docker run -d --name 容器名 -p 运行端口号:80 -p 8000:8000 -p 9000:9000 -p 9001:9001 -p 9002:9002 镜像名:v版本号</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-运行docker"><a href="#3-运行docker" class="headerlink" title="3.运行docker"></a>3.运行docker</h3><ul>
-<li>1.进入docker命令行运行镜像 docker exec -it 容器名 bash</li>
-<li>2.<code>docker ps</code>查看docker运行状态</li>
-<li>3.运行要执行的指令</li>
-</ul>
-<p>到这里docker服务以及启动了，可以在<code>http://localhost:8999</code>地址看到运行的内容了。</p>
-<h2 id="三、其他常用指令"><a href="#三、其他常用指令" class="headerlink" title="三、其他常用指令"></a>三、其他常用指令</h2><ul>
-<li><p>停止docker<br><code>docker stop 容器名</code></p>
-</li>
-<li><p>删除容器<br><code>docker rm 容器名</code></p>
-</li>
-<li><p>运行容器,容器停止后可以用此命令开启<br><code>docker start 容器名</code></p>
-</li>
-<li><p>重启容器，注：重启以后所有数据状态都会丢失<br><code>docker restart 容器名</code></p>
-</li>
-<li><p>查看容器日志<br><code>docker logs -f 容器名</code></p>
-</li>
-</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果需要在自己项目中定义主题色样式变量，可以使用如下方式：在 theme 文件夹下新建 config.less 文件，配置如下内容，并且引入 config.less 到需要用到的样式文件下：</p>
+<pre><code class="less">.body-warp-light {
+  // theme light下的全局变量在此定义
+  --font-color: #1f1c1c;
+  --bg-color: grey;
+}
+
+.body-warp-dark {
+  // theme dark下的全局变量在此定义
+  --font-color: grey;
+  --bg-color: #000;
+}</code></pre>
+<p>如果要自定义其他主题样式需要改成 body-warp-xxx。</p>
 
   </article>
   
@@ -288,7 +396,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/04/26/docker/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;26&#x2F;docker&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;26&#x2F;docker&#x2F;</a><br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/05/29/themeConfig/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;05&#x2F;29&#x2F;themeConfig&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;05&#x2F;29&#x2F;themeConfig&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -330,7 +438,7 @@
 </script>
 <script></script>
 
-<script src="/js/app.js?v=1590818433538"></script>
+<script src="/js/app.js?v=1590818433531"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
