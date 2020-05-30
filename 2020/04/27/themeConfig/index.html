@@ -2,7 +2,7 @@
 <html>
   <head>
     
-    <title>关于 threeJS - 阮旭松的博客</title>
+    <title>图表主题配置 - 阮旭松的博客</title>
     <meta charset="UTF-8" />
     <meta name="description" content="基于hexo的前端博客" />
     <meta
@@ -16,19 +16,19 @@
       href="/favicon.ico"
       type="image/x-icon"
     />
-    <meta name="description" content="three.js 中遇到的一些问题的解决方法">
+    <meta name="description" content="基于 G2Plot 实现主题配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 threeJS">
-<meta property="og:url" content="https://www.ruanxusong.com/2019/12/29/threeJS/index.html">
+<meta property="og:title" content="图表主题配置">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/04/27/themeConfig/index.html">
 <meta property="og:site_name" content="阮旭松的博客">
-<meta property="og:description" content="three.js 中遇到的一些问题的解决方法">
+<meta property="og:description" content="基于 G2Plot 实现主题配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-29T13:40:15.000Z">
-<meta property="article:modified_time" content="2020-05-29T11:22:58.773Z">
+<meta property="article:published_time" content="2020-04-27T12:02:52.000Z">
+<meta property="article:modified_time" content="2020-05-29T10:07:29.391Z">
 <meta property="article:author" content="Ruan XuSong">
-<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="图表">
 <meta property="article:tag" content="可视化">
-<meta property="article:tag" content="three.js">
+<meta property="article:tag" content="AntV">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
@@ -39,7 +39,7 @@
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
     />
-    <link rel="stylesheet" href="/css/style.css?v=1590805243877">
+    <link rel="stylesheet" href="/css/style.css?v=1590805243843">
   <meta name="generator" content="Hexo 4.2.0"></head>
 
   <body class="mdui-drawer-body-left">
@@ -221,48 +221,174 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/covers/three.jpg">
+        <img src="/covers/themeConfig.jpg">
         
-        <h1>关于 threeJS</h1>
+        <h1>图表主题配置</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2019年12月29日</a>
-    <a><i class="nexmoefont icon-areachart"></i>788 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月27日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/fontEnd/">前端</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/javascript/" rel="tag">javascript</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/three/" rel="tag">three.js</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/visualized/" rel="tag">可视化</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/AntV/" rel="tag">AntV</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/visualized/" rel="tag">可视化</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/graph/" rel="tag">图表</a>
     
   </div>
   <article>
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;今天把之前项目里做的 three.js 的照片墙重新用 html 的方法写了一遍，其中遇到了一些问题跟大家分享一下哈，最终效果在左侧照片墙的链接。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="hexo-中的配置"><a href="#hexo-中的配置" class="headerlink" title="hexo 中的配置"></a>hexo 中的配置</h3><p>&emsp;&emsp;首先，是 hexo 博客中要使用 three 的配置，不用 hexo 的小伙伴可以跳过这一点。为了在 hexo 里面显示出原页面的 html，需要先在 hexo 中配置一下<code>skip_render</code>用来跳过渲染，最好在文件目录下新建一个文件,假设是<code>photoWall</code>然后在<code>_config.yml</code>中设置:</p>
-<pre><code class="bash">skip_render: photoWall/*</code></pre>
-<p>&emsp;&emsp;表示跳过 photoWall 文件下所有文件的渲染,也可以用*.html 等进行更进一步的匹配跳过渲染，其他文章里也有提到这里不再赘述。接下来就可以在 photoWall 的文件夹下新建一个 index 文件写 原样的 html 文件了。</p>
-<h3 id="引入-js-脚本"><a href="#引入-js-脚本" class="headerlink" title="引入 js 脚本"></a>引入 js 脚本</h3><p>&emsp;&emsp;如果要在 html 中使用 three.js 的话，需要先把 three.js 给下载到本地进行引入，同时如果想要动画效果的话也可以把<code>tween.js</code> 引入:</p>
-<pre><code class="javascript"> &lt;script src=&quot;js/three.js&quot;&gt;&lt;/script&gt;
- &lt;script src=&quot;js/tween.js&quot;&gt;&lt;/script&gt;</code></pre>
-<p>&emsp;&emsp;我这里可以提供现成的下载链接，可以直接右键另存为保存到本地<br/></p>
+    <h2 id="使用主题配置功能"><a href="#使用主题配置功能" class="headerlink" title="使用主题配置功能"></a>使用主题配置功能</h2><h3 id="步骤一：安装环境"><a href="#步骤一：安装环境" class="headerlink" title="步骤一：安装环境"></a>步骤一：安装环境</h3><p>安装最新版 <code>umi-plugin-antd-theme</code>，</p>
+<h3 id="步骤二：基础配置"><a href="#步骤二：基础配置" class="headerlink" title="步骤二：基础配置"></a>步骤二：基础配置</h3><p>在项目 config 文件夹下新建 theme.config.json 文件，然后加入以下配置：</p>
+<pre><code class="json">{
+  &quot;theme&quot;: [
+    {
+      &quot;theme&quot;: &quot;dark&quot;,
+      &quot;fileName&quot;: &quot;dark.css&quot;,
+      &quot;modifyVars&quot;: {
+        &quot;@blue-screen-bg&quot;: &quot;#090b2c&quot;
+      }
+    },
+    {
+      &quot;theme&quot;: &quot;light&quot;,
+      &quot;fileName&quot;: &quot;light.css&quot;,
+      &quot;modifyVars&quot;: {
+        &quot;@blue-screen-bg&quot;: &quot;#fff&quot;
+      }
+    }
+  ],
+  // 是否压缩css
+  &quot;min&quot;: true,
+  // css module
+  &quot;isModule&quot;: true,
+  // 忽略 antd 的依赖
+  &quot;ignoreAntd&quot;: false,
+  // 忽略 pro-layout
+  &quot;ignoreProLayout&quot;: false,
+  // 使用缓存
+  &quot;cache&quot;: true,
+  // 引入外库less文件
+  &quot;extraLibraries&quot;: [&quot;@td-design/charts&quot;]
+}</code></pre>
+<p>theme 下的 modifyVars 下默认可配置 antd 的自带样式变量如：@primary-color 等。</p>
+<p>其中 <code>extraLibraries</code> 项目加入组件库名称后可以引入其他库的样式，并且添加组件库中定义的 less 变量到 modifyVars 下，可实现对该变量的主题色自定义配置，就可以实现组件库主题样式的统一配置。</p>
+<h3 id="步骤三：项目中使用经过主题色配置的变量"><a href="#步骤三：项目中使用经过主题色配置的变量" class="headerlink" title="步骤三：项目中使用经过主题色配置的变量"></a>步骤三：项目中使用经过主题色配置的变量</h3><p>在 src/styles 文件夹下 default.less 下添加该变量的默认配置。如：</p>
+<pre><code class="less">@blue-screen-bg: #fff;</code></pre>
+<p>在项目的样式文件<code>xxx.module.less</code>中使用该颜色变量，并从 default.less 文件中引入。<code>antd-pro-merge-less</code>会自动将该组件库中处理过的样式整合入<code>/theme/xxx.css</code>下，缓存在 node_modules/.plugin-theme 下 配合 theme/index.ts 中的主题切换方法就可以实现自定义主题色配置了。</p>
+<h3 id="步骤四：在项目中初始化-切换使用主题"><a href="#步骤四：在项目中初始化-切换使用主题" class="headerlink" title="步骤四：在项目中初始化/切换使用主题"></a>步骤四：在项目中初始化/切换使用主题</h3><h4 id="初始化主题"><a href="#初始化主题" class="headerlink" title="初始化主题"></a>初始化主题</h4><p>global.ts 中配置初始 theme ，这里配置了 <code>dark</code> 为初始主题：</p>
+<pre><code class="ts">((global as unknown) as CustomWindow).chartConfig = {
+  theme: &quot;dark&quot;
+};</code></pre>
+<p>在 app.ts 的 <code>render</code> 方法中调用 <code>themeInit</code> 方法，新建 <code>theme/index.ts</code> 并放入以下代码:</p>
+<pre><code class="ts">// theme/index.ts文件
+import { CustomWindow } from &quot;@/interfaces/common&quot;;
+
+/**
+ * @功能描述: 获得url中的传参
+ * @参数: name(指定项的key值)
+ * @返回值: 若有name，则返回指定项的value，若没有name则返回一个query的json
+ */
+const getUrlQuery = (name?: string) =&gt; {
+  let after = window.location.search || window.location.hash;
+  after = after ? after.split(&quot;?&quot;)[1] : &quot;&quot;;
+  const query = {};
+  const strs = after ? after.split(&quot;&amp;&quot;) : [];
+  for (let i = 0; i &lt; strs.length; i += 1) {
+    const keyValueMaps = strs[i] ? strs[i].split(&quot;=&quot;) : [];
+    if (keyValueMaps.length === 2) {
+      query[keyValueMaps[0]] = decodeURIComponent(keyValueMaps[1]);
+    } else if (keyValueMaps[0]) {
+      query[keyValueMaps[0]] = null;
+    }
+  }
+
+  if (name &amp;&amp; typeof name !== &quot;object&quot;) {
+    return query[name];
+  }
+
+  return query;
+};
+
+/**
+ * @功能描述: 跳转到修改/添加某参数后格式化过的url
+ * @参数: @param paramName 参数名,@param paramValue 参数值
+ * @返回值: void
+ */
+const getFormatedUrl = (paramName: string, paramValue: string) =&gt; {
+  const params = getUrlQuery();
+  const { origin, pathname } = window.location;
+  let newUrl = `${origin}${pathname}?`;
+  // 除了paramName之外的参数数组
+  const otherParamsKeys = Object.keys(params).filter(
+    item =&gt; item !== paramName
+  );
+  otherParamsKeys.forEach((item, idx) =&gt; {
+    newUrl = newUrl.concat(`${idx !== 0 ? &quot;&amp;&quot; : &quot;&quot;}${item}=${params[item]}`);
+  });
+  const formatedUrl = `${newUrl}${
+    otherParamsKeys.length &gt; 0 ? &quot;&amp;&quot; : &quot;&quot;
+  }${paramName}=${paramValue}`;
+  window.location.href = formatedUrl;
+};
+
+/**
+ * @功能描述: 初始化自定义主题色/重新设定主题色
+ * @参数: 如果需要修改主题可传入主题theme，否则可不传
+ * @返回值: 无
+ */
+export const themeInit = (customTheme?: string) =&gt; {
+  const { chartConfig } = (global as unknown) as CustomWindow;
+  let { theme } = chartConfig;
+  let styleLink = document.getElementById(&quot;theme-style&quot;) as HTMLLinkElement;
+  const body = document.getElementsByTagName(&quot;body&quot;)[0];
+  const newTheme = customTheme || getUrlQuery(&quot;theme&quot;);
+  if (newTheme) {
+    ((global as unknown) as CustomWindow).chartConfig.theme = newTheme;
+    // 如果地址存在theme参数，使用该theme
+    theme = newTheme;
+    if (customTheme) {
+      getFormatedUrl(&quot;theme&quot;, theme);
+    }
+  } else {
+    // 如果地址不存在theme参数，添加theme
+    getFormatedUrl(&quot;theme&quot;, theme);
+  }
+
+  if (styleLink) {
+    // 假如存在id为theme-style 的link标签，直接修改其href
+    if (theme) {
+      styleLink.href = `/theme/${theme}.css`;
+      body.className = `body-warp-${theme}`; // 切换自定义组件的主题
+    }
+  } else {
+    // 不存在的话，则新建一个
+    styleLink = document.createElement(&quot;link&quot;);
+    styleLink.type = &quot;text/css&quot;;
+    styleLink.rel = &quot;stylesheet&quot;;
+    styleLink.id = &quot;theme-style&quot;;
+    if (theme) {
+      styleLink.href = `/theme/${theme}.css`;
+      body.className = `body-warp-${theme}`; // 切换自定义组件的主题
+    }
+    document.body.append(styleLink);
+  }
+};</code></pre>
+<h4 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h4><p>调用 themeInit 方法(从 theme/index.ts 中引入)并传入主题名称即可。</p>
 <ul>
-<li>three.js：<a href="/js/three/Three.js">three.js</a></li>
-<li>tween.js：<a href="/js/three/tween.js">tween.js</a></li>
+<li>注：在 global.less 中的样式不会被整合，所以修改不会生效。</li>
 </ul>
-<p>&emsp;&emsp;<code>tween.js</code> 是一个很好用的平滑动画转换的 js 插件，可以让值从一个状态平滑的过渡到另一个状态。以后在我的博客里会继续介绍。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h2 id="xxx-is-not-a-constructor"><a href="#xxx-is-not-a-constructor" class="headerlink" title="xxx is not a constructor"></a>xxx is not a constructor</h2><p>&emsp;&emsp;因为 three.js 的更新，我最近经常遇到如下问题：</p>
-<pre><code class="bash">THREE.FirstPersonControls is not a constructor</code></pre>
-<p><br>这个问题意思是，THREE 下的 FirstPersonControls 不是一个构造函数，这就是因为没有引入 script 脚本，因为 three 里面有些插件是需要额外引入的，这个问题有一个解决方法：那就是把<code>FirstPersonControls.js</code>的代码在本地引入这样就没问题了，存在同样问题的有<code>MTLLoader</code>和<code>OBJLoader</code>，也可以用同样的方式解决。这里提供给有一样问题的小伙伴下载链接，可以直接右键另存到本地。</p>
-<ul>
-<li>FirstPersonControls：<a href="/js/three/FirstPersonControls.js">FirstPersonControls：</a></li>
-<li>MTLLoader：<a href="/js/three/MTLLoader.js">MTLLoader</a></li>
-<li>OBJLoader：<a href="/js/three/OBJLoader.js">OBJLoader</a></li>
-</ul>
-<p>在本地就可以直接引用<code>FirstPersonControls：</code>不需要引用<code>THREE.</code>的前缀啦。</p>
-<h3 id="Failed-to-execute-‘texImage2D’"><a href="#Failed-to-execute-‘texImage2D’" class="headerlink" title="Failed to execute ‘texImage2D’"></a>Failed to execute ‘texImage2D’</h3><p>这个问题全部报错信息如下：</p>
-<pre><code class="bash">ThreeJS DOMException: Failed to execute &#39;texImage2D&#39; on &#39;WebGLRenderingContext&#39;</code></pre>
-<p>&emsp;&emsp;这个原因是在贴图的时候，由于浏览器或者本地环境 localhost 的安全问题，可以试着部署到线上或者换成谷歌浏览器就可以了。</p>
-<h3 id="glTfloader-的问题"><a href="#glTfloader-的问题" class="headerlink" title="glTfloader 的问题"></a>glTfloader 的问题</h3><p>glTFloader 可以直接引入模型和材质,很方便,但是在<code>three.js</code>包里的 glTF 文件下的 glTFloader 存在很多问题，比如要分别引入<code>glTFShaders.js</code>,<code>glTFLoaderUtils.js</code>,<code>glTF-parser.js</code>和<code>glTFLoader.js</code>的插件，也会报很多 undefined 的错,这里推荐用<code>three-gltf-loader</code>的插件,可以直接引入 GLTFLoader，而且用法也是完全一样的，下面给出<code>three-gltf-loader</code>的下载地址:<br><a href="/js/three/three-gltf-loader.js">three-gltf-loader</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果需要在自己项目中定义主题色样式变量，可以使用如下方式：在 theme 文件夹下新建 config.less 文件，配置如下内容，并且引入 config.less 到需要用到的样式文件下：</p>
+<pre><code class="less">.body-warp-light {
+  // theme light下的全局变量在此定义
+  --font-color: #1f1c1c;
+  --bg-color: grey;
+}
+
+.body-warp-dark {
+  // theme dark下的全局变量在此定义
+  --font-color: grey;
+  --bg-color: #000;
+}</code></pre>
+<p>如果要自定义其他主题样式需要改成 body-warp-xxx。</p>
 
   </article>
   
@@ -270,7 +396,7 @@
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2019/12/29/threeJS/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;threeJS&#x2F;</a><br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/04/27/themeConfig/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;27&#x2F;themeConfig&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;04&#x2F;27&#x2F;themeConfig&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -312,7 +438,7 @@
 </script>
 <script></script>
 
-<script src="/js/app.js?v=1590805243880"></script>
+<script src="/js/app.js?v=1590805243845"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
