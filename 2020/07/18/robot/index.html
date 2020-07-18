@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>智能回复机器人 - 阮旭松的博客</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="基于hexo的前端博客" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+     
+
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="description" content="各种市面上的智能机器人回复系统介绍及使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能回复机器人">
+<meta property="og:url" content="https://www.ruanxusong.com/2020/07/18/robot/index.html">
+<meta property="og:site_name" content="阮旭松的博客">
+<meta property="og:description" content="各种市面上的智能机器人回复系统介绍及使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/QRspeed.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/QRSpeedWord.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/robot1.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/robot2.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/chatRoom1.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/chatRoom2.jpg">
+<meta property="article:published_time" content="2020-07-18T08:27:05.000Z">
+<meta property="article:modified_time" content="2020-07-18T10:37:58.435Z">
+<meta property="article:author" content="Ruan XuSong">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="webSocket">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/robot/QRspeed.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+     
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
+    />
+    <link rel="stylesheet" href="/css/style.css?v=1595068711487">
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+      <div
+        class="nexmoe-bg"
+        style="background-image: url(/images/background.jpeg)"
+      ></div>
+      <div class="mdui-appbar mdui-shadow-0">
+        <div class="mdui-toolbar">
+          <a
+            mdui-drawer="{target: '#drawer', swipe: true}"
+            title="menu"
+            class="mdui-btn mdui-btn-icon"
+            ><i class="mdui-icon material-icons">menu</i></a
+          >
+          <div class="mdui-toolbar-spacer"></div>
+          <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+          <a
+            href="/"
+            title="Ruan XuSong"
+            class="mdui-btn mdui-btn-icon"
+            ><img src="/images/avatar.jpeg"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+  <div class="nexmoe-avatar mdui-ripple">
+    <a href="/" title="Ruan XuSong">
+      <img
+        src="/images/avatar.jpeg"
+        alt="Ruan XuSong"
+      />
+    </a>
+  </div>
+  <div class="nexmoe-count">
+    <div><span>文章</span>15</div>
+    <div><span>标签</span>20</div>
+    <div>
+      <span>分类</span>4
+    </div>
+  </div>
+  <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/"
+      title="回到首页"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-home"
+      ></i>
+      <div class="mdui-list-item-content">
+        回到首页
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/about.html"
+      title="关于博客"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-info-circle"
+      ></i>
+      <div class="mdui-list-item-content">
+        关于博客
+      </div>
+    </a>
+    
+    <a
+      class="nexmoe-list-item mdui-list-item mdui-ripple"
+      href="/photoWall/index.html"
+      title="照片墙"
+    >
+      <i
+        class="mdui-list-item-icon nexmoefont icon-appstore-fill"
+      ></i>
+      <div class="mdui-list-item-content">
+        照片墙
+      </div>
+    </a>
+    
+  </ul>
+  <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=920595664&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/ruanxusong/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/fontEnd/">前端</a>
+          <span class="category-list-count">10</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">技术</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/life/">生活</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/mobile/">移动端</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/AntV/" style="font-size: 13.33px;">AntV</a> <a href="/tags/es6/" style="font-size: 10px;">ES6</a> <a href="/tags/taro/" style="font-size: 10px;">Taro</a> <a href="/tags/cordova/" style="font-size: 10px;">cordova</a> <a href="/tags/hooks/" style="font-size: 10px;">hooks</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/reactNative/" style="font-size: 13.33px;">react-native</a> <a href="/tags/three/" style="font-size: 10px;">three.js</a> <a href="/tags/webSocket/" style="font-size: 13.33px;">webSocket</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/visualized/" style="font-size: 16.67px;">可视化</a> <a href="/tags/backEnd/" style="font-size: 13.33px;">后端</a> <a href="/tags/graph/" style="font-size: 13.33px;">图表</a> <a href="/tags/weChat/" style="font-size: 10px;">微信小程序</a> <a href="/tags/motion/" style="font-size: 10px;">心情</a> <a href="/tags/regs/" style="font-size: 10px;">正则</a> <a href="/tags/oilMonkey/" style="font-size: 10px;">油猴</a> <a href="/tags/projectManage/" style="font-size: 10px;">项目管理</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+  <div class="nexmoe-copyright">
+    &copy; 2020 Ruan XuSong
+  </div>
+</div>
+<!-- .nexmoe-drawer -->
+
+    </div>
+    <div id="nexmoe-content">
+      <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="/covers/robot.jpg">
+        
+        <h1>智能回复机器人</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年07月18日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 15 分钟</a>
+    
+      <a class="nexmoefont icon-appstore-fill -link" href="/categories/fontEnd/">前端</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/webSocket/" rel="tag">webSocket</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/backEnd/" rel="tag">后端</a>
+    
+  </div>
+  <article>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;人工智能是一个当代的热门话题，也会是下一个技术发展的趋势。预言帝凯文·凯利就曾经预言未来 25 年内未来人工智能、虚拟现实以及追踪和跟踪是三大发展趋势。而市面上也已经有了一些例如叮咚智能音响，Siri，小爱等等的智能机器人，有的可以语音操控，有的可以语音聊天，对话等。而今天我们的目标就是实现一个我们自己的可以智能聊天的机器人。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="一、用酷-q-机器人-qq-微信接入"><a href="#一、用酷-q-机器人-qq-微信接入" class="headerlink" title="一、用酷 q 机器人 qq /微信接入"></a>一、用酷 q 机器人 qq /微信接入</h3><p>&emsp;&emsp;第一种方法就是借助市面上已有的机器人直接接入 qq 或微信，这边推荐比较好的一款是酷 q 机器人，可以在官网上申请注册一个账号，可以免费体验三天时间普通版，但是三天后只能用免费版，一天只能回复 10 条消息，后续需要 12 块钱 1 个月，像我们都是向来白嫖的，这个就比较奢侈了哈，还因为需要 windows 环境，mac 上 还要借助虚拟机。但是，毕竟是付费的，功能和智能化我觉得都是最好的，也能用来玩一些游戏。效果图如下：</p>
+<h3 id="二、用-QRspeed-手动设定回复机器人"><a href="#二、用-QRspeed-手动设定回复机器人" class="headerlink" title="二、用 QRspeed 手动设定回复机器人"></a>二、用 QRspeed 手动设定回复机器人</h3><p>&emsp;&emsp;第二种方法，就是用在电脑上跑一个模拟器上跑一个 QRSpeed 搭配 QRSpeed 词库，给机器人词库里写对应的语句，匹配到就会回复指定的语句。</p>
+<p>下图为 QRSpeed 配置，另外需要在群列表中选中需要机器人运作的群。</p>
+<p><img src="/images/posts/robot/QRspeed.jpg" alt="QRSpeed"></p>
+<p>上图中有一个 QRSpeed 词库的插件也需要安装一下，配置下主人和管理员，再导入下词库。</p>
+<p><img src="/images/posts/robot/QRSpeedWord.jpg" alt="QRSpeed 词库"></p>
+<p>在 QRSpeed 词库中导入下图的词库，如图为词库(语法可以在网上找到，门槛比较低)：</p>
+<p><img src="/images/posts/robot/robot1.jpg" alt="机器人截图1"></p>
+<p>这样设置以后再给机器人发消息就会自动回复了：</p>
+<p><img src="/images/posts/robot/robot2.jpg" alt="机器人截图2"></p>
+<p>也可以找网上例如小浅等智能机器人的词库，还可以实现一些小游戏。</p>
+<h3 id="三、用-webSocket-搭后台服务，接机器人接口"><a href="#三、用-webSocket-搭后台服务，接机器人接口" class="headerlink" title="三、用 webSocket 搭后台服务，接机器人接口"></a>三、用 webSocket 搭后台服务，接机器人接口</h3><p>&emsp;&emsp;这种方法就是今天重点了，用 webSocket 搭服务，这个我在之前的博客里讲过，就不展开讲了，接茉莉机器人接口，茉莉机器人,广泛应用于各类网站客服、QQ 机器人和微信公众平台。</p>
+<h4 id="步骤一：申请接口"><a href="#步骤一：申请接口" class="headerlink" title="步骤一：申请接口"></a>步骤一：申请接口</h4><p>&emsp;&emsp;前往<a href="http://www.itpk.cn/profile.php" target="_blank" rel="noopener">茉莉机器人官网</a>，注册申请自己的 API Key，可以在个人中心设置机器人的名字等信息，也可以设置词库，获取到接入 URL。如图：</p>
+<p>![茉莉机器人API]](/images/posts/robot/moliRobot1.jpg)</p>
+<h4 id="步骤二：写前端页面"><a href="#步骤二：写前端页面" class="headerlink" title="步骤二：写前端页面"></a>步骤二：写前端页面</h4><p>用 React 写一个简单的页面，我这里就直接把最后的代码放上来了。</p>
+<pre><code class="tsx">// 主文件
+import React, { useState, useEffect, useRef } from &#39;react&#39;;
+import { message, Button, Input } from &#39;antd&#39;;
+import { useRequest } from &#39;ahooks&#39;;
+import { useImmer } from &#39;use-immer&#39;;
+import moment from &#39;moment&#39;;
+import styles from &#39;./index.module.less&#39;;
+import { BASE_URL, MSG_TYPE } from &#39;../constant&#39;;
+import classnames from &#39;classnames&#39;;
+import Websocket from &#39;@/utils/webSocket&#39;;
+import { ChatDataProps } from &#39;interfaces/common&#39;;
+
+const { TextArea } = Input;
+
+// 初始化聊天配置
+const INITIAL_CHAT_CONFIG = {
+  userName: &#39;&#39;,
+  userContent: &#39;&#39;,
+};
+
+const HomePage = () =&gt; {
+  const [webSocket, setWebSocket] = useState&lt;Websocket&gt;();
+  const [chatConfig, setChatConfig] = useImmer(INITIAL_CHAT_CONFIG);
+  const chatListRef = useRef&lt;HTMLDivElement&gt;(null);
+  const { userName, userContent } = chatConfig;
+
+  /** 渲染聊天内容 */
+  const renderChatItem = (chatItem: ChatDataProps) =&gt; {
+    const { id, time, userName, content, msgType } = chatItem;
+    const timeString = moment(time).format(&#39;YYYY-MM-DD HH:mm:ss&#39;);
+    return msgType === MSG_TYPE.user ? (
+      &lt;div
+        className={classnames(
+          styles.chatRow,
+          userName === chatConfig.userName ? styles.myChatRow : {}
+        )}
+        key={id}
+      &gt;
+        &lt;div className={styles.releaseTime}&gt;{timeString}&lt;/div&gt;
+        &lt;div className={styles.userLine}&gt;
+          &lt;div className={styles.nameWrap}&gt;
+            &lt;span className={styles.userName}&gt;{userName}&lt;/span&gt;说:
+          &lt;/div&gt;
+          &lt;div className={styles.chatWord}&gt;{content}&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    ) : (
+      &lt;div className={styles.systemMessage} key={id}&gt;
+        &lt;span className={styles.userName}&gt;{userName}&lt;/span&gt;
+        {content}
+      &lt;/div&gt;
+    );
+  };
+
+  // 获取聊天室数据
+  const { data: chatData, run: fetchData } = useRequest(
+    `${BASE_URL}/chatData`,
+    {
+      formatResult: (result) =&gt; result.data,
+      onError: () =&gt; {
+        message.error(&#39;请求失败!&#39;);
+      },
+    }
+  );
+
+  // 连接服务器
+  const handleConnect = () =&gt; {
+    let webSocketIo;
+    // 发送成功/回调
+    const callback = async () =&gt; {
+      // 获取聊天室数据
+      await fetchData();
+      const dom = chatListRef.current;
+      if (dom) {
+        const scrollHeight = dom.scrollHeight;
+        dom.scrollTop = scrollHeight;
+      }
+    };
+
+    // 断开连接回调
+    const failCallback = () =&gt; {
+      setChatConfig((config) =&gt; {
+        config.userName = &#39;&#39;;
+        config.userContent = &#39;&#39;;
+      });
+    };
+    if (!webSocket) {
+      webSocketIo = new Websocket();
+      const userName = localStorage.getItem(&#39;chatRoom-userName&#39;);
+      setWebSocket(webSocketIo);
+      setChatConfig((config) =&gt; {
+        config.userName = userName || &#39;&#39;;
+      });
+    }
+    webSocketIo &amp;&amp; webSocketIo.handleConnect({ callback, failCallback });
+  };
+
+  // 修改聊天昵称
+  const handleChangeName = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    const userName = e.target.value;
+    setChatConfig((config) =&gt; {
+      config.userName = userName;
+    });
+  };
+
+  // 修改了昵称
+  const handleBlurName = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    const oldUserName = localStorage.getItem(&#39;chatRoom-userName&#39;);
+    const userName = e.target.value;
+    if (userName !== &#39;&#39; &amp;&amp; userName !== oldUserName) {
+      webSocket?.handleSendSystemMessage({ userName, status: &#39;online&#39; });
+      localStorage.setItem(&#39;chatRoom-userName&#39;, userName);
+    }
+  };
+
+  // 发送信息
+  const handleSubmit = () =&gt; {
+    if (userName === &#39;&#39;) {
+      alert(&#39;请先输入昵称!&#39;);
+      return;
+    }
+    if (userContent.trim() === &#39;&#39;) {
+      alert(&#39;发送内容不可为空!&#39;);
+      return;
+    }
+    webSocket?.handleSendMessage({
+      userName: userName,
+      userContent: userContent,
+    });
+    setChatConfig((config) =&gt; {
+      config.userContent = &#39;&#39;;
+    });
+  };
+
+  useEffect(() =&gt; {
+    document.onkeydown = function (e: KeyboardEvent) {
+      // 兼容FF和IE和Opera
+      var theEvent = (window.event as KeyboardEvent) || e;
+      var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+      // 若按下回车键
+      if (code == 13) {
+        e.preventDefault();
+        handleSubmit();
+      }
+    };
+  }, [userName, userContent]);
+
+  useEffect(() =&gt; {
+    // 连接至服务器
+    handleConnect();
+  }, []);
+
+  return (
+    &lt;div className={styles.container}&gt;
+      &lt;div className={styles.chatWrap}&gt;
+        &lt;div className={styles.chatHeader}&gt;智能聊天室&lt;/div&gt;
+        &lt;div ref={chatListRef} className={styles.chatList}&gt;
+          {chatData &amp;&amp;
+            chatData.map((item: ChatDataProps) =&gt; renderChatItem(item))}
+        &lt;/div&gt;
+        &lt;div className={styles.sendBar}&gt;
+          &lt;div className={styles.nameBar}&gt;
+            &lt;Input
+              className={styles.nameInput}
+              placeholder=&quot;请输入昵称&quot;
+              onChange={handleChangeName}
+              value={userName}
+              onBlur={handleBlurName}
+            /&gt;
+            &lt;Button className={styles.sendBtn} onClick={handleSubmit}&gt;
+              发送
+            &lt;/Button&gt;
+          &lt;/div&gt;
+          &lt;TextArea
+            className={styles.wordInput}
+            onChange={(e) =&gt; {
+              const value = e.target.value;
+              setChatConfig((config) =&gt; {
+                config.userContent = value;
+              });
+            }}
+            placeholder=&quot;请输入要说的话&quot;
+            value={userContent}
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default HomePage;</code></pre>
+<pre><code class="less">// 样式文件
+.container {
+  background: #eee;
+
+  .chatWrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 10px 6px 10px #ccc;
+    border-radius: 4px;
+    border: 1px solid #b9b9b9;
+    overflow: hidden;
+    justify-content: space-between;
+    background: #fff;
+
+    .chatHeader {
+      background: #f2f3f5;
+      padding: 10px;
+      font-size: 16px;
+      color: #333;
+      border-bottom: 1px solid #e8e8e9;
+    }
+
+    .chatList {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      overflow: auto;
+      max-height: calc(100vh - 110px);
+      padding-bottom: 60px;
+      margin-bottom: 160px;
+
+      .systemMessage {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin: 6px 0;
+      }
+
+      .chatRow {
+        padding: 4px 12px;
+      }
+
+      .myChatRow {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .releaseTime {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .userLine {
+        display: flex;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .nameWrap {
+        white-space: nowrap;
+        margin-right: 10px;
+      }
+
+      .userName {
+        color: #378ddf;
+        font-size: 14px;
+        margin-right: 4px;
+      }
+    }
+
+    .sendBar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #eee;
+      box-shadow: 0 2px 10px #999;
+
+      .nameBar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 2% 0;
+
+        .nameInput {
+          width: 200px;
+          border: 0;
+          padding: 4px 10px;
+          font-size: 14px;
+        }
+
+        .sendBtn {
+          background: rgba(55, 141, 223, 0.8);
+          border-radius: 4px;
+          color: #fff;
+          padding: 0 10px;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .sendBtn:hover {
+          background: #378ddf;
+        }
+      }
+
+      .wordInput {
+        width: 96%;
+        height: 100px;
+        padding: 4px 10px;
+        margin: 10px 2%;
+        border: 0;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}</code></pre>
+<p>这样就可以简单地搭出一个聊天室界面了，效果如下：</p>
+<p><img src="/images/posts/robot/chatRoom1.jpg" alt="聊天室1"></p>
+<h4 id="步骤三：用-node-js-写一个服务端"><a href="#步骤三：用-node-js-写一个服务端" class="headerlink" title="步骤三：用 node.js 写一个服务端"></a>步骤三：用 node.js 写一个服务端</h4><p>这里我 <code>webSocket</code> 使用的是 <code>socket.io</code> 的框架，代码如下：</p>
+<pre><code class="js">// node端
+//引入koa
+const Koa = require(&#39;koa&#39;);
+const app = new Koa();
+const mysql = require(&#39;./mysql&#39;);
+//创建http服务
+var server = require(&#39;http&#39;).createServer(app.callback());
+
+const request = require(&#39;request&#39;);
+
+const Router = require(&#39;koa-router&#39;);
+
+var config = require(&#39;./config/default.js&#39;);
+
+const { robot, msgType } = config;
+
+const { ROBOT_NAME, ROBOT_URL, API_KEY, API_SECRET } = robot;
+
+// 跨域请求
+const cors = require(&#39;koa2-cors&#39;);
+
+const router = new Router();
+
+// 跨域配置
+app.use(
+  cors({
+    origin: function (ctx) {
+      return &#39;*&#39;; // 允许来自所有域名请求
+    },
+    exposeHeaders: [&#39;WWW-Authenticate&#39;, &#39;Server-Authorization&#39;],
+    maxAge: 5,
+    credentials: true,
+    allowMethods: [&#39;GET&#39;, &#39;POST&#39;, &#39;DELETE&#39;],
+    allowHeaders: [&#39;Content-Type&#39;, &#39;Authorization&#39;, &#39;Accept&#39;],
+  })
+);
+
+//给http封装成io对象
+var io = require(&#39;socket.io&#39;)(server);
+// 建立链接
+io.on(&#39;connection&#39;, function (socket) {
+  // io.emit代表广播，socket.emit代表私发
+  socket.on(&#39;sendMessage&#39;, async function (content) {
+    await mysql.addChatData(content);
+    io.emit(&#39;getMessage&#39;, content);
+
+    // 若不为系统消息，机器人自动回复（实现机器人自动回复主要就是这一段）
+    if (content.msgType !== msgType.SYSTEM) {
+      request(
+        `${ROBOT_URL}?question=${encodeURI(
+          content.userContent
+        )}&amp;api_key=${API_KEY}&amp;api_secret=${API_SECRET}`,
+        async function (error, response, body) {
+          if (!error &amp;&amp; response.statusCode == 200) {
+            const robotContent = {
+              userContent: body,
+              userName: ROBOT_NAME,
+              msgType: msgType.USER,
+            };
+            await mysql.addChatData(robotContent);
+            io.emit(&#39;getMessage&#39;, robotContent);
+          }
+        }
+      );
+    }
+  });
+});
+
+router.get(&#39;/chatData&#39;, async (ctx, next) =&gt; {
+  const result = await mysql.getChatData();
+  ctx.body = {
+    code: 20000,
+    data: result,
+    message: &#39;请求成功&#39;,
+    success: true,
+  };
+});
+
+app.use(router.routes());
+
+app.use((ctx) =&gt; {
+  ctx.response.body = &#39;服务器运行中&#39;;
+});
+
+server.listen(3000, function () {
+  console.log(&#39;Server listening on port 3000&#39;);
+});</code></pre>
+<h5 id="Socket-IO"><a href="#Socket-IO" class="headerlink" title="Socket.IO"></a>Socket.IO</h5><p>这里介绍一下 <code>Socket.IO</code>，<code>Socket.IO</code> 是一个库，可用于在浏览器和服务器之间进行实时，双向和基于事件的通信。在客户端使用 <code>io.connect(BASE_URL)</code> 可以实例化一个 <code>socket</code> 对象，跟服务器端建立 WebSocket 连接，就可以用 <code>socket.on（&#39;connect&#39;,func)</code> 监听 <code>connect</code> 事件，如果服务器开启，客户端会自动连接上服务器，执行一些在建立连接后的事件。</p>
+<p>以下为 mysql 的连接池和接口请求配置，服务器端启动时需要启动 mysql 的服务：</p>
+<pre><code class="js">var mysql = require(&#39;mysql&#39;);
+var config = require(&#39;../config/default.js&#39;);
+var moment = require(&#39;moment&#39;);
+
+var pool = mysql.createPool({
+  host: config.database.HOST,
+  user: config.database.USERNAME,
+  password: config.database.PASSWORD,
+  database: config.database.DATABASE,
+});
+
+class Mysql {
+  constructor() {}
+  getChatData() {
+    return new Promise((resolve, reject) =&gt; {
+      pool.query(&#39;SELECT * from chatWords&#39;, function (error, results, fields) {
+        let counts = 0;
+        if (error) {
+          throw error;
+        }
+        results.forEach((item) =&gt; {
+          const userName = pool.query(
+            `SELECT username from user WHERE id=${item.userId}`,
+            function (error, result) {
+              try {
+                if (error) {
+                  throw error;
+                }
+                item.userName = result[0].username;
+                counts++;
+                if (counts === results.length) {
+                  resolve(results);
+                }
+              } catch (error) {
+                console.log(&#39;error: &#39;, error);
+                item.userName = &#39;匿名&#39;;
+              }
+            }
+          );
+        });
+      });
+    });
+  }
+  addChatData(chatData) {
+    const { userName, userContent, msgType = 1 } = chatData;
+    const nowTime = moment(new Date()).format(&#39;YYYY-MM-DD HH-mm-ss&#39;);
+    return new Promise((reslove, reject) =&gt; {
+      pool.query(`SELECT id from user WHERE username=&quot;${userName}&quot;`, function (
+        error,
+        results,
+        fields
+      ) {
+        try {
+          if (error) {
+            throw error;
+          }
+          if (results.length === 0) {
+            pool.query(
+              `INSERT INTO user (username) VALUES (&quot;${userName}&quot;)`,
+              function (error, result) {
+                if (error) {
+                  throw error;
+                }
+                pool.query(
+                  `INSERT INTO chatWords (content,time,userId,msgType) VALUES (&quot;${userContent}&quot;,&quot;${nowTime}&quot;,${result.insertId},${msgType})`,
+                  function (error, result) {
+                    if (error) {
+                      throw error;
+                    }
+                    reslove(true);
+                  }
+                );
+              }
+            );
+          } else {
+            pool.query(
+              `INSERT INTO chatWords (content,time,userId,msgType) VALUES (&quot;${userContent}&quot;,&quot;${nowTime}&quot;,${results[0].id},${msgType})`,
+              function (error, result) {
+                if (error) {
+                  throw error;
+                }
+                reslove(true);
+              }
+            );
+          }
+        } catch (error) {
+          console.log(&#39;error: &#39;, error);
+        }
+      });
+    });
+  }
+}
+
+module.exports = new Mysql();</code></pre>
+<p>以下是服务端配置文件,在 robot 的配置里把 API_KEY 和 API_SECRET 换成自己的：</p>
+<pre><code class="js">// ./config/default.js
+const config = {
+  // 启动端口
+  port: 3000,
+
+  // 数据库配置
+  database: {
+    DATABASE: &#39;first&#39;,
+    USERNAME: &#39;root&#39;,
+    PASSWORD: &#39;123456&#39;,
+    PORT: &#39;3306&#39;,
+    HOST: &#39;localhost&#39;,
+  },
+
+  // 机器人配置
+  robot: {
+    ROBOT_NAME: &#39;汐汐AI&#39;,
+    ROBOT_URL: &#39;http://i.itpk.cn/api.php&#39;,
+    API_KEY: &#39;xxxxx&#39;,
+    API_SECRET: &#39;xxxxxx&#39;,
+  },
+
+  // 消息类型枚举
+  msgType: {
+    USER: 1,
+    SYSTEM: 2,
+  },
+};
+
+module.exports = config;</code></pre>
+<h4 id="步骤四：在客户端写一个-WebSocket-类"><a href="#步骤四：在客户端写一个-WebSocket-类" class="headerlink" title="步骤四：在客户端写一个 WebSocket 类"></a>步骤四：在客户端写一个 WebSocket 类</h4><p>在客户端写一个 WebSocket 类，代码如下，因为我服务端的 <code>webSocket</code> 用的是 <code>socket.io</code> 的框架，所以客户端就要用 <code>socket.io-client</code> 插件并引入。</p>
+<pre><code class="ts">// @/utils/webSocket
+
+import io from &#39;socket.io-client&#39;;
+import { MSG_TYPE, BASE_URL } from &#39;@/pages/constant&#39;;
+
+export interface MsgContentProps {
+  userName: string;
+  userContent: string;
+  msgType?: number;
+}
+
+/**
+ * @功能描述: Websocket类
+ * @参数:
+ * @返回值:
+ */
+export default class Websocket {
+  private socket: any;
+  // 连接到服务器
+  handleConnect({
+    callback,
+    failCallback,
+  }: {
+    callback: () =&gt; void;
+    failCallback: () =&gt; void;
+  }) {
+    try {
+      const _this = this;
+      this.socket = io.connect(BASE_URL);
+      this.socket.on(&#39;connect&#39;, function () {
+        const userName = localStorage.getItem(&#39;chatRoom-userName&#39;);
+        const userStatus = localStorage.getItem(&#39;chatRoom-userStatus&#39;);
+        if (userName &amp;&amp; userStatus !== &#39;online&#39;) {
+          _this.handleSendSystemMessage({ userName, status: &#39;online&#39; });
+        }
+        // 执行回调
+        callback &amp;&amp; callback();
+      });
+      this.socket.on(&#39;getMessage&#39;, function () {
+        // 服务端收到信息回调
+        callback &amp;&amp; callback();
+      });
+      this.socket.on(&#39;disconnect&#39;, function () {
+        alert(&#39;服务器已断开连接&#39;);
+        _this.socket = null;
+        failCallback &amp;&amp; failCallback();
+      });
+    } catch (err) {
+      console.log(&#39;err: &#39;, err);
+      alert(&#39;服务器未启动!&#39;);
+    }
+  }
+  // 断开服务器
+  handleDisconnect() {
+    if (this.socket) {
+      this.socket.disconnect(true);
+    } else {
+      alert(&#39;还未连接到服务器！&#39;);
+    }
+  }
+  // 点击发送内容给服务器
+  handleSendMessage(content: MsgContentProps) {
+    if (this.socket) {
+      this.socket.emit(&#39;sendMessage&#39;, content);
+    } else {
+      alert(&#39;请先连接到服务器！&#39;);
+    }
+  }
+  /**
+   * @功能描述: 发送系统消息
+   * @参数: @param userName:用户名 @param status:用户状态(online/offline)
+   * @返回值:
+   */
+  handleSendSystemMessage({
+    userName,
+    status,
+  }: {
+    userName: string;
+    status: string;
+  }) {
+    if (status === &#39;online&#39;) {
+      this.handleSendMessage({
+        userName,
+        userContent: &#39;加入了聊天室&#39;,
+        msgType: MSG_TYPE.system,
+      });
+    } else {
+      this.handleSendMessage({
+        userName,
+        userContent: &#39;离开了聊天室&#39;,
+        msgType: MSG_TYPE.system,
+      });
+    }
+    localStorage.setItem(&#39;chatRoom-userStatus&#39;, status);
+  }
+}</code></pre>
+<p>以下为客户端常量配置：</p>
+<pre><code class="js">// @/pages/constant
+
+// 消息类型映射
+export const MSG_TYPE = Object.freeze({
+  user: 1,
+  system: 2,
+});
+export const BASE_URL = &#39;http://localhost:3000&#39;;</code></pre>
+<p>配置完成后就可以在客户端发送信息的时候，服务器端通过 webSocket 拿到前端调用接口的参数，通过判断信息类型以及内容，调用机器人回复接口，进行对应的回复。效果如下：</p>
+<p><img src="/images/posts/robot/chatRoom2.jpg" alt="聊天室截图"></p>
+<p>这样，一个简单的机器人就完成啦。</p>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>Ruan XuSong<br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.com/2020/07/18/robot/" title="https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;07&#x2F;18&#x2F;robot&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.com&#x2F;2020&#x2F;07&#x2F;18&#x2F;robot&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c42de8657e362551bd3e",
+    clientSecret: "d9fb1325c3fefa35a2486369919f7e4ee16cdc33",
+    id: window.location.pathname,
+    repo: "ruanxusong.github.io",
+    owner: "RuanXuSong",
+    admin: "RuanXuSong"
+  });
+  gitalk.render("gitalk");
+</script>
+
+</section>
+</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script></script>
+
+<script src="/js/app.js?v=1595068711489"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
+ 
+
+
+
+
+
+    <!-- baidu Analytics -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?5b6db02e965b8ddb3d42c5a128861983';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
