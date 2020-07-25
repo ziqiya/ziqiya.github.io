@@ -27,15 +27,16 @@
 <meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/QRSpeedWord.jpg">
 <meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/robot1.jpg">
 <meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/robot2.jpg">
+<meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/moliRobot1.jpg">
 <meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/chatRoom1.jpg">
 <meta property="og:image" content="https://www.ruanxusong.com/images/posts/robot/chatRoom2.jpg">
 <meta property="article:published_time" content="2020-07-18T08:27:05.000Z">
-<meta property="article:modified_time" content="2020-07-18T10:37:58.435Z">
+<meta property="article:modified_time" content="2020-07-25T09:00:15.774Z">
 <meta property="article:author" content="Ruan XuSong">
-<meta property="article:tag" content="人工智能">
 <meta property="article:tag" content="webSocket">
-<meta property="article:tag" content="前端">
 <meta property="article:tag" content="后端">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.ruanxusong.com/images/posts/robot/QRspeed.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
@@ -47,7 +48,7 @@
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
     />
-    <link rel="stylesheet" href="/css/style.css?v=1595068711487">
+    <link rel="stylesheet" href="/css/style.css?v=1595668303934">
   <meta name="generator" content="Hexo 4.2.0"></head>
 
   <body class="mdui-drawer-body-left">
@@ -247,7 +248,7 @@
   <article>
     <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;人工智能是一个当代的热门话题，也会是下一个技术发展的趋势。预言帝凯文·凯利就曾经预言未来 25 年内未来人工智能、虚拟现实以及追踪和跟踪是三大发展趋势。而市面上也已经有了一些例如叮咚智能音响，Siri，小爱等等的智能机器人，有的可以语音操控，有的可以语音聊天，对话等。而今天我们的目标就是实现一个我们自己的可以智能聊天的机器人。</p>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="一、用酷-q-机器人-qq-微信接入"><a href="#一、用酷-q-机器人-qq-微信接入" class="headerlink" title="一、用酷 q 机器人 qq /微信接入"></a>一、用酷 q 机器人 qq /微信接入</h3><p>&emsp;&emsp;第一种方法就是借助市面上已有的机器人直接接入 qq 或微信，这边推荐比较好的一款是酷 q 机器人，可以在官网上申请注册一个账号，可以免费体验三天时间普通版，但是三天后只能用免费版，一天只能回复 10 条消息，后续需要 12 块钱 1 个月，像我们都是向来白嫖的，这个就比较奢侈了哈，还因为需要 windows 环境，mac 上 还要借助虚拟机。但是，毕竟是付费的，功能和智能化我觉得都是最好的，也能用来玩一些游戏。效果图如下：</p>
-<h3 id="二、用-QRspeed-手动设定回复机器人"><a href="#二、用-QRspeed-手动设定回复机器人" class="headerlink" title="二、用 QRspeed 手动设定回复机器人"></a>二、用 QRspeed 手动设定回复机器人</h3><p>&emsp;&emsp;第二种方法，就是用在电脑上跑一个模拟器上跑一个 QRSpeed 搭配 QRSpeed 词库，给机器人词库里写对应的语句，匹配到就会回复指定的语句。</p>
+<h3 id="二、用-QRspeed-手动设定回复机器人"><a href="#二、用-QRspeed-手动设定回复机器人" class="headerlink" title="二、用 QRspeed 手动设定回复机器人"></a>二、用 QRspeed 手动设定回复机器人</h3><p>&emsp;&emsp;第二种方法，就是先在电脑上跑一个模拟器，在模拟器上运行 QRSpeed 搭配 QRSpeed 词库，给机器人词库里写对应的语句，匹配到就会回复指定的语句。</p>
 <p>下图为 QRSpeed 配置，另外需要在群列表中选中需要机器人运作的群。</p>
 <p><img src="/images/posts/robot/QRspeed.jpg" alt="QRSpeed"></p>
 <p>上图中有一个 QRSpeed 词库的插件也需要安装一下，配置下主人和管理员，再导入下词库。</p>
@@ -257,9 +258,9 @@
 <p>这样设置以后再给机器人发消息就会自动回复了：</p>
 <p><img src="/images/posts/robot/robot2.jpg" alt="机器人截图2"></p>
 <p>也可以找网上例如小浅等智能机器人的词库，还可以实现一些小游戏。</p>
-<h3 id="三、用-webSocket-搭后台服务，接机器人接口"><a href="#三、用-webSocket-搭后台服务，接机器人接口" class="headerlink" title="三、用 webSocket 搭后台服务，接机器人接口"></a>三、用 webSocket 搭后台服务，接机器人接口</h3><p>&emsp;&emsp;这种方法就是今天重点了，用 webSocket 搭服务，这个我在之前的博客里讲过，就不展开讲了，接茉莉机器人接口，茉莉机器人,广泛应用于各类网站客服、QQ 机器人和微信公众平台。</p>
+<h3 id="三、用-webSocket-搭后台服务，接机器人接口"><a href="#三、用-webSocket-搭后台服务，接机器人接口" class="headerlink" title="三、用 webSocket 搭后台服务，接机器人接口"></a>三、用 webSocket 搭后台服务，接机器人接口</h3><p>&emsp;&emsp;这种方法就是今天重点了，用 webSocket 搭服务，这个我在之前的博客里讲过，就不展开讲了，接茉莉机器人接口，茉莉机器人，广泛应用于各类网站客服、QQ 机器人和微信公众平台。</p>
 <h4 id="步骤一：申请接口"><a href="#步骤一：申请接口" class="headerlink" title="步骤一：申请接口"></a>步骤一：申请接口</h4><p>&emsp;&emsp;前往<a href="http://www.itpk.cn/profile.php" target="_blank" rel="noopener">茉莉机器人官网</a>，注册申请自己的 API Key，可以在个人中心设置机器人的名字等信息，也可以设置词库，获取到接入 URL。如图：</p>
-<p>![茉莉机器人API]](/images/posts/robot/moliRobot1.jpg)</p>
+<p><img src="/images/posts/robot/moliRobot1.jpg" alt="茉莉机器人API"></p>
 <h4 id="步骤二：写前端页面"><a href="#步骤二：写前端页面" class="headerlink" title="步骤二：写前端页面"></a>步骤二：写前端页面</h4><p>用 React 写一个简单的页面，我这里就直接把最后的代码放上来了。</p>
 <pre><code class="tsx">// 主文件
 import React, { useState, useEffect, useRef } from &#39;react&#39;;
@@ -949,7 +950,7 @@ export const BASE_URL = &#39;http://localhost:3000&#39;;</code></pre>
 </script>
 <script></script>
 
-<script src="/js/app.js?v=1595068711489"></script>
+<script src="/js/app.js?v=1595668303945"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
