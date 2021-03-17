@@ -2,7 +2,7 @@
 <html>
   <head>
     
-    <title>前端笔记 - 阮旭松的博客</title>
+    <title>闭包 - 阮旭松的博客</title>
     <meta charset="UTF-8" />
     <meta name="description" content="基于hexo的前端博客" />
     <meta
@@ -16,15 +16,15 @@
       href="/favicon.ico"
       type="image/x-icon"
     />
-    <meta name="description" content="记录一些前端开发过程中的知识点笔记">
+    <meta name="description" content="记录一些前端开发过程中的知识点笔记，闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端笔记">
-<meta property="og:url" content="https://www.ruanxusong.cn/2020/10/22/note/index.html">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="https://www.ruanxusong.cn/2020/10/22/closure/index.html">
 <meta property="og:site_name" content="阮旭松的博客">
-<meta property="og:description" content="记录一些前端开发过程中的知识点笔记">
+<meta property="og:description" content="记录一些前端开发过程中的知识点笔记，闭包">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-22T11:53:37.000Z">
-<meta property="article:modified_time" content="2020-10-22T11:55:32.644Z">
+<meta property="article:modified_time" content="2021-03-17T14:54:49.168Z">
 <meta property="article:author" content="Ruan XuSong">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="阮旭松">
@@ -43,7 +43,7 @@
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
     />
-    <link rel="stylesheet" href="/css/style.css?v=1615707318358">
+    <link rel="stylesheet" href="/css/style.css?v=1615992954648">
   <meta name="generator" content="Hexo 4.2.0"></head>
 
   <body class="mdui-drawer-body-left">
@@ -225,28 +225,95 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/covers/regs.jpg">
+        <img src="/covers/closure.jpg">
         
-        <h1>前端笔记</h1>
+        <h1>闭包</h1>
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年10月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>0 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>438 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/fontEnd/">前端</a>
     
     
   </div>
   <article>
-    
+    <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>记录一些知识点</p>
+<h2 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h2><h3 id="一、闭包"><a href="#一、闭包" class="headerlink" title="一、闭包"></a>一、闭包</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>内部函数总是可以访问其所在的外部函数中声明的参数和变量，即使在其外部函数被返回了之后。</p>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>让外部访问函数内部变量成为可能。</li>
+<li>闭包找到的是同一地址中父级函数中对应变量最终的值。</li>
+<li>可以避免使用全局变量，防止全局变量污染。</li>
+<li>会造成内存泄漏（有一块内存空间被长期占用，而不被释放）</li>
+<li>闭包就是可以创建一个独立的环境，每个闭包里面的环境都是独立的，互不干扰。</li>
+</ul>
+<pre><code class="js">// 例子1
+function outerFn(){
+var i = 0;
+  function innnerFn(){
+      i++;
+      console.log(i);
+  }
+  return innnerFn;
+}
+var inner1 = outerFn();
+var inner2 = outerFn();
+inner1();
+inner2();
+inner1();
+inner2();    //1 1 2 2</code></pre>
+<p>例1说明了：闭包就是可以创建一个独立的环境，每个闭包里面的环境都是独立的，互不干扰。</p>
+<pre><code class="js">// 例子2
+(function() { 
+  var m = 0; 
+  function getM() { return m; } 
+  function seta(val) { m = val; } 
+  window.g = getM; 
+  window.f = seta; 
+})(); 
+f(100);
+console.info(g());   //100</code></pre>
+<p>例2说明了：闭包找到的是同一地址中父级函数中对应变量最终的值</p>
+<pre><code class="js">// 例子3
+function fn(){
+   var arr = [];
+   for(var i = 0;i &lt; 5;i ++){
+     arr[i] = function(){
+         return i;
+     }
+   }
+   return arr;
+}
+var list = fn();
+for(var i = 0,len = list.length;i &lt; len ; i ++){
+   console.log(list[i]());
+}  //5 5 5 5 5</code></pre>
+<pre><code class="js">// 例子4
+function fn(){
+  var arr = [];
+  for(var i = 0;i &lt; 5;i ++){
+    arr[i] = (function(i){
+        return function (){
+            return i;
+        };
+    })(i);
+  }
+  return arr;
+}
+var list = fn();
+for(var i = 0,len = list.length;i &lt; len ; i ++){
+  console.log(list[i]());
+}  //0 1 2 3 4</code></pre>
+<p>例子3和例子4是因为立即执行函数的区别，立即执行并返回一个函数，这样就防止了闭包的返回最终值的特性。</p>
+
   </article>
   
     
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="https://www.ruanxusong.cn/2020/10/22/note/" title="https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;10&#x2F;22&#x2F;note&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;10&#x2F;22&#x2F;note&#x2F;</a><br>
+<strong>本文链接：</strong><a href="https://www.ruanxusong.cn/2020/10/22/closure/" title="https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;10&#x2F;22&#x2F;closure&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;10&#x2F;22&#x2F;closure&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -288,7 +355,7 @@
 </script>
 <script></script>
 
-<script src="/js/app.js?v=1615707318360"></script>
+<script src="/js/app.js?v=1615992954653"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
