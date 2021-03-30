@@ -2,7 +2,7 @@
 <html>
   <head>
     
-    <title>cordova - 阮旭松的博客</title>
+    <title>标签：名人 - 阮旭松的博客</title>
     <meta charset="UTF-8" />
     <meta name="description" content="基于hexo的前端博客" />
     <meta
@@ -16,20 +16,22 @@
       href="/favicon.ico"
       type="image/x-icon"
     />
-    <meta name="description" content="cordova环境搭建的问题总结与解决方法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="cordova">
-<meta property="og:url" content="https://www.ruanxusong.cn/2020/02/03/cordova/index.html">
+    <meta name="description" content="基于hexo的前端博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="阮旭松的博客">
+<meta property="og:url" content="https://www.ruanxusong.cn/tags/celebrity/index.html">
 <meta property="og:site_name" content="阮旭松的博客">
-<meta property="og:description" content="cordova环境搭建的问题总结与解决方法">
+<meta property="og:description" content="基于hexo的前端博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.ruanxusong.cn/images/posts/cordova/taro-bug.jpg">
-<meta property="article:published_time" content="2020-02-03T11:03:28.000Z">
-<meta property="article:modified_time" content="2020-04-28T13:39:22.022Z">
 <meta property="article:author" content="Ruan XuSong">
-<meta property="article:tag" content="cordova">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="阮旭松">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="three.js">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-native">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.ruanxusong.cn/images/posts/cordova/taro-bug.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css" />
     
@@ -39,7 +41,7 @@
       rel="stylesheet"
       href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css"
     />
-    <link rel="stylesheet" href="/css/style.css?v=1617116498574">
+    <link rel="stylesheet" href="/css/style.css?v=1617116498688">
   <meta name="generator" content="Hexo 4.2.0"></head>
 
   <body class="mdui-drawer-body-left">
@@ -218,101 +220,38 @@
     </div>
     <div id="nexmoe-content">
       <div class="nexmoe-primary">
-        <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="/covers/cordova.jpg">
-        
-        <h1>cordova</h1>
+        <section class="nexmoe-posts" id="brand-waterfall">
+    
+    <div class="nexmoe-post">
+        <a href="/2021/03/30/zengguofan/">
+            <div class="nexmoe-post-cover mdui-ripple"> 
+                
+                <img src="/covers/zengguofan.jpg" alt="说说曾国藩">
+                
+                <h1>说说曾国藩</h1>
+            </div>
+        </a>
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月30日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.6k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 10 分钟</a>
+            
+                <a class="nexmoefont icon-appstore-fill -link" href="/categories/life/">生活</a>
+            
+            
+                <a class="nexmoefont icon-tag-fill -link" href="/tags/celebrity/" rel="tag">名人</a>
+            
+        </div>
+        <article>
+            
+            今天来说说半圣人-曾国藩
+            
+        </article>
+      
     </div>
-  <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月03日</a>
-    <a><i class="nexmoefont icon-areachart"></i>802 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
-      <a class="nexmoefont icon-appstore-fill -link" href="/categories/fontEnd/">前端</a>
-    
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/cordova/" rel="tag">cordova</a>
-    
-  </div>
-  <article>
-    <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>&emsp;&emsp;近期因为接手一个基于 cordova 和 taro 的项目，在安卓和苹果端的打包过程中遇到了一些坑，这里给出基本流程指南及常见问题的解决方法。</p>
-<h2 id="二、打包步骤"><a href="#二、打包步骤" class="headerlink" title="二、打包步骤"></a>二、打包步骤</h2><h3 id="1、环境安装"><a href="#1、环境安装" class="headerlink" title="1、环境安装"></a>1、环境安装</h3><h4 id="1-全局安装cordova"><a href="#1-全局安装cordova" class="headerlink" title="1.全局安装cordova:"></a>1.全局安装<code>cordova</code>:</h4><pre><code class="bash">npm install -g cordova</code></pre>
-<h4 id="2-验证cordova是否安装成功"><a href="#2-验证cordova是否安装成功" class="headerlink" title="2.验证cordova是否安装成功:"></a>2.验证<code>cordova</code>是否安装成功:</h4><pre><code class="bash">cordova -v</code></pre>
-<h4 id="3-预下载包，进入cordova项目根目录下执行"><a href="#3-预下载包，进入cordova项目根目录下执行" class="headerlink" title="3.预下载包，进入cordova项目根目录下执行"></a>3.预下载包，进入<code>cordova</code>项目根目录下执行</h4><pre><code class="bash">cordova prepare</code></pre>
-<p>这一步可以帮你把一些插件包都安装好，否则直接执行<code>build</code>的话会在安装某些包的时候卡死。</p>
-<p>第一次执行<code>cordova</code>时可能会遇到以下问题:</p>
-<ul>
-<li><p>Q：提示报错 <code>no such file or directory open xxx\.config\cordova-config.json</code> 。<br>A：需要在对应的目录下手动新建一个名为<code>cordova-config.json</code>的文件，让里面的内容为空对象。</p>
-</li>
-<li><p>Q：提示报错 <code>Current working directory is not a Cordova-based project.</code>。<br> A：这并不是因为这不是一个<code>cordova</code>项目，事实上，你只要在项目根目录下手动新建一个<code>www</code>的空文件夹就可以解决了。</p>
-</li>
-</ul>
-<h4 id="4-打包项目："><a href="#4-打包项目：" class="headerlink" title="4.打包项目："></a>4.打包项目：</h4><ul>
-<li>安卓端：</li>
-</ul>
-<pre><code class="bash">cordova build android -release</code></pre>
-<p>&emsp;&emsp;这里第一次执行的时候会特别慢，毕竟服务器在国外，这里可以参考<a href="https://blog.csdn.net/yanzisu_congcong/article/details/78020056?utm_source=blogxgwz2" target="_blank" rel="noopener">这个博客</a>的步骤将 gradle 包先下载下来或者翻墙，这一步可以把安卓的各个手机类型的包打包出来，这里的<code>-release</code>参数加上才可以得到<code>release</code>的 apk 包，可用于安装使用，否则只会获得<code>debug</code>版本的，只能用于调试。</p>
-<p>这里可能会遇到的问题：</p>
-<pre><code class="bash">A Problem occurred configuring root project &#39;android&#39;.
-&gt; Could not resolve all dependencies for configuration &#39;:classpath&#39;</code></pre>
-<p>这是因为<code>gradle</code>的版本在安装时不一致，需要清一下缓存:</p>
-<pre><code class="bash">  cd platforms
-  cd android</code></pre>
-<p>进入 android 文件夹下，再清缓存即可解决：</p>
-<pre><code class="bash">./gradlew clean</code></pre>
-<ul>
-<li>苹果端：</li>
-</ul>
-<p><strong><em>1.执行以下代码来更新 ios 工程下的文件：</em></strong></p>
-<pre><code class="bash">cordova build ios</code></pre>
-<p>可能会遇到以下报错：</p>
-<pre><code class="bash">Cordova build fails with &#39;toLowerCase&#39; of undefined</code></pre>
-<p>这是因为<code>xcode11</code>跟<code>cordova</code>有些冲突,需要执行以下指令：</p>
-<pre><code class="bash">cordova platform rm ios
-cordova platform add ios@latest</code></pre>
-<p>安装最新版的 ios 并使你的<code>cordova-ios</code> 版本 &gt;= 5.0.0。</p>
-<p>2.打开<code>Xcode</code>进行打包发布，在 xcode 中打开第一步中更新的<code>platforms/ios/xxx.xcworkspace</code>文件，打开 iOS 工程，选为<code>Generic iOS Device</code>。</p>
-<p>3.在菜单中选择 Product -&gt; Archive 进行打包。</p>
-<p>4.打包成功后点击<code>Distribute App</code>,选择发布方式，生产环境选择 iOS App Store，测试环境选择 Ad Hoc。再点击<code>Next</code>，再选择合适的协议文件。</p>
-<p>5.最后，测试的点击<code>export</code>,生产的点击<code>upload</code>，打包就完成了。</p>
-<h2 id="三、其他问题"><a href="#三、其他问题" class="headerlink" title="三、其他问题"></a>三、其他问题</h2><ul>
-<li>Q：如果在执行 taro 项目打包的时候遇到这个问题怎么办：<br><img src="/images/posts/cordova/taro-bug.jpg" alt="bug-img"><br>A：这个问题可能是 taro 版本的问题，因为低版本 taro 不支持箭头函数写组件内的函数，可以把<code>package.json</code>中更改<code>taro</code>版本到<code>1.3.12</code>，再删除<code>package-lock.json</code>,重新<code>npm install</code>装包。如果还没有解决，那可能是因为本地的一些 node 依赖与<code>taro</code>不兼容，需要撤销本地的修改后再重装依赖。</li>
-</ul>
-
-  </article>
-  
-    
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>Ruan XuSong<br>
-<strong>本文链接：</strong><a href="https://www.ruanxusong.cn/2020/02/03/cordova/" title="https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;02&#x2F;03&#x2F;cordova&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.ruanxusong.cn&#x2F;2020&#x2F;02&#x2F;03&#x2F;cordova&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
-</div>
-
-
-  
-  <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: "c42de8657e362551bd3e",
-    clientSecret: "d9fb1325c3fefa35a2486369919f7e4ee16cdc33",
-    id: window.location.pathname,
-    repo: "ruanxusong.github.io",
-    owner: "RuanXuSong",
-    admin: "RuanXuSong"
-  });
-  gitalk.render("gitalk");
-</script>
-
 </section>
-</div>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
@@ -329,7 +268,7 @@ cordova platform add ios@latest</code></pre>
 </script>
 <script></script>
 
-<script src="/js/app.js?v=1617116498576"></script>
+<script src="/js/app.js?v=1617116498690"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
