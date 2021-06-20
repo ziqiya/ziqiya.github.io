@@ -237,6 +237,13 @@ body {
 #nexmoe-content {
   position: relative;
 }
+#nexmoe-content #busuanzi_container_site_uv {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  bottom: -60px;
+  right: 20px;
+}
 #nexmoe-content .nexmoe-primary {
   box-shadow: 0 0 1rem rgba(161,177,204,0.4);
   background-color: #fff;
@@ -295,6 +302,13 @@ body {
 }
 #nexmoe-content .nexmoe-post:hover article {
   display: block;
+}
+#nexmoe-content .nexmoe-post #busuanzi_container_page_pv {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  bottom: 8px;
+  right: 20px;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover {
   width: 100%;
