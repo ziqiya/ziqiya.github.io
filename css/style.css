@@ -237,7 +237,7 @@ body {
 #nexmoe-content {
   position: relative;
 }
-#nexmoe-content #busuanzi_container_site_uv {
+#nexmoe-content #busuanzi_site_uv {
   position: absolute;
   width: 100%;
   text-align: right;
@@ -303,7 +303,7 @@ body {
 #nexmoe-content .nexmoe-post:hover article {
   display: block;
 }
-#nexmoe-content .nexmoe-post #busuanzi_container_page_pv {
+#nexmoe-content .nexmoe-post #busuanzi_page_pv {
   position: absolute;
   width: 100%;
   text-align: right;
